@@ -1,0 +1,277 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const features = [
+  {
+    icon: 'calendar',
+    title: 'Online Booking',
+    description: '24/7 online reservations with deposits, capacity control, and automatic confirmations.'
+  },
+  {
+    icon: 'users',
+    title: 'Pet & Client Management',
+    description: 'Complete profiles with vaccination tracking, feeding notes, medications, and owner portals.'
+  },
+  {
+    icon: 'credit-card',
+    title: 'Billing & Payments',
+    description: 'Automated invoicing, package management, and integrated payment processing.'
+  },
+  {
+    icon: 'chart',
+    title: 'Reports & Analytics',
+    description: 'Track occupancy, revenue, retention, and average revenue per customer in real-time.'
+  },
+  {
+    icon: 'bell',
+    title: 'Automated Reminders',
+    description: 'SMS and email reminders for bookings, vaccinations, pickups, and review requests.'
+  },
+  {
+    icon: 'mobile',
+    title: 'Staff Tools',
+    description: 'Shift scheduling, daily task lists, incident logs, and handover notes.'
+  }
+];
+
+const testimonials = [
+  {
+    quote: "PetCare.Software cut our phone calls by 60%. Clients book online, vaccination reminders go out automatically, and we finally have time to focus on the dogs.",
+    author: "Sarah Mitchell",
+    role: "Owner, Paws & Play Daycare"
+  },
+  {
+    quote: "The automated billing alone saves us 10+ hours every month. Best investment we've made for our kennel.",
+    author: "James Thompson",
+    role: "Owner, Thompson's Boarding"
+  },
+  {
+    quote: "Parents love the photo updates and report cards. Our retention has improved significantly since switching.",
+    author: "Emma Wilson",
+    role: "Manager, Happy Tails Cattery"
+  }
+];
+
+const stats = [
+  { number: '500+', label: 'Pet Businesses' },
+  { number: '50,000+', label: 'Pets Managed' },
+  { number: '15+ hrs', label: 'Saved Weekly' },
+  { number: '4.8/5', label: 'Customer Rating' }
+];
+---
+
+<BaseLayout title="Home" description="PetCare.Software - The complete pet care management platform for dog daycare, boarding, kennels, and catteries. Online booking, billing, and operations in one place.">
+  
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy via-brand-navy to-gray-900 text-white">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: url('/images/hero-pets.jpg'); background-size: cover; background-position: center;"></div>
+    </div>
+    <div class="container-custom relative py-20 md:py-32">
+      <div class="max-w-3xl">
+        <span class="badge-primary mb-6">
+          #1 Pet Care Management Software
+        </span>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+          Run Your <span class="text-brand-red">Pet Business</span> Like a Pro
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+          The all-in-one platform for kennels, daycares, and catteries. Bookings, billing, vaccinations, and more — so you can focus on great pet care.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/contact/" class="btn-primary text-lg px-8 py-4">
+            Start Free Trial
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="/dog-daycare-software/" class="btn-secondary text-lg px-8 py-4">
+            See Features
+          </a>
+        </div>
+        <p class="mt-6 text-sm text-gray-400">
+          No credit card required • 14-day free trial • Cancel anytime
+        </p>
+      </div>
+    </div>
+    <div class="absolute -bottom-1 left-0 right-0">
+      <svg class="w-full h-12 text-white" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="currentColor" opacity=".25"></path>
+        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="currentColor" opacity=".5"></path>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="currentColor"></path>
+      </svg>
+    </div>
+  </section>
+
+  <section class="py-12 bg-gray-50 border-b border-gray-100">
+    <div class="container-custom">
+      <p class="text-center text-sm text-gray-500 uppercase tracking-wider mb-8">Trusted by pet care businesses worldwide</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        {stats.map((stat) => (
+          <div>
+            <div class="text-3xl md:text-4xl font-bold text-brand-navy">{stat.number}</div>
+            <div class="text-sm text-gray-600 mt-1">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="badge-primary mb-4">Features</span>
+        <h2 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6">
+          Everything You Need to Run Your Pet Business
+        </h2>
+        <p class="text-xl text-gray-600">
+          From online bookings to automated billing, we've got you covered with tools designed specifically for pet care facilities.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {features.map((feature) => (
+          <div class="card group">
+            <div class="w-12 h-12 rounded-xl bg-brand-red-light flex items-center justify-center mb-4 group-hover:bg-brand-red transition-colors">
+              <svg class="w-6 h-6 text-brand-red group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {feature.icon === 'calendar' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />}
+                {feature.icon === 'users' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />}
+                {feature.icon === 'credit-card' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />}
+                {feature.icon === 'chart' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />}
+                {feature.icon === 'bell' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />}
+                {feature.icon === 'mobile' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />}
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-brand-navy mb-2">{feature.title}</h3>
+            <p class="text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="/dog-daycare-software/" class="btn-outline">
+          See All Features
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="badge-primary mb-4">For All Pet Businesses</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
+            Built for Kennels, Daycares & Catteries
+          </h2>
+          <p class="text-lg text-gray-600 mb-6">
+            Whether you run a dog daycare, boarding kennel, cattery, or mixed facility, PetCare.Software adapts to your unique needs with customizable services, pricing, and workflows.
+          </p>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700"><strong class="text-brand-navy">Dog Daycare:</strong> Capacity rules, playgroups, report cards, and add-ons</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700"><strong class="text-brand-navy">Dog Boarding:</strong> Multi-night stays, room assignments, feeding schedules</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700"><strong class="text-brand-navy">Catteries:</strong> Individual enclosures, sibling pricing, species-specific care</span>
+            </li>
+          </ul>
+          <a href="/kennel-software/" class="btn-primary">
+            Learn More
+          </a>
+        </div>
+        <div class="relative">
+          <div class="bg-gradient-to-br from-brand-red-light to-white rounded-2xl p-8 shadow-xl">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-white rounded-xl p-4 shadow-sm">
+                <div class="text-2xl font-bold text-brand-navy">60%</div>
+                <div class="text-sm text-gray-600">Fewer phone calls</div>
+              </div>
+              <div class="bg-white rounded-xl p-4 shadow-sm">
+                <div class="text-2xl font-bold text-brand-navy">15+ hrs</div>
+                <div class="text-sm text-gray-600">Saved per week</div>
+              </div>
+              <div class="bg-white rounded-xl p-4 shadow-sm">
+                <div class="text-2xl font-bold text-brand-navy">25%</div>
+                <div class="text-sm text-gray-600">Fewer no-shows</div>
+              </div>
+              <div class="bg-white rounded-xl p-4 shadow-sm">
+                <div class="text-2xl font-bold text-brand-navy">100%</div>
+                <div class="text-sm text-gray-600">Vaccine compliance</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-brand-navy text-white">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block">Testimonials</span>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">
+          Loved by Pet Care Businesses
+        </h2>
+        <p class="text-xl text-gray-300">
+          See what kennel owners and daycare managers say about PetCare.Software.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial) => (
+          <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div class="flex gap-1 mb-4">
+              {[1,2,3,4,5].map(() => (
+                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <p class="text-gray-300 mb-6 leading-relaxed">"{testimonial.quote}"</p>
+            <div>
+              <div class="font-semibold">{testimonial.author}</div>
+              <div class="text-sm text-gray-400">{testimonial.role}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-gradient-to-r from-brand-red to-brand-red-dark text-white">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">
+        Ready to Streamline Your Pet Business?
+      </h2>
+      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        Join hundreds of pet care businesses already using PetCare.Software to save time, reduce no-shows, and grow revenue.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">
+          Start Your Free Trial
+        </a>
+        <a href="/pricing/" class="btn bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-4">
+          View Pricing
+        </a>
+      </div>
+      <p class="mt-6 text-sm text-white/70">
+        No credit card required • Setup in 5 minutes
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
