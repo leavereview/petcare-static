@@ -1,70 +1,187 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const faqs = [
+  {
+    question: "What is dog daycare software?",
+    answer: "Dog daycare software is an all-in-one system that handles reservations, deposits, packages, vaccination records, capacity management, report cards, owner messaging, and billing for daycare facilities."
+  },
+  {
+    question: "Is dog daycare software hard to learn?",
+    answer: "No. Modern systems are built for speed at the front desk. Teams typically learn check-in/out and report cards in a single shift."
+  },
+  {
+    question: "Can owners book and pay online?",
+    answer: "Yes. Pet parents can book, pay deposits, upload vaccines, sign waivers, and view balances in the owner portal—any time, from any device."
+  },
+  {
+    question: "Will dog daycare software increase revenue?",
+    answer: "Typically yes—by reducing no-shows with deposits and reminders, and by offering enrichment or grooming add-ons during the booking flow."
+  },
+  {
+    question: "How much does dog daycare software cost?",
+    answer: "Dog daycare software typically costs £30-100 per month depending on features and facility size. PetCare.Software offers flat monthly pricing with no per-booking fees."
+  }
+];
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Dog Daycare Software: Complete Guide for Facility Owners",
+  "description": "Everything you need to know about dog daycare software. Online booking, capacity management, report cards, and automated billing for daycare facilities.",
+  "author": {
+    "@type": "Organization",
+    "name": "PetCare.Software"
+  },
+  "datePublished": "2025-01-01",
+  "dateModified": "2026-01-15"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
 ---
 
-<BaseLayout title="Dog Daycare Software" description="Dog daycare software that saves you 15+ hours per week. Online bookings, capacity management, report cards, and automated billing for daycare facilities.">
+<BaseLayout
+  title="Dog Daycare Software: Complete Guide for Facility Owners (2026)"
+  description="Dog daycare software that saves 15+ hours per week. Online bookings, capacity management, report cards, and automated billing for daycare facilities."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero Section -->
   <section class="bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
     <div class="container-custom">
       <div class="max-w-3xl">
-        <span class="badge-primary mb-4">Dog Daycare Software</span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Dog Daycare Software That Saves Time & Boosts Profits</h1>
-        <p class="text-xl text-gray-300 mb-8">
-          Reduce phone calls by 60% with 24/7 online booking. Eliminate double-booking with real-time capacity management. Give staff clear schedules and daily task lists.
+        <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Complete Guide</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Dog Daycare Software</h1>
+        <p class="text-xl text-gray-300 mb-4">
+          <strong>Dog daycare software</strong> saves you 15+ hours per week by automating bookings, capacity management, report cards, and billing. Stop drowning in phone calls and spreadsheets.
         </p>
+        <p class="text-gray-400 mb-8">Last updated: January 2026 | Reading time: 8 minutes</p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="/contact/" class="btn-primary text-lg px-8 py-4">Start Free Trial</a>
-          <a href="/pricing/" class="btn-secondary text-lg px-8 py-4">View Pricing</a>
+          <a href="#what-is" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Stats Bar -->
+  <section class="py-8 bg-gray-50 border-b">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+        <div>
+          <div class="text-xl font-bold text-brand-navy">60%</div>
+          <div class="text-xs text-gray-600">Fewer phone calls</div>
+        </div>
+        <div>
+          <div class="text-xl font-bold text-brand-navy">15+ hrs</div>
+          <div class="text-xs text-gray-600">Saved weekly</div>
+        </div>
+        <div>
+          <div class="text-xl font-bold text-brand-navy">0</div>
+          <div class="text-xs text-gray-600">Double bookings</div>
+        </div>
+        <div>
+          <div class="text-xl font-bold text-brand-navy">100%</div>
+          <div class="text-xs text-gray-600">Vaccine compliance</div>
+        </div>
+        <div>
+          <div class="text-xl font-bold text-brand-navy">24/7</div>
+          <div class="text-xs text-gray-600">Online booking</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Table of Contents -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">In This Guide</h2>
+          <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
+            <li><a href="#what-is" class="hover:text-brand-red">→ What Is Daycare Software?</a></li>
+            <li><a href="#features" class="hover:text-brand-red">→ Must-Have Features</a></li>
+            <li><a href="#benefits" class="hover:text-brand-red">→ Benefits for Your Facility</a></li>
+            <li><a href="#comparison" class="hover:text-brand-red">→ Spreadsheets vs. Software</a></li>
+            <li><a href="#choosing" class="hover:text-brand-red">→ Choosing the Right Solution</a></li>
+            <li><a href="#faq" class="hover:text-brand-red">→ FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
   <section class="section bg-white">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold text-brand-navy mb-6">What Is Dog Daycare Software?</h2>
+
+        <h2 id="what-is" class="text-3xl font-bold text-brand-navy mb-6">What Is Dog Daycare Software?</h2>
         <p class="text-lg text-gray-600 mb-6">
           <strong>Dog daycare software</strong> is an all-in-one system that handles reservations, deposits, packages, vaccination records, capacity, report cards, owner messaging, and billing. The best platforms also include reminders (arrivals, pickups, vaccines), digital signatures, and real-time dashboards so you know who's in-house, who's late, and what's next.
         </p>
         <p class="text-gray-600 mb-8">
-          At PetCare.Software, we built tools specifically for mixed facilities—so if you also run <a href="/dog-boarding-software/" class="link">dog boarding</a>, a <a href="/kennel-software/" class="link">kennel</a>, or even a <a href="/cattery-software/" class="link">cattery</a>, you can manage everything from one login.
+          At PetCare.Software, we built tools specifically for mixed facilities—so if you also run <a href="/dog-boarding-software/" class="text-brand-red hover:underline">dog boarding</a>, a <a href="/kennel-software/" class="text-brand-red hover:underline">kennel</a>, or even a <a href="/cattery-software/" class="text-brand-red hover:underline">cattery</a>, you can manage everything from one login.
         </p>
 
-        <h2 class="text-3xl font-bold text-brand-navy mb-6">Must-Have Features</h2>
-        <ul class="space-y-4 mb-8">
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-            </svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">Online bookings & deposits:</strong> 24/7 reservations with optional deposits to reduce no-shows.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-            </svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">Capacity & playgroup rules:</strong> Real-time controls to avoid overbooking—by weight class, temperament, or room.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-            </svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">Owner portal:</strong> Clients upload vaccine proofs, sign waivers, update contact/pet info, and pay online.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-            </svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">Report cards & media:</strong> Branded updates with notes, photos, or links to short videos.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-            </svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">Add-ons & upsells:</strong> Offer enrichment, nail trims, baths, or late pickup fees during checkout.</span>
-          </li>
+        <h2 id="features" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Must-Have Features</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 my-8">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Online Bookings & Deposits</h3>
+            <p class="text-gray-700 text-sm">24/7 reservations with optional deposits to reduce no-shows. Owners book when it's convenient for them.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Capacity & Playgroup Rules</h3>
+            <p class="text-gray-700 text-sm">Real-time controls to avoid overbooking—by weight class, temperament, or room.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Owner Portal</h3>
+            <p class="text-gray-700 text-sm">Clients upload vaccine proofs, sign waivers, update contact/pet info, and pay online.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Report Cards & Media</h3>
+            <p class="text-gray-700 text-sm">Branded updates with notes, photos, or links to short videos. Owners love seeing their pups.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Add-ons & Upsells</h3>
+            <p class="text-gray-700 text-sm">Offer enrichment, nail trims, baths, or late pickup fees during checkout.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Vaccination Tracking</h3>
+            <p class="text-gray-700 text-sm">Automatic expiry alerts. Block bookings for non-compliant pets until records are updated.</p>
+          </div>
+        </div>
+
+        <h2 id="benefits" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Benefits for Your Facility</h2>
+
+        <div class="bg-red-50 border-l-4 border-brand-red p-4 my-6">
+          <p class="font-bold text-brand-navy">Time is money</p>
+          <p>Most daycare owners report saving 15+ hours per week after switching from spreadsheets to dedicated software. That's time you can spend with the dogs—or growing your business.</p>
+        </div>
+
+        <ul class="space-y-3 mb-8">
+          <li><strong>Reduced phone calls:</strong> Online booking cuts calls by 60%. Owners can self-serve.</li>
+          <li><strong>Zero double-bookings:</strong> Real-time capacity management eliminates conflicts.</li>
+          <li><strong>100% vaccine compliance:</strong> Automatic tracking and reminders keep you safe.</li>
+          <li><strong>Increased revenue:</strong> Add-ons and packages boost average booking value.</li>
+          <li><strong>Happy staff:</strong> Clear schedules and task lists reduce confusion.</li>
+          <li><strong>Happy owners:</strong> Report cards and easy booking create loyal customers.</li>
         </ul>
 
-        <h2 class="text-3xl font-bold text-brand-navy mb-6">Spreadsheets vs. Software</h2>
+        <h2 id="comparison" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Spreadsheets vs. Software</h2>
         <div class="overflow-x-auto mb-8">
           <table class="w-full text-left border-collapse">
             <thead>
@@ -95,38 +212,79 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <td class="py-3 px-4 text-gray-600">Manual</td>
                 <td class="py-3 px-4 text-gray-600">Automated SMS/email</td>
               </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4">Report cards</td>
+                <td class="py-3 px-4 text-gray-600">Separate tool or none</td>
+                <td class="py-3 px-4 text-gray-600">Built-in with photos</td>
+              </tr>
             </tbody>
           </table>
         </div>
 
-        <h2 class="text-3xl font-bold text-brand-navy mb-6">FAQs</h2>
+        <h2 id="choosing" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Choosing the Right Solution</h2>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What to Look For</h3>
+        <ul class="space-y-2 mb-6">
+          <li><strong>Built for pet care:</strong> Generic booking tools miss industry-specific features.</li>
+          <li><strong>Capacity management:</strong> Real-time availability by playgroup or room.</li>
+          <li><strong>Vaccination tracking:</strong> Automatic alerts and booking blocks.</li>
+          <li><strong>Owner portal:</strong> Self-service bookings, payments, and document uploads.</li>
+          <li><strong>Report cards:</strong> Photo sharing and activity updates.</li>
+          <li><strong>Mobile friendly:</strong> Staff and owners access from any device.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Red Flags</h3>
+        <ul class="space-y-2 mb-8">
+          <li>Per-booking fees that punish growth</li>
+          <li>No vaccination tracking or compliance features</li>
+          <li>Desktop-only with no mobile access</li>
+          <li>No trial period to test with real bookings</li>
+        </ul>
+
+        <p>Related: <a href="/kennel-software/" class="text-brand-red hover:underline">Kennel Software Guide</a> | <a href="/dog-boarding-software/" class="text-brand-red hover:underline">Dog Boarding Software</a></p>
+
+        <h2 id="faq" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Frequently Asked Questions</h2>
         <div class="space-y-6 mb-8">
-          <div>
-            <h3 class="font-bold text-brand-navy mb-2">Is dog daycare software hard to learn?</h3>
-            <p class="text-gray-600">No. Modern systems are built for speed at the front desk. Teams typically learn check-in/out and report cards in a single shift.</p>
-          </div>
-          <div>
-            <h3 class="font-bold text-brand-navy mb-2">Can owners book and pay online?</h3>
-            <p class="text-gray-600">Yes. Pet parents can book, pay deposits, upload vaccines, sign waivers, and view balances in the owner portal—any time, from any device.</p>
-          </div>
-          <div>
-            <h3 class="font-bold text-brand-navy mb-2">Will it increase revenue?</h3>
-            <p class="text-gray-600">Typically yes—by reducing no-shows with deposits/reminders and by offering enrichment or grooming add-ons in the booking flow.</p>
-          </div>
+          {faqs.map((faq) => (
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
+              <p class="text-gray-700">{faq.answer}</p>
+            </div>
+          ))}
         </div>
+
       </div>
     </div>
   </section>
 
-  <section class="section bg-gradient-to-r from-brand-red to-brand-red-dark text-white">
+  <!-- CTA Section -->
+  <section class="section bg-gradient-to-r from-brand-red to-red-700 text-white">
     <div class="container-custom text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Upgrade Your Daycare?</h2>
-      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-        Ditch the spreadsheets and give your team their time back. Book a demo and see how PetCare.Software handles bookings, capacity, and report cards.
-      </p>
-      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">
-        Start Your Free Trial
-      </a>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Upgrade Your Daycare?</h2>
+      <p class="text-xl mb-8 opacity-90">Ditch the spreadsheets and give your team their time back. See how PetCare.Software handles bookings, capacity, and report cards.</p>
+      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Free 14-Day Trial</a>
+      <p class="text-sm mt-4 opacity-75">No credit card required. Set up in 15 minutes.</p>
+    </div>
+  </section>
+
+  <!-- Related Content -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8 text-center">Related Guides</h2>
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <a href="/dog-boarding-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Dog Boarding Software</h3>
+          <p class="text-gray-600 text-sm">Overnight stays and extended boarding</p>
+        </a>
+        <a href="/kennel-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Kennel Software</h3>
+          <p class="text-gray-600 text-sm">Complete kennel management</p>
+        </a>
+        <a href="/cattery-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Cattery Software</h3>
+          <p class="text-gray-600 text-sm">Cat-specific boarding features</p>
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>

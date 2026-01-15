@@ -1,60 +1,142 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const faqs = [
+  {
+    question: "What is cattery software?",
+    answer: "Cattery software is a specialized management platform designed for cat boarding facilities to handle reservations, cage assignments, feeding schedules, medication tracking, vaccination records, billing, and owner communications."
+  },
+  {
+    question: "Can cattery software handle multi-cat families?",
+    answer: "Yes. Group family cats in shared enclosures or book adjoining suites with shared feeding schedules. The system supports sibling pricing and linked records."
+  },
+  {
+    question: "Is it different from dog boarding software?",
+    answer: "Cattery software includes cat-specific features like individual housing management, species-specific vaccination requirements (FeLV, FIV testing), and litter box monitoring. PetCare.Software handles both cats and dogs if you run a mixed facility."
+  },
+  {
+    question: "How much does cattery software cost?",
+    answer: "PetCare.Software starts at £40/month for small catteries. Pricing scales with facility size and features needed."
+  },
+  {
+    question: "Can owners see updates on their cats?",
+    answer: "Yes. Send photo updates, feeding logs, and daily care notes directly to pet parents through the owner portal or via email/SMS."
+  }
+];
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cattery Software: Complete Guide for Cat Boarding Facilities",
+  "description": "Everything you need to know about cattery software. Individual enclosures, vaccination tracking, sibling pricing, and automated billing for cat-specific care.",
+  "author": {
+    "@type": "Organization",
+    "name": "PetCare.Software"
+  },
+  "datePublished": "2025-01-01",
+  "dateModified": "2026-01-15"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
 ---
 
-<BaseLayout title="Cattery Software" description="Cattery software for cat boarding businesses. Individual enclosures, vaccination tracking, sibling pricing, and automated billing for cat-specific care.">
+<BaseLayout
+  title="Cattery Software: Complete Guide for Cat Boarding Facilities (2026)"
+  description="Cattery software for cat boarding businesses. Individual enclosures, vaccination tracking, sibling pricing, and automated billing for cat-specific care."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero Section -->
   <section class="bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
     <div class="container-custom">
       <div class="max-w-3xl">
-        <span class="badge-primary mb-4">Cattery Software</span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Manage & Grow Your Cat Boarding Business</h1>
-        <p class="text-xl text-gray-300 mb-8">
-          Purpose-built software for catteries. Individual enclosures, species-specific vaccination tracking, multi-cat family management, and automated owner communications.
+        <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Complete Guide</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Cattery Software</h1>
+        <p class="text-xl text-gray-300 mb-4">
+          <strong>Cattery software</strong> is purpose-built for cat boarding facilities. Individual enclosures, species-specific vaccination tracking, multi-cat family management, and automated owner communications.
         </p>
+        <p class="text-gray-400 mb-8">Last updated: January 2026 | Reading time: 7 minutes</p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="/contact/" class="btn-primary text-lg px-8 py-4">Start Free Trial</a>
-          <a href="/pricing/" class="btn-secondary text-lg px-8 py-4">View Pricing</a>
+          <a href="#why-need" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Table of Contents -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">In This Guide</h2>
+          <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
+            <li><a href="#why-need" class="hover:text-brand-red">→ Why Purpose-Built Software?</a></li>
+            <li><a href="#features" class="hover:text-brand-red">→ Key Features</a></li>
+            <li><a href="#comparison" class="hover:text-brand-red">→ Cattery vs. Generic Systems</a></li>
+            <li><a href="#multi-cat" class="hover:text-brand-red">→ Multi-Cat Family Management</a></li>
+            <li><a href="#faq" class="hover:text-brand-red">→ FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
   <section class="section bg-white">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold text-brand-navy mb-6">Why You Need Purpose-Built Cattery Software</h2>
+
+        <h2 id="why-need" class="text-3xl font-bold text-brand-navy mb-6">Why You Need Purpose-Built Cattery Software</h2>
         <p class="text-lg text-gray-600 mb-6">
           Unlike generic scheduling tools, cattery management software understands the unique needs of feline care: individual enclosures, feeding routines, medical tracking, and multi-cat family stays. Everything lives in one secure dashboard, accessible from any device.
         </p>
+        <p class="text-gray-600 mb-8">
+          Cats have different requirements than dogs—from vaccination protocols (FVRCP, FeLV, FIV testing) to housing needs. Software built for catteries handles these nuances automatically.
+        </p>
 
-        <div class="grid md:grid-cols-2 gap-6 mb-8">
-          <div class="card">
+        <h2 id="features" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Key Features</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 my-8">
+          <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="font-bold text-brand-navy mb-2">Smart Bookings</h3>
-            <p class="text-gray-600 text-sm">Real-time availability and deposit collection prevent overbooking.</p>
+            <p class="text-gray-700 text-sm">Real-time availability and deposit collection prevent overbooking. Owners book 24/7.</p>
           </div>
-          <div class="card">
+          <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="font-bold text-brand-navy mb-2">Vaccination Tracking</h3>
-            <p class="text-gray-600 text-sm">Automated alerts for FVRCP, rabies, and FeLV/FIV testing requirements.</p>
+            <p class="text-gray-700 text-sm">Automated alerts for FVRCP, rabies, and FeLV/FIV testing requirements.</p>
           </div>
-          <div class="card">
+          <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="font-bold text-brand-navy mb-2">Digital Care Sheets</h3>
-            <p class="text-gray-600 text-sm">Record feedings, litter box changes, meds, and notes per cat with timestamps.</p>
+            <p class="text-gray-700 text-sm">Record feedings, litter box changes, meds, and notes per cat with timestamps.</p>
           </div>
-          <div class="card">
+          <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="font-bold text-brand-navy mb-2">Owner Portal</h3>
-            <p class="text-gray-600 text-sm">Pet parents upload vaccination proof, pay invoices, and view photos.</p>
+            <p class="text-gray-700 text-sm">Pet parents upload vaccination proof, pay invoices, and view photos of their cats.</p>
           </div>
-          <div class="card">
+          <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="font-bold text-brand-navy mb-2">Multi-Cat Families</h3>
-            <p class="text-gray-600 text-sm">Group sibling cats with shared enclosures, coordinated schedules, and family pricing.</p>
+            <p class="text-gray-700 text-sm">Group sibling cats with shared enclosures, coordinated schedules, and family pricing.</p>
           </div>
-          <div class="card">
+          <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="font-bold text-brand-navy mb-2">Reports & Analytics</h3>
-            <p class="text-gray-600 text-sm">Monitor occupancy, revenue, retention, and average length of stay.</p>
+            <p class="text-gray-700 text-sm">Monitor occupancy, revenue, retention, and average length of stay.</p>
           </div>
         </div>
 
-        <h2 class="text-3xl font-bold text-brand-navy mb-6">PetCare.Software vs. Generic Systems</h2>
+        <h2 id="comparison" class="text-3xl font-bold text-brand-navy mt-12 mb-6">PetCare.Software vs. Generic Systems</h2>
         <div class="overflow-x-auto mb-8">
           <table class="w-full text-left border-collapse">
             <thead>
@@ -73,7 +155,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <tr class="border-b border-gray-100">
                 <td class="py-3 px-4">Vaccination Alerts</td>
                 <td class="py-3 px-4 text-gray-600">None</td>
-                <td class="py-3 px-4 text-gray-600">Automatic reminders</td>
+                <td class="py-3 px-4 text-gray-600">Automatic cat-specific reminders</td>
               </tr>
               <tr class="border-b border-gray-100">
                 <td class="py-3 px-4">Customer Portal</td>
@@ -85,38 +167,70 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <td class="py-3 px-4 text-gray-600">Paper checklists</td>
                 <td class="py-3 px-4 text-gray-600">Digital care logs with timestamps</td>
               </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4">Multi-cat booking</td>
+                <td class="py-3 px-4 text-gray-600">Not supported</td>
+                <td class="py-3 px-4 text-gray-600">Sibling grouping and pricing</td>
+              </tr>
             </tbody>
           </table>
         </div>
 
-        <h2 class="text-3xl font-bold text-brand-navy mb-6">FAQs</h2>
+        <h2 id="multi-cat" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Multi-Cat Family Management</h2>
+        <p class="text-gray-600 mb-4">Many cat owners bring multiple cats from the same household. Good cattery software handles this elegantly:</p>
+
+        <ul class="space-y-2 mb-8">
+          <li><strong>Shared enclosures:</strong> Group siblings together when appropriate.</li>
+          <li><strong>Linked records:</strong> See all family cats at once during check-in.</li>
+          <li><strong>Sibling pricing:</strong> Automatic discounts for multiple cats from one household.</li>
+          <li><strong>Coordinated schedules:</strong> Same feeding times, medication rounds, and care notes.</li>
+          <li><strong>Combined invoicing:</strong> One bill for the whole family.</li>
+        </ul>
+
+        <p>Related: <a href="/kennel-software/" class="text-brand-red hover:underline">Kennel Software Guide</a> | <a href="/dog-boarding-software/" class="text-brand-red hover:underline">Dog Boarding Software</a></p>
+
+        <h2 id="faq" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Frequently Asked Questions</h2>
         <div class="space-y-6 mb-8">
-          <div>
-            <h3 class="font-bold text-brand-navy mb-2">What is cattery software?</h3>
-            <p class="text-gray-600">Cattery software is a specialized management platform designed for cat boarding facilities to handle reservations, cage assignments, feeding schedules, medication tracking, vaccination records, billing, and owner communications.</p>
-          </div>
-          <div>
-            <h3 class="font-bold text-brand-navy mb-2">Can it handle multi-cat families?</h3>
-            <p class="text-gray-600">Yes. Group family cats in shared enclosures or book adjoining suites with shared feeding schedules. The system supports sibling pricing and linked records.</p>
-          </div>
-          <div>
-            <h3 class="font-bold text-brand-navy mb-2">Is it different from dog boarding software?</h3>
-            <p class="text-gray-600">Cattery software includes cat-specific features like individual housing management, species-specific vaccination requirements (FeLV, FIV testing), and litter box monitoring. PetCare.Software handles both cats and dogs if you run a mixed facility.</p>
-          </div>
+          {faqs.map((faq) => (
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
+              <p class="text-gray-700">{faq.answer}</p>
+            </div>
+          ))}
         </div>
+
       </div>
     </div>
   </section>
 
-  <section class="section bg-gradient-to-r from-brand-red to-brand-red-dark text-white">
+  <!-- CTA Section -->
+  <section class="section bg-gradient-to-r from-brand-red to-red-700 text-white">
     <div class="container-custom text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Upgrade Your Cattery?</h2>
-      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-        Save hours each week and deliver smoother customer experiences with PetCare.Software.
-      </p>
-      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">
-        Start Your Free Trial
-      </a>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Upgrade Your Cattery?</h2>
+      <p class="text-xl mb-8 opacity-90">Save hours each week and deliver smoother customer experiences with PetCare.Software.</p>
+      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Free 14-Day Trial</a>
+      <p class="text-sm mt-4 opacity-75">No credit card required. Set up in 15 minutes.</p>
+    </div>
+  </section>
+
+  <!-- Related Content -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8 text-center">Related Guides</h2>
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <a href="/dog-daycare-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Dog Daycare Software</h3>
+          <p class="text-gray-600 text-sm">Daytime care and playgroups</p>
+        </a>
+        <a href="/dog-boarding-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Dog Boarding Software</h3>
+          <p class="text-gray-600 text-sm">Overnight stays and extended boarding</p>
+        </a>
+        <a href="/kennel-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Kennel Software</h3>
+          <p class="text-gray-600 text-sm">Complete kennel management</p>
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>

@@ -1,24 +1,82 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const faqs = [
+  {
+    question: "What is kennel software?",
+    answer: "Kennel software is a digital management platform designed specifically for pet boarding facilities. It handles bookings, room assignments, vaccination tracking, feeding schedules, payment processing, and customer communication."
+  },
+  {
+    question: "How much does kennel software cost?",
+    answer: "PetCare.Software starts at £40/month for small facilities. Most platforms cost £40-£120/month depending on features and facility size."
+  },
+  {
+    question: "Is kennel software worth it for small facilities?",
+    answer: "Yes. Even small kennels report saving 15+ hours per week on admin, which more than covers the software cost in time savings alone."
+  },
+  {
+    question: "Can kennel software handle both dogs and cats?",
+    answer: "Yes. PetCare.Software manages dogs, cats, and other pets from one platform with species-specific features and shared client records."
+  },
+  {
+    question: "How long does it take to set up?",
+    answer: "Most facilities are up and running within a day. Import existing client data, configure your rooms and services, and start taking bookings."
+  }
+];
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Kennel Software: Complete Guide for Facility Owners",
+  "description": "Everything you need to know about kennel software. Online booking, vaccination tracking, staff scheduling, and automated billing for boarding facilities.",
+  "author": {
+    "@type": "Organization",
+    "name": "PetCare.Software"
+  },
+  "datePublished": "2025-01-01",
+  "dateModified": "2026-01-15"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
 ---
 
-<BaseLayout title="Kennel Software" description="Kennel software that saves you 15+ hours per week. Online booking, vaccination tracking, staff scheduling, and automated billing for boarding facilities.">
+<BaseLayout
+  title="Kennel Software: Complete Guide for Facility Owners (2026)"
+  description="Kennel software that saves you 15+ hours per week. Online booking, vaccination tracking, staff scheduling, and automated billing for boarding facilities."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero Section -->
   <section class="bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
     <div class="container-custom">
       <div class="max-w-3xl">
-        <span class="badge-primary mb-4">Kennel Software</span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Kennel Software That Saves You 15+ Hours Per Week</h1>
-        <p class="text-xl text-gray-300 mb-8">
-          Transform your kennel from chaotic to calm. Stop drowning in phone calls, paperwork, and double-booking disasters. Start running a streamlined, profitable boarding business.
+        <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Complete Guide</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Kennel Software</h1>
+        <p class="text-xl text-gray-300 mb-4">
+          <strong>Kennel software</strong> saves you 15+ hours per week by automating bookings, vaccinations, staff tasks, and billing. Transform your kennel from chaotic to calm.
         </p>
+        <p class="text-gray-400 mb-8">Last updated: January 2026 | Reading time: 8 minutes</p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="/contact/" class="btn-primary text-lg px-8 py-4">Start Free Trial</a>
-          <a href="/pricing/" class="btn-secondary text-lg px-8 py-4">View Pricing</a>
+          <a href="#what-is" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Stats Bar -->
   <section class="py-8 bg-gray-50 border-b">
     <div class="container-custom">
       <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
@@ -46,79 +104,140 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <section class="section bg-white">
+  <!-- Table of Contents -->
+  <section class="section bg-gray-50">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold text-brand-navy mb-6">The Hidden Cost of Running Your Kennel Without Proper Software</h2>
-        <p class="text-lg text-gray-600 mb-6">
-          You started your kennel because you love animals, not paperwork. But somewhere along the way, admin took over. Phone constantly ringing. Sticky notes everywhere. That sinking feeling when you realize you double-booked a suite.
-        </p>
-        <p class="text-gray-600 mb-8">
-          PetCare.Software was built specifically for small-to-medium boarding facilities. It handles online bookings, vaccination tracking, staff scheduling, payments, and customer communication in one easy-to-use platform.
-        </p>
-
-        <h2 class="text-3xl font-bold text-brand-navy mb-6">What You Get</h2>
-        <ul class="space-y-4 mb-8">
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-            </svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">24/7 Online Booking:</strong> Clients book anytime. You wake up to new reservations instead of voicemails.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-            </svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">Real-Time Capacity:</strong> The system knows which kennels are available. No more double-booking disasters.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-            </svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">Vaccination Alerts:</strong> Never let an unvaccinated dog through again. Automatic reminders to owners before expiry.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-            </svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">Staff Scheduling:</strong> Clear daily task lists and shift management. Everyone knows what needs doing.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-            </svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">Automated Billing:</strong> Invoices go out automatically. Get paid faster with online payments.</span>
-          </li>
-        </ul>
-
-        <h2 class="text-3xl font-bold text-brand-navy mb-6">FAQs</h2>
-        <div class="space-y-6 mb-8">
-          <div>
-            <h3 class="font-bold text-brand-navy mb-2">What is kennel software?</h3>
-            <p class="text-gray-600">Kennel software is a digital management platform designed specifically for pet boarding facilities. It handles bookings, room assignments, vaccination tracking, feeding schedules, payment processing, and customer communication.</p>
-          </div>
-          <div>
-            <h3 class="font-bold text-brand-navy mb-2">How much does kennel software cost?</h3>
-            <p class="text-gray-600">PetCare.Software starts at £40/month for small facilities. See our <a href="/pricing/" class="link">pricing page</a> for details.</p>
-          </div>
-          <div>
-            <h3 class="font-bold text-brand-navy mb-2">Is it worth it for small kennels?</h3>
-            <p class="text-gray-600">Yes. Even small kennels report saving 15+ hours per week on admin, which more than covers the software cost in time savings alone.</p>
-          </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">In This Guide</h2>
+          <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
+            <li><a href="#what-is" class="hover:text-brand-red">→ What Is Kennel Software?</a></li>
+            <li><a href="#problem" class="hover:text-brand-red">→ The Hidden Cost of Manual Management</a></li>
+            <li><a href="#features" class="hover:text-brand-red">→ What You Get</a></li>
+            <li><a href="#choosing" class="hover:text-brand-red">→ Choosing the Right Solution</a></li>
+            <li><a href="#faq" class="hover:text-brand-red">→ FAQ</a></li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section bg-gradient-to-r from-brand-red to-brand-red-dark text-white">
+  <!-- Main Content -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+
+        <h2 id="what-is" class="text-3xl font-bold text-brand-navy mb-6">What Is Kennel Software?</h2>
+        <p class="text-lg text-gray-600 mb-6">
+          <strong>Kennel software</strong> is a digital management platform designed specifically for pet boarding facilities. It handles bookings, room assignments, vaccination tracking, feeding schedules, payment processing, staff scheduling, and customer communication—all from one dashboard.
+        </p>
+        <p class="text-gray-600 mb-8">
+          PetCare.Software was built specifically for small-to-medium boarding facilities. It handles online bookings, vaccination tracking, staff scheduling, payments, and customer communication in one easy-to-use platform.
+        </p>
+
+        <h2 id="problem" class="text-3xl font-bold text-brand-navy mt-12 mb-6">The Hidden Cost of Running Without Proper Software</h2>
+        <p class="text-lg text-gray-600 mb-6">
+          You started your kennel because you love animals, not paperwork. But somewhere along the way, admin took over. Phone constantly ringing. Sticky notes everywhere. That sinking feeling when you realize you double-booked a suite.
+        </p>
+
+        <div class="bg-red-50 border-l-4 border-brand-red p-4 my-6">
+          <p class="font-bold text-brand-navy">The time trap</p>
+          <p>Without software, kennel owners report spending 15-20 hours per week on admin tasks that could be automated. That's time you could spend with the animals—or growing your business.</p>
+        </div>
+
+        <h2 id="features" class="text-3xl font-bold text-brand-navy mt-12 mb-6">What You Get</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 my-8">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">24/7 Online Booking</h3>
+            <p class="text-gray-700 text-sm">Clients book anytime. You wake up to new reservations instead of voicemails.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Real-Time Capacity</h3>
+            <p class="text-gray-700 text-sm">The system knows which kennels are available. No more double-booking disasters.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Vaccination Alerts</h3>
+            <p class="text-gray-700 text-sm">Never let an unvaccinated dog through again. Automatic reminders to owners before expiry.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Staff Scheduling</h3>
+            <p class="text-gray-700 text-sm">Clear daily task lists and shift management. Everyone knows what needs doing.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Automated Billing</h3>
+            <p class="text-gray-700 text-sm">Invoices go out automatically. Get paid faster with online payments.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Owner Portal</h3>
+            <p class="text-gray-700 text-sm">Pet parents book, pay, upload vaccines, and receive updates—all self-service.</p>
+          </div>
+        </div>
+
+        <h2 id="choosing" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Choosing the Right Solution</h2>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What to Look For</h3>
+        <ul class="space-y-2 mb-6">
+          <li><strong>Built for pet care:</strong> Generic booking tools miss industry-specific features.</li>
+          <li><strong>Multi-species support:</strong> Handle dogs, cats, and other pets.</li>
+          <li><strong>Vaccination tracking:</strong> Automatic alerts and booking blocks.</li>
+          <li><strong>Staff management:</strong> Task lists, schedules, and accountability.</li>
+          <li><strong>Mobile access:</strong> Work from anywhere in your facility.</li>
+          <li><strong>Free trial:</strong> Test with real bookings before committing.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Red Flags</h3>
+        <ul class="space-y-2 mb-8">
+          <li>Per-booking fees that punish success</li>
+          <li>No vaccination compliance features</li>
+          <li>Desktop-only with no mobile access</li>
+          <li>Complex setup requiring technical expertise</li>
+        </ul>
+
+        <p>Related: <a href="/dog-boarding-software/" class="text-brand-red hover:underline">Dog Boarding Software</a> | <a href="/dog-daycare-software/" class="text-brand-red hover:underline">Dog Daycare Software</a></p>
+
+        <h2 id="faq" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-6 mb-8">
+          {faqs.map((faq) => (
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
+              <p class="text-gray-700">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-gradient-to-r from-brand-red to-red-700 text-white">
     <div class="container-custom text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Kennel?</h2>
-      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-        Join kennel owners who've reclaimed their time and grown their business with PetCare.Software.
-      </p>
-      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">
-        Start Your Free Trial
-      </a>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Kennel?</h2>
+      <p class="text-xl mb-8 opacity-90">Join kennel owners who've reclaimed their time and grown their business with PetCare.Software.</p>
+      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Free 14-Day Trial</a>
+      <p class="text-sm mt-4 opacity-75">No credit card required. Set up in 15 minutes.</p>
+    </div>
+  </section>
+
+  <!-- Related Content -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8 text-center">Related Guides</h2>
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <a href="/dog-daycare-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Dog Daycare Software</h3>
+          <p class="text-gray-600 text-sm">Daytime care and playgroups</p>
+        </a>
+        <a href="/dog-boarding-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Dog Boarding Software</h3>
+          <p class="text-gray-600 text-sm">Overnight stays and extended boarding</p>
+        </a>
+        <a href="/cattery-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Cattery Software</h3>
+          <p class="text-gray-600 text-sm">Cat-specific boarding features</p>
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>
