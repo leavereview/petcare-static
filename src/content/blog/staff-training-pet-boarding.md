@@ -1,7 +1,8 @@
 ---
 title: "Staff Training & Certification for Dog Boarding Facilities"
 description: "How to train and certify your dog boarding staff. Covers essential skills, certification programs, and ongoing training strategies."
-date: "2025-11-21"
+image: /images/blog-staff-training.jpg
+date: "2026-01-23"
 tags: ["staff training", "certification", "business"]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "How to Start a Cattery Business: Complete Guide"
 description: "Step-by-step guide to starting a cat boarding business. Covers licensing, facility setup, pricing, and operations."
+image: /images/blog-cattery.jpg
 date: "2025-09-27"
 tags: ["starting a business", "cattery", "cats"]
 ---

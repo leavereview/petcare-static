@@ -1,7 +1,8 @@
 ---
 title: "Best Dog Daycare Software for Small Businesses (2025 Comparison)"
 description: "Compare the top dog daycare software options for small businesses. Features, pricing, and honest reviews to help you choose the right platform."
-date: "2025-10-29"
+image: /images/blog-technology.jpg
+date: "2026-02-20"
 tags: ["dog daycare", "software comparison"]
 author: "PetCare Team"
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Is Kennel Software Worth It for Small Pet Businesses?"
 description: "Evaluate whether kennel software is worth it for small pet businesses. Weighs costs against efficiency gains, customer experience and growth potential."
+image: /images/blog-kennel.jpg
 date: "2025-09-27"
 tags: ["kennel software", "pet business"]
 author: "PetCare Team"
