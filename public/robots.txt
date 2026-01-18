@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://petcare.software/sitemap.xml
+
+Disallow: /api/
+Disallow: /_astro/
