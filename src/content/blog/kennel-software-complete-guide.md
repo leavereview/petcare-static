@@ -3,7 +3,7 @@ title: "Kennel Software: The Complete 2026 Buyer's Guide"
 description: "Comprehensive guide to kennel management software: features, pricing, platform comparisons, and how to choose the right solution for kennels of any size."
 image: /images/blog-kennel.jpg
 date: "2026-01-16"
-tags: ["kennel software", "pet business", "software comparison"]
+tags: ["Kennel", "Software"]
 author: "PetCare Team"
 ---
 

@@ -3,7 +3,7 @@ title: "Is Dog Boarding Software Worth It for Small Pet Businesses?"
 description: "Cost-benefit analysis of dog boarding software for small facilities. Understand the ROI, time savings, and when software makes sense for your kennel."
 image: /images/blog-boarding.jpg
 date: "2026-01-23"
-tags: ["dog boarding software", "small business", "ROI", "kennel"]
+tags: ["Dog Boarding", "Software"]
 author: "PetCare Team"
 ---
 

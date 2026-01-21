@@ -3,7 +3,7 @@ title: "Marketing Strategies for Dog Daycare & Boarding Facilities"
 description: "Proven marketing strategies to grow your dog daycare or boarding business. Social media, local SEO, referrals, and customer retention."
 image: /images/blog-marketing.jpg
 date: "2026-02-13"
-tags: ["marketing", "business", "growth"]
+tags: ["Marketing", "Dog Daycare", "Dog Boarding"]
 ---
 
 Marketing a pet care business requires connecting with pet owners where they spend time and building trust. Here are proven strategies that work.

@@ -3,7 +3,7 @@ title: "How to Start a Dog Kennel / Boarding Business (Beginner's Guide)"
 description: "Step-by-step guide to starting a dog kennel business, including licensing requirements for USA, UK, Canada, Australia/NZ, facility setup, and operations."
 image: /images/blog-kennel.jpg
 date: "2026-01-16"
-tags: ["dog kennel", "pet business", "start a business", "licensing"]
+tags: ["Kennel", "Starting a Business", "Legal"]
 author: "PetCare Team"
 ---
 

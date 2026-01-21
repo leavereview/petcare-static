@@ -3,7 +3,7 @@ title: "Cattery Software: The Complete 2026 Buyer's Guide"
 description: "Everything you need to know about cattery management software: cat-specific features, platform comparisons, pricing, and how to choose the right solution."
 image: /images/blog-cattery.jpg
 date: "2026-01-16"
-tags: ["cattery software", "cat boarding", "pet business", "software comparison"]
+tags: ["Cattery", "Software"]
 author: "PetCare Team"
 ---
 

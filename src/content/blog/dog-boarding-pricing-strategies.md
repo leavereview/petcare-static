@@ -3,7 +3,7 @@ title: "Dog Boarding Pricing Strategies & Packages"
 description: "How to price your dog boarding services profitably. Learn about pricing models, packages, add-ons, and strategies to maximize revenue."
 image: /images/blog-business.jpg
 date: "2026-02-06"
-tags: ["pricing", "business", "dog boarding"]
+tags: ["Dog Boarding", "Finance"]
 ---
 
 Pricing your dog boarding services correctly balances profitability with competitiveness. This guide covers proven pricing strategies for boarding facilities.

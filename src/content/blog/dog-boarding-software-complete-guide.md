@@ -3,7 +3,7 @@ title: "Dog Boarding Software: The Complete 2026 Buyer's Guide"
 description: "Dog boarding software guide: essential features, pricing comparison, top platforms, and how to choose the right solution for your facility."
 image: /images/blog-boarding.jpg
 date: "2026-01-16"
-tags: ["dog boarding software", "pet business", "software comparison"]
+tags: ["Dog Boarding", "Software"]
 author: "PetCare Team"
 ---
 

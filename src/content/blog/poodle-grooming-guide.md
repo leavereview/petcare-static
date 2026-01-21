@@ -3,7 +3,7 @@ title: "The Complete Guide to Poodle Grooming: Professional Tips and Techniques"
 description: "Master poodle grooming with this professional guide. Learn about coat types, popular clips, tools needed, and step-by-step grooming techniques."
 image: /images/blog-grooming.jpg
 date: "2026-01-18"
-tags: ["grooming", "poodle", "breed guide", "professional tips"]
+tags: ["Grooming"]
 author: "PetCare Team"
 ---
 

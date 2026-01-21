@@ -3,7 +3,7 @@ title: "Dog Playgroup Management Strategies for Daycare Facilities"
 description: "Effective strategies for managing dog playgroups in daycare settings: grouping criteria, introductions, supervision, and conflict prevention."
 image: /images/blog-playgroup.jpg
 date: "2026-01-30"
-tags: ["dog daycare", "playgroup management", "operations", "dog behaviour"]
+tags: ["Dog Daycare", "Business Operations"]
 author: "PetCare Team"
 ---
 

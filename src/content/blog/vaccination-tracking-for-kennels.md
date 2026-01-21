@@ -3,7 +3,7 @@ title: "Why Vaccination Tracking Is Critical for Your Boarding Facility"
 description: "Learn why automated vaccination tracking protects your business and how to implement it effectively in your kennel or daycare."
 image: /images/blog-vaccination.jpg
 date: "2026-01-23"
-tags: ["kennel software", "safety"]
+tags: ["Kennel", "Safety"]
 author: "PetCare Team"
 ---
 

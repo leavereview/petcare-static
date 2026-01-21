@@ -3,7 +3,7 @@ title: "Dog Health & Safety Protocols for Boarding Facilities"
 description: "Essential health and safety protocols for dog boarding facilities. Vaccination requirements, disease prevention, and emergency procedures."
 image: /images/blog-vaccination.jpg
 date: "2026-01-23"
-tags: ["health", "safety", "dog boarding"]
+tags: ["Dog Boarding", "Safety"]
 ---
 
 Health and safety protocols protect pets, staff, and your business. This guide covers essential protocols every boarding facility should implement.

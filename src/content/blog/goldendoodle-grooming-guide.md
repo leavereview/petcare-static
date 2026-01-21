@@ -3,7 +3,7 @@ title: "Goldendoodle Grooming Guide: Professional Tips for Groomers"
 description: "Master goldendoodle grooming with this professional guide. Learn about coat types, popular cuts, tools needed, and techniques for this popular crossbreed."
 image: /images/blog-grooming.jpg
 date: "2026-01-18"
-tags: ["grooming", "goldendoodle", "breed guide", "professional tips"]
+tags: ["Grooming"]
 author: "PetCare Team"
 ---
 

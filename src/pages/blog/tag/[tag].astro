@@ -46,16 +46,21 @@ const shouldNoindex = posts.length < 3;
 
 // Tag topic intro content map
 const tagIntros: Record<string, string> = {
-  'Kennel Management': 'Expert guidance on running efficient kennel operations, from capacity planning to staff management and customer service best practices.',
+  'Kennel': 'Expert guidance on running efficient kennel operations, from facility design to capacity planning and customer service best practices.',
   'Dog Daycare': 'Insights and strategies for successful dog daycare businesses, including playgroup management, safety protocols, and client communication.',
   'Dog Boarding': 'Tips for overnight boarding facilities covering room management, feeding schedules, and creating comfortable stays for pets.',
   'Cattery': 'Specialized content for cat boarding businesses, including feline-specific care requirements, enclosure setup, and stress reduction techniques.',
-  'Pet Grooming': 'Resources for grooming salons and mobile groomers, from appointment scheduling to client retention and service pricing.',
+  'Grooming': 'Resources for grooming salons and mobile groomers, from techniques and tools to client retention and service pricing.',
   'Pet Sitting': 'Guides for pet sitters and dog walkers on building a successful business, from client management to GPS tracking and invoicing.',
-  'Business Growth': 'Strategies for scaling your pet care business, including marketing, pricing optimization, and operational efficiency.',
-  'Software Tips': 'Get the most from your pet care software with tutorials, feature guides, and workflow optimization tips.',
+  'Starting a Business': 'Step-by-step guides for launching your pet care business, from business plans to licensing and initial setup.',
+  'Business Operations': 'Operational best practices for pet care facilities, including playgroup management, scheduling, and daily workflows.',
+  'Marketing': 'Marketing strategies to grow your pet care business, from social media and local SEO to referral programs and promotions.',
+  'Finance': 'Financial management for pet care businesses, including pricing strategies, cost control, and cash flow management.',
+  'Software': 'Guides to choosing and using pet care management software, from feature comparisons to ROI analysis.',
+  'Safety': 'Health and safety protocols for pet care facilities, including vaccination tracking, emergency preparedness, and disease prevention.',
+  'Legal': 'Legal requirements and insurance essentials for pet boarding, daycare, and kennel businesses.',
+  'Staff Training': 'Training and certification resources for pet care staff, from essential skills to ongoing professional development.',
   'Industry Trends': 'Stay ahead with insights on pet care industry developments, emerging technologies, and market opportunities.',
-  'Customer Service': 'Best practices for exceptional customer service in pet care, building loyalty, and handling challenging situations.',
 };
 
 const introText = tagIntros[tag] || `Browse our collection of articles about ${tag.toLowerCase()}. Find practical tips and expert insights to help grow your pet care business.`;

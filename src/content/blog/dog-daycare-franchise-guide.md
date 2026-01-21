@@ -3,7 +3,7 @@ title: "Dog Daycare Franchise Guide: Is Franchising Right for You?"
 description: "Complete guide to dog daycare franchises. Compare buying a franchise vs. starting independent, costs, pros and cons, and what to expect."
 image: /images/blog-daycare.jpg
 date: "2026-01-18"
-tags: ["franchise", "dog daycare", "business", "startup"]
+tags: ["Dog Daycare", "Starting a Business"]
 author: "PetCare Team"
 ---
 

@@ -3,7 +3,7 @@ title: "Emergency Preparedness for Dog Daycare & Boarding Facilities"
 description: "Complete emergency preparedness guide for pet care facilities: risk assessment, response checklists, communication templates, and drill planning."
 image: /images/blog-emergency.jpg
 date: "2026-01-30"
-tags: ["emergency preparedness", "pet facility", "safety", "operations"]
+tags: ["Safety", "Business Operations"]
 author: "PetCare Team"
 ---
 

@@ -3,7 +3,7 @@ title: "Designing Safe & Comfortable Dog Boarding Kennels"
 description: "Complete guide to kennel design and layout: space requirements, flooring, ventilation, noise control, and creating comfortable environments for boarding dogs."
 image: /images/blog-kennel.jpg
 date: "2026-02-06"
-tags: ["kennel design", "facility", "dog boarding", "operations"]
+tags: ["Kennel", "Business Operations"]
 author: "PetCare Team"
 ---
 

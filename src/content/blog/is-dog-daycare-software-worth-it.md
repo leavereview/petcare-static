@@ -3,7 +3,7 @@ title: "Is Dog Daycare Software Worth It for Small Businesses?"
 description: "Evaluate whether dog daycare software is worth the investment for small businesses. Analysis of costs, time savings, and ROI for facilities under 30 dogs."
 image: /images/blog-daycare.jpg
 date: "2026-01-16"
-tags: ["dog daycare software", "small business", "ROI"]
+tags: ["Dog Daycare", "Software"]
 author: "PetCare Team"
 ---
 

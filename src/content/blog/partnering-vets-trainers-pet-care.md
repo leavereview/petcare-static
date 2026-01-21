@@ -3,7 +3,7 @@ title: "Partnering with Veterinarians & Trainers for Pet Care Businesses"
 description: "How to build valuable partnerships with veterinarians, dog trainers, and other pet professionals to grow your boarding or daycare business."
 image: /images/blog-training.jpg
 date: "2026-02-13"
-tags: ["partnerships", "pet business", "marketing", "veterinarians", "trainers"]
+tags: ["Marketing", "Business Operations"]
 author: "PetCare Team"
 ---
 
