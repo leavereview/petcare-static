@@ -41,8 +41,8 @@ const description = postCount === 1
   ? `Read our article about ${tag.toLowerCase()} for pet care businesses. Expert tips and guides from PetCare.Software.`
   : `Explore ${postCount} articles about ${tag.toLowerCase()} for pet care businesses. Expert tips, guides, and best practices.`;
 
-// noindex sparse tags (fewer than 3 posts) to avoid thin content penalties
-const shouldNoindex = posts.length < 3;
+// noindex sparse tags (fewer than 5 posts) to avoid thin content penalties
+const shouldNoindex = posts.length < 5;
 
 // Tag topic intro content map
 const tagIntros: Record<string, string> = {
@@ -70,7 +70,7 @@ const introText = tagIntros[tag] || `Browse our collection of articles about ${t
   title={`${displayTag} Articles`}
   description={description}
   noindex={shouldNoindex}
-  schemaType="WebPage"
+  schemaType="CollectionPage"
 >
   <!-- Breadcrumbs -->
   <div class="bg-gray-100 py-3">
@@ -92,8 +92,11 @@ const introText = tagIntros[tag] || `Browse our collection of articles about ${t
         <p class="text-xl text-gray-300 mb-4">
           {postCount} article{postCount !== 1 ? 's' : ''} tagged with "{tag}"
         </p>
-        <p class="text-gray-400">
+        <p class="text-gray-400 mb-4">
           {introText}
+        </p>
+        <p class="text-gray-400">
+          Whether you're just starting out or looking to optimize an established facility, our {tag.toLowerCase()} resources cover everything from industry best practices to practical implementation tips. Browse our curated collection below to find actionable insights for your pet care business.
         </p>
       </div>
     </div>
