@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const faqs = [
   {
@@ -52,11 +53,22 @@ const faqSchema = {
 ---
 
 <BaseLayout
-  title="Dog Daycare Software: Complete Guide for Facility Owners (2026)"
+  title="Dog Daycare Software Guide (2026)"
   description="Dog daycare software that saves 15+ hours per week. Online bookings, capacity management, report cards, and automated billing for daycare facilities."
+  image="/images/hero-pets.jpg"
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Breadcrumbs -->
+  <div class="bg-gray-100 py-3">
+    <div class="container-custom">
+      <Breadcrumbs items={[
+        { label: 'Home', href: '/' },
+        { label: 'Dog Daycare Software' }
+      ]} />
+    </div>
+  </div>
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">

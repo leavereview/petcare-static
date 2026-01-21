@@ -8,6 +8,7 @@ interface Props {
   description?: string;
   image?: string;
   type?: 'website' | 'article';
+  schemaType?: 'Article' | 'BlogPosting' | 'WebPage';
   publishedDate?: string;
   modifiedDate?: string;
   noindex?: boolean;
@@ -19,14 +20,21 @@ const {
   description = 'PetCare.Software - The complete pet care management platform for dog daycare, boarding, kennels, and catteries. Streamline bookings, billing, and operations.',
   image = '/images/og-default.jpg',
   type = 'website',
+  schemaType,
   publishedDate,
   modifiedDate,
   noindex = false,
   author = 'John Powell'
 } = Astro.props;
 
+// Determine the schema type to use
+const resolvedSchemaType = schemaType || (type === 'article' ? 'Article' : 'WebPage');
+
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const fullTitle = title === 'Home' ? 'PetCare.Software - Pet Boarding & Daycare Management' : `${title} | PetCare.Software`;
+
+// Build full image URL for schema
+const fullImageUrl = image ? new URL(image, Astro.site).href : null;
 
 const schemaOrg = {
   "@context": "https://schema.org",
@@ -52,7 +60,7 @@ const schemaOrg = {
       }
     },
     {
-      "@type": type === 'article' ? 'Article' : 'WebPage',
+      "@type": resolvedSchemaType,
       "@id": canonicalURL.href,
       "url": canonicalURL.href,
       "name": title,
@@ -62,7 +70,13 @@ const schemaOrg = {
       },
       ...(publishedDate && { "datePublished": publishedDate }),
       ...(modifiedDate && { "dateModified": modifiedDate }),
-      ...(type === 'article' && {
+      ...(fullImageUrl && (resolvedSchemaType === 'Article' || resolvedSchemaType === 'BlogPosting') && {
+        "image": {
+          "@type": "ImageObject",
+          "url": fullImageUrl
+        }
+      }),
+      ...((resolvedSchemaType === 'Article' || resolvedSchemaType === 'BlogPosting') && {
         "author": {
           "@type": "Person",
           "name": author,

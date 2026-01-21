@@ -49,7 +49,9 @@ const relatedPosts = allPosts
   description={post.data.description}
   image={post.data.image}
   type="article"
+  schemaType="BlogPosting"
   publishedDate={post.data.date}
+  author={post.data.author}
 >
   {faqSchema && (
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

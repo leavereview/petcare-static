@@ -3,12 +3,14 @@ const currentPath = Astro.url.pathname;
 
 const navLinks = [
   { label: 'Home', href: '/' },
-  { 
-    label: 'Software', 
+  {
+    label: 'Software',
     href: '/dog-daycare-software/',
     dropdown: [
       { label: 'Dog Daycare Software', href: '/dog-daycare-software/' },
       { label: 'Dog Boarding Software', href: '/dog-boarding-software/' },
+      { label: 'Pet Grooming Software', href: '/pet-grooming-software/' },
+      { label: 'Pet Sitting Software', href: '/pet-sitting-software/' },
       { label: 'Kennel Software', href: '/kennel-software/' },
       { label: 'Cattery Software', href: '/cattery-software/' },
     ]

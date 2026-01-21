@@ -1,0 +1,455 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqs = [
+  {
+    question: "What is pet sitting software?",
+    answer: "Pet sitting software is a digital management platform designed for pet sitters, dog walkers, and in-home pet care providers. It handles scheduling, client management, GPS tracking, invoicing, and communication with pet owners."
+  },
+  {
+    question: "How much does pet sitting software cost?",
+    answer: "Most platforms cost £20-£80/month depending on features and number of clients. Some charge per booking. PetCare.Software offers affordable plans starting at £29/month with no setup fees."
+  },
+  {
+    question: "Do I need software if I'm a solo pet sitter?",
+    answer: "Even solo pet sitters benefit from software that handles scheduling, reminders, and payments. It becomes essential once you have more than 10-15 regular clients or start hiring help."
+  },
+  {
+    question: "Can pet sitting software track dog walks?",
+    answer: "Yes. Most pet sitting software includes GPS tracking for dog walks, showing pet owners the route, distance, and duration. Photos and notes can be added during walks."
+  },
+  {
+    question: "What about managing multiple pet sitters?",
+    answer: "Software designed for pet sitting businesses includes staff scheduling, assignment management, and performance tracking. Team members can access their schedules via mobile apps."
+  },
+  {
+    question: "How do clients book through the software?",
+    answer: "Clients can book through an online portal showing your availability, or you can manually enter bookings. Most software sends automatic confirmation and reminder messages."
+  }
+];
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Pet Sitting Software: Complete Guide for Pet Sitters and Dog Walkers",
+  "description": "Everything you need to know about pet sitting software. Scheduling, GPS tracking, client management, and invoicing for pet care professionals.",
+  "author": {
+    "@type": "Organization",
+    "name": "PetCare.Software"
+  },
+  "datePublished": "2026-01-18",
+  "dateModified": "2026-01-18"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<BaseLayout
+  title="Pet Sitting Software Guide (2026)"
+  description="Pet sitting software for professional pet sitters and dog walkers. Scheduling, GPS tracking, client management, and invoicing in one platform."
+  image="/images/blog-general.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Breadcrumbs -->
+  <div class="bg-gray-100 py-3">
+    <div class="container-custom">
+      <Breadcrumbs items={[
+        { label: 'Home', href: '/' },
+        { label: 'Pet Sitting Software' }
+      ]} />
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: url('/images/blog-general.jpg'); background-size: cover; background-position: center;"></div>
+    </div>
+    <div class="container-custom relative">
+      <div class="max-w-3xl">
+        <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Complete Guide</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Pet Sitting Software</h1>
+        <p class="text-xl text-gray-300 mb-4">
+          <strong>Pet sitting software</strong> handles scheduling, GPS tracking, client communication, and payments. Grow your pet sitting or dog walking business without drowning in admin.
+        </p>
+        <p class="text-gray-400 mb-8">Last updated: January 2026 | Reading time: 8 minutes</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Start Free Trial</a>
+          <a href="#what-is" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-8 bg-white border-b border-gray-100">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-3xl font-bold text-brand-red">65%</div>
+          <div class="text-sm text-gray-600">Less Admin Time</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-brand-red">24/7</div>
+          <div class="text-sm text-gray-600">Online Booking</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-brand-red">GPS</div>
+          <div class="text-sm text-gray-600">Walk Tracking</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-brand-red">Auto</div>
+          <div class="text-sm text-gray-600">Invoicing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Table of Contents -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">In This Guide</h2>
+          <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
+            <li><a href="#what-is" class="hover:text-brand-red">→ What Is Pet Sitting Software?</a></li>
+            <li><a href="#features" class="hover:text-brand-red">→ Essential Features</a></li>
+            <li><a href="#dog-walker" class="hover:text-brand-red">→ Dog Walking Features</a></li>
+            <li><a href="#benefits" class="hover:text-brand-red">→ Benefits for Your Business</a></li>
+            <li><a href="#choosing" class="hover:text-brand-red">→ Choosing the Right Software</a></li>
+            <li><a href="#faq" class="hover:text-brand-red">→ FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+
+        <!-- What Is Pet Sitting Software -->
+        <div id="what-is" class="mb-16">
+          <h2 class="text-3xl font-bold text-brand-navy mb-6">What Is Pet Sitting Software?</h2>
+
+          <p class="text-lg text-gray-600 mb-6">
+            Pet sitting software is a specialised platform designed to help pet sitters, dog walkers, and in-home pet care providers manage their businesses. Unlike generic scheduling tools, it includes features specifically built for pet care—like GPS walk tracking, pet profiles, and key management.
+          </p>
+
+          <p class="text-gray-600 mb-6">
+            Whether you're a solo dog walker with a handful of regular clients or a growing pet sitting company with multiple staff members, the right software reduces admin time and helps you provide better service.
+          </p>
+
+          <div class="bg-gray-50 rounded-xl p-6 mb-6">
+            <h3 class="font-bold text-brand-navy mb-3">Pet Sitting Software Typically Includes:</h3>
+            <ul class="grid md:grid-cols-2 gap-3">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                <span class="text-gray-700">Online booking and scheduling</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                <span class="text-gray-700">Client and pet profiles</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                <span class="text-gray-700">GPS walk tracking</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                <span class="text-gray-700">Photo and report sharing</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                <span class="text-gray-700">Invoicing and payments</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                <span class="text-gray-700">Automated reminders</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                <span class="text-gray-700">Key/access management</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                <span class="text-gray-700">Staff scheduling (for teams)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Essential Features -->
+        <div id="features" class="mb-16">
+          <h2 class="text-3xl font-bold text-brand-navy mb-6">Essential Features for Pet Sitters</h2>
+
+          <div class="space-y-8">
+            <div class="border-l-4 border-brand-red pl-6">
+              <h3 class="text-xl font-bold text-brand-navy mb-2">Client and Pet Profiles</h3>
+              <p class="text-gray-600 mb-3">
+                Store everything in one place: pet names, breeds, health conditions, vet information, feeding instructions, and emergency contacts. Access it all from your phone during visits.
+              </p>
+              <p class="text-gray-500 text-sm">Never forget that Max needs his medication at 2pm or that Bella is scared of vacuum cleaners.</p>
+            </div>
+
+            <div class="border-l-4 border-brand-red pl-6">
+              <h3 class="text-xl font-bold text-brand-navy mb-2">Scheduling and Availability</h3>
+              <p class="text-gray-600 mb-3">
+                Set your available hours and let clients book visits that work for both of you. The system prevents double-booking and shows realistic availability based on travel time between appointments.
+              </p>
+            </div>
+
+            <div class="border-l-4 border-brand-red pl-6">
+              <h3 class="text-xl font-bold text-brand-navy mb-2">Real-Time Updates</h3>
+              <p class="text-gray-600 mb-3">
+                Send photos, notes, and updates to pet owners during visits. They'll love seeing their pets happy while they're at work or on holiday.
+              </p>
+            </div>
+
+            <div class="border-l-4 border-brand-red pl-6">
+              <h3 class="text-xl font-bold text-brand-navy mb-2">Invoicing and Payments</h3>
+              <p class="text-gray-600 mb-3">
+                Generate invoices automatically based on completed visits. Accept online payments, track outstanding balances, and reconcile with your accounts.
+              </p>
+            </div>
+
+            <div class="border-l-4 border-brand-red pl-6">
+              <h3 class="text-xl font-bold text-brand-navy mb-2">Key and Access Management</h3>
+              <p class="text-gray-600 mb-3">
+                Track which keys you have for which clients, store access codes securely, and maintain records for insurance purposes.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dog Walking Features -->
+        <div id="dog-walker" class="mb-16">
+          <h2 class="text-3xl font-bold text-brand-navy mb-6">Dog Walking Software Features</h2>
+
+          <p class="text-gray-600 mb-6">
+            If dog walking is part of your services, look for these specific features:
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-gray-50 rounded-xl p-6">
+              <h3 class="font-bold text-brand-navy mb-3">GPS Walk Tracking</h3>
+              <p class="text-gray-600 text-sm">
+                Track routes automatically during walks. Pet owners can see the path, distance covered, and duration. Provides accountability and peace of mind.
+              </p>
+            </div>
+
+            <div class="bg-gray-50 rounded-xl p-6">
+              <h3 class="font-bold text-brand-navy mb-3">Group Walk Management</h3>
+              <p class="text-gray-600 text-sm">
+                Schedule and manage group walks with multiple dogs. Track which dogs walk well together and manage capacity limits.
+              </p>
+            </div>
+
+            <div class="bg-gray-50 rounded-xl p-6">
+              <h3 class="font-bold text-brand-navy mb-3">Photo Reports</h3>
+              <p class="text-gray-600 text-sm">
+                Snap photos during walks and send them automatically to owners. Nothing makes clients happier than seeing their dog enjoying their walk.
+              </p>
+            </div>
+
+            <div class="bg-gray-50 rounded-xl p-6">
+              <h3 class="font-bold text-brand-navy mb-3">Route Planning</h3>
+              <p class="text-gray-600 text-sm">
+                Optimise your daily route to minimise travel time between pickups and drop-offs. More efficient days mean more capacity for walks.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-brand-navy text-white rounded-xl p-6 mt-8">
+            <h3 class="font-bold text-lg mb-3">Why GPS Tracking Matters</h3>
+            <p class="text-gray-300">
+              GPS tracking isn't just about proving you did the walk—it builds trust with clients and provides protection if questions ever arise. It's become an expected feature for professional dog walking services.
+            </p>
+          </div>
+        </div>
+
+        <!-- Benefits -->
+        <div id="benefits" class="mb-16">
+          <h2 class="text-3xl font-bold text-brand-navy mb-6">Benefits for Your Pet Sitting Business</h2>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <div class="text-3xl mb-4">⏰</div>
+              <h3 class="font-bold text-brand-navy mb-2">Save Time on Admin</h3>
+              <p class="text-gray-600 text-sm">
+                Automated scheduling, invoicing, and reminders eliminate hours of weekly admin work. Spend that time on actual pet care or growing your business.
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <div class="text-3xl mb-4">📱</div>
+              <h3 class="font-bold text-brand-navy mb-2">Look Professional</h3>
+              <p class="text-gray-600 text-sm">
+                Online booking, automated confirmations, and polished reports make you look like an established business—even if you're just starting out.
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <div class="text-3xl mb-4">💰</div>
+              <h3 class="font-bold text-brand-navy mb-2">Get Paid Faster</h3>
+              <p class="text-gray-600 text-sm">
+                Online payment options and automated invoicing mean less chasing payments. See your cash flow improve as clients pay promptly.
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <div class="text-3xl mb-4">📈</div>
+              <h3 class="font-bold text-brand-navy mb-2">Scale Your Business</h3>
+              <p class="text-gray-600 text-sm">
+                As you grow, software handles the complexity of multiple staff, schedules, and clients that would be impossible to manage manually.
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <div class="text-3xl mb-4">❤️</div>
+              <h3 class="font-bold text-brand-navy mb-2">Better Client Relationships</h3>
+              <p class="text-gray-600 text-sm">
+                Photo updates and detailed reports show clients you genuinely care about their pets. This builds loyalty and generates referrals.
+              </p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <div class="text-3xl mb-4">🔒</div>
+              <h3 class="font-bold text-brand-navy mb-2">Protect Your Business</h3>
+              <p class="text-gray-600 text-sm">
+                Digital records of visits, GPS tracking, and timestamped photos provide documentation if any disputes arise.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Choosing Software -->
+        <div id="choosing" class="mb-16">
+          <h2 class="text-3xl font-bold text-brand-navy mb-6">Choosing the Right Pet Sitting Software</h2>
+
+          <h3 class="text-xl font-bold text-brand-navy mb-4">Questions to Ask</h3>
+
+          <div class="space-y-4 mb-8">
+            <div class="bg-gray-50 rounded-lg p-4">
+              <h4 class="font-bold text-brand-navy">Is it mobile-friendly?</h4>
+              <p class="text-gray-600 text-sm">You'll use it on your phone during visits. A poor mobile experience is a dealbreaker.</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-4">
+              <h4 class="font-bold text-brand-navy">Does it include GPS tracking?</h4>
+              <p class="text-gray-600 text-sm">Essential for dog walkers. Make sure it works well and doesn't drain your battery.</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-4">
+              <h4 class="font-bold text-brand-navy">How do clients book?</h4>
+              <p class="text-gray-600 text-sm">Can clients book online 24/7? Is the booking experience smooth and professional?</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-4">
+              <h4 class="font-bold text-brand-navy">What payment options are available?</h4>
+              <p class="text-gray-600 text-sm">Online payments, invoicing, recurring billing—what does the software support?</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-4">
+              <h4 class="font-bold text-brand-navy">Can it grow with you?</h4>
+              <p class="text-gray-600 text-sm">If you hire staff later, can the software handle team scheduling and management?</p>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-bold text-brand-navy mb-4">Red Flags to Watch For</h3>
+
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start gap-2">
+              <span class="text-red-500">⚠️</span>
+              <span>Per-booking fees that eat into your margins</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500">⚠️</span>
+              <span>Long-term contracts with no monthly option</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500">⚠️</span>
+              <span>Poor mobile apps with low ratings</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500">⚠️</span>
+              <span>No way to export your data if you leave</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500">⚠️</span>
+              <span>Complicated pricing that's hard to understand</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- FAQ Section -->
+        <div id="faq" class="mb-16">
+          <h2 class="text-3xl font-bold text-brand-navy mb-6">Frequently Asked Questions</h2>
+
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="border-b border-gray-200 pb-6">
+                <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
+                <p class="text-gray-600">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Related Resources -->
+        <div class="mb-16">
+          <h2 class="text-3xl font-bold text-brand-navy mb-6">Related Resources</h2>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <a href="/dog-daycare-software/" class="block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
+              <h3 class="font-bold text-brand-navy mb-2">Dog Daycare Software</h3>
+              <p class="text-gray-600 text-sm">If you also offer daycare services at a facility.</p>
+            </a>
+            <a href="/dog-boarding-software/" class="block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
+              <h3 class="font-bold text-brand-navy mb-2">Dog Boarding Software</h3>
+              <p class="text-gray-600 text-sm">For overnight boarding and kenneling services.</p>
+            </a>
+            <a href="/pet-grooming-software/" class="block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
+              <h3 class="font-bold text-brand-navy mb-2">Pet Grooming Software</h3>
+              <p class="text-gray-600 text-sm">If grooming is part of your service offering.</p>
+            </a>
+            <a href="/blog/" class="block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
+              <h3 class="font-bold text-brand-navy mb-2">Pet Business Blog</h3>
+              <p class="text-gray-600 text-sm">Tips and guides for growing your pet care business.</p>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-gradient-to-r from-brand-red to-brand-red-dark text-white">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Streamline Your Pet Sitting Business?</h2>
+      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        Stop juggling spreadsheets and text messages. PetCare.Software gives you everything you need to manage clients, schedule visits, track walks, and get paid—all in one platform.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Free Trial</a>
+        <a href="/pricing/" class="btn border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-4">View Pricing</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
