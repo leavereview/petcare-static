@@ -1,5 +1,5 @@
 ---
-title: "Marketing Strategies for Dog Daycare & Boarding Facilities"
+title: "Marketing for Dog Daycare & Boarding"
 description: "Proven marketing strategies to grow your dog daycare or boarding business. Social media, local SEO, referrals, and customer retention."
 image: /images/blog-marketing.jpg
 date: "2026-02-13"

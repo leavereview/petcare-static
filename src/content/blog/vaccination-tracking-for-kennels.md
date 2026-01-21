@@ -1,5 +1,5 @@
 ---
-title: "Why Vaccination Tracking Is Critical for Your Boarding Facility"
+title: "Vaccination Tracking for Boarding"
 description: "Learn why automated vaccination tracking protects your business and how to implement it effectively in your kennel or daycare."
 image: /images/blog-vaccination.jpg
 date: "2026-01-23"

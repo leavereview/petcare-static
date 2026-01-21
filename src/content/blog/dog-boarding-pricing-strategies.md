@@ -1,5 +1,5 @@
 ---
-title: "Dog Boarding Pricing Strategies & Packages"
+title: "Dog Boarding Pricing Strategies"
 description: "How to price your dog boarding services profitably. Learn about pricing models, packages, add-ons, and strategies to maximize revenue."
 image: /images/blog-business.jpg
 date: "2026-02-06"

@@ -1,5 +1,5 @@
 ---
-title: "How to Reduce No-Shows at Your Dog Daycare or Kennel"
+title: "How to Reduce No-Shows at Daycare"
 description: "Practical strategies to reduce no-shows and last-minute cancellations at your pet care facility. Includes deposit policies and automation tips."
 image: /images/blog-customer.jpg
 date: "2026-02-06"

@@ -1,5 +1,5 @@
 ---
-title: "International Dog Day: Marketing Ideas for Pet Businesses"
+title: "International Dog Day Marketing Ideas"
 description: "Boost your pet business with these International Dog Day marketing ideas. Promotions, social media campaigns, and community events that drive bookings."
 image: /images/blog-marketing.jpg
 date: "2026-01-18"

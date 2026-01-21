@@ -1,5 +1,5 @@
 ---
-title: "Starting a Dog Sitting Business: Complete Startup Guide"
+title: "Starting a Dog Sitting Business"
 description: "Learn how to start a dog sitting business. Costs, legal requirements, pricing, marketing, and everything you need to launch your pet sitting service."
 image: /images/blog-customer.jpg
 date: "2026-01-18"

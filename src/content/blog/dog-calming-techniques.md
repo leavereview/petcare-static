@@ -1,5 +1,5 @@
 ---
-title: "Dog Calming Techniques for Daycare & Boarding Facilities"
+title: "Dog Calming Techniques for Daycare"
 description: "Proven dog calming techniques for daycare and boarding: environmental strategies, enrichment, handling approaches, and how to track behavioural progress."
 image: /images/blog-training.jpg
 date: "2026-01-30"

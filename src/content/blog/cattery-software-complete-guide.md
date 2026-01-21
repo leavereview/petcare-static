@@ -1,5 +1,5 @@
 ---
-title: "Cattery Software: The Complete 2026 Buyer's Guide"
+title: "Cattery Software Buyer's Guide"
 description: "Everything you need to know about cattery management software: cat-specific features, platform comparisons, pricing, and how to choose the right solution."
 image: /images/blog-cattery.jpg
 date: "2026-01-16"

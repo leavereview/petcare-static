@@ -1,5 +1,5 @@
 ---
-title: "7 Data-Driven Strategies to Grow Your Dog Kennel Business"
+title: "7 Ways to Grow Your Kennel Business"
 description: "Proven strategies to grow your dog kennel or boarding business using data, metrics, and smart operational decisions. Practical advice for sustainable growth."
 image: /images/blog-marketing.jpg
 date: "2026-02-13"

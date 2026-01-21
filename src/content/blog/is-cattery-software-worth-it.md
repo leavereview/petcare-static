@@ -1,5 +1,5 @@
 ---
-title: "Is Cattery Software Worth It for Small Businesses?"
+title: "Is Cattery Software Worth It?"
 description: "Honest assessment of whether cattery management software is worth the investment for small cat boarding facilities. ROI analysis and decision guide."
 image: /images/blog-technology.jpg
 date: "2026-01-23"

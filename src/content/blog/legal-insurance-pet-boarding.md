@@ -1,5 +1,5 @@
 ---
-title: "Legal & Insurance Essentials for Pet Boarding Businesses"
+title: "Legal & Insurance for Pet Boarding"
 description: "Essential legal requirements and insurance coverage for dog daycare, boarding, and kennel businesses: liability, contracts, compliance, and risk management."
 image: /images/blog-insurance.jpg
 date: "2026-01-30"

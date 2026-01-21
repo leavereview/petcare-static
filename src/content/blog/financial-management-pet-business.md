@@ -1,5 +1,5 @@
 ---
-title: "Financial Management for Dog Daycare & Boarding Businesses"
+title: "Financial Management for Pet Care"
 description: "Financial management for pet care businesses: pricing strategy, cost control, cash flow, and key metrics for daycares and boarding facilities."
 image: /images/blog-business.jpg
 date: "2026-02-06"

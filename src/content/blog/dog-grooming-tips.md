@@ -1,5 +1,5 @@
 ---
-title: "Dog Grooming Tips: Expert Advice for Pet Professionals"
+title: "Dog Grooming Tips for Professionals"
 description: "Professional dog grooming tips from industry experts. Handling techniques, efficiency hacks, and quality standards for grooming businesses."
 image: /images/blog-grooming.jpg
 date: "2026-01-18"

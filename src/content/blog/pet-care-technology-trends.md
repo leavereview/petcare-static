@@ -1,5 +1,5 @@
 ---
-title: "Technology Trends in Pet Care Facilities (2026)"
+title: "Pet Care Technology Trends (2026)"
 description: "Emerging technology trends shaping dog daycare, boarding, and kennel businesses: automation, AI, smart facilities, and what to invest in now."
 image: /images/blog-technology.jpg
 date: "2026-02-20"

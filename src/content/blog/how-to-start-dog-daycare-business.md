@@ -1,5 +1,5 @@
 ---
-title: "How to Start a Dog Daycare Business: Step-by-Step Guide"
+title: "How to Start a Dog Daycare Business"
 description: "Complete guide to starting a dog daycare business. Covers licensing, facility setup, pricing, marketing, and the software you need to succeed."
 image: /images/blog-daycare.jpg
 date: "2025-09-27"

@@ -1,5 +1,5 @@
 ---
-title: "Dog Grooming Business Plan: Complete Guide to Starting Your Grooming Business"
+title: "Dog Grooming Business Plan (2026)"
 description: "Create a successful dog grooming business plan. Covers startup costs, services, pricing, marketing, and everything you need to launch your grooming business."
 image: /images/blog-grooming.jpg
 date: "2026-01-18"

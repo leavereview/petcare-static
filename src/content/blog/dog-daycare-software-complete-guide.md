@@ -1,5 +1,5 @@
 ---
-title: "Dog Daycare Software: The Complete 2026 Buyer's Guide"
+title: "Dog Daycare Software Buyer's Guide"
 description: "Everything you need to know about dog daycare software: features, pricing, comparisons, and how to choose the right platform for your business size."
 image: /images/blog-daycare.jpg
 date: "2026-01-16"

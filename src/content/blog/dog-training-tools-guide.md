@@ -1,5 +1,5 @@
 ---
-title: "Essential Dog Training Tools: A Complete Guide for Pet Professionals"
+title: "Dog Training Tools for Pet Pros"
 description: "Discover the best dog training tools for professional trainers and pet facilities. From clickers to treat pouches, learn what works and why."
 image: /images/blog-training.jpg
 date: "2026-01-18"

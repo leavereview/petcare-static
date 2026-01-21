@@ -1,5 +1,5 @@
 ---
-title: "How Much to Tip a Dog Groomer: Complete Tipping Guide"
+title: "How Much to Tip a Dog Groomer"
 description: "Wondering how much to tip your dog groomer? This guide covers tipping etiquette, standard amounts, and when to tip more or less."
 image: /images/blog-grooming.jpg
 date: "2026-01-18"

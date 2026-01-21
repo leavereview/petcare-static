@@ -1,5 +1,5 @@
 ---
-title: "How to Write a Business Plan for a Pet Boarding Facility"
+title: "Pet Boarding Business Plan Guide"
 description: "Step-by-step guide to writing a pet boarding business plan with financial projections, startup costs, and operational planning for small to medium facilities."
 image: /images/blog-business.jpg
 date: "2026-01-16"

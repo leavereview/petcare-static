@@ -1,5 +1,5 @@
 ---
-title: "Building Customer Loyalty Programs for Pet Care Businesses"
+title: "Customer Loyalty for Pet Businesses"
 description: "How to create effective loyalty programs for dog daycare, boarding, and kennel businesses that increase retention and lifetime customer value."
 image: /images/blog-customer.jpg
 date: "2026-02-13"

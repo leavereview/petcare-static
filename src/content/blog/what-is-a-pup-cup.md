@@ -1,5 +1,5 @@
 ---
-title: "What is a Pup Cup? Everything Pet Businesses Should Know"
+title: "What is a Pup Cup? Business Guide"
 description: "Learn what a pup cup is, why they're so popular, and how pet businesses can use this trend to attract customers and build loyalty."
 image: /images/blog-general.jpg
 date: "2026-01-18"
