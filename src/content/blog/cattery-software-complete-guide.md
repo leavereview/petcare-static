@@ -314,4 +314,6 @@ The key is configuring the platform properly for cat-specific needs during setup
 
 ---
 
+*Ready to get started? Visit our [cattery software](/cattery-software/) page to learn more about PetCare.Software's cat boarding features.*
+
 *Related guides: [Dog Daycare Software](/blog/dog-daycare-software-complete-guide), [Dog Boarding Software](/blog/dog-boarding-software-complete-guide), [Kennel Software](/blog/kennel-software-complete-guide)*

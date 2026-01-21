@@ -317,4 +317,6 @@ There's no universally perfect platform. Focus on fit for your situation, trial 
 
 ---
 
+*Ready to get started? Visit our [dog boarding software](/dog-boarding-software/) page to learn more about PetCare.Software's boarding features.*
+
 *Related guides: [Dog Daycare Software](/blog/dog-daycare-software-complete-guide), [Kennel Software](/blog/kennel-software-complete-guide), [Cattery Software](/blog/cattery-software-complete-guide)*

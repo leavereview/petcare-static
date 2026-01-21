@@ -212,4 +212,6 @@ Take a free trial. Configure it for cats properly. The answer will become clear.
 
 ---
 
-*Related reading: [Cattery Software Complete Guide](/blog/cattery-software-complete-guide), [How to Start a Cattery Business](/blog/how-to-start-cattery-business), [Kennel Software Complete Guide](/blog/kennel-software-complete-guide)*
+*Ready to explore your options? See our complete [cattery software](/cattery-software/) guide for features, pricing, and platform comparisons.*
+
+*Related reading: [How to Start a Cattery Business](/blog/how-to-start-cattery-business), [Kennel Software Guide](/blog/kennel-software-complete-guide)*

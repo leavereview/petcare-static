@@ -357,4 +357,6 @@ Don't overthink this. The best kennel software is the one you'll actually use co
 
 ---
 
+*Ready to get started? Visit our [kennel software](/kennel-software/) page to learn more about PetCare.Software's kennel management features.*
+
 *Related guides: [Dog Daycare Software](/blog/dog-daycare-software-complete-guide), [Dog Boarding Software](/blog/dog-boarding-software-complete-guide), [Cattery Software](/blog/cattery-software-complete-guide)*

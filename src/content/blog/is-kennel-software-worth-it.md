@@ -79,4 +79,4 @@ Essential features include online booking (24/7 customer access), automated emai
 
 For small kennels, expect 1-2 weeks from purchase to full operation. Initial setup takes 3-5 hours and can be done in one sitting. Staff training for small teams (1-5 people) requires 1-2 hours per person, usually accomplished in one training session.
 
-**Ready to see if kennel software is right for your business?** [Start your free trial](/contact/) and discover how PetCare.Software can save you time and grow your business.
+**Ready to see if kennel software is right for your business?** Explore our complete [kennel software](/kennel-software/) guide for features, pricing, and platform comparisons, or [start your free trial](/contact/) today.
