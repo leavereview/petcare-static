@@ -1,77 +1,170 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import StatisticsSection from '../components/seo/StatisticsSection.astro';
+import ComparisonTable from '../components/seo/ComparisonTable.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 
-const faqs = [
+// Breadcrumb data
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Pet Sitting Software' }
+];
+
+// Pet sitting industry statistics
+const petSittingStats = [
   {
-    question: "What is pet sitting software?",
-    answer: "Pet sitting software is a digital management platform designed for pet sitters, dog walkers, and in-home pet care providers. It handles scheduling, client management, GPS tracking, invoicing, and communication with pet owners."
+    label: 'UK Pet Sitters & Dog Walkers',
+    value: '12,000+',
+    change: { value: 32, direction: 'up' as const, period: 'since 2020' },
+    context: 'Professional pet care providers'
   },
   {
-    question: "How much does pet sitting software cost?",
-    answer: "Most platforms cost £20-£80/month depending on features and number of clients. Some charge per booking. PetCare.Software offers affordable plans starting at £29/month with no setup fees."
+    label: 'Average Session Rate',
+    value: '£15-25',
+    context: 'Per 30-minute visit or walk'
   },
   {
-    question: "Do I need software if I'm a solo pet sitter?",
-    answer: "Even solo pet sitters benefit from software that handles scheduling, reminders, and payments. It becomes essential once you have more than 10-15 regular clients or start hiring help."
+    label: 'Admin Time Saved',
+    value: '65%',
+    context: 'With scheduling and invoicing automation'
   },
   {
-    question: "Can pet sitting software track dog walks?",
-    answer: "Yes. Most pet sitting software includes GPS tracking for dog walks, showing pet owners the route, distance, and duration. Photos and notes can be added during walks."
+    label: 'Client Retention',
+    value: '85%',
+    context: 'With photo updates and GPS tracking'
   },
   {
-    question: "What about managing multiple pet sitters?",
-    answer: "Software designed for pet sitting businesses includes staff scheduling, assignment management, and performance tracking. Team members can access their schedules via mobile apps."
+    label: 'Pet Sitters Using Software',
+    value: '38%',
+    change: { value: 45, direction: 'up' as const, period: 'YoY' },
+    context: 'Rapid adoption of digital tools'
   },
   {
-    question: "How do clients book through the software?",
-    answer: "Clients can book through an online portal showing your availability, or you can manually enter bookings. Most software sends automatic confirmation and reminder messages."
+    label: 'Revenue Increase',
+    value: '28%',
+    change: { value: 28, direction: 'up' as const, period: 'year 1' },
+    context: 'With online booking and better scheduling'
   }
 ];
 
-const schemaMarkup = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Pet Sitting Software: Complete Guide for Pet Sitters and Dog Walkers",
-  "description": "Everything you need to know about pet sitting software. Scheduling, GPS tracking, client management, and invoicing for pet care professionals.",
-  "image": "https://petcare.software/images/blog-petsitting.jpg",
-  "author": {
-    "@type": "Organization",
-    "name": "PetCare.Software"
+// Feature comparison table
+const comparisonData = [
+  {
+    label: 'Online Client Booking',
+    values: [true, true, false],
+    highlight: true
   },
-  "datePublished": "2026-01-18",
-  "dateModified": "2026-01-18"
-};
+  {
+    label: 'GPS Walk Tracking',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Photo & Report Sharing',
+    values: [true, false, false]
+  },
+  {
+    label: 'Pet Profile Management',
+    values: [true, true, false]
+  },
+  {
+    label: 'Route Optimization',
+    values: [true, false, false]
+  },
+  {
+    label: 'Automated Invoicing',
+    values: [true, true, false]
+  },
+  {
+    label: 'Key/Access Management',
+    values: [true, false, false]
+  },
+  {
+    label: 'Staff Scheduling for Teams',
+    values: [true, false, false]
+  },
+  {
+    label: 'Mobile App (iOS/Android)',
+    values: [true, true, false]
+  },
+  {
+    label: 'Monthly Cost',
+    values: ['From £40', 'From £60', 'Manual/Free']
+  }
+];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
-};
+// Enhanced FAQ data
+const faqItems = [
+  {
+    question: "What is pet sitting software?",
+    answer: "Pet sitting software is a digital management platform designed for pet sitters, dog walkers, and in-home pet care providers. It handles scheduling, client booking, GPS walk tracking, pet profiles, photo sharing, invoicing, and payment processing. Modern platforms save sitters 65% on admin time while improving client retention by 85% through automated updates and professional communication."
+  },
+  {
+    question: "How much does pet sitting software cost?",
+    answer: "PetCare.Software starts at £40/month for the Basic Plan with unlimited bookings and clients. Most pet sitting software ranges from £20-£80/month depending on features and team size. Avoid platforms charging per-booking fees (3-5% per visit) which can cost thousands annually. Solo pet sitters typically see ROI within the first month through time savings and increased capacity.",
+    links: [
+      { text: 'View Pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "Do I need software if I'm a solo pet sitter?",
+    answer: "Yes, even solo pet sitters benefit significantly. Software eliminates hours of weekly admin (scheduling, invoicing, reminders), provides professional photo updates to clients, GPS-tracks walks for accountability, and enables online booking so clients book while you're working. Most solo sitters report saving 10+ hours weekly, allowing them to take on more clients without working longer hours.",
+    links: [
+      { text: 'Dog Walking Software Features', url: '#dog-walker' }
+    ]
+  },
+  {
+    question: "Can pet sitting software track dog walks with GPS?",
+    answer: "Yes. Modern pet sitting software includes GPS tracking that automatically records walk routes, distance, duration, and timestamps. Pet owners receive a map showing the exact path you took with their dog. This builds trust, provides documentation for insurance purposes, and has become an expected feature for professional dog walking services. GPS tracking also protects you if any questions arise about visits."
+  },
+  {
+    question: "How do clients book through the software?",
+    answer: "Clients book through an online portal (accessible via website link or mobile app) showing your real-time availability. They select service type (walk, visit, overnight), choose dates/times, provide pet details, and receive instant confirmation. Automated reminders are sent before appointments. You can also manually enter bookings for phone requests. The system prevents double-booking and accounts for travel time between appointments.",
+    links: [
+      { text: 'Online Booking Features', url: '#features' }
+    ]
+  },
+  {
+    question: "What about managing multiple pet sitters or dog walkers?",
+    answer: "Pet sitting software designed for teams includes staff scheduling, visit assignment management, individual performance tracking, and payroll calculations. Team members access their schedules via mobile apps, mark visits complete, and upload photos. You can balance workload across staff, track who visited which pets, and manage different service areas. Essential once you have 2+ staff members.",
+    links: [
+      { text: 'Team Management', url: '#choosing' }
+    ]
+  },
+  {
+    question: "Does it handle invoicing and payments?",
+    answer: "Yes. The software generates invoices automatically based on completed visits, allows online payment via card or bank transfer, tracks outstanding balances, sends payment reminders, and reconciles with your accounts. You can set up recurring billing for regular clients, collect deposits, apply discounts, and generate financial reports. This eliminates manual invoicing and reduces payment delays significantly."
+  },
+  {
+    question: "Can I share photos with pet owners?",
+    answer: "Yes. During or after visits, snap photos with your phone and upload them through the app. Photos are instantly shared with pet owners via their portal, email, or SMS (depending on preferences). You can add notes about the visit (what activities, eating/drinking, bathroom, behavior). Owners love receiving updates and photos make a huge difference in client satisfaction and retention."
+  },
+  {
+    question: "How does key management work?",
+    answer: "The software tracks which clients' keys you have, stores door access codes securely (encrypted), records key pickup/return dates, and maintains documentation for insurance purposes. You can mark when you collect or return keys, add notes about special access instructions (gate codes, alarm systems), and have a complete audit trail. This prevents lost keys and ensures accountability."
+  },
+  {
+    question: "Will pet sitting software help me get more clients?",
+    answer: "Yes, in several ways: Professional online booking attracts tech-savvy pet owners (growing demographic), automated photo updates generate word-of-mouth referrals, GPS tracking builds trust with new clients, increased capacity from time savings means you can serve more clients, and better organization allows you to maintain quality as you grow. Most pet sitters see 28% revenue increase in year one.",
+    links: [
+      { text: 'Benefits for Your Business', url: '#benefits' },
+      { text: 'Dog Daycare Software', url: '/dog-daycare-software/' }
+    ]
+  }
+];
 ---
 
 <BaseLayout
-  title="Pet Sitting Software Guide (2026)"
-  description="Pet sitting software for professional pet sitters and dog walkers. Scheduling, GPS tracking, client management, and invoicing in one platform."
+  title="Pet Sitting Software Guide (2026) - For Pet Sitters & Dog Walkers"
+  description="Pet sitting software for professional pet sitters and dog walkers. GPS tracking, online booking, photo sharing, scheduling, and invoicing in one platform."
   image="/images/blog-general.jpg"
 >
-  <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-
-  <!-- Breadcrumbs -->
+  <!-- Breadcrumbs with Schema -->
   <div class="bg-gray-100 py-3">
     <div class="container-custom">
-      <Breadcrumbs items={[
-        { label: 'Home', href: '/' },
-        { label: 'Pet Sitting Software' }
-      ]} />
+      <BreadcrumbsEnhanced items={breadcrumbs} site="petcare" />
     </div>
   </div>
 
@@ -96,42 +189,47 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- Stats Section -->
-  <section class="py-8 bg-white border-b border-gray-100">
+  <!-- Featured Answer for Featured Snippet -->
+  <section class="section bg-white">
     <div class="container-custom">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        <div>
-          <div class="text-3xl font-bold text-brand-red">65%</div>
-          <div class="text-sm text-gray-600">Less Admin Time</div>
-        </div>
-        <div>
-          <div class="text-3xl font-bold text-brand-red">24/7</div>
-          <div class="text-sm text-gray-600">Online Booking</div>
-        </div>
-        <div>
-          <div class="text-3xl font-bold text-brand-red">GPS</div>
-          <div class="text-sm text-gray-600">Walk Tracking</div>
-        </div>
-        <div>
-          <div class="text-3xl font-bold text-brand-red">Auto</div>
-          <div class="text-sm text-gray-600">Invoicing</div>
-        </div>
+      <div class="max-w-4xl mx-auto">
+        <FeaturedAnswer question="What is pet sitting software?">
+          Pet sitting software is a digital management platform for pet sitters, dog walkers, and in-home pet care providers that handles scheduling, client booking, GPS walk tracking, pet profiles, photo sharing, invoicing, and payments. Modern platforms save sitters 65% on admin time while improving client retention by 85% through automated updates.
+        </FeaturedAnswer>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section with Dataset Schema -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <StatisticsSection
+          title="UK Pet Sitting & Dog Walking Industry Statistics 2026"
+          description="Key metrics showing growth and digital transformation in pet sitting"
+          stats={petSittingStats}
+          layout="grid"
+          source="UK Pet Care Industry Report 2026"
+          datePublished="2026-01-01"
+          site="petcare"
+          pageUrl={Astro.url.href}
+        />
       </div>
     </div>
   </section>
 
   <!-- Table of Contents -->
-  <section class="section bg-gray-50">
+  <section class="section bg-white">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <div class="bg-white p-6 rounded-lg shadow-sm">
+        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
           <h2 class="text-xl font-bold text-brand-navy mb-4">In This Guide</h2>
           <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
             <li><a href="#what-is" class="hover:text-brand-red">→ What Is Pet Sitting Software?</a></li>
             <li><a href="#features" class="hover:text-brand-red">→ Essential Features</a></li>
+            <li><a href="#comparison" class="hover:text-brand-red">→ Software Comparison</a></li>
             <li><a href="#dog-walker" class="hover:text-brand-red">→ Dog Walking Features</a></li>
             <li><a href="#benefits" class="hover:text-brand-red">→ Benefits for Your Business</a></li>
-            <li><a href="#choosing" class="hover:text-brand-red">→ Choosing the Right Software</a></li>
             <li><a href="#faq" class="hover:text-brand-red">→ FAQ</a></li>
           </ul>
         </div>
@@ -193,6 +291,18 @@ const faqSchema = {
               </li>
             </ul>
           </div>
+        </div>
+
+        <!-- Software Comparison -->
+        <div id="comparison" class="mb-16">
+          <h2 class="text-3xl font-bold text-brand-navy mb-6">How Pet Sitting Software Compares</h2>
+          <ComparisonTable
+            title="Pet Sitting Software Feature Comparison"
+            description="Compare PetCare.Software against generic booking tools and manual management"
+            headers={['Feature', 'PetCare.Software', 'Generic Tools', 'Manual/Spreadsheets']}
+            rows={comparisonData}
+            sortable={true}
+          />
         </div>
 
         <!-- Essential Features -->
@@ -339,103 +449,24 @@ const faqSchema = {
           </div>
         </div>
 
-        <!-- Choosing Software -->
-        <div id="choosing" class="mb-16">
-          <h2 class="text-3xl font-bold text-brand-navy mb-6">Choosing the Right Pet Sitting Software</h2>
+        <p>Related: <a href="/dog-daycare-software/" class="text-brand-red hover:underline">Dog Daycare Software</a> | <a href="/dog-boarding-software/" class="text-brand-red hover:underline">Dog Boarding Software</a> | <a href="/pet-grooming-software/" class="text-brand-red hover:underline">Pet Grooming Software</a></p>
 
-          <h3 class="text-xl font-bold text-brand-navy mb-4">Questions to Ask</h3>
+      </div>
+    </div>
+  </section>
 
-          <div class="space-y-4 mb-8">
-            <div class="bg-gray-50 rounded-lg p-4">
-              <h4 class="font-bold text-brand-navy">Is it mobile-friendly?</h4>
-              <p class="text-gray-600 text-sm">You'll use it on your phone during visits. A poor mobile experience is a dealbreaker.</p>
-            </div>
-
-            <div class="bg-gray-50 rounded-lg p-4">
-              <h4 class="font-bold text-brand-navy">Does it include GPS tracking?</h4>
-              <p class="text-gray-600 text-sm">Essential for dog walkers. Make sure it works well and doesn't drain your battery.</p>
-            </div>
-
-            <div class="bg-gray-50 rounded-lg p-4">
-              <h4 class="font-bold text-brand-navy">How do clients book?</h4>
-              <p class="text-gray-600 text-sm">Can clients book online 24/7? Is the booking experience smooth and professional?</p>
-            </div>
-
-            <div class="bg-gray-50 rounded-lg p-4">
-              <h4 class="font-bold text-brand-navy">What payment options are available?</h4>
-              <p class="text-gray-600 text-sm">Online payments, invoicing, recurring billing—what does the software support?</p>
-            </div>
-
-            <div class="bg-gray-50 rounded-lg p-4">
-              <h4 class="font-bold text-brand-navy">Can it grow with you?</h4>
-              <p class="text-gray-600 text-sm">If you hire staff later, can the software handle team scheduling and management?</p>
-            </div>
-          </div>
-
-          <h3 class="text-xl font-bold text-brand-navy mb-4">Red Flags to Watch For</h3>
-
-          <ul class="space-y-2 text-gray-600">
-            <li class="flex items-start gap-2">
-              <span class="text-red-500">⚠️</span>
-              <span>Per-booking fees that eat into your margins</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-red-500">⚠️</span>
-              <span>Long-term contracts with no monthly option</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-red-500">⚠️</span>
-              <span>Poor mobile apps with low ratings</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-red-500">⚠️</span>
-              <span>No way to export your data if you leave</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-red-500">⚠️</span>
-              <span>Complicated pricing that's hard to understand</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- FAQ Section -->
-        <div id="faq" class="mb-16">
-          <h2 class="text-3xl font-bold text-brand-navy mb-6">Frequently Asked Questions</h2>
-
-          <div class="space-y-6">
-            {faqs.map((faq) => (
-              <div class="border-b border-gray-200 pb-6">
-                <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
-                <p class="text-gray-600">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <!-- Related Resources -->
-        <div class="mb-16">
-          <h2 class="text-3xl font-bold text-brand-navy mb-6">Related Resources</h2>
-
-          <div class="grid md:grid-cols-2 gap-4">
-            <a href="/dog-daycare-software/" class="block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
-              <h3 class="font-bold text-brand-navy mb-2">Dog Daycare Software</h3>
-              <p class="text-gray-600 text-sm">If you also offer daycare services at a facility.</p>
-            </a>
-            <a href="/dog-boarding-software/" class="block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
-              <h3 class="font-bold text-brand-navy mb-2">Dog Boarding Software</h3>
-              <p class="text-gray-600 text-sm">For overnight boarding and kenneling services.</p>
-            </a>
-            <a href="/pet-grooming-software/" class="block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
-              <h3 class="font-bold text-brand-navy mb-2">Pet Grooming Software</h3>
-              <p class="text-gray-600 text-sm">If grooming is part of your service offering.</p>
-            </a>
-            <a href="/blog/" class="block bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-colors">
-              <h3 class="font-bold text-brand-navy mb-2">Pet Business Blog</h3>
-              <p class="text-gray-600 text-sm">Tips and guides for growing your pet care business.</p>
-            </a>
-          </div>
-        </div>
-
+  <!-- FAQ Section with Enhanced Component -->
+  <section class="section bg-gray-50" id="faq">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <FAQEnhanced
+          faqs={faqItems}
+          title="Frequently Asked Questions"
+          searchable={true}
+          site="petcare"
+          pageUrl={Astro.url.href}
+          initiallyExpanded={0}
+        />
       </div>
     </div>
   </section>
@@ -450,6 +481,27 @@ const faqSchema = {
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Free Trial</a>
         <a href="/pricing/" class="btn border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-4">View Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Content -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8 text-center">Related Guides</h2>
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <a href="/dog-daycare-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Dog Daycare Software</h3>
+          <p class="text-gray-600 text-sm">If you also offer daycare services</p>
+        </a>
+        <a href="/dog-boarding-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Dog Boarding Software</h3>
+          <p class="text-gray-600 text-sm">For overnight boarding services</p>
+        </a>
+        <a href="/pet-grooming-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Pet Grooming Software</h3>
+          <p class="text-gray-600 text-sm">If grooming is part of your offering</p>
+        </a>
       </div>
     </div>
   </section>

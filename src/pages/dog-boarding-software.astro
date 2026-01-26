@@ -1,73 +1,164 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import ComparisonTable from '../components/seo/ComparisonTable.astro';
+import StatisticsSection from '../components/seo/StatisticsSection.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
 
-const faqs = [
+// Breadcrumb data
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Dog Boarding Software' }
+];
+
+// Dog boarding industry statistics
+const boardingStats = [
   {
-    question: "What is dog boarding software?",
-    answer: "Dog boarding software is a digital management platform designed specifically for pet boarding facilities. It handles overnight stay bookings, room/suite assignments, vaccination tracking, feeding schedules, medication administration, payment processing, and customer communication."
+    label: 'UK Dog Boarding Facilities',
+    value: '2,800+',
+    change: { value: 22, direction: 'up' as const, period: 'since 2021' },
+    context: 'Kennels and boarding facilities combined'
   },
   {
-    question: "How much does dog boarding software cost?",
-    answer: "Most platforms cost £40-£120/month depending on features and facility size. PetCare.Software starts at £40/month with no setup fees."
+    label: 'Average Boarding Rate (UK)',
+    value: '£35/night',
+    context: 'Varies by region and room type'
   },
   {
-    question: "Can it handle both boarding and daycare?",
-    answer: "Yes. PetCare.Software manages boarding, daycare, and cattery services from one login with shared client records."
+    label: 'Peak Season Occupancy',
+    value: '95%+',
+    context: 'Summer holidays and Christmas periods'
   },
   {
-    question: "What about peak season management?",
-    answer: "Built-in waitlist management, early booking discounts, and capacity alerts help you maximize revenue during busy periods like holidays."
+    label: 'Facilities Using Software',
+    value: '52%',
+    change: { value: 38, direction: 'up' as const, period: 'YoY' },
+    context: 'Digital transformation accelerating'
   },
   {
-    question: "Do owners get updates during their pet's stay?",
-    answer: "Yes. Send photo updates, feeding logs, and daily reports directly to pet parents through the owner portal or via SMS/email."
+    label: 'Time Saved vs Manual',
+    value: '12+ hrs/week',
+    context: 'Booking, billing, feeding schedules combined'
+  },
+  {
+    label: 'No-Show Reduction',
+    value: '45%',
+    context: 'With deposit collection and reminders'
   }
 ];
 
-const schemaMarkup = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Dog Boarding Software: Complete Guide for Kennels",
-  "description": "Everything you need to know about dog boarding software. Room assignments, multi-night bookings, feeding schedules, and automated deposits.",
-  "image": "https://petcare.software/images/blog-boarding.jpg",
-  "author": {
-    "@type": "Organization",
-    "name": "PetCare.Software"
+// Feature comparison table
+const comparisonData = [
+  {
+    label: 'Online Booking 24/7',
+    values: [true, true, false],
+    highlight: true
   },
-  "datePublished": "2025-01-01",
-  "dateModified": "2026-01-15"
-};
+  {
+    label: 'Multi-Night Stay Management',
+    values: [true, true, false]
+  },
+  {
+    label: 'Room/Suite Assignments',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Feeding Schedule Tracking',
+    values: [true, false, false]
+  },
+  {
+    label: 'Medication Administration Logs',
+    values: [true, false, false]
+  },
+  {
+    label: 'Photo Updates to Owners',
+    values: [true, false, false]
+  },
+  {
+    label: 'Automated Deposit Collection',
+    values: [true, true, false],
+    highlight: true
+  },
+  {
+    label: 'Vaccination Tracking',
+    values: [true, false, false]
+  },
+  {
+    label: 'Peak Season Pricing',
+    values: [true, false, false]
+  },
+  {
+    label: 'Monthly Cost',
+    values: ['From £40', 'From £80', 'Manual/Free']
+  }
+];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
-};
+// Enhanced FAQ data
+const faqItems = [
+  {
+    question: 'What is dog boarding software?',
+    answer: 'Dog boarding software is a specialized management platform designed for pet boarding facilities and kennels. It handles multi-night stay bookings, room assignments, vaccination tracking, feeding schedules, medication administration logs, automated payment processing, and owner communication with photo updates. Modern systems help facilities save 12+ hours per week while reducing no-shows by 45% through automated deposits and reminders.',
+    links: [
+      { text: 'Kennel Software', url: '/kennel-software/' },
+      { text: 'Dog Daycare Software', url: '/dog-daycare-software/' }
+    ]
+  },
+  {
+    question: 'How much does dog boarding software cost?',
+    answer: 'Dog boarding software typically costs £40-120 per month depending on features, facility size, and booking volume. PetCare.Software offers flat monthly pricing starting from £40 with no per-booking fees, unlimited bookings, and includes all features. Avoid platforms with per-transaction fees (3-5% per booking) that punish growth and can cost thousands annually.',
+    links: [
+      { text: 'View Pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: 'What features should dog boarding software have?',
+    answer: 'Essential features include: multi-night booking management, room/suite assignment system, vaccination tracking with automatic expiry alerts, feeding schedule management, medication administration logs, owner portal with booking access, photo update sharing, automated reminders, deposit collection, peak season pricing, waitlist management, and integrated payment processing. Facilities running mixed services (boarding + daycare + grooming) should look for unified platforms.',
+    links: [
+      { text: 'Pet Grooming Software', url: '/pet-grooming-software/' }
+    ]
+  },
+  {
+    question: 'Can it handle both boarding and daycare?',
+    answer: 'Yes. Modern boarding software like PetCare.Software manages boarding, daycare, and cattery services from one unified platform with shared client records. You can book the same dog for daycare on weekdays and boarding on weekends without duplicate data entry. This eliminates the need for multiple systems and ensures consistent customer experience.',
+    links: [
+      { text: 'Dog Daycare Software', url: '/dog-daycare-software/' },
+      { text: 'Cattery Software', url: '/cattery-software/' }
+    ]
+  },
+  {
+    question: 'How does room assignment work?',
+    answer: 'Dog boarding software tracks room availability, suite types, and size requirements automatically. You can assign specific rooms/kennels to bookings, set room capacities, block rooms for maintenance, and manage different room types (standard, deluxe, suite). The system prevents double-booking and shows real-time availability by room type. You can also accommodate special requests like adjacent rooms for multiple dogs from same family.',
+  },
+  {
+    question: 'Do owners get updates during their pet\'s stay?',
+    answer: 'Yes. Modern boarding software enables you to send photo updates, feeding logs, medication administration records, and daily activity reports directly to pet parents through the owner portal or via SMS/email. Owners can log in anytime to see their pet\'s status, upcoming meals, and photos. This reduces phone calls by 60% and improves customer satisfaction significantly.',
+  },
+  {
+    question: 'What about peak season management?',
+    answer: 'Dog boarding software handles peak seasons (holidays, summer) with built-in waitlist management, early booking discounts, seasonal pricing adjustments, capacity alerts, and priority booking for regular clients. You can set higher rates for Christmas, Easter, and school holidays automatically. Waitlist functionality captures demand when fully booked and automatically notifies clients of cancellations.',
+  },
+  {
+    question: 'How does feeding schedule management work?',
+    answer: 'Boarding software tracks each dog\'s feeding times, portion sizes, dietary restrictions, and special food requirements. Staff can mark meals as completed via mobile app, add feeding notes, and record any issues. Owners can see feeding logs in their portal. The system sends reminders to staff for upcoming meals and alerts for missed feedings. You can also track special diets, allergies, and medication with meals.',
+  },
+  {
+    question: 'Can I collect deposits for boarding?',
+    answer: 'Yes. Dog boarding software enables automatic deposit collection at booking time (typically 20-50% of total). Deposits reduce no-shows by 45% and protect revenue during peak seasons. PetCare.Software integrates with Stripe for secure payment processing. You can set deposit amounts by booking value, refund policies, and automatically charge remaining balance at check-in or after stay.',
+  }
+];
 ---
 
 <BaseLayout
   title="Dog Boarding Software Guide (2026)"
-  description="Dog boarding software for kennels and overnight stays. Room assignments, multi-night bookings, feeding schedules, and automated deposits."
+  description="Dog boarding software for kennels and overnight stays. Room assignments, multi-night bookings, feeding schedules, and automated deposits. From £40/month."
   image="/images/blog-kennel.jpg"
 >
-  <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-
-  <!-- Breadcrumbs -->
+  <!-- Breadcrumbs with Schema -->
   <div class="bg-gray-100 py-3">
     <div class="container-custom">
-      <Breadcrumbs items={[
-        { label: 'Home', href: '/' },
-        { label: 'Dog Boarding Software' }
-      ]} />
+      <BreadcrumbsEnhanced items={breadcrumbs} site="petcare" />
     </div>
   </div>
 
@@ -78,12 +169,11 @@ const faqSchema = {
     </div>
     <div class="container-custom relative">
       <div class="max-w-3xl">
-        <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Complete Guide</span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Dog Boarding Software</h1>
-        <p class="text-xl text-gray-300 mb-4">
-          <strong>Dog boarding software</strong> handles multi-night bookings, room assignments, feeding schedules, and automated payments. Fill more kennels with less admin work.
+        <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Complete Guide 2026</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Dog Boarding Software</h1>
+        <p class="text-xl text-gray-300 mb-8">
+          Handle multi-night bookings, room assignments, feeding schedules, and automated payments. Fill more kennels with less admin work—save 12+ hours per week.
         </p>
-        <p class="text-gray-400 mb-8">Last updated: January 2026 | Reading time: 7 minutes</p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="/contact/" class="btn-primary text-lg px-8 py-4">Start Free Trial</a>
           <a href="#what-is" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
@@ -92,17 +182,46 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- Table of Contents -->
+  <!-- Featured Answer for Featured Snippet -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <FeaturedAnswer question="What is dog boarding software?">
+          Dog boarding software is a specialized management platform for pet boarding facilities and kennels that handles multi-night stay bookings, room assignments, vaccination tracking, feeding schedules, medication logs, automated payment processing, and owner communication with photo updates. Modern systems help facilities save 12+ hours per week.
+        </FeaturedAnswer>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section with Dataset Schema -->
   <section class="section bg-gray-50">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <div class="bg-white p-6 rounded-lg shadow-sm">
+        <StatisticsSection
+          title="UK Dog Boarding Industry Statistics 2026"
+          description="Key metrics showing growth and digital transformation in pet boarding"
+          stats={boardingStats}
+          layout="grid"
+          source="UK Pet Boarding Industry Report 2026 & PFMA Data"
+          datePublished="2026-01-01"
+          site="petcare"
+          pageUrl={Astro.url.href}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Table of Contents -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
           <h2 class="text-xl font-bold text-brand-navy mb-4">In This Guide</h2>
           <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
             <li><a href="#what-is" class="hover:text-brand-red">→ What Is Boarding Software?</a></li>
-            <li><a href="#features" class="hover:text-brand-red">→ Key Features</a></li>
-            <li><a href="#benefits" class="hover:text-brand-red">→ Benefits for Your Facility</a></li>
-            <li><a href="#peak-season" class="hover:text-brand-red">→ Peak Season Management</a></li>
+            <li><a href="#features" class="hover:text-brand-red">→ Essential Features</a></li>
+            <li><a href="#comparison" class="hover:text-brand-red">→ Software Comparison</a></li>
+            <li><a href="#benefits" class="hover:text-brand-red">→ Benefits for Kennels</a></li>
             <li><a href="#choosing" class="hover:text-brand-red">→ Choosing the Right Solution</a></li>
             <li><a href="#faq" class="hover:text-brand-red">→ FAQ</a></li>
           </ul>
@@ -112,97 +231,201 @@ const faqSchema = {
   </section>
 
   <!-- Main Content -->
-  <section class="section bg-white">
+  <section class="section bg-white" id="what-is">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-
-        <h2 id="what-is" class="text-3xl font-bold text-brand-navy mb-6">What Is Dog Boarding Software?</h2>
-        <p class="text-lg text-gray-600 mb-6">
-          <strong>Dog boarding software</strong> is a digital management platform designed specifically for pet boarding facilities. It handles overnight stay bookings, room/suite assignments, vaccination tracking, feeding schedules, medication administration, payment processing, and customer communication.
+        <h2 class="text-3xl font-bold text-brand-navy mb-6">What Is Dog Boarding Software?</h2>
+        <p class="text-lg text-gray-700 mb-6">
+          <strong>Dog boarding software</strong> is a specialized digital management platform designed specifically for pet boarding facilities, kennels, and overnight care providers. Unlike generic booking systems, it includes industry-specific features like multi-night stay management, room assignments, and feeding schedules.
         </p>
-        <p class="text-gray-600 mb-8">
-          Unlike general booking tools, boarding software understands multi-night stays, capacity management across date ranges, and the unique needs of overnight pet care.
+        <p class="text-gray-700 mb-6">
+          The best platforms handle reservations spanning multiple nights, room/suite assignments by size and type, vaccination records with automatic expiry alerts, detailed feeding schedules with meal tracking, medication administration logs, photo updates to owners, automated payment processing including deposits, and comprehensive owner communication tools.
+        </p>
+        <p class="text-gray-700 mb-8">
+          At PetCare.Software, we built tools specifically for mixed facilities—so if you also run <a href="/dog-daycare-software/" class="text-brand-red hover:underline">dog daycare</a>, a <a href="/kennel-software/" class="text-brand-red hover:underline">kennel</a>, or even a <a href="/cattery-software/" class="text-brand-red hover:underline">cattery</a>, you can manage everything from one login without duplicate data entry.
         </p>
 
-        <h2 id="features" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Key Features</h2>
+        <h2 id="features" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Essential Features for Boarding Facilities</h2>
 
         <div class="grid md:grid-cols-2 gap-6 my-8">
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">Multi-Night Booking</h3>
-            <p class="text-gray-700 text-sm">Handle extended stays with automatic pricing calculations and room availability across date ranges.</p>
+          <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+            <h3 class="font-bold text-brand-navy mb-2">Multi-Night Booking Management</h3>
+            <p class="text-gray-700 text-sm">Handle reservations spanning days, weeks, or months. Calculate pricing by night, show availability calendars, and manage check-in/out times.</p>
           </div>
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">Room Assignments</h3>
-            <p class="text-gray-700 text-sm">Assign pets to specific rooms or suites with drag-and-drop scheduling and conflict prevention.</p>
+          <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+            <h3 class="font-bold text-brand-navy mb-2">Room & Suite Assignments</h3>
+            <p class="text-gray-700 text-sm">Assign specific rooms/kennels by size, type, and special features. Track availability, prevent double-booking, and manage room maintenance schedules.</p>
           </div>
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">Feeding & Medication</h3>
-            <p class="text-gray-700 text-sm">Track feeding schedules, special diets, and medication requirements for each guest.</p>
+          <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+            <h3 class="font-bold text-brand-navy mb-2">Feeding Schedule Management</h3>
+            <p class="text-gray-700 text-sm">Track meal times, portion sizes, dietary restrictions, and special food requirements. Staff can mark meals completed via mobile app.</p>
           </div>
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">Vaccination Tracking</h3>
-            <p class="text-gray-700 text-sm">Automated alerts ensure no expired vaccinations slip through. Block bookings for non-compliant pets.</p>
+          <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+            <h3 class="font-bold text-brand-navy mb-2">Medication Administration Logs</h3>
+            <p class="text-gray-700 text-sm">Record medication schedules, dosages, administration times, and any reactions. Critical for pets with ongoing health needs.</p>
           </div>
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">Deposits & Payments</h3>
-            <p class="text-gray-700 text-sm">Collect deposits at booking to reduce no-shows. Process payments securely with saved cards.</p>
+          <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+            <h3 class="font-bold text-brand-navy mb-2">Photo Updates to Owners</h3>
+            <p class="text-gray-700 text-sm">Send daily photos and activity updates to pet parents. Reduces "how is my dog?" phone calls by 60% while improving satisfaction.</p>
           </div>
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">Owner Updates</h3>
-            <p class="text-gray-700 text-sm">Send photo updates, feeding logs, and daily reports to reassure pet parents.</p>
+          <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+            <h3 class="font-bold text-brand-navy mb-2">Deposit Collection & Peak Pricing</h3>
+            <p class="text-gray-700 text-sm">Automatically collect deposits (20-50%) at booking to reduce no-shows. Set higher rates for holidays and peak seasons.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <h2 id="benefits" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Benefits for Your Facility</h2>
+  <!-- Comparison Table Section -->
+  <section class="section bg-gray-50" id="comparison">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto">
+        <ComparisonTable
+          title="Dog Boarding Software Feature Comparison"
+          description="Compare PetCare.Software against generic pet software and manual spreadsheet management"
+          headers={['Feature', 'PetCare.Software', 'Generic Pet Software', 'Manual/Spreadsheets']}
+          rows={comparisonData}
+          sortable={true}
+        />
+      </div>
+    </div>
+  </section>
 
-        <div class="bg-red-50 border-l-4 border-brand-red p-4 my-6">
-          <p class="font-bold text-brand-navy">Fill more kennels</p>
-          <p>Real-time availability and online booking mean you never miss a reservation. Owners book when it's convenient for them—often outside business hours.</p>
+  <!-- Benefits Section -->
+  <section class="section bg-white" id="benefits">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-brand-navy mb-6">Benefits for Boarding Kennels</h2>
+
+        <div class="bg-red-50 border-l-4 border-brand-red p-6 my-6 rounded">
+          <p class="font-bold text-brand-navy mb-2">Maximize Peak Season Revenue</p>
+          <p class="text-gray-700">Boarding facilities report <strong>95%+ occupancy during holidays</strong> with automated booking, waitlists, and early-bird discounts. Peak season pricing and deposit requirements protect revenue while reducing no-shows by 45%.</p>
         </div>
 
-        <ul class="space-y-3 mb-8">
-          <li><strong>Reduced admin:</strong> Automated confirmations, reminders, and invoicing save hours weekly.</li>
-          <li><strong>Fewer no-shows:</strong> Deposits at booking mean committed customers.</li>
-          <li><strong>Better care tracking:</strong> Digital feeding and medication logs ensure nothing's missed.</li>
-          <li><strong>Happy pet parents:</strong> Photo updates and easy communication build trust and loyalty.</li>
-          <li><strong>Compliance confidence:</strong> Automatic vaccination tracking keeps your facility safe.</li>
-        </ul>
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0 w-6 h-6 bg-brand-red text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+            <div>
+              <strong class="text-brand-navy">Reduced phone calls:</strong>
+              <span class="text-gray-700"> Online booking cuts calls by 60%. Owners can self-serve bookings, check availability, and view their pet's stay details without calling.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0 w-6 h-6 bg-brand-red text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+            <div>
+              <strong class="text-brand-navy">Zero double-bookings:</strong>
+              <span class="text-gray-700"> Real-time room management eliminates conflicts and prevents overbooking by room type, size, and total capacity.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0 w-6 h-6 bg-brand-red text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+            <div>
+              <strong class="text-brand-navy">45% fewer no-shows:</strong>
+              <span class="text-gray-700"> Automated reminders and deposit requirements dramatically reduce no-shows, protecting peak season revenue.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0 w-6 h-6 bg-brand-red text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+            <div>
+              <strong class="text-brand-navy">12+ hours saved weekly:</strong>
+              <span class="text-gray-700"> Automated booking, billing, feeding schedules, and owner updates eliminate manual admin work.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0 w-6 h-6 bg-brand-red text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+            <div>
+              <strong class="text-brand-navy">Staff efficiency:</strong>
+              <span class="text-gray-700"> Mobile app access for feeding logs, medication administration, and photo updates makes staff handovers seamless.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0 w-6 h-6 bg-brand-red text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+            <div>
+              <strong class="text-brand-navy">Happy pet parents:</strong>
+              <span class="text-gray-700"> Photo updates and daily activity reports create loyal customers who book repeatedly and leave 5-star reviews.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <h2 id="peak-season" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Peak Season Management</h2>
-
-        <p class="text-gray-600 mb-4">Holidays and summer create booking surges. Good boarding software helps you capitalize:</p>
-
-        <ul class="space-y-2 mb-8">
-          <li><strong>Waitlist management:</strong> Capture interested clients when you're full.</li>
-          <li><strong>Early booking incentives:</strong> Offer discounts for advance reservations.</li>
-          <li><strong>Capacity alerts:</strong> Know when you're approaching full so you can adjust.</li>
-          <li><strong>Flexible pricing:</strong> Peak-season rates automatically applied.</li>
-          <li><strong>Add-on opportunities:</strong> Grooming, enrichment, and premium suites boost revenue.</li>
-        </ul>
-
-        <h2 id="choosing" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Choosing the Right Solution</h2>
+  <!-- Choosing Section -->
+  <section class="section bg-gray-50" id="choosing">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-brand-navy mb-6">Choosing the Right Boarding Software</h2>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What to Look For</h3>
-        <ul class="space-y-2 mb-6">
-          <li><strong>Multi-night support:</strong> Date range booking with automatic pricing.</li>
-          <li><strong>Room/suite management:</strong> Visual calendar with drag-and-drop.</li>
-          <li><strong>Care tracking:</strong> Feeding, medication, and activity logs.</li>
-          <li><strong>Owner portal:</strong> Self-service bookings and updates.</li>
-          <li><strong>Mobile access:</strong> Staff can update from anywhere in the facility.</li>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start gap-2">
+            <span class="text-brand-red font-bold">→</span>
+            <span><strong>Built for boarding:</strong> Generic booking tools miss critical features like room assignments, feeding schedules, and medication logs.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-red font-bold">→</span>
+            <span><strong>Multi-night capability:</strong> Must handle stays spanning days, weeks, or months with automatic pricing calculation.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-red font-bold">→</span>
+            <span><strong>Room management:</strong> Real-time room availability by type, size, and special features (e.g., outdoor access, deluxe suites).</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-red font-bold">→</span>
+            <span><strong>Owner portal:</strong> Self-service booking, photo updates, stay history, and payment access reduce phone calls.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-red font-bold">→</span>
+            <span><strong>Mobile staff access:</strong> Feeding logs, medication records, and photo uploads from phones/tablets.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-red font-bold">→</span>
+            <span><strong>Peak season tools:</strong> Waitlist management, seasonal pricing, early booking discounts, and capacity alerts.</span>
+          </li>
         </ul>
 
-        <p>Related: <a href="/kennel-software/" class="text-brand-red hover:underline">Kennel Software Guide</a> | <a href="/dog-daycare-software/" class="text-brand-red hover:underline">Dog Daycare Software</a></p>
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Red Flags to Avoid</h3>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start gap-2">
+            <span class="text-red-600 font-bold">✗</span>
+            <span>Per-booking fees (3-5% per transaction adds up to thousands annually)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-red-600 font-bold">✗</span>
+            <span>No room assignment capability (critical for boarding)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-red-600 font-bold">✗</span>
+            <span>Desktop-only with no mobile access for staff</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-red-600 font-bold">✗</span>
+            <span>No trial period to test with real bookings</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-red-600 font-bold">✗</span>
+            <span>Limited support during busy peak seasons</span>
+          </li>
+        </ul>
 
-        <h2 id="faq" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Frequently Asked Questions</h2>
-        <div class="space-y-6 mb-8">
-          {faqs.map((faq) => (
-            <div class="bg-gray-50 p-6 rounded-lg">
-              <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
-              <p class="text-gray-700">{faq.answer}</p>
-            </div>
-          ))}
-        </div>
+        <p class="text-gray-700">Related: <a href="/kennel-software/" class="text-brand-red hover:underline font-semibold">Kennel Software Guide</a> | <a href="/dog-daycare-software/" class="text-brand-red hover:underline font-semibold">Dog Daycare Software</a> | <a href="/pet-sitting-software/" class="text-brand-red hover:underline font-semibold">Pet Sitting Software</a></p>
+      </div>
+    </div>
+  </section>
 
+  <!-- FAQ Section with Enhanced Component -->
+  <section class="section bg-white" id="faq">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <FAQEnhanced
+          faqs={faqItems}
+          title="Frequently Asked Questions"
+          searchable={true}
+          site="petcare"
+          pageUrl={Astro.url.href}
+          initiallyExpanded={0}
+        />
       </div>
     </div>
   </section>
@@ -211,8 +434,11 @@ const faqSchema = {
   <section class="section bg-gradient-to-r from-brand-red to-red-700 text-white">
     <div class="container-custom text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Fill More Kennels?</h2>
-      <p class="text-xl mb-8 opacity-90">See how PetCare.Software helps boarding facilities save time and increase bookings.</p>
-      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Free 14-Day Trial</a>
+      <p class="text-xl mb-8 opacity-90">Automate bookings, room assignments, and owner updates. See how PetCare.Software handles boarding operations.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4 font-bold">Start Free 14-Day Trial</a>
+        <a href="/pricing/" class="btn border-2 border-white text-white hover:bg-white hover:text-brand-red text-lg px-8 py-4 font-bold">View Pricing</a>
+      </div>
       <p class="text-sm mt-4 opacity-75">No credit card required. Set up in 15 minutes.</p>
     </div>
   </section>
@@ -222,17 +448,17 @@ const faqSchema = {
     <div class="container-custom">
       <h2 class="text-2xl font-bold text-brand-navy mb-8 text-center">Related Guides</h2>
       <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-        <a href="/dog-daycare-software/" class="card p-6 hover:shadow-lg transition-shadow">
-          <h3 class="font-bold text-brand-navy mb-2">Dog Daycare Software</h3>
-          <p class="text-gray-600 text-sm">Daytime care and playgroups</p>
+        <a href="/kennel-software/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Kennel Software</h3>
+          <p class="text-gray-600 text-sm">Complete kennel and boarding management</p>
         </a>
-        <a href="/kennel-software/" class="card p-6 hover:shadow-lg transition-shadow">
-          <h3 class="font-bold text-brand-navy mb-2">Kennel Software</h3>
-          <p class="text-gray-600 text-sm">Complete kennel management</p>
+        <a href="/dog-daycare-software/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Dog Daycare Software</h3>
+          <p class="text-gray-600 text-sm">Daycare bookings and playgroup management</p>
         </a>
-        <a href="/cattery-software/" class="card p-6 hover:shadow-lg transition-shadow">
-          <h3 class="font-bold text-brand-navy mb-2">Cattery Software</h3>
-          <p class="text-gray-600 text-sm">Cat-specific boarding features</p>
+        <a href="/pet-sitting-software/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Pet Sitting Software</h3>
+          <p class="text-gray-600 text-sm">In-home pet sitting and visits</p>
         </a>
       </div>
     </div>

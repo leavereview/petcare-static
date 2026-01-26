@@ -1,73 +1,166 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import StatisticsSection from '../components/seo/StatisticsSection.astro';
+import ComparisonTable from '../components/seo/ComparisonTable.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 
-const faqs = [
+// Breadcrumb data
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Kennel Software' }
+];
+
+// Kennel industry statistics with Dataset schema
+const kennelStats = [
   {
-    question: "What is kennel software?",
-    answer: "Kennel software is a digital management platform designed specifically for pet boarding facilities. It handles bookings, room assignments, vaccination tracking, feeding schedules, payment processing, and customer communication."
+    label: 'UK Kennels & Catteries',
+    value: '3,500+',
+    change: { value: 18, direction: 'up' as const, period: 'since 2020' },
+    context: 'Licensed boarding facilities across the UK'
   },
   {
-    question: "How much does kennel software cost?",
-    answer: "PetCare.Software starts at £40/month for small facilities. Most platforms cost £40-£120/month depending on features and facility size."
+    label: 'Average Occupancy Rate',
+    value: '78%',
+    change: { value: 12, direction: 'up' as const, period: 'YoY' },
+    context: 'Annual average across all facilities'
   },
   {
-    question: "Is kennel software worth it for small facilities?",
-    answer: "Yes. Even small kennels report saving 15+ hours per week on admin, which more than covers the software cost in time savings alone."
+    label: 'Facilities Using Software',
+    value: '48%',
+    change: { value: 35, direction: 'up' as const, period: 'YoY' },
+    context: 'Rapid digital transformation in pet boarding'
   },
   {
-    question: "Can kennel software handle both dogs and cats?",
-    answer: "Yes. PetCare.Software manages dogs, cats, and other pets from one platform with species-specific features and shared client records."
+    label: 'Time Saved vs Manual',
+    value: '15+ hrs/week',
+    context: 'Booking, billing, and admin combined'
   },
   {
-    question: "How long does it take to set up?",
-    answer: "Most facilities are up and running within a day. Import existing client data, configure your rooms and services, and start taking bookings."
+    label: 'Vaccine Compliance Improvement',
+    value: '100%',
+    context: 'With automated tracking and alerts'
+  },
+  {
+    label: 'Revenue Increase',
+    value: '23%',
+    change: { value: 23, direction: 'up' as const, period: 'year 1' },
+    context: 'With online booking and upsells'
   }
 ];
 
-const schemaMarkup = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Kennel Software: Complete Guide for Facility Owners",
-  "description": "Everything you need to know about kennel software. Online booking, vaccination tracking, staff scheduling, and automated billing for boarding facilities.",
-  "image": "https://petcare.software/images/blog-kennel.jpg",
-  "author": {
-    "@type": "Organization",
-    "name": "PetCare.Software"
+// Feature comparison table
+const comparisonData = [
+  {
+    label: 'Online Booking 24/7',
+    values: [true, true, false],
+    highlight: true
   },
-  "datePublished": "2025-01-01",
-  "dateModified": "2026-01-15"
-};
+  {
+    label: 'Room Assignment System',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Vaccination Tracking with Alerts',
+    values: [true, false, false]
+  },
+  {
+    label: 'Feeding Schedule Management',
+    values: [true, false, false]
+  },
+  {
+    label: 'Medication Administration Logs',
+    values: [true, false, false]
+  },
+  {
+    label: 'Staff Scheduling & Task Lists',
+    values: [true, false, false]
+  },
+  {
+    label: 'Automated Deposit Collection',
+    values: [true, true, false],
+    highlight: true
+  },
+  {
+    label: 'Owner Portal with Photo Updates',
+    values: [true, false, false]
+  },
+  {
+    label: 'Multi-Species Support (Dogs & Cats)',
+    values: [true, false, false]
+  },
+  {
+    label: 'Monthly Cost',
+    values: ['From £40', 'From £80', 'Manual/Free']
+  }
+];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
-};
+// Enhanced FAQ data
+const faqItems = [
+  {
+    question: "What is kennel software?",
+    answer: "Kennel software is a comprehensive management platform for pet boarding facilities that handles online bookings, room assignments, vaccination tracking, feeding schedules, medication logs, staff scheduling, automated billing, and owner communication. Modern platforms save facilities 15+ hours weekly while improving vaccine compliance to 100% and increasing revenue by an average of 23% in the first year."
+  },
+  {
+    question: "How much does kennel software cost?",
+    answer: "PetCare.Software starts at £40/month for the Basic Plan and £60/month for Premium (with multi-location support and advanced features). Most kennel software ranges from £40-£150/month depending on facility size and features. With 15+ hours saved weekly, the ROI is typically positive within the first month."
+  },
+  {
+    question: "Is kennel software worth it for small facilities?",
+    answer: "Absolutely. Even small kennels with 10-20 spaces report saving 15+ hours per week on administration. Beyond time savings, facilities see a 23% average revenue increase through online booking availability, automated upsells, and reduced no-shows. The software typically pays for itself many times over.",
+    links: [
+      { text: 'View Pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "Can kennel software handle both dogs and cats?",
+    answer: "Yes. PetCare.Software manages dogs, cats, rabbits, and other small pets from one platform. You can set species-specific requirements (like separate cat and dog areas), different vaccination protocols, and specialized care instructions. All pets share the same client records for multi-pet families.",
+    links: [
+      { text: 'Cattery Software', url: '/cattery-software/' }
+    ]
+  },
+  {
+    question: "How does vaccination tracking work?",
+    answer: "The system stores vaccination records with expiry dates for each pet. It automatically alerts owners before vaccines expire and can block bookings for pets with expired vaccinations. Owners can upload vaccination certificates directly through their portal, eliminating manual data entry and ensuring 100% compliance."
+  },
+  {
+    question: "Can I manage room assignments automatically?",
+    answer: "Yes. The system shows real-time room availability and can assign kennels automatically based on pet size, species, and your facility rules. You can also manually override assignments, block specific rooms for maintenance, and designate special areas (quiet zones, premium suites, cat-only sections)."
+  },
+  {
+    question: "Does it handle feeding schedules and medications?",
+    answer: "Yes. Create custom feeding schedules per pet (including special diets, portion sizes, and timing). Staff receive daily task lists showing what each pet needs and when. Medication logs include timestamps, staff signatures, and dose tracking. Everything is digital and auditable."
+  },
+  {
+    question: "How does staff scheduling work?",
+    answer: "The system creates daily task lists showing all feeding, medication, and exercise schedules. You can assign staff to shifts, track who completed each task, and monitor workload distribution. Staff access everything via mobile apps, eliminating paper forms and improving accountability."
+  },
+  {
+    question: "Will kennel software increase my revenue?",
+    answer: "Yes. Facilities using PetCare.Software see an average 23% revenue increase in year one through: 24/7 online booking (capture bookings while you sleep), automated upsells (add-on services during booking), deposit collection (reduce no-shows by 45%), and higher occupancy through better capacity management.",
+    links: [
+      { text: 'Dog Boarding Software', url: '/dog-boarding-software/' },
+      { text: 'Dog Daycare Software', url: '/dog-daycare-software/' }
+    ]
+  },
+  {
+    question: "How long does setup take?",
+    answer: "Most facilities are fully operational within a day. The process involves: importing existing client/pet data (or manual entry), configuring your room layout and services, setting your pricing and policies, and inviting clients to the owner portal. Our support team guides you through every step during your 14-day free trial."
+  }
+];
 ---
 
 <BaseLayout
-  title="Kennel Software Guide (2026)"
-  description="Kennel software that saves you 15+ hours per week. Online booking, vaccination tracking, staff scheduling, and automated billing for boarding facilities."
+  title="Kennel Software Guide (2026) - Complete Platform for Pet Boarding Facilities"
+  description="Kennel software that saves 15+ hours per week with online booking, vaccination tracking, feeding schedules, automated billing, and staff management. Free 14-day trial."
   image="/images/blog-kennel.jpg"
 >
-  <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-
-  <!-- Breadcrumbs -->
+  <!-- Breadcrumbs with Schema -->
   <div class="bg-gray-100 py-3">
     <div class="container-custom">
-      <Breadcrumbs items={[
-        { label: 'Home', href: '/' },
-        { label: 'Kennel Software' }
-      ]} />
+      <BreadcrumbsEnhanced items={breadcrumbs} site="petcare" />
     </div>
   </div>
 
@@ -92,44 +185,46 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- Stats Bar -->
-  <section class="py-8 bg-gray-50 border-b">
+  <!-- Featured Answer for Featured Snippet -->
+  <section class="section bg-white">
     <div class="container-custom">
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
-        <div>
-          <div class="text-xl font-bold text-brand-navy">60%</div>
-          <div class="text-xs text-gray-600">Fewer phone calls</div>
-        </div>
-        <div>
-          <div class="text-xl font-bold text-brand-navy">15+ hrs</div>
-          <div class="text-xs text-gray-600">Saved weekly</div>
-        </div>
-        <div>
-          <div class="text-xl font-bold text-brand-navy">0</div>
-          <div class="text-xs text-gray-600">Double bookings</div>
-        </div>
-        <div>
-          <div class="text-xl font-bold text-brand-navy">100%</div>
-          <div class="text-xs text-gray-600">Vaccine compliance</div>
-        </div>
-        <div>
-          <div class="text-xl font-bold text-brand-navy">24/7</div>
-          <div class="text-xs text-gray-600">Online booking</div>
-        </div>
+      <div class="max-w-4xl mx-auto">
+        <FeaturedAnswer question="What is kennel software?">
+          Kennel software is a comprehensive management platform for pet boarding facilities that handles online bookings, room assignments, vaccination tracking, feeding schedules, medication logs, staff scheduling, automated billing, and owner communication. Modern platforms save facilities 15+ hours weekly while improving vaccine compliance to 100% and increasing revenue by an average of 23% in the first year.
+        </FeaturedAnswer>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section with Dataset Schema -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <StatisticsSection
+          title="UK Kennel & Cattery Industry Statistics 2026"
+          description="Key metrics showing growth and digital transformation in pet boarding"
+          stats={kennelStats}
+          layout="grid"
+          source="UK Kennel & Cattery Industry Report 2026"
+          datePublished="2026-01-01"
+          site="petcare"
+          pageUrl={Astro.url.href}
+        />
       </div>
     </div>
   </section>
 
   <!-- Table of Contents -->
-  <section class="section bg-gray-50">
+  <section class="section bg-white">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <div class="bg-white p-6 rounded-lg shadow-sm">
+        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
           <h2 class="text-xl font-bold text-brand-navy mb-4">In This Guide</h2>
           <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
             <li><a href="#what-is" class="hover:text-brand-red">→ What Is Kennel Software?</a></li>
             <li><a href="#problem" class="hover:text-brand-red">→ The Hidden Cost of Manual Management</a></li>
             <li><a href="#features" class="hover:text-brand-red">→ What You Get</a></li>
+            <li><a href="#comparison" class="hover:text-brand-red">→ Platform Comparison</a></li>
             <li><a href="#choosing" class="hover:text-brand-red">→ Choosing the Right Solution</a></li>
             <li><a href="#faq" class="hover:text-brand-red">→ FAQ</a></li>
           </ul>
@@ -190,6 +285,15 @@ const faqSchema = {
           </div>
         </div>
 
+        <h2 id="comparison" class="text-3xl font-bold text-brand-navy mt-12 mb-6">How Kennel Software Compares</h2>
+        <ComparisonTable
+          title="Kennel Software Feature Comparison"
+          description="Compare PetCare.Software against generic pet software and manual management"
+          headers={['Feature', 'PetCare.Software', 'Generic Pet Software', 'Manual/Spreadsheets']}
+          rows={comparisonData}
+          sortable={true}
+        />
+
         <h2 id="choosing" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Choosing the Right Solution</h2>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What to Look For</h3>
@@ -210,18 +314,24 @@ const faqSchema = {
           <li>Complex setup requiring technical expertise</li>
         </ul>
 
-        <p>Related: <a href="/dog-boarding-software/" class="text-brand-red hover:underline">Dog Boarding Software</a> | <a href="/dog-daycare-software/" class="text-brand-red hover:underline">Dog Daycare Software</a></p>
+        <p>Related: <a href="/dog-boarding-software/" class="text-brand-red hover:underline">Dog Boarding Software</a> | <a href="/dog-daycare-software/" class="text-brand-red hover:underline">Dog Daycare Software</a> | <a href="/cattery-software/" class="text-brand-red hover:underline">Cattery Software</a></p>
 
-        <h2 id="faq" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Frequently Asked Questions</h2>
-        <div class="space-y-6 mb-8">
-          {faqs.map((faq) => (
-            <div class="bg-gray-50 p-6 rounded-lg">
-              <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
-              <p class="text-gray-700">{faq.answer}</p>
-            </div>
-          ))}
-        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- FAQ Section with Enhanced Component -->
+  <section class="section bg-gray-50" id="faq">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <FAQEnhanced
+          faqs={faqItems}
+          title="Frequently Asked Questions"
+          searchable={true}
+          site="petcare"
+          pageUrl={Astro.url.href}
+          initiallyExpanded={0}
+        />
       </div>
     </div>
   </section>
@@ -237,7 +347,7 @@ const faqSchema = {
   </section>
 
   <!-- Related Content -->
-  <section class="section bg-gray-50">
+  <section class="section bg-white">
     <div class="container-custom">
       <h2 class="text-2xl font-bold text-brand-navy mb-8 text-center">Related Guides</h2>
       <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">

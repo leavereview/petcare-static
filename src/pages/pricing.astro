@@ -1,7 +1,128 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+// Pricing tiers data
+const pricingTiers = [
+  {
+    name: 'Basic Plan',
+    description: 'Perfect for start-ups',
+    monthlyPrice: 40,
+    yearlyPrice: 400,
+    features: [
+      'Online booking & scheduling',
+      'Client & pet profiles',
+      'Invoicing & payment processing',
+      'Email & SMS reminders',
+      '1 location'
+    ],
+    popular: false
+  },
+  {
+    name: 'Premium Plan',
+    description: 'For growing businesses',
+    monthlyPrice: 60,
+    yearlyPrice: 600,
+    features: [
+      'Everything in Basic',
+      'Staff scheduling & time tracking',
+      'Multi-location support',
+      'Advanced reporting & analytics',
+      'Marketing tools & review requests'
+    ],
+    popular: true
+  }
+];
+
+// Offer schemas for each pricing tier
+const offerSchemas = pricingTiers.map((tier, index) => ({
+  "@context": "https://schema.org",
+  "@type": "Offer",
+  "@id": `https://petcare.software/pricing/#${tier.name.toLowerCase().replace(/\s+/g, '-')}`,
+  "name": tier.name,
+  "description": `${tier.description} - ${tier.features.length} key features included`,
+  "price": tier.monthlyPrice,
+  "priceCurrency": "GBP",
+  "priceSpecification": {
+    "@type": "UnitPriceSpecification",
+    "price": tier.monthlyPrice,
+    "priceCurrency": "GBP",
+    "unitText": "month",
+    "billingIncrement": 1
+  },
+  "priceValidUntil": "2026-12-31",
+  "availability": "https://schema.org/InStock",
+  "url": "https://petcare.software/contact/",
+  "seller": {
+    "@type": "Organization",
+    "name": "PetCare.Software"
+  },
+  "itemOffered": {
+    "@type": "SoftwareApplication",
+    "name": "PetCare.Software",
+    "applicationCategory": "BusinessApplication"
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Annual Price",
+      "value": tier.yearlyPrice,
+      "unitText": "GBP"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Billing Frequency",
+      "value": "Monthly or Annual"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Free Trial",
+      "value": "14 days"
+    }
+  ]
+}));
+
+// Free trial offer schema
+const freeTrialSchema = {
+  "@context": "https://schema.org",
+  "@type": "Offer",
+  "@id": "https://petcare.software/pricing/#free-trial",
+  "name": "14-Day Free Trial",
+  "description": "Try PetCare.Software free for 14 days with full access to all features. No credit card required.",
+  "price": "0",
+  "priceCurrency": "GBP",
+  "priceValidUntil": "2026-12-31",
+  "availability": "https://schema.org/InStock",
+  "url": "https://petcare.software/contact/",
+  "eligibleRegion": {
+    "@type": "Place",
+    "name": "United Kingdom"
+  },
+  "itemOffered": {
+    "@type": "SoftwareApplication",
+    "name": "PetCare.Software",
+    "applicationCategory": "BusinessApplication"
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Trial Duration",
+      "value": "14 days"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Credit Card Required",
+      "value": "No"
+    }
+  ]
+};
 ---
+
+<!-- Offer Schemas -->
+{offerSchemas.map(offerSchema => (
+  <script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
+))}
+<script type="application/ld+json" set:html={JSON.stringify(freeTrialSchema)} />
 
 <BaseLayout title="Pricing Plans for Pet Care Software" description="Simple, transparent pricing for PetCare.Software. Plans for kennels, dog daycares, and catteries of all sizes. No hidden fees, cancel anytime.">
   <!-- Breadcrumbs -->
@@ -31,7 +152,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 
   <section class="section bg-white">
     <div class="container-custom">
-      <div class="flex justify-center gap-4 mb-12">
+      <div class="flex justify-center gap-4 mb-12 flex-wrap">
         <span class="badge-primary">14-Day Free Trial</span>
         <span class="badge-primary">No Credit Card Required</span>
         <span class="badge-primary">Cancel Anytime</span>
@@ -39,92 +160,44 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 
       <h2 class="sr-only">Pricing Plans</h2>
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div class="card border-2 border-gray-100">
-          <h3 class="text-2xl font-bold text-brand-navy mb-2">Basic Plan</h3>
-          <p class="text-gray-600 mb-4">Perfect for Start-ups</p>
-          <div class="text-4xl font-bold text-brand-navy mb-2">
-            £40<span class="text-lg font-normal text-gray-500">/month</span>
+        {pricingTiers.map((tier) => (
+          <div class={`card border-2 ${tier.popular ? 'border-brand-red' : 'border-gray-100'} relative`}>
+            {tier.popular && (
+              <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+                <span class="bg-brand-red text-white px-4 py-1 rounded-full text-sm font-medium">Most Popular</span>
+              </div>
+            )}
+            <h3 class="text-2xl font-bold text-brand-navy mb-2">{tier.name}</h3>
+            <p class="text-gray-600 mb-4">{tier.description}</p>
+            <div class="text-4xl font-bold text-brand-navy mb-2">
+              £{tier.monthlyPrice}<span class="text-lg font-normal text-gray-500">/month</span>
+            </div>
+            <p class="text-sm text-gray-500 mb-6">or £{tier.yearlyPrice}/year (save 2 months)</p>
+            <ul class="space-y-3 mb-8">
+              {tier.features.map((feature) => (
+                <li class="flex items-center gap-2">
+                  <svg class="w-5 h-5 text-brand-red flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+            <a href="/contact/" class={`${tier.popular ? 'btn-primary' : 'btn-outline'} w-full justify-center`}>
+              Start Free Trial
+            </a>
           </div>
-          <p class="text-sm text-gray-500 mb-6">or £400/year (save 2 months)</p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span>Online booking & scheduling</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span>Client & pet profiles</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span>Invoicing & payment processing</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span>Email & SMS reminders</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span>1 location</span>
-            </li>
-          </ul>
-          <a href="/contact/" class="btn-outline w-full justify-center">Start Free Trial</a>
-        </div>
+        ))}
+      </div>
 
-        <div class="card border-2 border-brand-red relative">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-            <span class="bg-brand-red text-white px-4 py-1 rounded-full text-sm font-medium">Most Popular</span>
-          </div>
-          <h3 class="text-2xl font-bold text-brand-navy mb-2">Premium Plan</h3>
-          <p class="text-gray-600 mb-4">For Growing Businesses</p>
-          <div class="text-4xl font-bold text-brand-navy mb-2">
-            £60<span class="text-lg font-normal text-gray-500">/month</span>
-          </div>
-          <p class="text-sm text-gray-500 mb-6">or £600/year (save 2 months)</p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span>Everything in Basic</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span>Staff scheduling & time tracking</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span>Multi-location support</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span>Advanced reporting & analytics</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span>Marketing tools & review requests</span>
-            </li>
-          </ul>
-          <a href="/contact/" class="btn-primary w-full justify-center">Start Free Trial</a>
-        </div>
+      <!-- Pricing Comparison Note -->
+      <div class="max-w-3xl mx-auto mt-12 text-center">
+        <p class="text-gray-600 mb-4">
+          <strong class="text-brand-navy">All plans include:</strong> Unlimited bookings, unlimited pets, unlimited clients, mobile app access, email support, and regular feature updates.
+        </p>
+        <p class="text-sm text-gray-500">
+          Need more than 5 locations or custom features? <a href="/contact/" class="text-brand-red hover:underline font-semibold">Contact us</a> for Enterprise pricing.
+        </p>
       </div>
     </div>
   </section>
@@ -135,19 +208,27 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
       <div class="max-w-3xl mx-auto space-y-6">
         <div class="card">
           <h3 class="text-lg font-bold text-brand-navy mb-2">Do I need to sign a contract?</h3>
-          <p class="text-gray-600">No. Plans are month to month, and you can cancel anytime.</p>
+          <p class="text-gray-600">No. Plans are month to month, and you can cancel anytime with no penalties or fees.</p>
         </div>
         <div class="card">
           <h3 class="text-lg font-bold text-brand-navy mb-2">Is there a setup fee?</h3>
-          <p class="text-gray-600">No. We'll help you get started at no additional cost.</p>
+          <p class="text-gray-600">No. We'll help you get started at no additional cost. Setup typically takes 15-30 minutes.</p>
         </div>
         <div class="card">
           <h3 class="text-lg font-bold text-brand-navy mb-2">Can I upgrade or downgrade later?</h3>
-          <p class="text-gray-600">Yes, you can switch plans as your business grows.</p>
+          <p class="text-gray-600">Yes, you can switch plans anytime as your business grows. Changes take effect immediately.</p>
         </div>
         <div class="card">
           <h3 class="text-lg font-bold text-brand-navy mb-2">Do you offer annual discounts?</h3>
-          <p class="text-gray-600">Yes, pay yearly and save two months' worth of fees.</p>
+          <p class="text-gray-600">Yes, pay yearly and save two months' worth of fees. That's £480/year for Basic (vs £480 monthly) and £720/year for Premium (vs £720 monthly).</p>
+        </div>
+        <div class="card">
+          <h3 class="text-lg font-bold text-brand-navy mb-2">What payment methods do you accept?</h3>
+          <p class="text-gray-600">We accept all major credit and debit cards via Stripe. Direct debit is available for annual plans.</p>
+        </div>
+        <div class="card">
+          <h3 class="text-lg font-bold text-brand-navy mb-2">Is the free trial really free?</h3>
+          <p class="text-gray-600">Yes, completely free for 14 days. No credit card required to start. Full access to all features.</p>
         </div>
       </div>
     </div>
@@ -157,11 +238,12 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
     <div class="container-custom text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
       <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-        Join hundreds of pet care businesses using PetCare.Software to automate operations and grow.
+        Join hundreds of pet care businesses using PetCare.Software to automate operations and grow revenue.
       </p>
-      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">
+      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4 font-bold">
         Start Your Free 14-Day Trial
       </a>
+      <p class="text-sm mt-4 text-white/70">No credit card required • Setup in 15 minutes</p>
     </div>
   </section>
 </BaseLayout>

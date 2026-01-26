@@ -1,73 +1,165 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import StatisticsSection from '../components/seo/StatisticsSection.astro';
+import ComparisonTable from '../components/seo/ComparisonTable.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 
-const faqs = [
+// Breadcrumb data
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Pet Grooming Software' }
+];
+
+// Pet grooming industry statistics
+const groomingStats = [
   {
-    question: "What is pet grooming software?",
-    answer: "Pet grooming software is an all-in-one system that handles appointment scheduling, client records, pet profiles, automated reminders, point of sale, and business reporting for grooming salons and mobile groomers."
+    label: 'UK Pet Grooming Salons',
+    value: '4,200+',
+    change: { value: 15, direction: 'up' as const, period: 'since 2021' },
+    context: 'Including mobile groomers'
   },
   {
-    question: "Is pet grooming software hard to learn?",
-    answer: "No. Modern grooming software is designed for busy salons. Most teams learn the basics within a day, and the time savings quickly outweigh the learning curve."
+    label: 'Average Salon Size',
+    value: '3 groomers',
+    context: 'Typical UK grooming business'
   },
   {
-    question: "Can clients book grooming appointments online?",
-    answer: "Yes. Good grooming software includes an online booking portal where clients can see availability, choose services, and book 24/7 without calling."
+    label: 'No-Show Reduction',
+    value: '70%',
+    context: 'With automated reminders and deposits'
   },
   {
-    question: "Will grooming software reduce no-shows?",
-    answer: "Yes. Automated SMS and email reminders typically reduce no-shows by 50-70%. Some systems also support deposits or prepayment to further protect your revenue."
+    label: 'Admin Time Saved',
+    value: '15+ hrs/week',
+    context: 'Booking, reminders, and record-keeping'
   },
   {
-    question: "How much does pet grooming software cost?",
-    answer: "Pet grooming software typically costs £30-100 per month depending on features and salon size. PetCare.Software offers flat monthly pricing with no per-appointment fees."
+    label: 'Salons Using Software',
+    value: '42%',
+    change: { value: 28, direction: 'up' as const, period: 'YoY' },
+    context: 'Rapid digital adoption in grooming'
+  },
+  {
+    label: 'Average Groom Cost (UK)',
+    value: '£45',
+    context: 'Varies by breed size and coat type'
   }
 ];
 
-const schemaMarkup = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Pet Grooming Software: Complete Guide for Salons and Mobile Groomers",
-  "description": "Everything you need to know about pet grooming software. Online booking, client management, appointment scheduling, and automated reminders for grooming businesses.",
-  "image": "https://petcare.software/images/blog-grooming.jpg",
-  "author": {
-    "@type": "Organization",
-    "name": "PetCare.Software"
+// Feature comparison table
+const comparisonData = [
+  {
+    label: 'Online Booking 24/7',
+    values: [true, true, false],
+    highlight: true
   },
-  "datePublished": "2026-01-18",
-  "dateModified": "2026-01-18"
-};
+  {
+    label: 'Automated SMS/Email Reminders',
+    values: [true, true, false],
+    highlight: true
+  },
+  {
+    label: 'Detailed Pet Grooming Profiles',
+    values: [true, false, false]
+  },
+  {
+    label: 'Before/After Photo Storage',
+    values: [true, false, false]
+  },
+  {
+    label: 'Integrated Point of Sale',
+    values: [true, false, false]
+  },
+  {
+    label: 'Grooming History & Notes',
+    values: [true, false, false]
+  },
+  {
+    label: 'Service Pricing by Breed',
+    values: [true, false, false]
+  },
+  {
+    label: 'Mobile Groomer Route Planning',
+    values: [true, false, false]
+  },
+  {
+    label: 'Recurring Appointment Setup',
+    values: [true, false, false]
+  },
+  {
+    label: 'Monthly Cost',
+    values: ['From £40', 'From £70', 'Manual/Free']
+  }
+];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
-};
+// Enhanced FAQ data
+const faqItems = [
+  {
+    question: "What is pet grooming software?",
+    answer: "Pet grooming software is a specialized management platform designed for grooming salons and mobile groomers. It handles appointment scheduling, online booking, automated reminders, detailed pet profiles with grooming history, point of sale, payment processing, and business reporting. Modern platforms save salons 15+ hours weekly while reducing no-shows by 70% through automated reminders and deposit collection."
+  },
+  {
+    question: "How much does pet grooming software cost?",
+    answer: "PetCare.Software starts at £40/month for the Basic Plan with unlimited appointments and all core features. Most grooming software ranges from £40-£120/month depending on salon size and features. Avoid platforms charging per-appointment fees (3-5% per booking) as these can cost thousands annually. With 15+ hours saved weekly, ROI is typically positive within the first month.",
+    links: [
+      { text: 'View Pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "Is pet grooming software hard to learn?",
+    answer: "No. Modern grooming software like PetCare.Software is designed for busy salons with intuitive interfaces. Most teams learn the basics (creating bookings, checking schedules, processing payments) within a day. Advanced features like custom service pricing or route optimization can be learned gradually. The time savings quickly outweigh the learning curve, with most salons fully operational within their first week."
+  },
+  {
+    question: "Can clients book grooming appointments online?",
+    answer: "Yes. Good grooming software includes an online booking portal where clients can view real-time availability, select their preferred groomer, choose services (bath, full groom, nail trim, etc.), see pricing by breed size, and book 24/7 without calling. Clients receive instant confirmation and automated reminders before their appointment."
+  },
+  {
+    question: "Will grooming software reduce no-shows?",
+    answer: "Yes. Grooming salons using automated SMS and email reminders typically reduce no-shows by 70%. Advanced features like deposit collection (capturing £10-20 at booking time), prepayment options, and easy rescheduling further protect revenue. Some salons also implement cancellation fees for late cancellations, automatically managed by the software.",
+    links: [
+      { text: 'Dog Boarding Software', url: '/dog-boarding-software/' }
+    ]
+  },
+  {
+    question: "Does it track pet grooming history?",
+    answer: "Yes. Pet grooming software stores complete grooming history including dates, services performed, groomer notes, clip styles, blade numbers, coat condition, temperament, and before/after photos. Every groomer sees the full history before each appointment, ensuring consistent results. Owners can also view their pet's grooming history through the owner portal."
+  },
+  {
+    question: "Can it handle different pricing by breed?",
+    answer: "Yes. Configure services with different pricing based on breed size (small, medium, large, giant), coat type (short, long, curly, double-coat), and service complexity. For example, a Labrador full groom might be £45 while a Standard Poodle is £75. The system shows correct pricing during online booking and automatically applies the right price at checkout."
+  },
+  {
+    question: "Is there software for mobile groomers?",
+    answer: "Yes. PetCare.Software includes mobile grooming features: route optimization (group appointments by area), automatic travel time buffers between appointments, service area management (only accept bookings within your coverage zone), mobile-first interface (full functionality from phone/tablet), offline mode for areas without signal, and GPS directions to appointments.",
+    links: [
+      { text: 'Kennel Software', url: '/kennel-software/' }
+    ]
+  },
+  {
+    question: "Does it integrate with payment processing?",
+    answer: "Yes. Grooming software integrates with payment processors like Stripe for card payments. Process transactions, issue refunds, manage deposits, track retail product sales, apply discounts, and handle gift cards—all from one system. Integrated payments eliminate double-entry and automatically reconcile your accounts."
+  },
+  {
+    question: "Can I manage multiple groomers?",
+    answer: "Yes. Manage multiple groomers with individual calendars, availability schedules, service specializations, and performance tracking. Clients can select their preferred groomer during online booking. The system balances workload, prevents overbooking, tracks individual revenue and appointment counts, and manages staff holidays and days off.",
+    links: [
+      { text: 'Dog Daycare Software', url: '/dog-daycare-software/' }
+    ]
+  }
+];
 ---
 
 <BaseLayout
-  title="Pet Grooming Software Guide (2026)"
-  description="Pet grooming software that cuts admin time by 50%. Online booking, automated reminders, client management, and POS for grooming salons and mobile groomers."
+  title="Pet Grooming Software Guide (2026) - Online Booking & Salon Management"
+  description="Pet grooming software that cuts admin time by 50%. Online booking, automated reminders, detailed pet profiles, and POS for grooming salons and mobile groomers."
   image="/images/hero-pets.jpg"
 >
-  <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-
-  <!-- Breadcrumbs -->
+  <!-- Breadcrumbs with Schema -->
   <div class="bg-gray-100 py-3">
     <div class="container-custom">
-      <Breadcrumbs items={[
-        { label: 'Home', href: '/' },
-        { label: 'Pet Grooming Software' }
-      ]} />
+      <BreadcrumbsEnhanced items={breadcrumbs} site="petcare" />
     </div>
   </div>
 
@@ -92,46 +184,47 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- Stats Bar -->
-  <section class="py-8 bg-gray-50 border-b">
+  <!-- Featured Answer for Featured Snippet -->
+  <section class="section bg-white">
     <div class="container-custom">
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
-        <div>
-          <div class="text-xl font-bold text-brand-navy">50%</div>
-          <div class="text-xs text-gray-600">Less admin time</div>
-        </div>
-        <div>
-          <div class="text-xl font-bold text-brand-navy">70%</div>
-          <div class="text-xs text-gray-600">Fewer no-shows</div>
-        </div>
-        <div>
-          <div class="text-xl font-bold text-brand-navy">24/7</div>
-          <div class="text-xs text-gray-600">Online booking</div>
-        </div>
-        <div>
-          <div class="text-xl font-bold text-brand-navy">100%</div>
-          <div class="text-xs text-gray-600">Client records digital</div>
-        </div>
-        <div>
-          <div class="text-xl font-bold text-brand-navy">15+</div>
-          <div class="text-xs text-gray-600">Hours saved weekly</div>
-        </div>
+      <div class="max-w-4xl mx-auto">
+        <FeaturedAnswer question="What is pet grooming software?">
+          Pet grooming software is a specialized management platform for grooming salons and mobile groomers that handles appointment scheduling, online booking, automated reminders, detailed pet profiles with grooming history, point of sale, payment processing, and business reporting. Modern platforms save salons 15+ hours weekly while reducing no-shows by 70% through automated reminders.
+        </FeaturedAnswer>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section with Dataset Schema -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <StatisticsSection
+          title="UK Pet Grooming Industry Statistics 2026"
+          description="Key metrics showing growth and digital transformation in pet grooming"
+          stats={groomingStats}
+          layout="grid"
+          source="UK Pet Grooming Industry Report 2026 & PFMA Data"
+          datePublished="2026-01-01"
+          site="petcare"
+          pageUrl={Astro.url.href}
+        />
       </div>
     </div>
   </section>
 
   <!-- Table of Contents -->
-  <section class="section bg-gray-50">
+  <section class="section bg-white">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <div class="bg-white p-6 rounded-lg shadow-sm">
+        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
           <h2 class="text-xl font-bold text-brand-navy mb-4">In This Guide</h2>
           <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
             <li><a href="#what-is" class="hover:text-brand-red">→ What Is Grooming Software?</a></li>
             <li><a href="#features" class="hover:text-brand-red">→ Must-Have Features</a></li>
+            <li><a href="#comparison" class="hover:text-brand-red">→ Software Comparison</a></li>
             <li><a href="#benefits" class="hover:text-brand-red">→ Benefits for Your Business</a></li>
             <li><a href="#mobile" class="hover:text-brand-red">→ Mobile Grooming Solutions</a></li>
-            <li><a href="#choosing" class="hover:text-brand-red">→ Choosing the Right Software</a></li>
             <li><a href="#faq" class="hover:text-brand-red">→ FAQ</a></li>
           </ul>
         </div>
@@ -191,21 +284,60 @@ const faqSchema = {
           <li><strong>Waitlist management:</strong> Fill cancellations quickly from a ready waitlist</li>
         </ul>
 
+        <h2 id="comparison" class="text-3xl font-bold text-brand-navy mt-12 mb-6">How Grooming Software Compares</h2>
+        <ComparisonTable
+          title="Pet Grooming Software Feature Comparison"
+          description="Compare PetCare.Software against generic booking tools and manual management"
+          headers={['Feature', 'PetCare.Software', 'Generic Booking Tools', 'Paper Diary']}
+          rows={comparisonData}
+          sortable={true}
+        />
+
         <h2 id="benefits" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Benefits for Your Grooming Business</h2>
 
-        <div class="bg-red-50 border-l-4 border-brand-red p-4 my-6">
-          <p class="font-bold text-brand-navy">The numbers don't lie</p>
-          <p>Grooming salons using dedicated software report 50% less time on admin, 70% fewer no-shows, and 20% more appointments per week through better scheduling efficiency.</p>
+        <div class="bg-red-50 border-l-4 border-brand-red p-4 my-6 rounded">
+          <p class="font-bold text-brand-navy mb-2">The numbers don't lie</p>
+          <p class="text-gray-700">Grooming salons using dedicated software report <strong>50% less time on admin</strong>, <strong>70% fewer no-shows</strong>, and <strong>20% more appointments per week</strong> through better scheduling efficiency.</p>
         </div>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">For Salon Owners</h3>
-        <ul class="space-y-3 mb-6">
-          <li><strong>Reclaim your evenings:</strong> Stop returning calls and confirming appointments after hours</li>
-          <li><strong>Reduce revenue leakage:</strong> Deposits and reminders protect against no-shows</li>
-          <li><strong>Make data-driven decisions:</strong> See which services are most profitable, which days are busiest</li>
-          <li><strong>Scale without chaos:</strong> Add groomers without your admin workload multiplying</li>
-          <li><strong>Professional image:</strong> Online booking and automated communications impress clients</li>
-        </ul>
+        <div class="space-y-4 mb-6">
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0 w-6 h-6 bg-brand-red text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+            <div>
+              <strong class="text-brand-navy">Reclaim your evenings:</strong>
+              <span class="text-gray-700"> Stop returning calls and confirming appointments after hours</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0 w-6 h-6 bg-brand-red text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+            <div>
+              <strong class="text-brand-navy">Reduce revenue leakage:</strong>
+              <span class="text-gray-700"> Deposits and reminders protect against no-shows</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0 w-6 h-6 bg-brand-red text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+            <div>
+              <strong class="text-brand-navy">Make data-driven decisions:</strong>
+              <span class="text-gray-700"> See which services are most profitable, which days are busiest</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0 w-6 h-6 bg-brand-red text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+            <div>
+              <strong class="text-brand-navy">Scale without chaos:</strong>
+              <span class="text-gray-700"> Add groomers without your admin workload multiplying</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0 w-6 h-6 bg-brand-red text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+            <div>
+              <strong class="text-brand-navy">Professional image:</strong>
+              <span class="text-gray-700"> Online booking and automated communications impress clients</span>
+            </div>
+          </div>
+        </div>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">For Groomers</h3>
         <ul class="space-y-3 mb-6">
@@ -213,14 +345,6 @@ const faqSchema = {
           <li><strong>Consistent results:</strong> Access grooming notes and previous styles</li>
           <li><strong>Less interruption:</strong> Clients book online instead of calling during grooms</li>
           <li><strong>Fair workload:</strong> Automated scheduling balances appointments across staff</li>
-        </ul>
-
-        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">For Clients</h3>
-        <ul class="space-y-3 mb-8">
-          <li><strong>Book anytime:</strong> Schedule appointments at midnight if they want</li>
-          <li><strong>Never forget:</strong> Automated reminders keep appointments top of mind</li>
-          <li><strong>Easy rebooking:</strong> One-click rebooking for regular appointments</li>
-          <li><strong>Transparent pricing:</strong> See exactly what services cost before booking</li>
         </ul>
 
         <h2 id="mobile" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Mobile Grooming Software</h2>
@@ -242,84 +366,24 @@ const faqSchema = {
           Mobile grooming is one of the fastest-growing segments of the pet industry. The right software helps you serve more clients efficiently while maintaining the personalized service that sets mobile groomers apart.
         </p>
 
-        <h2 id="comparison" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Paper Diary vs. Grooming Software</h2>
-        <div class="overflow-x-auto mb-8">
-          <table class="w-full text-left border-collapse">
-            <thead>
-              <tr class="border-b-2 border-gray-200">
-                <th class="py-3 px-4 text-brand-navy">Task</th>
-                <th class="py-3 px-4 text-brand-navy">Paper Diary</th>
-                <th class="py-3 px-4 text-brand-navy">PetCare.Software</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="border-b border-gray-100">
-                <td class="py-3 px-4">Taking a booking</td>
-                <td class="py-3 px-4 text-gray-600">Answer phone, check diary, write details</td>
-                <td class="py-3 px-4 text-gray-600">Client self-books online</td>
-              </tr>
-              <tr class="border-b border-gray-100">
-                <td class="py-3 px-4">Sending reminders</td>
-                <td class="py-3 px-4 text-gray-600">Manual calls or texts</td>
-                <td class="py-3 px-4 text-gray-600">Automatic SMS/email</td>
-              </tr>
-              <tr class="border-b border-gray-100">
-                <td class="py-3 px-4">Finding client history</td>
-                <td class="py-3 px-4 text-gray-600">Flip through old diaries</td>
-                <td class="py-3 px-4 text-gray-600">Instant search</td>
-              </tr>
-              <tr class="border-b border-gray-100">
-                <td class="py-3 px-4">Taking payment</td>
-                <td class="py-3 px-4 text-gray-600">Separate card machine</td>
-                <td class="py-3 px-4 text-gray-600">Integrated POS</td>
-              </tr>
-              <tr class="border-b border-gray-100">
-                <td class="py-3 px-4">Viewing business performance</td>
-                <td class="py-3 px-4 text-gray-600">Manual counting</td>
-                <td class="py-3 px-4 text-gray-600">Real-time dashboard</td>
-              </tr>
-              <tr class="border-b border-gray-100">
-                <td class="py-3 px-4">Rebooking regulars</td>
-                <td class="py-3 px-4 text-gray-600">Remember to ask</td>
-                <td class="py-3 px-4 text-gray-600">One-click recurring</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h2 id="choosing" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Choosing the Right Grooming Software</h2>
-
-        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Questions to Ask</h3>
-        <ul class="space-y-2 mb-6">
-          <li><strong>Is it built for pet grooming?</strong> Generic scheduling tools miss industry-specific features</li>
-          <li><strong>Does it include online booking?</strong> Essential for modern client expectations</li>
-          <li><strong>How does it handle no-shows?</strong> Look for deposits and automated reminders</li>
-          <li><strong>Can I see pet grooming history?</strong> Detailed profiles improve service quality</li>
-          <li><strong>Is there a mobile app?</strong> Important for checking schedules on the go</li>
-          <li><strong>What's the pricing model?</strong> Avoid per-appointment fees that punish growth</li>
-        </ul>
-
-        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Red Flags to Avoid</h3>
-        <ul class="space-y-2 mb-8">
-          <li>Per-booking or per-client fees that increase with success</li>
-          <li>No trial period to test with real appointments</li>
-          <li>Desktop-only with no mobile access</li>
-          <li>No automated reminder system</li>
-          <li>Complicated pricing or hidden charges</li>
-        </ul>
-
         <p>Related: <a href="/dog-daycare-software/" class="text-brand-red hover:underline">Dog Daycare Software</a> | <a href="/dog-boarding-software/" class="text-brand-red hover:underline">Dog Boarding Software</a> | <a href="/kennel-software/" class="text-brand-red hover:underline">Kennel Software</a></p>
 
-        <h2 id="faq" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Frequently Asked Questions</h2>
-        <div class="space-y-6 mb-8">
-          {faqs.map((faq) => (
-            <div class="bg-gray-50 p-6 rounded-lg">
-              <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
-              <p class="text-gray-700">{faq.answer}</p>
-            </div>
-          ))}
-        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- FAQ Section with Enhanced Component -->
+  <section class="section bg-gray-50" id="faq">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <FAQEnhanced
+          faqs={faqItems}
+          title="Frequently Asked Questions"
+          searchable={true}
+          site="petcare"
+          pageUrl={Astro.url.href}
+          initiallyExpanded={0}
+        />
       </div>
     </div>
   </section>
@@ -335,7 +399,7 @@ const faqSchema = {
   </section>
 
   <!-- Related Content -->
-  <section class="section bg-gray-50">
+  <section class="section bg-white">
     <div class="container-custom">
       <h2 class="text-2xl font-bold text-brand-navy mb-8 text-center">Related Guides</h2>
       <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">

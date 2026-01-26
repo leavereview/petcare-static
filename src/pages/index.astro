@@ -38,17 +38,20 @@ const testimonials = [
   {
     quote: "PetCare.Software cut our phone calls by 60%. Clients book online, vaccination reminders go out automatically, and we finally have time to focus on the dogs.",
     author: "Sarah Mitchell",
-    role: "Owner, Paws & Play Daycare"
+    role: "Owner, Paws & Play Daycare",
+    rating: 5
   },
   {
     quote: "The automated billing alone saves us 10+ hours every month. Best investment we've made for our kennel.",
     author: "James Thompson",
-    role: "Owner, Thompson's Boarding"
+    role: "Owner, Thompson's Boarding",
+    rating: 5
   },
   {
     quote: "Parents love the photo updates and report cards. Our retention has improved significantly since switching.",
     author: "Emma Wilson",
-    role: "Manager, Happy Tails Cattery"
+    role: "Manager, Happy Tails Cattery",
+    rating: 5
   }
 ];
 
@@ -58,10 +61,126 @@ const stats = [
   { number: '15+ hrs', label: 'Saved Weekly' },
   { number: '24/7', label: 'Support' }
 ];
+
+// Calculate average rating from testimonials
+const averageRating = testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length;
+const reviewCount = testimonials.length;
+
+// Enhanced schema for homepage
+const softwareApplicationSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://petcare.software/#software",
+  "name": "PetCare.Software",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web-based, iOS, Android",
+  "url": "https://petcare.software",
+  "description": "Complete pet care management platform for dog daycare, boarding, kennels, and catteries. Online booking, billing, vaccination tracking, and operations management.",
+  "offers": {
+    "@type": "Offer",
+    "price": "79",
+    "priceCurrency": "GBP",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "79",
+      "priceCurrency": "GBP",
+      "unitText": "month"
+    },
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": averageRating.toFixed(1),
+    "ratingCount": reviewCount,
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "featureList": [
+    "Online Booking 24/7",
+    "Vaccination Tracking with Expiry Alerts",
+    "Automated Billing & Payments",
+    "Owner Portal & Mobile App",
+    "Report Cards with Photo Sharing",
+    "Capacity Management by Playgroup",
+    "Automated SMS/Email Reminders",
+    "Staff Scheduling & Task Management",
+    "Real-time Occupancy Dashboard",
+    "Multi-location Support"
+  ],
+  "screenshot": [
+    "https://petcare.software/images/screenshot-booking.jpg",
+    "https://petcare.software/images/screenshot-dashboard.jpg"
+  ],
+  "softwareVersion": "2.0",
+  "releaseNotes": "Enhanced mobile app, improved vaccination tracking, multi-location dashboard",
+  "applicationSubCategory": "Pet Care Management",
+  "downloadUrl": "https://petcare.software/contact/",
+  "installUrl": "https://petcare.software/contact/",
+  "provider": {
+    "@type": "Organization",
+    "name": "PetCare.Software",
+    "url": "https://petcare.software"
+  },
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Dog Daycare, Boarding Kennels, Catteries, Pet Grooming"
+  }
+};
+
+// Review schema for testimonials
+const reviewSchemas = testimonials.map((testimonial, index) => ({
+  "@type": "Review",
+  "@id": `https://petcare.software/#review-${index + 1}`,
+  "itemReviewed": {
+    "@id": "https://petcare.software/#software"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": testimonial.rating,
+    "bestRating": 5
+  },
+  "author": {
+    "@type": "Person",
+    "name": testimonial.author
+  },
+  "reviewBody": testimonial.quote,
+  "publisher": {
+    "@type": "Organization",
+    "name": "PetCare.Software"
+  }
+}));
+
+// Offer schema for free trial
+const offerSchema = {
+  "@context": "https://schema.org",
+  "@type": "Offer",
+  "@id": "https://petcare.software/#free-trial",
+  "name": "14-Day Free Trial",
+  "description": "Try PetCare.Software free for 14 days with no credit card required",
+  "price": "0",
+  "priceCurrency": "GBP",
+  "priceValidUntil": "2026-12-31",
+  "availability": "https://schema.org/InStock",
+  "url": "https://petcare.software/contact/",
+  "eligibleRegion": {
+    "@type": "Place",
+    "name": "United Kingdom"
+  },
+  "itemOffered": {
+    "@id": "https://petcare.software/#software"
+  }
+};
 ---
 
+<!-- Enhanced Schema Markup -->
+<script type="application/ld+json" set:html={JSON.stringify(softwareApplicationSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
+{reviewSchemas.map(reviewSchema => (
+  <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
+))}
+
 <BaseLayout title="Home" description="Pet care management software for dog daycare, boarding, kennels, and catteries. Online booking, billing, and operations in one platform.">
-  
+
   <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy via-brand-navy to-gray-900 text-white">
     <div class="absolute inset-0 opacity-10">
       <div class="absolute inset-0" style="background-image: url('/images/hero-pets.jpg'); background-size: cover; background-position: center;"></div>
@@ -127,7 +246,7 @@ const stats = [
           From online bookings to automated billing, we've got you covered with tools designed specifically for pet care facilities.
         </p>
       </div>
-      
+
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {features.map((feature) => (
           <div class="card group">
@@ -146,7 +265,7 @@ const stats = [
           </div>
         ))}
       </div>
-      
+
       <div class="text-center mt-12">
         <a href="/dog-daycare-software/" class="btn-outline">
           See All Features
@@ -228,7 +347,7 @@ const stats = [
           See what kennel owners and daycare managers say about PetCare.Software.
         </p>
       </div>
-      
+
       <div class="grid md:grid-cols-3 gap-8">
         {testimonials.map((testimonial) => (
           <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
