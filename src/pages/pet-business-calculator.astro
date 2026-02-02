@@ -332,7 +332,7 @@ const faqSchema = {
           </div>
 
           <!-- Step 3: Operating Costs -->
-          <div id="step-3" class="calculator-step hidden">
+          <div id="step-costs" class="calculator-step hidden">
             <h2 class="text-3xl font-bold text-brand-navy mb-6">Operating Costs</h2>
             <p class="text-gray-600 mb-8">Enter your monthly operating expenses to calculate profitability.</p>
 
@@ -442,7 +442,7 @@ const faqSchema = {
           </div>
 
           <!-- Step 4: Seasonal Patterns & Growth -->
-          <div id="step-4" class="calculator-step hidden">
+          <div id="step-seasonal" class="calculator-step hidden">
             <h2 class="text-3xl font-bold text-brand-navy mb-6">Seasonal Patterns & Growth</h2>
             <p class="text-gray-600 mb-8">Adjust seasonal demand and plan for business growth.</p>
 
@@ -561,7 +561,7 @@ const faqSchema = {
           </div>
 
           <!-- Step 5: Results Dashboard -->
-          <div id="step-5" class="calculator-step hidden">
+          <div id="step-results" class="calculator-step hidden">
             <div class="text-center mb-8">
               <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Your Pet Business Financial Dashboard</h2>
               <p class="text-lg text-gray-600">Comprehensive analysis of your pet care business's financial picture</p>
@@ -1050,13 +1050,14 @@ const faqSchema = {
 
     btnNext?.addEventListener('click', () => {
       if (validateCurrentStep()) {
-        if (currentStep < totalSteps - 1) {
+        if (currentStep < totalSteps) {
           currentStep++;
-          showStep(currentStep);
-        } else if (currentStep === totalSteps - 1) {
-          // Calculate and show results
-          currentStep = totalSteps;
-          calculateAndDisplayResults();
+
+          // If we just moved to the results step, calculate results
+          if (currentStep === totalSteps) {
+            calculateAndDisplayResults();
+          }
+
           showStep(currentStep);
         }
       }
@@ -1103,7 +1104,17 @@ const faqSchema = {
       });
 
       // Recalculate total steps
-      totalSteps = 3 + selectedServices.length + 2; // Profile + Services + Costs + Seasonal + Results
+      // Profile(1) + Services(N) + Costs(1) + Seasonal(1) + Results(1) = 4 + N
+      totalSteps = 4 + selectedServices.length;
+
+      // Update IDs of fixed steps to match new positions
+      const costsStep = document.getElementById('step-costs');
+      const seasonalStep = document.getElementById('step-seasonal');
+      const resultsStep = document.getElementById('step-results');
+
+      if (costsStep) costsStep.id = `step-${2 + selectedServices.length}`;
+      if (seasonalStep) seasonalStep.id = `step-${3 + selectedServices.length}`;
+      if (resultsStep) resultsStep.id = `step-${4 + selectedServices.length}`;
 
       // Update step label
       if (stepLabel) {
