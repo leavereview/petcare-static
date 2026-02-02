@@ -27,6 +27,12 @@ Your business plan should cover:
 - **Revenue projections**: Based on capacity, pricing, and realistic occupancy rates
 - **Break-even analysis**: When will you become profitable?
 
+---
+
+📊 **Crunch your numbers:** Use our free [Pet Business Revenue Calculator](/pet-business-calculator/) to model your facility's income and profit across all your services — with seasonal demand and capacity planning included.
+
+---
+
 ## Step 3: Choose Your Location and Facility
 
 Key considerations for your facility:

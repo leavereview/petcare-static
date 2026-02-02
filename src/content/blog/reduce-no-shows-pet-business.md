@@ -9,6 +9,12 @@ author: "PetCare Team"
 
 No-shows and last-minute cancellations hurt more than just your daily revenue. Empty kennels mean missed opportunities, wasted staff time, and lost income that's nearly impossible to recover. Here's how to dramatically reduce them.
 
+---
+
+📊 **Crunch your numbers:** Use our free [Pet Business Revenue Calculator](/pet-business-calculator/) to model your facility's income and profit across all your services — with seasonal demand and capacity planning included.
+
+---
+
 ## Understanding Why Clients No-Show
 
 Before solving the problem, understand it:

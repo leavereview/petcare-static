@@ -181,6 +181,12 @@ Banks may view franchises as lower risk than independent startups, potentially a
 
 ## Financial Reality Check
 
+---
+
+📊 **Crunch your numbers:** Use our free [Pet Business Revenue Calculator](/pet-business-calculator/) to model your facility's income and profit across all your services — with seasonal demand and capacity planning included.
+
+---
+
 ### Franchise Total Investment
 
 A typical dog daycare franchise requires:

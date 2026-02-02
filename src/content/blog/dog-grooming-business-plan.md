@@ -11,6 +11,12 @@ A well-crafted business plan is essential for launching a successful dog groomin
 
 As you grow, [pet grooming software](/pet-grooming-software/) will help manage operations, but first you need a solid foundation built on careful planning.
 
+---
+
+📊 **Crunch your numbers:** Use our free [Pet Business Revenue Calculator](/pet-business-calculator/) to model your facility's income and profit across all your services — with seasonal demand and capacity planning included.
+
+---
+
 ## Executive Summary
 
 ### What to Include

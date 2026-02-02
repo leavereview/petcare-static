@@ -8,6 +8,12 @@ tags: ["Dog Boarding", "Finance"]
 
 Pricing your dog boarding services correctly balances profitability with competitiveness. This guide covers proven pricing strategies for boarding facilities.
 
+---
+
+📊 **Crunch your numbers:** Use our free [Pet Business Revenue Calculator](/pet-business-calculator/) to model your facility's income and profit across all your services — with seasonal demand and capacity planning included.
+
+---
+
 ## Dog Boarding Pricing Models
 
 ### Per-Night Pricing

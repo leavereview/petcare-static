@@ -13,6 +13,12 @@ Growing a kennel business isn't about working harder—it's about working smarte
 
 You can't improve what you don't measure. Track these metrics monthly:
 
+---
+
+📊 **Crunch your numbers:** Use our free [Pet Business Revenue Calculator](/pet-business-calculator/) to model your facility's income and profit across all your services — with seasonal demand and capacity planning included.
+
+---
+
 ### Essential Metrics
 
 | Metric | What It Tells You | Target |

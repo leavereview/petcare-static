@@ -51,6 +51,12 @@ Monthly Fixed Costs + Monthly Variable Costs
 
 Your price must exceed this to make profit.
 
+---
+
+📊 **Crunch your numbers:** Use our free [Pet Business Revenue Calculator](/pet-business-calculator/) to model your facility's income and profit across all your services — with seasonal demand and capacity planning included.
+
+---
+
 ## Pricing Strategy
 
 ### Market Research

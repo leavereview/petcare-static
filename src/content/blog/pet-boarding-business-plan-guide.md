@@ -109,6 +109,12 @@ Detail how you'll deliver safe, consistent care every day.
 
 Use conservative assumptions and show sensitivity to occupancy and rate changes.
 
+---
+
+📊 **Crunch your numbers:** Use our free [Pet Business Revenue Calculator](/pet-business-calculator/) to model your facility's income and profit across all your services — with seasonal demand and capacity planning included.
+
+---
+
 ### Estimated Startup Budget
 
 | Category | Small Facility | Medium Facility | Notes |

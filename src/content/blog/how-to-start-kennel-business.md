@@ -158,6 +158,12 @@ Once you've navigated licensing, the next step is building strong operational fo
 
 A well-prepared business plan helps secure financing and guide your growth:
 
+---
+
+📊 **Crunch your numbers:** Use our free [Pet Business Revenue Calculator](/pet-business-calculator/) to model your facility's income and profit across all your services — with seasonal demand and capacity planning included.
+
+---
+
 1. **Executive Summary:** Vision, mission, and overview of services
 2. **Business Description:** Type of services, target market, and location
 3. **Market Analysis:** Research on local pet ownership, competitors, pricing

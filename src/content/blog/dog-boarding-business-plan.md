@@ -39,6 +39,12 @@ Your executive summary should capture:
 
 *"[Business Name] is a premium dog boarding facility in [Location], offering cage-free boarding, daycare, and grooming services. With £250,000 initial investment, we project break-even within 18 months and revenue of £400,000 by year 3. Our focus on individual attention, quality facilities, and transparent communication positions us as the premium choice for discerning pet owners in [Area]."*
 
+---
+
+📊 **Crunch your numbers:** Use our free [Pet Business Revenue Calculator](/pet-business-calculator/) to model your facility's income and profit across all your services — with seasonal demand and capacity planning included.
+
+---
+
 ## Business Description
 
 ### Boarding Model Options
