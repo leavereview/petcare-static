@@ -103,7 +103,7 @@ Tracking loyalty manually is error-prone. Use software that:
 - Automatically tracks visits or spend
 - Calculates reward eligibility
 - Applies discounts at checkout
-- Sends status updates to customers
+- Sends status updates to customers Check out [Cattery Software for Cat Boarding Facilities](/cattery-software/). Explore [Dog Boarding Software](/dog-boarding-software/) solutions. Learn more about [Dog Daycare Software](/dog-daycare-software/). Explore [Kennel Software](/kennel-software/) solutions. Learn more about [Pet Grooming Software](/pet-grooming-software/). Explore [Pet Sitting Software](/pet-sitting-software/) solutions.
 
 ### Staff Training
 

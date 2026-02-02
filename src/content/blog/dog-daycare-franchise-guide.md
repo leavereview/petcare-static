@@ -80,7 +80,7 @@ Franchisors have refined their operations over years. You inherit processes for:
 - Safety protocols
 - Booking and scheduling
 - Customer service standards
-- Marketing approaches
+- Marketing approaches See how [Cattery Software for Cat Boarding Facilities](/cattery-software/) can help. See how [Dog Boarding Software](/dog-boarding-software/) can help. Learn more about [Kennel Software](/kennel-software/). Learn more about [Pet Grooming Software](/pet-grooming-software/). Explore [Pet Sitting Software](/pet-sitting-software/) solutions.
 
 **Training and Support**
 Most franchises provide:

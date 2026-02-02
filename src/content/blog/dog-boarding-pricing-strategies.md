@@ -128,6 +128,6 @@ Modern boarding software helps manage pricing:
 - Automatic seasonal rate adjustments
 - Package and discount calculations
 - Add-on management
-- Deposit collection at booking
+- Deposit collection at booking Explore [Cattery Software for Cat Boarding Facilities](/cattery-software/) solutions. Learn more about [Dog Daycare Software](/dog-daycare-software/). Check out [Pet Grooming Software](/pet-grooming-software/). See how [Pet Sitting Software](/pet-sitting-software/) can help.
 
 Related: [Dog Boarding Software Guide](/dog-boarding-software/) | [Kennel Software](/kennel-software/)

@@ -289,7 +289,7 @@ Your executive summary should capture:
 - Payment processing
 - Client communication
 - Record keeping
-- Scheduling system
+- Scheduling system Explore [Cattery Software for Cat Boarding Facilities](/cattery-software/) solutions. Check out [Dog Daycare Software](/dog-daycare-software/). Explore [Kennel Software](/kennel-software/) solutions. Learn more about [Pet Grooming Software](/pet-grooming-software/). Check out [Pet Sitting Software](/pet-sitting-software/).
 
 ## Financial Projections
 

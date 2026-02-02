@@ -241,7 +241,7 @@ Identify gaps in local market:
 - [Grooming software](/pet-grooming-software/) for scheduling
 - Online booking convenience
 - Reminder systems
-- Waitlist management
+- Waitlist management Explore [Cattery Software for Cat Boarding Facilities](/cattery-software/) solutions. See how [Dog Boarding Software](/dog-boarding-software/) can help. See how [Dog Daycare Software](/dog-daycare-software/) can help. Check out [Kennel Software](/kennel-software/). See how [Pet Sitting Software](/pet-sitting-software/) can help.
 
 ## Financial Projections
 

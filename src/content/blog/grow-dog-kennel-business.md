@@ -119,7 +119,7 @@ Acquiring a new customer costs 5-7× more than retaining one. Focus on lifetime 
 | Standard boarding | Premium suite |
 | Boarding only | Add daycare activities |
 | Overnight | Extended checkout |
-| Any service | Grooming before pickup |
+| Any service | Grooming before pickup | Explore [Dog Boarding Software](/dog-boarding-software/) solutions. See how [Dog Daycare Software](/dog-daycare-software/) can help. Check out [Pet Grooming Software](/pet-grooming-software/).
 
 Train staff on natural upselling—not pushy, but informative.
 

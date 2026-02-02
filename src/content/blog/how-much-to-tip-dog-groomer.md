@@ -315,6 +315,6 @@ Good groomers work hard to care for your pet. A fair tip shows you value their e
 
 ## For Grooming Business Owners
 
-Managing tips, staff, and client relationships is easier with the right tools. [PetCare.Software](/pet-grooming-software/) helps you track appointments, manage your team, and build lasting client relationships.
+Managing tips, staff, and client relationships is easier with the right tools. [PetCare.Software](/pet-grooming-software/) helps you track appointments, manage your team, and build lasting client relationships. Explore [Dog Daycare Software](/dog-daycare-software/) solutions.
 
 [Start your free trial](/contact/) and streamline your grooming business.

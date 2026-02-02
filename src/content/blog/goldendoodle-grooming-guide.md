@@ -382,6 +382,6 @@ The teddy bear cut remains most popular, but adapt styles to each dog's coat typ
 
 ## Ready to Manage Your Grooming Business?
 
-Tracking client preferences, coat types, and rebooking schedules for all your goldendoodle clients? [PetCare.Software](/pet-grooming-software/) keeps detailed records, automates reminders, and helps you deliver consistent results.
+Tracking client preferences, coat types, and rebooking schedules for all your goldendoodle clients? [PetCare.Software](/pet-grooming-software/) keeps detailed records, automates reminders, and helps you deliver consistent results. Learn more about [Dog Boarding Software](/dog-boarding-software/). Explore [Dog Daycare Software](/dog-daycare-software/) solutions. Explore [Kennel Software](/kennel-software/) solutions.
 
 [Start your free trial](/contact/) and streamline your grooming business today.

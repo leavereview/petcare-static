@@ -126,7 +126,7 @@ Software helps maintain safety:
 - Allergy and medication alerts
 - Incident logging
 - Communication records
-- Staff task verification
+- Staff task verification Learn more about [Cattery Software for Cat Boarding Facilities](/cattery-software/). Check out [Dog Boarding Software](/dog-boarding-software/). See how [Dog Daycare Software](/dog-daycare-software/) can help. Check out [Pet Grooming Software](/pet-grooming-software/). Check out [Pet Sitting Software](/pet-sitting-software/).
 
 Good protocols protect pets, staff, and your reputation. Review and update regularly.
 

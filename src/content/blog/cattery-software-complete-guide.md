@@ -256,7 +256,7 @@ Train on:
 
 ### What is cattery software and is it different from kennel software?
 
-Cattery software is management software for cat boarding facilities. It's similar to kennel software but should include cat-specific features: FIV/FeLV tracking, detailed feeding management, and individual housing rather than group spaces. Most platforms work for both cats and dogs with proper configuration.
+Cattery software is management software for cat boarding facilities. It's similar to kennel software but should include cat-specific features: FIV/FeLV tracking, detailed feeding management, and individual housing rather than group spaces. Most platforms work for both cats and dogs with proper configuration. Check out [Dog Boarding Software](/dog-boarding-software/). Check out [Dog Daycare Software](/dog-daycare-software/). Check out [Kennel Software](/kennel-software/). See how [Pet Grooming Software](/pet-grooming-software/) can help. See how [Pet Sitting Software](/pet-sitting-software/) can help.
 
 ### What cat-specific features should cattery software have?
 

@@ -84,7 +84,7 @@ Some dogs naturally take on leadership roles within playgroups, and this isn't i
 - Strategic grouping with equally confident dogs
 - Scheduled breaks
 - Additional training requirements
-- Restricted play privileges if needed
+- Restricted play privileges if needed Check out [Cattery Software for Cat Boarding Facilities](/cattery-software/). Check out [Dog Boarding Software](/dog-boarding-software/). Check out [Dog Daycare Software](/dog-daycare-software/). See how [Kennel Software](/kennel-software/) can help. Check out [Pet Grooming Software](/pet-grooming-software/). Check out [Pet Sitting Software](/pet-sitting-software/).
 
 ## Reading Dog Body Language
 

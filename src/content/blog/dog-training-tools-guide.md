@@ -249,7 +249,7 @@ If you run a facility offering training services, tracking equipment, managing i
 - Equipment inventory and condition
 - Which tools are assigned to which dogs
 - Training session notes and progress
-- Client preferences and restrictions
+- Client preferences and restrictions Explore [Kennel Software](/kennel-software/) solutions. Check out [Pet Sitting Software](/pet-sitting-software/).
 
 ## Summary
 
@@ -264,6 +264,6 @@ Add appropriate collars, harnesses, and facility equipment based on your specifi
 
 ## Ready to Streamline Your Training Business?
 
-Managing a training practice alongside daycare, boarding, or grooming services? [PetCare.Software](/dog-daycare-software/) helps you track training progress, manage client records, and coordinate your entire pet business from one platform.
+Managing a training practice alongside daycare, boarding, or grooming services? [PetCare.Software](/dog-daycare-software/) helps you track training progress, manage client records, and coordinate your entire pet business from one platform. Learn more about [Cattery Software for Cat Boarding Facilities](/cattery-software/). Learn more about [Dog Boarding Software](/dog-boarding-software/). Check out [Pet Grooming Software](/pet-grooming-software/).
 
 [Start your free trial](/contact/) and see how much easier running a pet business can be.

@@ -47,7 +47,7 @@ Generic booking tools don't account for these realities. Spreadsheets work until
 | Manual run assignments | Automated kennel management |
 | Calling clients with updates | Automated daily updates with photos |
 | Paper invoices after checkout | Pre-payment and automatic billing |
-| Guessing at occupancy patterns | Data-driven capacity forecasting |
+| Guessing at occupancy patterns | Data-driven capacity forecasting | Learn more about [Cattery Software for Cat Boarding Facilities](/cattery-software/).
 
 ## Essential Features for Boarding Software
 
@@ -112,7 +112,7 @@ Getting paid efficiently:
 | **Revelation Pets** | From $39/mo | Yes | Full | Basic | Yes | Yes |
 | **ProPet** | From $50/mo | Yes | Full | Yes | Yes | Yes |
 | **Kennel Booker** | From GBP 35/mo | Yes | Full | Basic | Yes | Yes |
-| **Kennel Connection** | From $65/mo | Demo | Full | Yes | Yes | Limited |
+| **Kennel Connection** | From $65/mo | Demo | Full | Yes | Yes | Limited | See how [Dog Daycare Software](/dog-daycare-software/) can help. Learn more about [Kennel Software](/kennel-software/). Check out [Pet Grooming Software](/pet-grooming-software/). Check out [Pet Sitting Software](/pet-sitting-software/).
 
 *Pricing verified January 2026. Confirm current rates with vendors.*
 

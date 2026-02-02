@@ -466,6 +466,6 @@ Every dog and every groom is different. The best groomers adapt their approach w
 
 ## Ready to Streamline Your Grooming Business?
 
-Tracking client preferences, managing appointments, and growing your grooming business is easier with the right tools. [PetCare.Software](/pet-grooming-software/) helps you manage your entire grooming operation from one platform.
+Tracking client preferences, managing appointments, and growing your grooming business is easier with the right tools. [PetCare.Software](/pet-grooming-software/) helps you manage your entire grooming operation from one platform. Check out [Cattery Software for Cat Boarding Facilities](/cattery-software/). Explore [Dog Boarding Software](/dog-boarding-software/) solutions. Learn more about [Dog Daycare Software](/dog-daycare-software/). See how [Kennel Software](/kennel-software/) can help. Explore [Pet Sitting Software](/pet-sitting-software/) solutions.
 
 [Start your free trial](/contact/) and focus on what you do best—making dogs look and feel great.
