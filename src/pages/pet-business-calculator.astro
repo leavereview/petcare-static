@@ -114,6 +114,28 @@ const faqSchema = {
     }
   ]
 };
+
+// Software Application schema
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Pet Business Revenue Calculator",
+  "applicationCategory": "BusinessApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "GBP"
+  },
+  "description": "Free calculator for pet care business owners to model revenue, costs, and growth projections across daycare, boarding, grooming, and cattery services.",
+  "operatingSystem": "Web Browser",
+  "featureList": [
+    "Multi-service revenue analysis",
+    "Seasonal occupancy modeling",
+    "Operating cost breakdown",
+    "Growth projections",
+    "Profit margin calculation"
+  ]
+};
 ---
 
 <BaseLayout
@@ -125,6 +147,7 @@ const faqSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(softwareSchema)} />
 
   <!-- Hero Section -->
   <section class="section bg-gradient-to-br from-brand-navy via-brand-navy to-gray-900 text-white">
@@ -201,7 +224,7 @@ const faqSchema = {
           </p>
 
           <p class="text-gray-600 mt-6">
-            Looking for software to manage your bookings, billing, and operations? Explore our specialized solutions for <a href="/dog-daycare-software/" class="text-brand-red hover:underline">dog daycare</a>, <a href="/kennel-software/" class="text-brand-red hover:underline">kennels</a>, and <a href="/pet-grooming-software/" class="text-brand-red hover:underline">grooming</a> businesses.
+            Looking for software to manage your bookings, billing, and operations? Explore our specialized solutions for <a href="/dog-daycare-software/?utm_source=calculator&utm_medium=tool&utm_campaign=petcare-revenue&utm_content=pillar-link-daycare" class="text-brand-red hover:underline">dog daycare</a>, <a href="/kennel-software/?utm_source=calculator&utm_medium=tool&utm_campaign=petcare-revenue&utm_content=pillar-link-kennel" class="text-brand-red hover:underline">kennels</a>, and <a href="/pet-grooming-software/?utm_source=calculator&utm_medium=tool&utm_campaign=petcare-revenue&utm_content=pillar-link-grooming" class="text-brand-red hover:underline">grooming</a> businesses.
           </p>
         </div>
       </div>
@@ -632,7 +655,12 @@ const faqSchema = {
             <li><strong>Cattery to boarding:</strong> Add cat boarding to dog-focused facilities</li>
           </ul>
           <p class="text-gray-600 mb-6">
-            Our specialized software makes it easy to manage multiple services from one platform. Explore solutions for <a href="/dog-boarding-software/" class="text-brand-red hover:underline">boarding</a>, <a href="/dog-daycare-software/" class="text-brand-red hover:underline">daycare</a>, and <a href="/pet-grooming-software/" class="text-brand-red hover:underline">grooming</a>.
+            Our specialized software makes it easy to manage multiple services from one platform. Explore solutions for <a href="/dog-boarding-software/?utm_source=calculator&utm_medium=tool&utm_campaign=petcare-revenue&utm_content=pillar-link-boarding" class="text-brand-red hover:underline">boarding</a>, <a href="/dog-daycare-software/?utm_source=calculator&utm_medium=tool&utm_campaign=petcare-revenue&utm_content=pillar-link-daycare" class="text-brand-red hover:underline">daycare</a>, and <a href="/pet-grooming-software/?utm_source=calculator&utm_medium=tool&utm_campaign=petcare-revenue&utm_content=pillar-link-grooming" class="text-brand-red hover:underline">grooming</a>. Similar capacity optimization challenges exist in
+            <a href="https://mydriveschool.software/driving-school-calculator/"
+               rel="external"
+               class="text-brand-red hover:underline">
+              service-based education businesses
+            </a>, where scheduling efficiency and utilization rates drive profitability.
           </p>
 
           <h3 class="text-2xl font-semibold text-brand-navy mt-8 mb-4">3. Optimize Add-On Revenue</h3>
@@ -680,7 +708,7 @@ const faqSchema = {
             <li>Package deals that incentivize commitment</li>
           </ul>
           <p class="text-gray-600 mb-6">
-            Software with automated reminders can reduce no-shows by 40-60%. Explore our <a href="/pet-sitting-software/" class="text-brand-red hover:underline">pet sitting</a> and <a href="/cattery-software/" class="text-brand-red hover:underline">cattery</a> management solutions.
+            Software with automated reminders can reduce no-shows by 40-60%. Explore our <a href="/pet-sitting-software/?utm_source=calculator&utm_medium=tool&utm_campaign=petcare-revenue&utm_content=pillar-link-petsitting" class="text-brand-red hover:underline">pet sitting</a> and <a href="/cattery-software/?utm_source=calculator&utm_medium=tool&utm_campaign=petcare-revenue&utm_content=pillar-link-cattery" class="text-brand-red hover:underline">cattery</a> management solutions.
           </p>
 
           <div class="bg-brand-red-light border-l-4 border-brand-red p-6 rounded-lg mt-8">
@@ -2039,7 +2067,7 @@ const faqSchema = {
             <p class="text-gray-700 mb-4">
               PetCare.Software helps you maximize these projections with automated booking, billing, and capacity management.
             </p>
-            <a href="/contact/" class="btn-primary inline-block">Start Free Trial</a>
+            <a href="/contact/?utm_source=calculator&utm_medium=tool&utm_campaign=petcare-revenue&utm_content=contact-cta" class="btn-primary inline-block">Start Free Trial</a>
           </div>
         </div>
       `;
