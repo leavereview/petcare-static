@@ -32,7 +32,14 @@ const {
 const resolvedSchemaType = schemaType || (type === 'article' ? 'Article' : 'WebPage');
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const fullTitle = title === 'Home' ? 'PetCare.Software - Pet Boarding & Daycare Management' : `${title} | PetCare.Software`;
+
+// Dynamic title suffix: skip for long titles, use shorter brand name
+const getTitleSuffix = (pageTitle: string): string => {
+  if (pageTitle === 'Home') return 'PetCare.Software - Pet Boarding & Daycare Management';
+  if (pageTitle.length > 50) return pageTitle; // No suffix for long titles
+  return `${pageTitle} | PetCare`;
+};
+const fullTitle = getTitleSuffix(title);
 
 // Build full image URL for schema
 const fullImageUrl = image ? new URL(image, Astro.site).href : null;
@@ -49,7 +56,26 @@ const schemaOrg = {
         "@type": "ImageObject",
         "url": "https://petcare.software/logo.svg"
       },
-      "sameAs": []
+      "sameAs": [
+        "https://twitter.com/petcaresoftware",
+        "https://www.linkedin.com/company/petcare-software",
+        "https://www.facebook.com/petcaresoftware"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "email": "support@petcare.software",
+        "url": "https://petcare.software/contact/"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "124 City Road",
+        "addressLocality": "London",
+        "postalCode": "EC1V 2NX",
+        "addressCountry": "GB"
+      },
+      "foundingDate": "2024",
+      "description": "Complete pet care management software for dog daycare, boarding kennels, catteries, and grooming salons. Automate bookings, billing, and operations."
     },
     {
       "@type": "WebSite",
