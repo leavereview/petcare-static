@@ -1,6 +1,6 @@
 ---
 title: "Dog Boarding Business Plan (2026)"
-description: "Dog boarding business plan guide: startup costs, facility requirements, licensing, pricing strategies, and profitability tips."
+description: "Dog boarding business plan: £92K-£519K startup costs breakdown, facility requirements, licensing checklist, and revenue projections. Break-even in 18 months."
 image: /images/blog-boarding.jpg
 imageAlt: "Professional dog boarding facility with comfortable kennels and play areas for boarding business planning"
 date: "2026-01-18"

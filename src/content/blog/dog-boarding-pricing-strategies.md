@@ -1,6 +1,6 @@
 ---
 title: "Dog Boarding Pricing Strategies"
-description: "How to price your dog boarding services profitably. Learn about pricing models, packages, add-ons, and strategies to maximize revenue."
+description: "Dog boarding pricing strategies: £25-£75/night rates by service level. Pricing models, package deals, seasonal adjustments, and add-on revenue boosters."
 image: /images/blog-business.jpg
 date: "2026-02-06"
 tags: ["Dog Boarding", "Finance"]

@@ -1,6 +1,6 @@
 ---
 title: "Dog Daycare Software Comparison"
-description: "Compare the top dog daycare software options for small businesses. Features, pricing, and honest reviews to help you choose the right platform."
+description: "Dog daycare software compared: 5 platforms reviewed by 500+ facilities. Real pricing (£49-£199/mo), feature tables, and best-fit guide. Free trial links."
 image: /images/blog-technology.jpg
 imageAlt: "Modern pet care software interface on laptop showing booking and scheduling features for dog daycare management"
 date: "2026-02-20"
