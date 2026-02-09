@@ -13,7 +13,7 @@ const pricingTiers = [
       'Online booking & scheduling',
       'Client & pet profiles',
       'Invoicing & payment processing',
-      'Email & SMS reminders',
+      'Email reminders',
       '1 location'
     ],
     popular: false
@@ -25,10 +25,10 @@ const pricingTiers = [
     yearlyPrice: 600,
     features: [
       'Everything in Basic',
-      'Staff scheduling & time tracking',
+      'Staff task management',
       'Multi-location support',
       'Advanced reporting & analytics',
-      'Marketing tools & review requests'
+      'Customer retention tools'
     ],
     popular: true
   }
@@ -190,10 +190,28 @@ const freeTrialSchema = {
         ))}
       </div>
 
+      <!-- Beta Features Box -->
+      <div class="max-w-3xl mx-auto mt-12 p-6 bg-blue-50 rounded-lg border border-blue-200">
+        <h3 class="font-bold text-brand-navy mb-3">Beta Features Available</h3>
+        <p class="text-sm text-gray-700 mb-3">
+          Some advanced features are in beta testing and available on request during your trial:
+        </p>
+        <ul class="text-sm text-gray-700 space-y-1">
+          <li>✓ Owner Portal (100% complete, opt-in)</li>
+          <li>✓ SMS Reminders (Twilio integrated)</li>
+          <li>✓ Advanced Staff Scheduling</li>
+          <li>✓ Credit Packs & Packages</li>
+          <li>✓ Peak Season Pricing</li>
+        </ul>
+        <p class="text-sm text-gray-600 mt-3">
+          Email <a href="mailto:support@petcare.software" class="text-brand-red hover:underline">support@petcare.software</a> to enable beta features.
+        </p>
+      </div>
+
       <!-- Pricing Comparison Note -->
-      <div class="max-w-3xl mx-auto mt-12 text-center">
+      <div class="max-w-3xl mx-auto mt-8 text-center">
         <p class="text-gray-600 mb-4">
-          <strong class="text-brand-navy">All plans include:</strong> Unlimited bookings, unlimited pets, unlimited clients, mobile app access, email support, and regular feature updates.
+          <strong class="text-brand-navy">All plans include:</strong> Unlimited bookings, unlimited pets, unlimited clients, mobile-responsive web access, email support, and regular feature updates.
         </p>
         <p class="text-sm text-gray-500">
           Need more than 5 locations or custom features? <a href="/contact/" class="text-brand-red hover:underline font-semibold">Contact us</a> for Enterprise pricing.

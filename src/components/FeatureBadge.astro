@@ -1,0 +1,22 @@
+---
+interface Props {
+  status: 'available' | 'coming-soon' | 'beta' | 'planned';
+  date?: string;
+}
+
+const { status, date } = Astro.props;
+
+const badges = {
+  'available': { bg: 'bg-green-100', text: 'text-green-700', label: 'Available', icon: '✓' },
+  'coming-soon': { bg: 'bg-orange-100', text: 'text-orange-700', label: date || 'Coming Soon', icon: '⏰' },
+  'beta': { bg: 'bg-blue-100', text: 'text-blue-700', label: 'Beta', icon: '🧪' },
+  'planned': { bg: 'bg-gray-100', text: 'text-gray-600', label: 'Planned', icon: '📋' }
+};
+
+const config = badges[status];
+---
+
+<span class={`inline-flex items-center gap-1 px-2 py-1 rounded text-xs font-medium ${config.bg} ${config.text}`}>
+  <span>{config.icon}</span>
+  <span>{config.label}</span>
+</span>

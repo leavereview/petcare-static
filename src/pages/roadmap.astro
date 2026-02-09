@@ -1,0 +1,333 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import FeatureBadge from '../components/FeatureBadge.astro';
+
+// Available Now - Fully Working Features
+const availableFeatures = [
+  {
+    title: 'Online Booking 24/7',
+    description: 'Real-time availability with capacity management and automated confirmations.'
+  },
+  {
+    title: 'Vaccination Tracking',
+    description: 'Automatic expiry alerts and booking blocks for non-compliant pets.'
+  },
+  {
+    title: 'Email Reminders',
+    description: 'Automated reminders for bookings, vaccinations, and pickups.'
+  },
+  {
+    title: 'Payment Processing',
+    description: 'Stripe integration with deposit collection and automated invoicing.'
+  },
+  {
+    title: 'Client & Pet Profiles',
+    description: 'Complete profiles with health records, medications, and feeding schedules.'
+  },
+  {
+    title: 'Activity Logs',
+    description: 'Manual photo uploads and care notes for pet parents.'
+  },
+  {
+    title: 'Multi-Location Support',
+    description: 'Manage multiple facilities with centralized reporting.'
+  },
+  {
+    title: 'Reporting & Analytics',
+    description: 'Occupancy, revenue, and retention tracking in real-time.'
+  },
+  {
+    title: 'Room Assignments',
+    description: 'Manage boarding rooms, suites, and playgroups.'
+  },
+  {
+    title: 'Staff Task Management',
+    description: 'Task tracking, care logs, and activity documentation.'
+  }
+];
+
+// Beta Features - Built but OFF by Default
+const betaFeatures = [
+  {
+    title: 'Owner Portal',
+    description: '100% complete self-service portal. Pet parents can book, pay, upload vaccination records, and view account history. Available on request during your trial.',
+    gaDate: 'Q2 2026'
+  },
+  {
+    title: 'SMS Reminders',
+    description: 'Twilio-integrated text message reminders for bookings and vaccinations. Proven to reduce no-shows by 60%. Contact us to enable.',
+    gaDate: 'Q2 2026'
+  },
+  {
+    title: 'Advanced Staff Scheduling',
+    description: 'Shift scheduling, time tracking, and team management features. Perfect for facilities with 5+ staff members.',
+    gaDate: 'Q2 2026'
+  },
+  {
+    title: 'Credit Packs & Packages',
+    description: 'Sell packages of 5, 10, or 20 visits at discounted rates. Improves cash flow and customer retention.',
+    gaDate: 'Q2 2026'
+  },
+  {
+    title: 'Peak Season Pricing',
+    description: 'Automatically adjust rates for holidays and high-demand periods. Set custom pricing rules by date range.',
+    gaDate: 'Q2 2026'
+  },
+  {
+    title: 'Batch Payments',
+    description: 'Process multiple invoices in one transaction. Saves time for monthly billing clients.',
+    gaDate: 'Q3 2026'
+  }
+];
+
+// Coming Q2 2026
+const q2Features = [
+  {
+    title: 'Photo Report Cards (Automated)',
+    description: 'Automated daily reports with photos sent to pet parents. Manual photo uploads available now.'
+  },
+  {
+    title: 'Recurring Appointments',
+    description: 'Set up repeating appointments for grooming, daycare regulars, and weekly boarders.'
+  },
+  {
+    title: 'Waitlist Management',
+    description: 'Automated waitlist for sold-out dates with automatic notifications when spots open.'
+  }
+];
+
+// Coming Q3-Q4 2026
+const laterFeatures = [
+  {
+    title: 'Mobile Groomer Route Optimization',
+    description: 'Route planning, travel time buffers, service area management, and GPS navigation for mobile groomers.',
+    timeline: 'Q3 2026'
+  },
+  {
+    title: 'Service Area Management',
+    description: 'Define coverage zones and only accept bookings within your service area. For mobile groomers and pickup/delivery services.',
+    timeline: 'Q3 2026'
+  },
+  {
+    title: 'Digital Waivers',
+    description: 'Electronic signature collection for liability waivers and agreements during online booking.',
+    timeline: 'Q4 2026'
+  }
+];
+
+// Future Considerations - Not Yet Scheduled
+const futureFeatures = [
+  {
+    title: 'Native Mobile Apps (iOS/Android)',
+    description: 'Currently mobile-responsive web. Native apps planned based on customer demand.'
+  },
+  {
+    title: 'Review Request Automation',
+    description: 'Automated follow-up emails requesting Google/Facebook reviews after completed bookings.'
+  },
+  {
+    title: 'Point of Sale for Retail',
+    description: 'Full POS system for selling pet food, toys, and supplies in-store.'
+  }
+];
+---
+
+<BaseLayout
+  title="Product Roadmap - PetCare.Software"
+  description="See what's available now, in beta, and coming soon to PetCare.Software. Transparent product roadmap for pet care management features."
+>
+  <!-- Breadcrumbs -->
+  <div class="bg-gray-100 py-3">
+    <div class="container-custom">
+      <Breadcrumbs items={[
+        { label: 'Home', href: '/' },
+        { label: 'Product Roadmap' }
+      ]} />
+    </div>
+  </div>
+
+  <!-- Header -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
+    <div class="container-custom relative">
+      <div class="max-w-3xl text-center mx-auto">
+        <span class="badge-primary mb-4">Product Roadmap</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Transparent Development Roadmap</h1>
+        <p class="text-xl text-gray-300">
+          See what's available today, in beta testing, and coming soon to PetCare.Software.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Available Now -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <FeatureBadge status="available" />
+          <h2 class="text-3xl font-bold text-brand-navy">Available Now</h2>
+        </div>
+        <p class="text-gray-600 mb-8">
+          These features are fully working and included in all plans. No configuration needed—they work out of the box.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          {availableFeatures.map((feature) => (
+            <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+              <h3 class="font-bold text-brand-navy mb-2 flex items-center gap-2">
+                <span class="text-green-600">✓</span>
+                {feature.title}
+              </h3>
+              <p class="text-sm text-gray-600">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-8 text-center">
+          <a href="/contact/" class="btn-primary">Start Free Trial →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beta Features -->
+  <section class="section bg-blue-50">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <FeatureBadge status="beta" />
+          <h2 class="text-3xl font-bold text-brand-navy">In Beta (Available on Request)</h2>
+        </div>
+        <p class="text-gray-600 mb-8">
+          These features are 100% built and working, but currently disabled by default. Email us during your trial to enable beta features.
+        </p>
+
+        <div class="space-y-4">
+          {betaFeatures.map((feature) => (
+            <div class="bg-white border border-blue-200 rounded-lg p-6">
+              <div class="flex items-start justify-between mb-3">
+                <h3 class="font-bold text-lg text-brand-navy">{feature.title}</h3>
+                <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded whitespace-nowrap">
+                  GA: {feature.gaDate}
+                </span>
+              </div>
+              <p class="text-gray-600">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-8 p-6 bg-white rounded-lg border-2 border-blue-300">
+          <h3 class="font-bold text-brand-navy mb-2">Request Beta Access</h3>
+          <p class="text-gray-600 mb-4">
+            Email <a href="mailto:support@petcare.software" class="text-brand-red hover:underline">support@petcare.software</a> during your 14-day trial to enable any beta features. We'll activate them within 24 hours.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coming Q2 2026 -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <FeatureBadge status="coming-soon" date="Q2 2026" />
+          <h2 class="text-3xl font-bold text-brand-navy">Coming Q2 2026</h2>
+        </div>
+        <p class="text-gray-600 mb-8">
+          Actively in development. Expected launch April-June 2026.
+        </p>
+
+        <div class="space-y-4">
+          {q2Features.map((feature) => (
+            <div class="bg-orange-50 border border-orange-200 rounded-lg p-6">
+              <h3 class="font-bold text-lg text-brand-navy mb-2">{feature.title}</h3>
+              <p class="text-gray-600">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coming Q3-Q4 2026 -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <FeatureBadge status="coming-soon" date="Q3-Q4 2026" />
+          <h2 class="text-3xl font-bold text-brand-navy">Coming Q3-Q4 2026</h2>
+        </div>
+        <p class="text-gray-600 mb-8">
+          Planned for later in 2026. Timelines subject to change based on customer feedback.
+        </p>
+
+        <div class="space-y-4">
+          {laterFeatures.map((feature) => (
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+              <div class="flex items-start justify-between mb-3">
+                <h3 class="font-bold text-lg text-brand-navy">{feature.title}</h3>
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
+                  {feature.timeline}
+                </span>
+              </div>
+              <p class="text-gray-600">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Considerations -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <FeatureBadge status="planned" />
+          <h2 class="text-3xl font-bold text-brand-navy">Future Considerations</h2>
+        </div>
+        <p class="text-gray-600 mb-8">
+          Features we're considering based on customer demand. No timeline set yet—vote for what matters most to you.
+        </p>
+
+        <div class="space-y-4">
+          {futureFeatures.map((feature) => (
+            <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+              <h3 class="font-bold text-lg text-brand-navy mb-2">{feature.title}</h3>
+              <p class="text-gray-600">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-8 p-6 bg-blue-50 rounded-lg border border-blue-200">
+          <h3 class="font-bold text-brand-navy mb-2">Request a Feature</h3>
+          <p class="text-gray-600">
+            Have a feature idea? Email <a href="mailto:support@petcare.software" class="text-brand-red hover:underline">support@petcare.software</a> with your suggestion. Customer feedback drives our roadmap.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-gradient-to-r from-brand-red to-red-700 text-white">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Start your free trial today and see what's available. Request beta access for advanced features.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4 font-bold">
+          Start Free 14-Day Trial
+        </a>
+        <a href="/pricing/" class="btn border-2 border-white text-white hover:bg-white hover:text-brand-red text-lg px-8 py-4 font-bold">
+          View Pricing
+        </a>
+      </div>
+      <p class="text-sm mt-4 opacity-75">No credit card required • Setup in 15 minutes</p>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -56,7 +56,7 @@ const comparisonData = [
     highlight: true
   },
   {
-    label: 'Automated SMS/Email Reminders',
+    label: 'Email Reminders (SMS Beta)',
     values: [true, true, false],
     highlight: true
   },
@@ -69,7 +69,7 @@ const comparisonData = [
     values: [true, false, false]
   },
   {
-    label: 'Integrated Point of Sale',
+    label: 'Payment Processing',
     values: [true, false, false]
   },
   {
@@ -81,12 +81,12 @@ const comparisonData = [
     values: [true, false, false]
   },
   {
-    label: 'Mobile Groomer Route Planning',
-    values: [true, false, false]
+    label: 'Mobile Groomer Support',
+    values: ['Planned Q3 2026', false, false]
   },
   {
-    label: 'Recurring Appointment Setup',
-    values: [true, false, false]
+    label: 'Recurring Appointments',
+    values: ['Coming Q2 2026', false, false]
   },
   {
     label: 'Monthly Cost',
@@ -98,7 +98,7 @@ const comparisonData = [
 const faqItems = [
   {
     question: "What is pet grooming software?",
-    answer: "Pet grooming software is a specialized management platform designed for grooming salons and mobile groomers. It handles appointment scheduling, online booking, automated reminders, detailed pet profiles with grooming history, point of sale, payment processing, and business reporting. Modern platforms save salons 15+ hours weekly while reducing no-shows by 70% through automated reminders and deposit collection."
+    answer: "Pet grooming software is a specialized management platform designed for grooming salons. It handles appointment scheduling, online booking, automated email reminders (SMS in beta), detailed pet profiles with grooming history, payment processing, and business reporting. Modern platforms save salons 15+ hours weekly while reducing no-shows by 70% through automated reminders and deposit collection."
   },
   {
     question: "How much does pet grooming software cost?",
@@ -109,7 +109,7 @@ const faqItems = [
   },
   {
     question: "Is pet grooming software hard to learn?",
-    answer: "No. Modern grooming software like PetCare.Software is designed for busy salons with intuitive interfaces. Most teams learn the basics (creating bookings, checking schedules, processing payments) within a day. Advanced features like custom service pricing or route optimization can be learned gradually. The time savings quickly outweigh the learning curve, with most salons fully operational within their first week."
+    answer: "No. Modern grooming software like PetCare.Software is designed for busy salons with intuitive interfaces. Most teams learn the basics (creating bookings, checking schedules, processing payments) within a day. Advanced features like custom service pricing can be learned gradually. The time savings quickly outweigh the learning curve, with most salons fully operational within their first week."
   },
   {
     question: "Can clients book grooming appointments online?",
@@ -117,7 +117,7 @@ const faqItems = [
   },
   {
     question: "Will grooming software reduce no-shows?",
-    answer: "Yes. Grooming salons using automated SMS and email reminders typically reduce no-shows by 70%. Advanced features like deposit collection (capturing £10-20 at booking time), prepayment options, and easy rescheduling further protect revenue. Some salons also implement cancellation fees for late cancellations, automatically managed by the software.",
+    answer: "Yes. Grooming salons using automated email reminders (and SMS reminders in beta) typically reduce no-shows by 70%. Advanced features like deposit collection (capturing £10-20 at booking time), prepayment options, and easy rescheduling further protect revenue. Some salons also implement cancellation fees for late cancellations, automatically managed by the software.",
     links: [
       { text: 'Dog Boarding Software', url: '/dog-boarding-software/' }
     ]
@@ -132,7 +132,7 @@ const faqItems = [
   },
   {
     question: "Is there software for mobile groomers?",
-    answer: "Yes. PetCare.Software includes mobile grooming features: route optimization (group appointments by area), automatic travel time buffers between appointments, service area management (only accept bookings within your coverage zone), mobile-first interface (full functionality from phone/tablet), offline mode for areas without signal, and GPS directions to appointments.",
+    answer: "Mobile grooming features are planned for Q3 2026, including route optimization, travel time buffers, and service area management. Currently, PetCare.Software offers mobile-responsive web access for groomers on the go with full appointment scheduling and client management functionality from any device.",
     links: [
       { text: 'Kennel Software', url: '/kennel-software/' }
     ]
@@ -153,7 +153,7 @@ const faqItems = [
 
 <BaseLayout
   title="Pet Grooming Software Guide (2026) - Online Booking & Salon Management"
-  description="Pet grooming software that cuts admin time by 50%. Online booking, automated reminders, detailed pet profiles, and POS for grooming salons and mobile groomers."
+  description="Pet grooming software that cuts admin time by 50%. Online booking, automated reminders, detailed pet profiles, and payment processing for grooming salons."
   image="/images/hero-pets.jpg"
 >
   <!-- Breadcrumbs with Schema -->
@@ -347,23 +347,27 @@ const faqItems = [
           <li><strong>Fair workload:</strong> Automated scheduling balances appointments across staff</li>
         </ul>
 
-        <h2 id="mobile" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Mobile Grooming Software</h2>
-        <p class="text-gray-600 mb-6">
-          Mobile groomers have unique needs. You're managing a business from a van, often with limited connectivity, while also handling driving routes and travel time between appointments.
+        <h2 id="mobile" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Mobile Grooming Software (Coming Q3 2026)</h2>
+
+        <div class="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-lg mb-6">
+          <p class="text-gray-700 mb-3">
+            <strong>Planned for Q3 2026:</strong> Mobile groomers have unique needs, and we're building specialized features to support them.
+          </p>
+          <h3 class="text-lg font-bold text-brand-navy mb-2">Planned Features</h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li>✓ Route optimization to group appointments by area</li>
+            <li>✓ Automatic travel time buffers between appointments</li>
+            <li>✓ Service area management (coverage zones)</li>
+            <li>✓ GPS directions to appointments</li>
+          </ul>
+        </div>
+
+        <p class="text-gray-600 mb-4">
+          <strong>Available Now:</strong> Mobile-responsive web access lets you manage appointments, client profiles, and payments from any device while on the go.
         </p>
 
-        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Key Features for Mobile Groomers</h3>
-        <ul class="space-y-3 mb-6">
-          <li><strong>Route optimization:</strong> Group appointments by area to minimize driving</li>
-          <li><strong>Travel time buffers:</strong> Automatically add travel time between appointments</li>
-          <li><strong>Service area management:</strong> Only accept bookings within your coverage zone</li>
-          <li><strong>Mobile-first interface:</strong> Full functionality from your phone or tablet</li>
-          <li><strong>Offline mode:</strong> Continue working even without signal</li>
-          <li><strong>GPS directions:</strong> Navigate to appointments with integrated maps</li>
-        </ul>
-
         <p class="text-gray-600 mb-8">
-          Mobile grooming is one of the fastest-growing segments of the pet industry. The right software helps you serve more clients efficiently while maintaining the personalized service that sets mobile groomers apart.
+          Mobile grooming is one of the fastest-growing segments of the pet industry. Contact us to request early beta access to mobile grooming features.
         </p>
 
         <p>Related: <a href="/dog-daycare-software/" class="text-brand-red hover:underline">Dog Daycare Software</a> | <a href="/dog-boarding-software/" class="text-brand-red hover:underline">Dog Boarding Software</a> | <a href="/kennel-software/" class="text-brand-red hover:underline">Kennel Software</a></p>
