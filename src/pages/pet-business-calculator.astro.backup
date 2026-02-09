@@ -1,0 +1,2195 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Pet Business Revenue Calculator — Free Profit Planner for Kennels, Daycares & Groomers";
+const description = "Calculate your pet care business revenue, costs, and profit with our free calculator. Plan daycare, boarding, grooming, and cattery income with seasonal projections.";
+
+// Breadcrumb schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://petcare.software/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Pet Business Calculator",
+      "item": "https://petcare.software/pet-business-calculator/"
+    }
+  ]
+};
+
+// HowTo schema
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Calculate Your Pet Business Revenue and Profitability",
+  "description": "Step-by-step calculator for pet care businesses including daycare, boarding, grooming, and catteries",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Enter Your Business Profile",
+      "text": "Select your business types (daycare, boarding, grooming, etc.), currency, operating days, and location."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Configure Your Services",
+      "text": "Input capacity, pricing, occupancy rates, and add-ons for each service you offer."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Enter Operating Costs",
+      "text": "Define your staffing, facility, operational, and business costs."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Adjust Seasonal Patterns",
+      "text": "Customize monthly demand patterns and plan for growth with client acquisition and churn rates."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Review Your Financial Dashboard",
+      "text": "Analyze revenue by service, profitability metrics, capacity utilization, and personalized insights."
+    }
+  ]
+};
+
+// FAQ schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does the average dog daycare make per year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An established dog daycare with 20-30 dog capacity typically generates £100,000-£200,000 in annual revenue in the UK, with profit margins of 15-30%. Revenue depends on capacity, occupancy rates (typically 60-75%), and pricing (£25-£45 per day)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good profit margin for a pet boarding business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Healthy pet boarding businesses achieve 20-35% profit margins. Boarding typically has higher margins than daycare due to lower staffing requirements overnight. Revenue per kennel run averages £4,000-£8,000 annually at 50-65% occupancy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many dogs does a daycare need to be profitable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Break-even typically occurs at 10-15 dogs per day depending on your cost structure. With proper pricing (£25-£35/day) and 60%+ occupancy, most daycares become profitable at 12-15 dogs daily capacity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is pet grooming a profitable business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pet grooming typically has higher profit margins (25-40%) than boarding or daycare. A single grooming station can generate £25,000-£50,000 annually with 3-5 grooms per day at £30-£50 per groom."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost to start a boarding kennel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Startup costs for a boarding kennel range from £20,000-£100,000+ depending on whether you're converting existing space or building from scratch. This includes kennel runs, licensing, insurance, initial marketing, and working capital."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What occupancy rate do kennels need to break even?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Break-even occupancy varies by cost structure but typically ranges from 35-50% for boarding facilities. Well-managed kennels average 50-65% annual occupancy (85-100% during peak holiday periods)."
+      }
+    }
+  ]
+};
+
+// Software Application schema
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Pet Business Revenue Calculator",
+  "applicationCategory": "BusinessApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "GBP"
+  },
+  "description": "Free calculator for pet care business owners to model revenue, costs, and growth projections across daycare, boarding, grooming, and cattery services.",
+  "operatingSystem": "Web Browser",
+  "featureList": [
+    "Multi-service revenue analysis",
+    "Seasonal occupancy modeling",
+    "Operating cost breakdown",
+    "Growth projections",
+    "Profit margin calculation"
+  ]
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  schemaType="WebPage"
+>
+  <!-- Additional Schema Markup -->
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(softwareSchema)} />
+
+  <!-- Hero Section -->
+  <section class="section bg-gradient-to-br from-brand-navy via-brand-navy to-gray-900 text-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 bg-brand-red-light text-brand-red px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          Free Financial Planning Tool
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          Pet Business Revenue & Profit Calculator
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+          Model your pet care business income across daycare, boarding, grooming, and more — with seasonal projections and capacity planning
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Content -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-xl shadow-sm p-8 md:p-12">
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            Planning the finances of a pet care business requires understanding multiple revenue streams, capacity constraints, and seasonal demand patterns. Whether you're running a dog daycare, boarding kennel, grooming salon, or multi-service facility, having accurate projections makes all the difference.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            This free pet business revenue calculator helps you model realistic scenarios based on industry benchmarks from successful kennels, daycares, and grooming businesses across the UK. Unlike generic business calculators, this tool understands the specific economics of pet care — from occupancy rates and seasonal swings to add-on services and capacity planning.
+          </p>
+
+          <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-4">What You'll Discover</h2>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span><strong>Multi-service revenue modeling:</strong> Calculate income across daycare, boarding, grooming, cattery, walking, sitting, and training services</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span><strong>Capacity-based economics:</strong> Understand how occupancy rates, capacity limits, and pricing interact to drive profitability</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span><strong>Seasonal demand patterns:</strong> Model UK pet care seasonality with adjustable monthly demand curves</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span><strong>Add-on revenue opportunities:</strong> Factor in enrichment, extra walks, premium upgrades, grooming packages, and retail sales</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span><strong>Industry benchmarks:</strong> Compare your projections against real UK pet care business performance data</span>
+            </li>
+          </ul>
+
+          <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-lg mt-8">
+            <h3 class="font-semibold text-brand-navy mb-2">Who This Calculator Is For</h3>
+            <p class="text-gray-600">
+              This tool is designed for kennel owners, daycare operators, groomers, and multi-service pet care facilities. Whether you're planning a new business, evaluating your current performance, or considering adding new services, this calculator provides the financial clarity you need. Use it to model different scenarios, test pricing strategies, and understand the impact of capacity and occupancy on profitability.
+            </p>
+          </div>
+
+          <p class="text-lg text-gray-600 leading-relaxed mt-8">
+            The UK pet care market continues to grow, with dog daycare revenue averaging £100,000-£200,000 annually for facilities with 20-30 dog capacity, boarding kennels generating £4,000-£8,000 per run per year, and grooming stations producing £25,000-£50,000 annually. The calculator uses these industry benchmarks alongside your specific inputs to show you where your business stands and where it could go.
+          </p>
+
+          <p class="text-gray-600 mt-6">
+            Looking for software to manage your bookings, billing, and operations? Explore our specialized solutions for <a href="/dog-daycare-software/" class="text-brand-red hover:underline">dog daycare</a>, <a href="/kennel-software/" class="text-brand-red hover:underline">kennels</a>, and <a href="/pet-grooming-software/" class="text-brand-red hover:underline">grooming</a> businesses.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator Section - Will add next -->
+  <section class="section bg-white" id="calculator-app">
+    <div class="container-custom max-w-6xl">
+      <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 md:p-12">
+        <!-- Progress indicator -->
+        <div class="mb-8">
+          <div class="bg-gray-200 h-2 rounded-full overflow-hidden">
+            <div id="progress-bar" class="bg-brand-red h-full transition-all duration-300" style="width: 20%"></div>
+          </div>
+          <div id="step-label" class="text-sm text-gray-500 mt-2">Step 1 of 5: Business Profile</div>
+        </div>
+
+        <!-- Calculator steps -->
+        <div id="calculator-steps">
+
+          <!-- Step 1: Business Profile -->
+          <div id="step-1" class="calculator-step">
+            <h2 class="text-3xl font-bold text-brand-navy mb-6">Business Profile</h2>
+            <p class="text-gray-600 mb-8">Tell us about your pet care business to get started.</p>
+
+            <div class="space-y-6">
+              <div>
+                <label for="business-name" class="block text-sm font-semibold text-brand-navy mb-2">Business Name (Optional)</label>
+                <input type="text" id="business-name" class="input" placeholder="e.g., Happy Paws Pet Care">
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold text-brand-navy mb-3">What services do you offer?</label>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                    <input type="checkbox" name="business-type" value="daycare" class="w-5 h-5 text-brand-red">
+                    <div>
+                      <div class="font-medium text-brand-navy">Dog Daycare</div>
+                      <div class="text-sm text-gray-500">Daily drop-off care</div>
+                    </div>
+                  </label>
+                  <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                    <input type="checkbox" name="business-type" value="boarding" class="w-5 h-5 text-brand-red">
+                    <div>
+                      <div class="font-medium text-brand-navy">Dog Boarding</div>
+                      <div class="text-sm text-gray-500">Overnight kennels</div>
+                    </div>
+                  </label>
+                  <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                    <input type="checkbox" name="business-type" value="grooming" class="w-5 h-5 text-brand-red">
+                    <div>
+                      <div class="font-medium text-brand-navy">Pet Grooming</div>
+                      <div class="text-sm text-gray-500">Bathing, trimming, styling</div>
+                    </div>
+                  </label>
+                  <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                    <input type="checkbox" name="business-type" value="cattery" class="w-5 h-5 text-brand-red">
+                    <div>
+                      <div class="font-medium text-brand-navy">Cattery</div>
+                      <div class="text-sm text-gray-500">Cat boarding</div>
+                    </div>
+                  </label>
+                  <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                    <input type="checkbox" name="business-type" value="walking" class="w-5 h-5 text-brand-red">
+                    <div>
+                      <div class="font-medium text-brand-navy">Dog Walking</div>
+                      <div class="text-sm text-gray-500">Group or solo walks</div>
+                    </div>
+                  </label>
+                  <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                    <input type="checkbox" name="business-type" value="sitting" class="w-5 h-5 text-brand-red">
+                    <div>
+                      <div class="font-medium text-brand-navy">Pet Sitting</div>
+                      <div class="text-sm text-gray-500">In-home care</div>
+                    </div>
+                  </label>
+                  <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                    <input type="checkbox" name="business-type" value="training" class="w-5 h-5 text-brand-red">
+                    <div>
+                      <div class="font-medium text-brand-navy">Training Classes</div>
+                      <div class="text-sm text-gray-500">Obedience, agility</div>
+                    </div>
+                  </label>
+                </div>
+                <p class="text-sm text-gray-500 mt-2">Select all that apply</p>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="currency" class="block text-sm font-semibold text-brand-navy mb-2">Currency</label>
+                  <select id="currency" class="input">
+                    <option value="£">£ (GBP)</option>
+                    <option value="$">$ (USD)</option>
+                    <option value="€">€ (EUR)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="operating-days" class="block text-sm font-semibold text-brand-navy mb-2">
+                    Operating Days Per Week
+                    <span class="text-gray-500 font-normal">(for daycare/grooming)</span>
+                  </label>
+                  <input type="number" id="operating-days" class="input" value="6" min="1" max="7">
+                </div>
+              </div>
+
+              <div>
+                <label for="location" class="block text-sm font-semibold text-brand-navy mb-2">Location Type</label>
+                <select id="location" class="input">
+                  <option value="urban">Urban</option>
+                  <option value="suburban" selected>Suburban</option>
+                  <option value="rural">Rural</option>
+                </select>
+              </div>
+
+              <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-lg">
+                <p class="text-sm text-gray-700">
+                  <strong>Tip:</strong> Select at least one service to continue. You'll configure each service's capacity, pricing, and add-ons in the next steps.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 container: Dynamic service configuration -->
+          <div id="step-2-container" class="hidden">
+            <!-- Service configuration steps will be dynamically inserted here -->
+          </div>
+
+          <!-- Step 3: Operating Costs -->
+          <div id="step-costs" class="calculator-step hidden">
+            <h2 class="text-3xl font-bold text-brand-navy mb-6">Operating Costs</h2>
+            <p class="text-gray-600 mb-8">Enter your monthly operating expenses to calculate profitability.</p>
+
+            <div class="space-y-6">
+              <h3 class="text-xl font-semibold text-brand-navy mt-6 mb-4">Staffing Costs</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="ft-staff-count" class="block text-sm font-semibold text-brand-navy mb-2">Full-Time Staff</label>
+                  <input type="number" id="ft-staff-count" class="input" value="2" min="0">
+                </div>
+                <div>
+                  <label for="ft-staff-salary" class="block text-sm font-semibold text-brand-navy mb-2">
+                    Annual Salary Per FT Staff
+                    <span class="text-gray-500 font-normal" id="ft-salary-hint">(£20k-£30k typical)</span>
+                  </label>
+                  <input type="number" id="ft-staff-salary" class="input" value="22000" min="0">
+                </div>
+                <div>
+                  <label for="pt-staff-count" class="block text-sm font-semibold text-brand-navy mb-2">Part-Time Staff</label>
+                  <input type="number" id="pt-staff-count" class="input" value="1" min="0">
+                </div>
+                <div>
+                  <label for="pt-staff-hours" class="block text-sm font-semibold text-brand-navy mb-2">
+                    PT Hours Per Week
+                    <span class="text-gray-500 font-normal">(per person)</span>
+                  </label>
+                  <input type="number" id="pt-staff-hours" class="input" value="20" min="0">
+                </div>
+                <div>
+                  <label for="pt-staff-rate" class="block text-sm font-semibold text-brand-navy mb-2">
+                    PT Hourly Rate
+                    <span class="text-gray-500 font-normal" id="pt-rate-hint">(£10-£14 typical)</span>
+                  </label>
+                  <input type="number" id="pt-staff-rate" class="input" value="11" min="0">
+                </div>
+              </div>
+
+              <h3 class="text-xl font-semibold text-brand-navy mt-8 mb-4">Facility Costs</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="rent" class="block text-sm font-semibold text-brand-navy mb-2">Monthly Rent / Mortgage</label>
+                  <input type="number" id="rent" class="input" value="1500" min="0">
+                </div>
+                <div>
+                  <label for="utilities" class="block text-sm font-semibold text-brand-navy mb-2">Utilities (Gas, Electric, Water)</label>
+                  <input type="number" id="utilities" class="input" value="300" min="0">
+                </div>
+                <div>
+                  <label for="insurance" class="block text-sm font-semibold text-brand-navy mb-2">Insurance</label>
+                  <input type="number" id="insurance" class="input" value="200" min="0">
+                </div>
+                <div>
+                  <label for="rates" class="block text-sm font-semibold text-brand-navy mb-2">Business Rates / Property Tax</label>
+                  <input type="number" id="rates" class="input" value="150" min="0">
+                </div>
+              </div>
+
+              <h3 class="text-xl font-semibold text-brand-navy mt-8 mb-4">Operational Costs</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="cleaning-supplies" class="block text-sm font-semibold text-brand-navy mb-2">Cleaning Supplies</label>
+                  <input type="number" id="cleaning-supplies" class="input" value="200" min="0">
+                </div>
+                <div>
+                  <label for="food-treats" class="block text-sm font-semibold text-brand-navy mb-2">Food & Treats</label>
+                  <input type="number" id="food-treats" class="input" value="150" min="0">
+                </div>
+                <div>
+                  <label for="equipment" class="block text-sm font-semibold text-brand-navy mb-2">Equipment & Maintenance</label>
+                  <input type="number" id="equipment" class="input" value="100" min="0">
+                </div>
+                <div>
+                  <label for="vet-fund" class="block text-sm font-semibold text-brand-navy mb-2">Vet / Emergency Fund</label>
+                  <input type="number" id="vet-fund" class="input" value="50" min="0">
+                </div>
+              </div>
+
+              <h3 class="text-xl font-semibold text-brand-navy mt-8 mb-4">Business Costs</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="marketing" class="block text-sm font-semibold text-brand-navy mb-2">Marketing & Advertising</label>
+                  <input type="number" id="marketing" class="input" value="200" min="0">
+                </div>
+                <div>
+                  <label for="software" class="block text-sm font-semibold text-brand-navy mb-2">Software & Tools</label>
+                  <input type="number" id="software" class="input" value="50" min="0">
+                </div>
+                <div>
+                  <label for="accounting" class="block text-sm font-semibold text-brand-navy mb-2">Accounting / Admin</label>
+                  <input type="number" id="accounting" class="input" value="80" min="0">
+                </div>
+                <div>
+                  <label for="vehicle" class="block text-sm font-semibold text-brand-navy mb-2">Vehicle (if applicable)</label>
+                  <input type="number" id="vehicle" class="input" value="0" min="0">
+                </div>
+                <div>
+                  <label for="other-costs" class="block text-sm font-semibold text-brand-navy mb-2">Other Costs</label>
+                  <input type="number" id="other-costs" class="input" value="0" min="0">
+                </div>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-200 p-6 rounded-lg mt-6">
+                <h4 class="font-semibold text-brand-navy mb-2">Total Monthly Costs</h4>
+                <p class="text-3xl font-bold text-brand-red" id="total-costs-preview">£0</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4: Seasonal Patterns & Growth -->
+          <div id="step-seasonal" class="calculator-step hidden">
+            <h2 class="text-3xl font-bold text-brand-navy mb-6">Seasonal Patterns & Growth</h2>
+            <p class="text-gray-600 mb-8">Adjust seasonal demand and plan for business growth.</p>
+
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-xl font-semibold text-brand-navy mb-4">Monthly Demand Patterns</h3>
+                <p class="text-sm text-gray-600 mb-6">
+                  Adjust the sliders to reflect seasonal demand variations (100% = average month). UK pet care typically sees peaks during summer holidays and Christmas.
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="seasonal-sliders">
+                  <!-- January -->
+                  <div>
+                    <label class="block text-sm font-medium text-brand-navy mb-2">Jan</label>
+                    <input type="range" class="w-full" min="40" max="120" value="60" data-month="0">
+                    <div class="text-center text-sm text-gray-600 mt-1"><span class="seasonal-value">60</span>%</div>
+                  </div>
+                  <!-- February -->
+                  <div>
+                    <label class="block text-sm font-medium text-brand-navy mb-2">Feb</label>
+                    <input type="range" class="w-full" min="40" max="120" value="65" data-month="1">
+                    <div class="text-center text-sm text-gray-600 mt-1"><span class="seasonal-value">65</span>%</div>
+                  </div>
+                  <!-- March -->
+                  <div>
+                    <label class="block text-sm font-medium text-brand-navy mb-2">Mar</label>
+                    <input type="range" class="w-full" min="40" max="120" value="75" data-month="2">
+                    <div class="text-center text-sm text-gray-600 mt-1"><span class="seasonal-value">75</span>%</div>
+                  </div>
+                  <!-- April -->
+                  <div>
+                    <label class="block text-sm font-medium text-brand-navy mb-2">Apr</label>
+                    <input type="range" class="w-full" min="40" max="120" value="85" data-month="3">
+                    <div class="text-center text-sm text-gray-600 mt-1"><span class="seasonal-value">85</span>%</div>
+                  </div>
+                  <!-- May -->
+                  <div>
+                    <label class="block text-sm font-medium text-brand-navy mb-2">May</label>
+                    <input type="range" class="w-full" min="40" max="120" value="80" data-month="4">
+                    <div class="text-center text-sm text-gray-600 mt-1"><span class="seasonal-value">80</span>%</div>
+                  </div>
+                  <!-- June -->
+                  <div>
+                    <label class="block text-sm font-medium text-brand-navy mb-2">Jun</label>
+                    <input type="range" class="w-full" min="40" max="120" value="95" data-month="5">
+                    <div class="text-center text-sm text-gray-600 mt-1"><span class="seasonal-value">95</span>%</div>
+                  </div>
+                  <!-- July -->
+                  <div>
+                    <label class="block text-sm font-medium text-brand-navy mb-2">Jul</label>
+                    <input type="range" class="w-full" min="40" max="120" value="100" data-month="6">
+                    <div class="text-center text-sm text-gray-600 mt-1"><span class="seasonal-value">100</span>%</div>
+                  </div>
+                  <!-- August -->
+                  <div>
+                    <label class="block text-sm font-medium text-brand-navy mb-2">Aug</label>
+                    <input type="range" class="w-full" min="40" max="120" value="100" data-month="7">
+                    <div class="text-center text-sm text-gray-600 mt-1"><span class="seasonal-value">100</span>%</div>
+                  </div>
+                  <!-- September -->
+                  <div>
+                    <label class="block text-sm font-medium text-brand-navy mb-2">Sep</label>
+                    <input type="range" class="w-full" min="40" max="120" value="80" data-month="8">
+                    <div class="text-center text-sm text-gray-600 mt-1"><span class="seasonal-value">80</span>%</div>
+                  </div>
+                  <!-- October -->
+                  <div>
+                    <label class="block text-sm font-medium text-brand-navy mb-2">Oct</label>
+                    <input type="range" class="w-full" min="40" max="120" value="70" data-month="9">
+                    <div class="text-center text-sm text-gray-600 mt-1"><span class="seasonal-value">70</span>%</div>
+                  </div>
+                  <!-- November -->
+                  <div>
+                    <label class="block text-sm font-medium text-brand-navy mb-2">Nov</label>
+                    <input type="range" class="w-full" min="40" max="120" value="65" data-month="10">
+                    <div class="text-center text-sm text-gray-600 mt-1"><span class="seasonal-value">65</span>%</div>
+                  </div>
+                  <!-- December -->
+                  <div>
+                    <label class="block text-sm font-medium text-brand-navy mb-2">Dec</label>
+                    <input type="range" class="w-full" min="40" max="120" value="90" data-month="11">
+                    <div class="text-center text-sm text-gray-600 mt-1"><span class="seasonal-value">90</span>%</div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-semibold text-brand-navy mb-4">Growth Planning</h3>
+                <div class="space-y-6">
+                  <div>
+                    <label for="new-clients" class="block text-sm font-semibold text-brand-navy mb-2">
+                      Monthly New Client Acquisitions
+                      <span class="text-gray-500 font-normal">(0-50)</span>
+                    </label>
+                    <input type="number" id="new-clients" class="input" value="5" min="0" max="50">
+                    <p class="text-sm text-gray-500 mt-2">New clients joining per month on average</p>
+                  </div>
+
+                  <div>
+                    <label for="churn-rate" class="block text-sm font-semibold text-brand-navy mb-2">
+                      Monthly Client Churn Rate (%)
+                      <span class="text-gray-500 font-normal">(0-15%)</span>
+                    </label>
+                    <input type="number" id="churn-rate" class="input" value="5" min="0" max="15" step="0.5">
+                    <p class="text-sm text-gray-500 mt-2">Industry average: 4-8% monthly for daycare</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-lg">
+                <h4 class="font-semibold text-brand-navy mb-2">About Seasonal Patterns</h4>
+                <p class="text-sm text-gray-600">
+                  UK pet care businesses typically see 40-60% variation between quiet and peak months. Summer holidays (July-August) and Christmas (December) are peak periods, while January-February are typically quieter. Adjust these patterns based on your actual experience.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 5: Results Dashboard -->
+          <div id="step-results" class="calculator-step hidden">
+            <div class="text-center mb-8">
+              <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Your Pet Business Financial Dashboard</h2>
+              <p class="text-lg text-gray-600">Comprehensive analysis of your pet care business's financial picture</p>
+            </div>
+
+            <div id="results-content">
+              <!-- Results will be dynamically generated by JavaScript -->
+              <div class="text-center py-12">
+                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-red mx-auto mb-4"></div>
+                <p class="text-gray-600">Calculating your results...</p>
+              </div>
+            </div>
+
+            <div class="mt-8 text-center no-print">
+              <button onclick="window.print()" class="btn-secondary">
+                <svg class="w-5 h-5 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                </svg>
+                Download PDF Report
+              </button>
+              <button id="btn-recalculate" class="btn-primary ml-4">
+                Adjust Inputs
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Navigation buttons -->
+        <div class="flex justify-between mt-8">
+          <button id="btn-back" class="btn-secondary" disabled>Back</button>
+          <button id="btn-next" class="btn-primary">Next</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom SEO Content -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-xl shadow-sm p-8 md:p-12">
+          <h2 class="text-3xl font-bold text-brand-navy mb-6">How to Increase Your Pet Care Business Revenue</h2>
+
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            Once you've modeled your current revenue and identified your profit margins, the next question is: how do you grow? Here are proven strategies from successful pet care businesses across the UK.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-brand-navy mt-8 mb-4">1. Maximize Occupancy Rates</h3>
+          <p class="text-gray-600 mb-4">
+            Most pet care businesses have untapped capacity. If your daycare runs at 65% occupancy, increasing to 75% (industry target) could add 15% to your revenue without adding fixed costs. Tactics include:
+          </p>
+          <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
+            <li>Implementing online booking to reduce friction for clients</li>
+            <li>Offering multi-day package discounts to encourage regular bookings</li>
+            <li>Running targeted promotions during quiet periods (January-February)</li>
+            <li>Building a waitlist to fill last-minute cancellations</li>
+          </ul>
+
+          <h3 class="text-2xl font-semibold text-brand-navy mt-8 mb-4">2. Add Complementary Services</h3>
+          <p class="text-gray-600 mb-4">
+            Multi-service facilities typically generate 20-40% more revenue per client than single-service businesses. Natural combinations include:
+          </p>
+          <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
+            <li><strong>Grooming to boarding:</strong> Offer "spa package" grooming before pickup from boarding stays</li>
+            <li><strong>Training to daycare:</strong> Run group training classes for daycare regulars</li>
+            <li><strong>Walking to sitting:</strong> Expand pet sitting clients into regular walking services</li>
+            <li><strong>Cattery to boarding:</strong> Add cat boarding to dog-focused facilities</li>
+          </ul>
+          <p class="text-gray-600 mb-6">
+            Our specialized software makes it easy to manage multiple services from one platform. Explore solutions for <a href="/dog-boarding-software/" class="text-brand-red hover:underline">boarding</a>, <a href="/dog-daycare-software/" class="text-brand-red hover:underline">daycare</a>, and <a href="/pet-grooming-software/" class="text-brand-red hover:underline">grooming</a>.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-brand-navy mt-8 mb-4">3. Optimize Add-On Revenue</h3>
+          <p class="text-gray-600 mb-4">
+            Well-managed facilities generate 15-20% of revenue from add-ons. High-uptake options include:
+          </p>
+          <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
+            <li><strong>Enrichment activities:</strong> Extra play sessions, puzzle toys, swimming (£5-£10 per day, 20-40% uptake)</li>
+            <li><strong>Premium upgrades:</strong> Larger kennels, private outdoor space, webcam access (£8-£15/night, 10-20% uptake)</li>
+            <li><strong>Extra walks:</strong> Additional walks during boarding stays (£8-£12 per walk, 30-50% uptake)</li>
+            <li><strong>Report cards:</strong> Photo updates and activity reports (£2-£5 per day, 40-60% uptake)</li>
+            <li><strong>Grooming add-ons:</strong> Teeth cleaning, nail trimming, de-shedding treatments</li>
+          </ul>
+
+          <h3 class="text-2xl font-semibold text-brand-navy mt-8 mb-4">4. Implement Package Pricing</h3>
+          <p class="text-gray-600 mb-4">
+            Package pricing creates predictable revenue while incentivizing commitment. Typical packages include:
+          </p>
+          <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
+            <li><strong>Daycare packages:</strong> 5-day or 10-day bundles with 5-15% discount</li>
+            <li><strong>Monthly memberships:</strong> Unlimited daycare for a fixed monthly fee (works well at 40-60% capacity)</li>
+            <li><strong>Grooming subscriptions:</strong> Monthly grooming memberships (especially effective for frequent breeds)</li>
+            <li><strong>Walking packages:</strong> Pre-paid walk bundles (10-20 walks) with volume discounts</li>
+          </ul>
+
+          <h3 class="text-2xl font-semibold text-brand-navy mt-8 mb-4">5. Seasonal Pricing Strategies</h3>
+          <p class="text-gray-600 mb-4">
+            Dynamic pricing helps balance demand and maximize revenue during peak periods:
+          </p>
+          <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
+            <li>Peak holiday pricing (Christmas, Easter, summer) can add 15-30% to rates when demand exceeds capacity</li>
+            <li>Off-peak promotions in January-February to maintain occupancy</li>
+            <li>Advance booking discounts to secure revenue during shoulder seasons</li>
+            <li>Last-minute discounts (48 hours before) to fill unexpected gaps</li>
+          </ul>
+
+          <h3 class="text-2xl font-semibold text-brand-navy mt-8 mb-4">6. Reduce No-Shows and Cancellations</h3>
+          <p class="text-gray-600 mb-6">
+            No-shows cost the average pet care business 5-10% of potential revenue. Mitigation strategies include:
+          </p>
+          <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
+            <li>Automated SMS/email reminders 24-48 hours before bookings</li>
+            <li>Cancellation policies with deposits or fees for late cancellations</li>
+            <li>Waitlist management to quickly fill cancelled slots</li>
+            <li>Package deals that incentivize commitment</li>
+          </ul>
+          <p class="text-gray-600 mb-6">
+            Software with automated reminders can reduce no-shows by 40-60%. Explore our <a href="/pet-sitting-software/" class="text-brand-red hover:underline">pet sitting</a> and <a href="/cattery-software/" class="text-brand-red hover:underline">cattery</a> management solutions.
+          </p>
+
+          <div class="bg-brand-red-light border-l-4 border-brand-red p-6 rounded-lg mt-8">
+            <h4 class="font-semibold text-brand-navy mb-2">Calculate Your Growth Potential</h4>
+            <p class="text-gray-700">
+              Use the calculator above to model the revenue impact of these strategies. Adjust your occupancy rates, add new services, and see how add-ons and packages affect your bottom line. Even small improvements compound significantly over a year.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-12 bg-white rounded-xl shadow-sm p-8 md:p-12">
+          <h2 class="text-3xl font-bold text-brand-navy mb-8">Frequently Asked Questions</h2>
+          <div class="space-y-4">
+            <details class="bg-gray-50 rounded-lg p-6 group">
+              <summary class="font-semibold text-lg cursor-pointer text-brand-navy flex justify-between items-center">
+                <span>How much does the average dog daycare make per year?</span>
+                <svg class="w-5 h-5 text-brand-red transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <p class="mt-4 text-gray-600 leading-relaxed">
+                An established dog daycare with 20-30 dog capacity typically generates £100,000-£200,000 in annual revenue in the UK, with profit margins of 15-30%. Revenue depends on capacity, occupancy rates (typically 60-75%), and pricing (£25-£45 per day). Location, service quality, and add-on revenue significantly impact the final figures. Urban facilities with higher pricing can exceed £200,000, while rural facilities may operate at the lower end of this range.
+              </p>
+            </details>
+
+            <details class="bg-gray-50 rounded-lg p-6 group">
+              <summary class="font-semibold text-lg cursor-pointer text-brand-navy flex justify-between items-center">
+                <span>What is a good profit margin for a pet boarding business?</span>
+                <svg class="w-5 h-5 text-brand-red transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <p class="mt-4 text-gray-600 leading-relaxed">
+                Healthy pet boarding businesses achieve 20-35% profit margins. Boarding typically has higher margins than daycare due to lower staffing requirements overnight. Revenue per kennel run averages £4,000-£8,000 annually at 50-65% occupancy. Margins can be improved by adding high-margin services like grooming, premium upgrades, and retail sales. Well-run facilities with occupancy above 65% often achieve margins at the higher end of this range.
+              </p>
+            </details>
+
+            <details class="bg-gray-50 rounded-lg p-6 group">
+              <summary class="font-semibold text-lg cursor-pointer text-brand-navy flex justify-between items-center">
+                <span>How many dogs does a daycare need to be profitable?</span>
+                <svg class="w-5 h-5 text-brand-red transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <p class="mt-4 text-gray-600 leading-relaxed">
+                Break-even typically occurs at 10-15 dogs per day depending on your cost structure. With proper pricing (£25-£35/day) and 60%+ occupancy, most daycares become profitable at 12-15 dogs daily capacity. Fixed costs (rent, utilities, base staffing) mean that adding dogs beyond break-even significantly improves margins. A facility with 20-dog capacity running at 75% occupancy (15 dogs/day) will be considerably more profitable than one at 50% occupancy, even with the same infrastructure costs.
+              </p>
+            </details>
+
+            <details class="bg-gray-50 rounded-lg p-6 group">
+              <summary class="font-semibold text-lg cursor-pointer text-brand-navy flex justify-between items-center">
+                <span>Is pet grooming a profitable business?</span>
+                <svg class="w-5 h-5 text-brand-red transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <p class="mt-4 text-gray-600 leading-relaxed">
+                Pet grooming typically has higher profit margins (25-40%) than boarding or daycare. A single grooming station can generate £25,000-£50,000 annually with 3-5 grooms per day at £30-£50 per groom. Mobile groomers often achieve even higher margins due to lower overhead. Profitability improves significantly when grooming is paired with other services like boarding or daycare, as the shared infrastructure and client base create operational efficiencies. Add-on services like teeth cleaning, nail trimming, and retail product sales can add another 15-20% to revenue.
+              </p>
+            </details>
+
+            <details class="bg-gray-50 rounded-lg p-6 group">
+              <summary class="font-semibold text-lg cursor-pointer text-brand-navy flex justify-between items-center">
+                <span>How much does it cost to start a boarding kennel?</span>
+                <svg class="w-5 h-5 text-brand-red transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <p class="mt-4 text-gray-600 leading-relaxed">
+                Startup costs for a boarding kennel range from £20,000-£100,000+ depending on whether you're converting existing space or building from scratch. This includes kennel runs (£500-£1,500 per run), licensing and planning permissions (£2,000-£10,000), insurance, initial marketing, and 3-6 months of working capital. Converting existing agricultural buildings is typically cheapest, while purpose-built facilities with indoor/outdoor runs and climate control cost significantly more. Factor in ongoing costs including staff, utilities, and marketing when planning your budget.
+              </p>
+            </details>
+
+            <details class="bg-gray-50 rounded-lg p-6 group">
+              <summary class="font-semibold text-lg cursor-pointer text-brand-navy flex justify-between items-center">
+                <span>What occupancy rate do kennels need to break even?</span>
+                <svg class="w-5 h-5 text-brand-red transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <p class="mt-4 text-gray-600 leading-relaxed">
+                Break-even occupancy varies by cost structure but typically ranges from 35-50% for boarding facilities. Well-managed kennels average 50-65% annual occupancy, with peak periods (summer holidays, Christmas) reaching 85-100%. The key is surviving the quiet periods (January-February) when occupancy can drop to 30-40%. Facilities with multiple revenue streams (daycare, grooming, training) can sustain lower boarding occupancy as other services fill capacity. Building sufficient cash reserves during peak seasons to cover quiet months is essential for long-term viability.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Styles -->
+  <style>
+    /* Toggle switch for service enable/disable */
+    .toggle-switch {
+      width: 56px;
+      height: 28px;
+      background: #e5e7eb;
+      border-radius: 14px;
+      position: relative;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+    .toggle-switch::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: white;
+      top: 2px;
+      left: 2px;
+      transition: transform 0.3s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    input:checked + .toggle-switch {
+      background: #E94560;
+    }
+
+    input:checked + .toggle-switch::after {
+      transform: translateX(28px);
+    }
+
+    /* Calculator step visibility */
+    .calculator-step {
+      display: block;
+    }
+
+    .calculator-step.hidden {
+      display: none;
+    }
+
+    /* Range sliders for seasonal adjustments */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #e5e7eb;
+      outline: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #E94560;
+      cursor: pointer;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #E94560;
+      cursor: pointer;
+      border: none;
+    }
+
+    /* Print styles */
+    @media print {
+      nav, footer, .no-print {
+        display: none !important;
+      }
+
+      .calculator-step:not(#step-5) {
+        display: none !important;
+      }
+
+      #step-5 {
+        display: block !important;
+      }
+
+      .section {
+        padding: 20px 0;
+      }
+
+      body {
+        padding-top: 0 !important;
+      }
+    }
+
+    /* Chart containers */
+    .chart-container {
+      position: relative;
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    /* Insight cards */
+    .insight-card {
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border-left: 4px solid;
+      margin-bottom: 1rem;
+    }
+
+    .insight-card.positive {
+      background: #f0fdf4;
+      border-color: #22c55e;
+    }
+
+    .insight-card.warning {
+      background: #fef3c7;
+      border-color: #f59e0b;
+    }
+
+    .insight-card.opportunity {
+      background: #eff6ff;
+      border-color: #3b82f6;
+    }
+
+    .insight-card.info {
+      background: #f5f5f5;
+      border-color: #6b7280;
+    }
+
+    /* Custom input styles */
+    .input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .input:focus {
+      outline: none;
+      border-color: #E94560;
+      box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
+    }
+
+    /* Responsive grid for service cards */
+    @media (max-width: 768px) {
+      .grid-cols-2 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+    }
+
+    /* Animation for progress bar */
+    #progress-bar {
+      transition: width 0.3s ease-in-out;
+    }
+  </style>
+
+  <!-- JavaScript -->
+  <script>
+    // @ts-nocheck
+    // ===========================
+    // STATE MANAGEMENT
+    // ===========================
+    let currentStep = 1;
+    let totalSteps = 5;
+    let currencySymbol = '£';
+    let selectedServices: string[] = [];
+    let serviceStepNumbers: { [key: string]: number } = {};
+
+    const businessData = {
+      profile: {},
+      services: {},
+      costs: {},
+      seasonal: [60, 65, 75, 85, 80, 95, 100, 100, 80, 70, 65, 90], // Default UK seasonality
+      growth: {}
+    };
+
+    // ===========================
+    // DOM ELEMENTS
+    // ===========================
+    const progressBar = document.getElementById('progress-bar') as HTMLElement;
+    const stepLabel = document.getElementById('step-label') as HTMLElement;
+    const btnBack = document.getElementById('btn-back') as HTMLButtonElement;
+    const btnNext = document.getElementById('btn-next') as HTMLButtonElement;
+    const currencySelect = document.getElementById('currency') as HTMLSelectElement;
+
+    // ===========================
+    // UTILITY FUNCTIONS
+    // ===========================
+    function formatCurrency(value: number): string {
+      return `${currencySymbol}${Math.round(value).toLocaleString()}`;
+    }
+
+    function parseFloatSafe(value: string | number | null | undefined, defaultValue: number = 0): number {
+      if (value === null || value === undefined || value === '') return defaultValue;
+      const parsed = parseFloat(String(value));
+      return isNaN(parsed) ? defaultValue : parsed;
+    }
+
+    // ===========================
+    // CURRENCY HANDLING
+    // ===========================
+    currencySelect?.addEventListener('change', () => {
+      currencySymbol = currencySelect.value;
+      updateAllCurrencyDisplays();
+    });
+
+    function updateAllCurrencyDisplays() {
+      // Update any displayed currency values
+      const totalCostsPreview = document.getElementById('total-costs-preview');
+      if (totalCostsPreview) {
+        const total = calculateTotalCosts();
+        totalCostsPreview.textContent = formatCurrency(total);
+      }
+    }
+
+    // ===========================
+    // STEP NAVIGATION
+    // ===========================
+    function showStep(step: number) {
+      // Hide all steps
+      const allSteps = document.querySelectorAll('.calculator-step');
+      allSteps.forEach(stepEl => {
+        stepEl.classList.add('hidden');
+      });
+
+      // Show current step
+      const currentStepEl = document.getElementById(`step-${step}`);
+      if (currentStepEl) {
+        currentStepEl.classList.remove('hidden');
+      }
+
+      // Update progress bar
+      const progress = (step / totalSteps) * 100;
+      if (progressBar) {
+        progressBar.style.width = `${progress}%`;
+      }
+
+      // Update step label
+      if (stepLabel) {
+        const stepNames = ['Business Profile', 'Service Configuration', 'Operating Costs', 'Seasonal Patterns & Growth', 'Results Dashboard'];
+        const stepName = step <= stepNames.length ? stepNames[step - 1] : 'Results';
+        stepLabel.textContent = `Step ${step} of ${totalSteps}: ${stepName}`;
+      }
+
+      // Update button states
+      if (btnBack) {
+        btnBack.disabled = step === 1;
+      }
+
+      if (btnNext) {
+        if (step === totalSteps) {
+          btnNext.style.display = 'none';
+        } else {
+          btnNext.style.display = 'block';
+          btnNext.textContent = step === totalSteps - 1 ? 'Calculate Results' : 'Next';
+        }
+      }
+
+      // Scroll to top of calculator
+      const calculatorApp = document.getElementById('calculator-app');
+      if (calculatorApp) {
+        calculatorApp.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    btnBack?.addEventListener('click', () => {
+      if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    });
+
+    btnNext?.addEventListener('click', () => {
+      if (validateCurrentStep()) {
+        if (currentStep < totalSteps) {
+          currentStep++;
+
+          // If we just moved to the results step, calculate results
+          if (currentStep === totalSteps) {
+            calculateAndDisplayResults();
+          }
+
+          showStep(currentStep);
+        }
+      }
+    });
+
+    function validateCurrentStep(): boolean {
+      if (currentStep === 1) {
+        // Validate that at least one service is selected
+        const checkboxes = document.querySelectorAll('input[name="business-type"]:checked');
+        if (checkboxes.length === 0) {
+          alert('Please select at least one service to continue.');
+          return false;
+        }
+
+        // Generate service steps when moving from step 1
+        generateServiceSteps();
+      }
+      return true;
+    }
+
+    // ===========================
+    // DYNAMIC SERVICE STEP GENERATION
+    // ===========================
+    function generateServiceSteps() {
+      const checkboxes = document.querySelectorAll('input[name="business-type"]:checked') as NodeListOf<HTMLInputElement>;
+      selectedServices = Array.from(checkboxes).map(cb => cb.value);
+
+      const container = document.getElementById('step-2-container');
+      if (!container) return;
+
+      container.innerHTML = '';
+      container.classList.remove('hidden');
+
+      selectedServices.forEach((service, index) => {
+        const stepNumber = 2 + index;
+        serviceStepNumbers[service] = stepNumber;
+
+        const stepDiv = document.createElement('div');
+        stepDiv.id = `step-${stepNumber}`;
+        stepDiv.className = 'calculator-step hidden';
+        stepDiv.innerHTML = createServiceStepHTML(service, index + 1, selectedServices.length);
+
+        container.appendChild(stepDiv);
+      });
+
+      // Recalculate total steps
+      // Profile(1) + Services(N) + Costs(1) + Seasonal(1) + Results(1) = 4 + N
+      totalSteps = 4 + selectedServices.length;
+
+      // Update IDs of fixed steps to match new positions
+      const costsStep = document.getElementById('step-costs');
+      const seasonalStep = document.getElementById('step-seasonal');
+      const resultsStep = document.getElementById('step-results');
+
+      if (costsStep) costsStep.id = `step-${2 + selectedServices.length}`;
+      if (seasonalStep) seasonalStep.id = `step-${3 + selectedServices.length}`;
+      if (resultsStep) resultsStep.id = `step-${4 + selectedServices.length}`;
+
+      // Update step label
+      if (stepLabel) {
+        stepLabel.textContent = `Step 1 of ${totalSteps}: Business Profile`;
+      }
+    }
+
+    function createServiceStepHTML(service: string, serviceIndex: number, totalServices: number): string {
+      const serviceConfig = getServiceConfig(service);
+
+      let html = `
+        <h2 class="text-3xl font-bold text-brand-navy mb-6">${serviceConfig.title}</h2>
+        <p class="text-gray-600 mb-8">Configure your ${serviceConfig.name} service capacity, pricing, and add-ons.</p>
+        <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-lg mb-6">
+          <p class="text-sm text-gray-700">Configuring service ${serviceIndex} of ${totalServices}</p>
+        </div>
+        <div class="space-y-6">
+      `;
+
+      html += serviceConfig.html;
+
+      html += `</div>`;
+
+      return html;
+    }
+
+    // ===========================
+    // SERVICE CONFIGURATIONS
+    // ===========================
+    function getServiceConfig(service: string) {
+      const configs: { [key: string]: any } = {
+        daycare: {
+          title: 'Dog Daycare Configuration',
+          name: 'daycare',
+          html: `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="daycare-capacity" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Maximum Dogs Per Day
+                </label>
+                <input type="number" id="daycare-capacity" class="input" value="20" min="1" max="100">
+              </div>
+              <div>
+                <label for="daycare-rate" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Average Daily Rate
+                </label>
+                <input type="number" id="daycare-rate" class="input" value="28" min="5" max="100">
+              </div>
+              <div>
+                <label for="daycare-occupancy" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Average Occupancy Rate (%)
+                </label>
+                <input type="number" id="daycare-occupancy" class="input" value="65" min="10" max="100">
+                <p class="text-sm text-gray-500 mt-1">Industry average: 60-75%</p>
+              </div>
+              <div>
+                <label for="daycare-package-discount" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Multi-Day Package Discount (%)
+                </label>
+                <input type="number" id="daycare-package-discount" class="input" value="10" min="0" max="30">
+              </div>
+              <div>
+                <label for="daycare-package-ratio" class="block text-sm font-semibold text-brand-navy mb-2">
+                  % of Clients on Packages
+                </label>
+                <input type="number" id="daycare-package-ratio" class="input" value="40" min="0" max="100">
+              </div>
+            </div>
+
+            <h3 class="text-xl font-semibold text-brand-navy mt-8 mb-4">Add-On Services</h3>
+            <div class="space-y-4">
+              <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                <input type="checkbox" id="daycare-addon-enrichment" class="w-5 h-5 text-brand-red">
+                <div class="flex-1">
+                  <div class="font-medium text-brand-navy">Enrichment Activities (£5/day, 30% uptake)</div>
+                  <div class="text-sm text-gray-500">Extra play sessions, puzzle toys</div>
+                </div>
+              </label>
+              <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                <input type="checkbox" id="daycare-addon-reports" class="w-5 h-5 text-brand-red">
+                <div class="flex-1">
+                  <div class="font-medium text-brand-navy">Report Cards (£3/day, 50% uptake)</div>
+                  <div class="text-sm text-gray-500">Photo updates and activity summaries</div>
+                </div>
+              </label>
+              <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                <input type="checkbox" id="daycare-addon-pickup" class="w-5 h-5 text-brand-red">
+                <div class="flex-1">
+                  <div class="font-medium text-brand-navy">Pick-up/Drop-off Service</div>
+                  <div class="text-sm text-gray-500">Collection and delivery service</div>
+                </div>
+              </label>
+              <div id="daycare-pickup-inputs" class="ml-12 space-y-3 hidden">
+                <div>
+                  <label for="daycare-pickup-fee" class="block text-sm font-medium text-brand-navy mb-2">Fee Per Trip</label>
+                  <input type="number" id="daycare-pickup-fee" class="input" value="10" min="0">
+                </div>
+                <div>
+                  <label for="daycare-pickup-trips" class="block text-sm font-medium text-brand-navy mb-2">Trips Per Week</label>
+                  <input type="number" id="daycare-pickup-trips" class="input" value="5" min="0">
+                </div>
+              </div>
+            </div>
+          `
+        },
+        boarding: {
+          title: 'Dog Boarding Configuration',
+          name: 'boarding',
+          html: `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="boarding-runs" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Number of Kennel Runs
+                </label>
+                <input type="number" id="boarding-runs" class="input" value="15" min="1" max="100">
+              </div>
+              <div>
+                <label for="boarding-rate" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Nightly Rate Per Dog
+                </label>
+                <input type="number" id="boarding-rate" class="input" value="30" min="10" max="100">
+              </div>
+              <div>
+                <label for="boarding-occupancy" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Average Occupancy Rate (%)
+                </label>
+                <input type="number" id="boarding-occupancy" class="input" value="55" min="10" max="100">
+                <p class="text-sm text-gray-500 mt-1">Industry average: 50-65%</p>
+              </div>
+              <div>
+                <label for="boarding-stay" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Average Length of Stay (nights)
+                </label>
+                <input type="number" id="boarding-stay" class="input" value="3" min="1" max="14">
+              </div>
+              <div>
+                <label for="boarding-sibling-discount" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Sibling Discount (%)
+                </label>
+                <input type="number" id="boarding-sibling-discount" class="input" value="15" min="0" max="50">
+                <p class="text-sm text-gray-500 mt-1">Discount for 2nd+ dog from same family</p>
+              </div>
+              <div>
+                <label for="boarding-multi-dog" class="block text-sm font-semibold text-brand-navy mb-2">
+                  % Multi-Dog Bookings
+                </label>
+                <input type="number" id="boarding-multi-dog" class="input" value="25" min="0" max="100">
+              </div>
+            </div>
+
+            <h3 class="text-xl font-semibold text-brand-navy mt-8 mb-4">Add-On Services</h3>
+            <div class="space-y-4">
+              <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                <input type="checkbox" id="boarding-addon-walks" class="w-5 h-5 text-brand-red">
+                <div class="flex-1">
+                  <div class="font-medium text-brand-navy">Extra Walks (£8/walk, 40% uptake)</div>
+                  <div class="text-sm text-gray-500">Additional walks beyond standard</div>
+                </div>
+              </label>
+              <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                <input type="checkbox" id="boarding-addon-premium" class="w-5 h-5 text-brand-red">
+                <div class="flex-1">
+                  <div class="font-medium text-brand-navy">Premium Room (£10/night, 15% uptake)</div>
+                  <div class="text-sm text-gray-500">Larger space, private outdoor access</div>
+                </div>
+              </label>
+              <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                <input type="checkbox" id="boarding-addon-grooming" class="w-5 h-5 text-brand-red">
+                <div class="flex-1">
+                  <div class="font-medium text-brand-navy">Grooming Before Pickup (£25, 20% uptake)</div>
+                  <div class="text-sm text-gray-500">Bath and tidy before going home</div>
+                </div>
+              </label>
+            </div>
+          `
+        },
+        grooming: {
+          title: 'Pet Grooming Configuration',
+          name: 'grooming',
+          html: `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="grooming-stations" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Number of Grooming Stations
+                </label>
+                <input type="number" id="grooming-stations" class="input" value="2" min="1" max="20">
+              </div>
+              <div>
+                <label for="grooming-per-station" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Grooms Per Station Per Day
+                </label>
+                <input type="number" id="grooming-per-station" class="input" value="4" min="1" max="8">
+              </div>
+              <div>
+                <label for="grooming-price" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Average Groom Price
+                </label>
+                <input type="number" id="grooming-price" class="input" value="38" min="15" max="150">
+              </div>
+              <div>
+                <label for="grooming-fill-rate" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Appointment Fill Rate (%)
+                </label>
+                <input type="number" id="grooming-fill-rate" class="input" value="70" min="20" max="100">
+                <p class="text-sm text-gray-500 mt-1">% of available slots filled</p>
+              </div>
+              <div>
+                <label for="grooming-retail" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Monthly Retail Sales
+                </label>
+                <input type="number" id="grooming-retail" class="input" value="150" min="0">
+                <p class="text-sm text-gray-500 mt-1">Shampoos, brushes, treats, etc.</p>
+              </div>
+            </div>
+
+            <h3 class="text-xl font-semibold text-brand-navy mt-8 mb-4">Add-On Services</h3>
+            <div class="space-y-4">
+              <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                <input type="checkbox" id="grooming-addon-nails" class="w-5 h-5 text-brand-red">
+                <div class="flex-1">
+                  <div class="font-medium text-brand-navy">Nail Trimming Walk-ins (£10 each)</div>
+                  <div class="text-sm text-gray-500">Quick nail trimming service</div>
+                </div>
+              </label>
+              <div id="grooming-nails-inputs" class="ml-12 space-y-3 hidden">
+                <div>
+                  <label for="grooming-nails-per-week" class="block text-sm font-medium text-brand-navy mb-2">Walk-ins Per Week</label>
+                  <input type="number" id="grooming-nails-per-week" class="input" value="8" min="0">
+                </div>
+              </div>
+              <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                <input type="checkbox" id="grooming-addon-teeth" class="w-5 h-5 text-brand-red">
+                <div class="flex-1">
+                  <div class="font-medium text-brand-navy">Teeth Cleaning (£15, 15% uptake)</div>
+                  <div class="text-sm text-gray-500">Dental hygiene add-on</div>
+                </div>
+              </label>
+              <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                <input type="checkbox" id="grooming-addon-deshed" class="w-5 h-5 text-brand-red">
+                <div class="flex-1">
+                  <div class="font-medium text-brand-navy">De-shedding Treatment (£20, 10% uptake)</div>
+                  <div class="text-sm text-gray-500">Intensive shedding treatment</div>
+                </div>
+              </label>
+            </div>
+          `
+        },
+        cattery: {
+          title: 'Cattery Configuration',
+          name: 'cattery',
+          html: `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="cattery-pens" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Number of Cat Pens
+                </label>
+                <input type="number" id="cattery-pens" class="input" value="12" min="1" max="50">
+              </div>
+              <div>
+                <label for="cattery-rate" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Nightly Rate Per Cat
+                </label>
+                <input type="number" id="cattery-rate" class="input" value="15" min="5" max="50">
+              </div>
+              <div>
+                <label for="cattery-occupancy" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Average Occupancy Rate (%)
+                </label>
+                <input type="number" id="cattery-occupancy" class="input" value="50" min="10" max="100">
+                <p class="text-sm text-gray-500 mt-1">Industry average: 45-60%</p>
+              </div>
+              <div>
+                <label for="cattery-stay" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Average Length of Stay (nights)
+                </label>
+                <input type="number" id="cattery-stay" class="input" value="5" min="1" max="21">
+              </div>
+            </div>
+
+            <h3 class="text-xl font-semibold text-brand-navy mt-8 mb-4">Add-On Services</h3>
+            <div class="space-y-4">
+              <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                <input type="checkbox" id="cattery-addon-premium" class="w-5 h-5 text-brand-red">
+                <div class="flex-1">
+                  <div class="font-medium text-brand-navy">Premium Pen (£5/night, 20% uptake)</div>
+                  <div class="text-sm text-gray-500">Larger space with outdoor access</div>
+                </div>
+              </label>
+              <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                <input type="checkbox" id="cattery-addon-playtime" class="w-5 h-5 text-brand-red">
+                <div class="flex-1">
+                  <div class="font-medium text-brand-navy">Extra Playtime (£3/day, 25% uptake)</div>
+                  <div class="text-sm text-gray-500">Additional supervised play sessions</div>
+                </div>
+              </label>
+            </div>
+          `
+        },
+        walking: {
+          title: 'Dog Walking Configuration',
+          name: 'walking',
+          html: `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="walking-clients" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Number of Active Walking Clients
+                </label>
+                <input type="number" id="walking-clients" class="input" value="30" min="1" max="200">
+              </div>
+              <div>
+                <label for="walking-rate" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Average Walk Price
+                </label>
+                <input type="number" id="walking-rate" class="input" value="15" min="5" max="50">
+              </div>
+              <div>
+                <label for="walking-per-week" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Average Walks Per Client Per Week
+                </label>
+                <input type="number" id="walking-per-week" class="input" value="3" min="1" max="7">
+              </div>
+              <div>
+                <label for="walking-group-size" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Average Group Walk Size
+                </label>
+                <input type="number" id="walking-group-size" class="input" value="4" min="1" max="10">
+                <p class="text-sm text-gray-500 mt-1">Dogs per walk</p>
+              </div>
+            </div>
+          `
+        },
+        sitting: {
+          title: 'Pet Sitting Configuration',
+          name: 'sitting',
+          html: `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="sitting-visits-per-month" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Visits Per Month
+                </label>
+                <input type="number" id="sitting-visits-per-month" class="input" value="60" min="1" max="500">
+              </div>
+              <div>
+                <label for="sitting-rate" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Average Visit Rate
+                </label>
+                <input type="number" id="sitting-rate" class="input" value="18" min="10" max="50">
+              </div>
+              <div>
+                <label for="sitting-overnight-rate" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Overnight Rate
+                </label>
+                <input type="number" id="sitting-overnight-rate" class="input" value="40" min="20" max="100">
+              </div>
+              <div>
+                <label for="sitting-overnights" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Overnight Bookings Per Month
+                </label>
+                <input type="number" id="sitting-overnights" class="input" value="10" min="0" max="100">
+              </div>
+            </div>
+          `
+        },
+        training: {
+          title: 'Training Classes Configuration',
+          name: 'training',
+          html: `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="training-classes-per-week" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Classes Per Week
+                </label>
+                <input type="number" id="training-classes-per-week" class="input" value="6" min="1" max="30">
+              </div>
+              <div>
+                <label for="training-dogs-per-class" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Average Dogs Per Class
+                </label>
+                <input type="number" id="training-dogs-per-class" class="input" value="8" min="1" max="20">
+              </div>
+              <div>
+                <label for="training-price" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Price Per Class (per dog)
+                </label>
+                <input type="number" id="training-price" class="input" value="15" min="5" max="50">
+              </div>
+              <div>
+                <label for="training-fill-rate" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Class Fill Rate (%)
+                </label>
+                <input type="number" id="training-fill-rate" class="input" value="75" min="20" max="100">
+              </div>
+              <div>
+                <label for="training-private-rate" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Private Session Rate
+                </label>
+                <input type="number" id="training-private-rate" class="input" value="45" min="20" max="150">
+              </div>
+              <div>
+                <label for="training-private-per-month" class="block text-sm font-semibold text-brand-navy mb-2">
+                  Private Sessions Per Month
+                </label>
+                <input type="number" id="training-private-per-month" class="input" value="8" min="0" max="100">
+              </div>
+            </div>
+          `
+        }
+      };
+
+      return configs[service] || { title: 'Unknown Service', name: service, html: '' };
+    }
+
+    // Event delegation for addon toggles
+    document.addEventListener('change', (e) => {
+      const target = e.target as HTMLInputElement;
+
+      // Daycare pickup service toggle
+      if (target.id === 'daycare-addon-pickup') {
+        const inputs = document.getElementById('daycare-pickup-inputs');
+        if (inputs) {
+          inputs.classList.toggle('hidden', !target.checked);
+        }
+      }
+
+      // Grooming nails toggle
+      if (target.id === 'grooming-addon-nails') {
+        const inputs = document.getElementById('grooming-nails-inputs');
+        if (inputs) {
+          inputs.classList.toggle('hidden', !target.checked);
+        }
+      }
+
+      // Update seasonal values
+      if (target.type === 'range' && target.dataset.month !== undefined) {
+        const monthIndex = parseInt(target.dataset.month);
+        const value = parseInt(target.value);
+        businessData.seasonal[monthIndex] = value;
+
+        // Update display value
+        const parent = target.parentElement;
+        const valueDisplay = parent?.querySelector('.seasonal-value');
+        if (valueDisplay) {
+          valueDisplay.textContent = value.toString();
+        }
+      }
+    });
+
+    // ===========================
+    // CALCULATION FUNCTIONS
+    // ===========================
+    function calculateTotalCosts(): number {
+      // Staffing
+      const ftCount = parseFloatSafe((document.getElementById('ft-staff-count') as HTMLInputElement)?.value);
+      const ftSalary = parseFloatSafe((document.getElementById('ft-staff-salary') as HTMLInputElement)?.value);
+      const ptCount = parseFloatSafe((document.getElementById('pt-staff-count') as HTMLInputElement)?.value);
+      const ptHours = parseFloatSafe((document.getElementById('pt-staff-hours') as HTMLInputElement)?.value);
+      const ptRate = parseFloatSafe((document.getElementById('pt-staff-rate') as HTMLInputElement)?.value);
+
+      const ftCostMonthly = (ftCount * ftSalary) / 12;
+      const ptCostMonthly = ptCount * ptHours * ptRate * 4.33; // weeks per month
+
+      // Facility
+      const rent = parseFloatSafe((document.getElementById('rent') as HTMLInputElement)?.value);
+      const utilities = parseFloatSafe((document.getElementById('utilities') as HTMLInputElement)?.value);
+      const insurance = parseFloatSafe((document.getElementById('insurance') as HTMLInputElement)?.value);
+      const rates = parseFloatSafe((document.getElementById('rates') as HTMLInputElement)?.value);
+
+      // Operational
+      const cleaning = parseFloatSafe((document.getElementById('cleaning-supplies') as HTMLInputElement)?.value);
+      const food = parseFloatSafe((document.getElementById('food-treats') as HTMLInputElement)?.value);
+      const equipment = parseFloatSafe((document.getElementById('equipment') as HTMLInputElement)?.value);
+      const vet = parseFloatSafe((document.getElementById('vet-fund') as HTMLInputElement)?.value);
+
+      // Business
+      const marketing = parseFloatSafe((document.getElementById('marketing') as HTMLInputElement)?.value);
+      const software = parseFloatSafe((document.getElementById('software') as HTMLInputElement)?.value);
+      const accounting = parseFloatSafe((document.getElementById('accounting') as HTMLInputElement)?.value);
+      const vehicle = parseFloatSafe((document.getElementById('vehicle') as HTMLInputElement)?.value);
+      const other = parseFloatSafe((document.getElementById('other-costs') as HTMLInputElement)?.value);
+
+      return ftCostMonthly + ptCostMonthly + rent + utilities + insurance + rates +
+             cleaning + food + equipment + vet + marketing + software + accounting + vehicle + other;
+    }
+
+    function calculateDaycareRevenue() {
+      const capacity = parseFloatSafe(document.getElementById('daycare-capacity')?.value, 20);
+      const dailyRate = parseFloatSafe(document.getElementById('daycare-rate')?.value, 28);
+      const occupancy = parseFloatSafe(document.getElementById('daycare-occupancy')?.value, 65) / 100;
+      const operatingDays = parseFloatSafe(document.getElementById('operating-days')?.value, 6);
+      const packageDiscount = parseFloatSafe(document.getElementById('daycare-package-discount')?.value, 10) / 100;
+      const packageRatio = parseFloatSafe(document.getElementById('daycare-package-ratio')?.value, 40) / 100;
+
+      const daysPerMonth = operatingDays * 4.33;
+      const dogsPerDay = capacity * occupancy;
+      const totalDogDays = dogsPerDay * daysPerMonth;
+
+      const packageDogDays = totalDogDays * packageRatio;
+      const dropinDogDays = totalDogDays * (1 - packageRatio);
+      const packageRate = dailyRate * (1 - packageDiscount);
+
+      const baseRevenue = (packageDogDays * packageRate) + (dropinDogDays * dailyRate);
+
+      let addOnRevenue = 0;
+      if ((document.getElementById('daycare-addon-enrichment') as HTMLInputElement)?.checked) {
+        addOnRevenue += totalDogDays * 0.30 * 5;
+      }
+      if ((document.getElementById('daycare-addon-reports') as HTMLInputElement)?.checked) {
+        addOnRevenue += totalDogDays * 0.50 * 3;
+      }
+      if ((document.getElementById('daycare-addon-pickup') as HTMLInputElement)?.checked) {
+        const pickupFee = parseFloatSafe(document.getElementById('daycare-pickup-fee')?.value, 10);
+        const tripsPerWeek = parseFloatSafe(document.getElementById('daycare-pickup-trips')?.value, 5);
+        addOnRevenue += pickupFee * tripsPerWeek * 4.33;
+      }
+
+      return {
+        base: baseRevenue,
+        addOns: addOnRevenue,
+        total: baseRevenue + addOnRevenue,
+        metrics: {
+          dogsPerDay: dogsPerDay,
+          daysPerMonth: daysPerMonth,
+          capacity: capacity
+        }
+      };
+    }
+
+    function calculateBoardingRevenue() {
+      const runs = parseFloatSafe(document.getElementById('boarding-runs')?.value, 15);
+      const nightlyRate = parseFloatSafe(document.getElementById('boarding-rate')?.value, 30);
+      const occupancy = parseFloatSafe(document.getElementById('boarding-occupancy')?.value, 55) / 100;
+      const avgStay = parseFloatSafe(document.getElementById('boarding-stay')?.value, 3);
+      const siblingDiscount = parseFloatSafe(document.getElementById('boarding-sibling-discount')?.value, 15) / 100;
+      const multiDogRatio = parseFloatSafe(document.getElementById('boarding-multi-dog')?.value, 25) / 100;
+
+      const runNightsPerMonth = runs * occupancy * 30;
+      const singleDogNights = runNightsPerMonth * (1 - multiDogRatio);
+      const multiDogNights = runNightsPerMonth * multiDogRatio;
+      const multiDogRate = nightlyRate + (nightlyRate * (1 - siblingDiscount));
+
+      const baseRevenue = (singleDogNights * nightlyRate) + (multiDogNights * multiDogRate);
+
+      let addOnRevenue = 0;
+      const totalBookings = runNightsPerMonth / avgStay;
+
+      if ((document.getElementById('boarding-addon-walks') as HTMLInputElement)?.checked) {
+        addOnRevenue += totalBookings * 0.40 * 8 * avgStay;
+      }
+      if ((document.getElementById('boarding-addon-premium') as HTMLInputElement)?.checked) {
+        addOnRevenue += runNightsPerMonth * 0.15 * 10;
+      }
+      if ((document.getElementById('boarding-addon-grooming') as HTMLInputElement)?.checked) {
+        addOnRevenue += totalBookings * 0.20 * 25;
+      }
+
+      return {
+        base: baseRevenue,
+        addOns: addOnRevenue,
+        total: baseRevenue + addOnRevenue,
+        metrics: {
+          runNights: runNightsPerMonth,
+          bookings: totalBookings,
+          capacity: runs
+        }
+      };
+    }
+
+    function calculateGroomingRevenue() {
+      const stations = parseFloatSafe(document.getElementById('grooming-stations')?.value, 2);
+      const groomsPerStationPerDay = parseFloatSafe(document.getElementById('grooming-per-station')?.value, 4);
+      const avgPrice = parseFloatSafe(document.getElementById('grooming-price')?.value, 38);
+      const fillRate = parseFloatSafe(document.getElementById('grooming-fill-rate')?.value, 70) / 100;
+      const operatingDays = parseFloatSafe(document.getElementById('operating-days')?.value, 6);
+      const retailSales = parseFloatSafe(document.getElementById('grooming-retail')?.value, 150);
+
+      const daysPerMonth = operatingDays * 4.33;
+      const totalGroomsPerMonth = stations * groomsPerStationPerDay * daysPerMonth * fillRate;
+      const baseRevenue = totalGroomsPerMonth * avgPrice;
+
+      let addOnRevenue = retailSales;
+
+      if ((document.getElementById('grooming-addon-nails') as HTMLInputElement)?.checked) {
+        const nailsPerWeek = parseFloatSafe(document.getElementById('grooming-nails-per-week')?.value, 8);
+        addOnRevenue += 10 * nailsPerWeek * 4.33;
+      }
+      if ((document.getElementById('grooming-addon-teeth') as HTMLInputElement)?.checked) {
+        addOnRevenue += totalGroomsPerMonth * 0.15 * 15;
+      }
+      if ((document.getElementById('grooming-addon-deshed') as HTMLInputElement)?.checked) {
+        addOnRevenue += totalGroomsPerMonth * 0.10 * 20;
+      }
+
+      return {
+        base: baseRevenue,
+        addOns: addOnRevenue,
+        total: baseRevenue + addOnRevenue,
+        metrics: {
+          groomsPerMonth: totalGroomsPerMonth,
+          stations: stations
+        }
+      };
+    }
+
+    function calculateCatteryRevenue() {
+      const pens = parseFloatSafe(document.getElementById('cattery-pens')?.value, 12);
+      const nightlyRate = parseFloatSafe(document.getElementById('cattery-rate')?.value, 15);
+      const occupancy = parseFloatSafe(document.getElementById('cattery-occupancy')?.value, 50) / 100;
+      const avgStay = parseFloatSafe(document.getElementById('cattery-stay')?.value, 5);
+
+      const penNightsPerMonth = pens * occupancy * 30;
+      const baseRevenue = penNightsPerMonth * nightlyRate;
+
+      let addOnRevenue = 0;
+      const totalBookings = penNightsPerMonth / avgStay;
+
+      if ((document.getElementById('cattery-addon-premium') as HTMLInputElement)?.checked) {
+        addOnRevenue += penNightsPerMonth * 0.20 * 5;
+      }
+      if ((document.getElementById('cattery-addon-playtime') as HTMLInputElement)?.checked) {
+        addOnRevenue += penNightsPerMonth * 0.25 * 3;
+      }
+
+      return {
+        base: baseRevenue,
+        addOns: addOnRevenue,
+        total: baseRevenue + addOnRevenue,
+        metrics: {
+          penNights: penNightsPerMonth,
+          capacity: pens
+        }
+      };
+    }
+
+    function calculateWalkingRevenue() {
+      const clients = parseFloatSafe(document.getElementById('walking-clients')?.value, 30);
+      const walkRate = parseFloatSafe(document.getElementById('walking-rate')?.value, 15);
+      const walksPerWeek = parseFloatSafe(document.getElementById('walking-per-week')?.value, 3);
+
+      const totalWalksPerMonth = clients * walksPerWeek * 4.33;
+      const baseRevenue = totalWalksPerMonth * walkRate;
+
+      return {
+        base: baseRevenue,
+        addOns: 0,
+        total: baseRevenue,
+        metrics: {
+          walksPerMonth: totalWalksPerMonth,
+          clients: clients
+        }
+      };
+    }
+
+    function calculateSittingRevenue() {
+      const visitsPerMonth = parseFloatSafe(document.getElementById('sitting-visits-per-month')?.value, 60);
+      const visitRate = parseFloatSafe(document.getElementById('sitting-rate')?.value, 18);
+      const overnightRate = parseFloatSafe(document.getElementById('sitting-overnight-rate')?.value, 40);
+      const overnights = parseFloatSafe(document.getElementById('sitting-overnights')?.value, 10);
+
+      const visitsRevenue = visitsPerMonth * visitRate;
+      const overnightsRevenue = overnights * overnightRate;
+      const baseRevenue = visitsRevenue + overnightsRevenue;
+
+      return {
+        base: baseRevenue,
+        addOns: 0,
+        total: baseRevenue,
+        metrics: {
+          visits: visitsPerMonth,
+          overnights: overnights
+        }
+      };
+    }
+
+    function calculateTrainingRevenue() {
+      const classesPerWeek = parseFloatSafe(document.getElementById('training-classes-per-week')?.value, 6);
+      const dogsPerClass = parseFloatSafe(document.getElementById('training-dogs-per-class')?.value, 8);
+      const pricePerClass = parseFloatSafe(document.getElementById('training-price')?.value, 15);
+      const fillRate = parseFloatSafe(document.getElementById('training-fill-rate')?.value, 75) / 100;
+      const privateRate = parseFloatSafe(document.getElementById('training-private-rate')?.value, 45);
+      const privatePerMonth = parseFloatSafe(document.getElementById('training-private-per-month')?.value, 8);
+
+      const classRevenue = classesPerWeek * dogsPerClass * pricePerClass * fillRate * 4.33;
+      const privateRevenue = privatePerMonth * privateRate;
+      const baseRevenue = classRevenue + privateRevenue;
+
+      return {
+        base: baseRevenue,
+        addOns: 0,
+        total: baseRevenue,
+        metrics: {
+          classesPerMonth: classesPerWeek * 4.33,
+          privateSessions: privatePerMonth
+        }
+      };
+    }
+
+    // ===========================
+    // RESULTS CALCULATION AND RENDERING
+    // ===========================
+    function calculateAndDisplayResults() {
+      const results: any = {
+        services: {},
+        totalRevenue: 0,
+        totalCosts: calculateTotalCosts(),
+        profit: 0,
+        profitMargin: 0
+      };
+
+      // Calculate revenue for each selected service
+      selectedServices.forEach(service => {
+        let serviceResult;
+        switch (service) {
+          case 'daycare':
+            serviceResult = calculateDaycareRevenue();
+            break;
+          case 'boarding':
+            serviceResult = calculateBoardingRevenue();
+            break;
+          case 'grooming':
+            serviceResult = calculateGroomingRevenue();
+            break;
+          case 'cattery':
+            serviceResult = calculateCatteryRevenue();
+            break;
+          case 'walking':
+            serviceResult = calculateWalkingRevenue();
+            break;
+          case 'sitting':
+            serviceResult = calculateSittingRevenue();
+            break;
+          case 'training':
+            serviceResult = calculateTrainingRevenue();
+            break;
+          default:
+            serviceResult = { base: 0, addOns: 0, total: 0, metrics: {} };
+        }
+        results.services[service] = serviceResult;
+        results.totalRevenue += serviceResult.total;
+      });
+
+      results.profit = results.totalRevenue - results.totalCosts;
+      results.profitMargin = results.totalRevenue > 0 ? (results.profit / results.totalRevenue) * 100 : 0;
+
+      // Render results
+      renderResults(results);
+    }
+
+    function renderResults(results: any) {
+      const container = document.getElementById('results-content');
+      if (!container) return;
+
+      const businessName = (document.getElementById('business-name') as HTMLInputElement)?.value || 'Your Pet Care Business';
+
+      let html = `
+        <div class="space-y-8">
+          <!-- Summary Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-gradient-to-br from-brand-navy to-gray-800 text-white p-6 rounded-xl shadow-lg">
+              <div class="text-sm font-medium opacity-90 mb-2">Monthly Revenue</div>
+              <div class="text-3xl font-bold">${formatCurrency(results.totalRevenue)}</div>
+              <div class="text-sm opacity-75 mt-2">${formatCurrency(results.totalRevenue * 12)}/year</div>
+            </div>
+            <div class="bg-gradient-to-br from-gray-600 to-gray-700 text-white p-6 rounded-xl shadow-lg">
+              <div class="text-sm font-medium opacity-90 mb-2">Monthly Costs</div>
+              <div class="text-3xl font-bold">${formatCurrency(results.totalCosts)}</div>
+              <div class="text-sm opacity-75 mt-2">${formatCurrency(results.totalCosts * 12)}/year</div>
+            </div>
+            <div class="bg-gradient-to-br from-brand-red to-red-600 text-white p-6 rounded-xl shadow-lg">
+              <div class="text-sm font-medium opacity-90 mb-2">Monthly Profit</div>
+              <div class="text-3xl font-bold">${formatCurrency(results.profit)}</div>
+              <div class="text-sm opacity-75 mt-2">${results.profitMargin.toFixed(1)}% margin</div>
+            </div>
+          </div>
+
+          <!-- Revenue Breakdown -->
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h3 class="text-2xl font-bold text-brand-navy mb-6">Revenue Breakdown by Service</h3>
+            <div class="space-y-4">
+      `;
+
+      Object.entries(results.services).forEach(([service, data]: [string, any]) => {
+        const serviceConfig = getServiceConfig(service);
+        const percentage = ((data.total / results.totalRevenue) * 100).toFixed(1);
+
+        html += `
+          <div class="flex items-center justify-between pb-4 border-b border-gray-100 last:border-0">
+            <div class="flex-1">
+              <div class="font-semibold text-brand-navy">${serviceConfig.title}</div>
+              <div class="text-sm text-gray-500">
+                Base: ${formatCurrency(data.base)} | Add-ons: ${formatCurrency(data.addOns)}
+              </div>
+            </div>
+            <div class="text-right">
+              <div class="text-2xl font-bold text-brand-red">${formatCurrency(data.total)}</div>
+              <div class="text-sm text-gray-500">${percentage}%</div>
+            </div>
+          </div>
+        `;
+      });
+
+      html += `
+            </div>
+          </div>
+
+          <!-- Key Insights -->
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h3 class="text-2xl font-bold text-brand-navy mb-6">Key Insights</h3>
+            <div class="space-y-4">
+      `;
+
+      // Generate insights
+      const insights = generateInsights(results);
+      insights.forEach(insight => {
+        html += `
+          <div class="insight-card ${insight.type}">
+            <div class="font-semibold text-brand-navy mb-1">${insight.title}</div>
+            <div class="text-sm text-gray-700">${insight.text}</div>
+          </div>
+        `;
+      });
+
+      html += `
+            </div>
+          </div>
+
+          <!-- Capacity Analysis -->
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h3 class="text-2xl font-bold text-brand-navy mb-6">Capacity Utilization</h3>
+            <div class="space-y-4">
+      `;
+
+      selectedServices.forEach(service => {
+        const serviceData = results.services[service];
+        const serviceConfig = getServiceConfig(service);
+
+        if (service === 'daycare') {
+          const occupancy = parseFloatSafe(document.getElementById('daycare-occupancy')?.value, 65);
+          const capacity = serviceData.metrics.capacity;
+          const currentDogs = serviceData.metrics.dogsPerDay;
+          const potentialDogs = capacity - currentDogs;
+          const revenueGap = potentialDogs * serviceData.metrics.daysPerMonth * parseFloatSafe(document.getElementById('daycare-rate')?.value, 28);
+
+          html += `
+            <div class="p-4 bg-gray-50 rounded-lg">
+              <div class="font-semibold text-brand-navy mb-2">Daycare Capacity</div>
+              <div class="text-sm text-gray-600 mb-2">${currentDogs.toFixed(1)}/${capacity} dogs per day (${occupancy}% occupancy)</div>
+              <div class="w-full bg-gray-200 rounded-full h-3 mb-2">
+                <div class="bg-brand-red h-3 rounded-full" style="width: ${occupancy}%"></div>
+              </div>
+              <div class="text-sm text-gray-600">
+                At 100% capacity: +${formatCurrency(revenueGap)}/month additional revenue
+              </div>
+            </div>
+          `;
+        } else if (service === 'boarding') {
+          const occupancy = parseFloatSafe(document.getElementById('boarding-occupancy')?.value, 55);
+          const capacity = serviceData.metrics.capacity;
+
+          html += `
+            <div class="p-4 bg-gray-50 rounded-lg">
+              <div class="font-semibold text-brand-navy mb-2">Boarding Capacity</div>
+              <div class="text-sm text-gray-600 mb-2">${capacity} runs at ${occupancy}% occupancy</div>
+              <div class="w-full bg-gray-200 rounded-full h-3 mb-2">
+                <div class="bg-brand-red h-3 rounded-full" style="width: ${occupancy}%"></div>
+              </div>
+              <div class="text-sm text-gray-600">
+                Revenue per run: ${formatCurrency(serviceData.total / capacity)}/month
+              </div>
+            </div>
+          `;
+        } else if (service === 'grooming') {
+          const stations = serviceData.metrics.stations;
+          const groomsPerMonth = serviceData.metrics.groomsPerMonth;
+          const fillRate = parseFloatSafe(document.getElementById('grooming-fill-rate')?.value, 70);
+
+          html += `
+            <div class="p-4 bg-gray-50 rounded-lg">
+              <div class="font-semibold text-brand-navy mb-2">Grooming Utilization</div>
+              <div class="text-sm text-gray-600 mb-2">${stations} stations, ${groomsPerMonth.toFixed(0)} grooms/month (${fillRate}% filled)</div>
+              <div class="w-full bg-gray-200 rounded-full h-3 mb-2">
+                <div class="bg-brand-red h-3 rounded-full" style="width: ${fillRate}%"></div>
+              </div>
+            </div>
+          `;
+        }
+      });
+
+      html += `
+            </div>
+          </div>
+
+          <!-- Benchmark Comparison -->
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h3 class="text-2xl font-bold text-brand-navy mb-6">Industry Benchmark Comparison</h3>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                <div>
+                  <div class="font-medium text-brand-navy">Profit Margin</div>
+                  <div class="text-sm text-gray-500">Target: 20-35%</div>
+                </div>
+                <div class="text-2xl font-bold ${results.profitMargin >= 20 && results.profitMargin <= 35 ? 'text-green-600' : results.profitMargin > 35 ? 'text-blue-600' : 'text-orange-600'}">${results.profitMargin.toFixed(1)}%</div>
+              </div>
+      `;
+
+      const staffingCosts = results.totalCosts * 0.61; // Approximate from input structure
+      const staffingRatio = (staffingCosts / results.totalRevenue) * 100;
+
+      html += `
+              <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                <div>
+                  <div class="font-medium text-brand-navy">Staffing Cost Ratio</div>
+                  <div class="text-sm text-gray-500">Target: 40-50%</div>
+                </div>
+                <div class="text-2xl font-bold ${staffingRatio >= 40 && staffingRatio <= 50 ? 'text-green-600' : 'text-orange-600'}">${staffingRatio.toFixed(1)}%</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Next Steps -->
+          <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-lg">
+            <h4 class="font-semibold text-brand-navy mb-2">Ready to Streamline Operations?</h4>
+            <p class="text-gray-700 mb-4">
+              PetCare.Software helps you maximize these projections with automated booking, billing, and capacity management.
+            </p>
+            <a href="/contact/" class="btn-primary inline-block">Start Free Trial</a>
+          </div>
+        </div>
+      `;
+
+      container.innerHTML = html;
+    }
+
+    // ===========================
+    // INSIGHT GENERATION
+    // ===========================
+    function generateInsights(results: any): Array<{type: string, title: string, text: string, priority: number}> {
+      const insights = [];
+      const profitMargin = results.profitMargin;
+
+      // Profitability insight
+      if (profitMargin < 10) {
+        insights.push({
+          type: 'warning',
+          title: 'Profit margin below industry target',
+          text: `Your profit margin of ${profitMargin.toFixed(1)}% is below the pet care industry target of 20-35%. Review your pricing strategy and cost structure.`,
+          priority: 1
+        });
+      } else if (profitMargin >= 20 && profitMargin <= 35) {
+        insights.push({
+          type: 'positive',
+          title: 'Healthy profit margin',
+          text: `Your ${profitMargin.toFixed(1)}% profit margin is within the industry target range of 20-35%.`,
+          priority: 3
+        });
+      } else if (profitMargin > 35) {
+        insights.push({
+          type: 'positive',
+          title: 'Strong profitability',
+          text: `Your ${profitMargin.toFixed(1)}% profit margin exceeds industry averages. This indicates efficient operations.`,
+          priority: 2
+        });
+      } else if (profitMargin >= 10 && profitMargin < 20) {
+        insights.push({
+          type: 'opportunity',
+          title: 'Profit margin has room for improvement',
+          text: `At ${profitMargin.toFixed(1)}%, you're profitable but below the 20-35% industry target. Consider pricing adjustments or cost optimization.`,
+          priority: 2
+        });
+      }
+
+      // Capacity insights
+      if (results.services.daycare) {
+        const occupancy = parseFloatSafe(document.getElementById('daycare-occupancy')?.value, 65);
+        if (occupancy < 65) {
+          const revenueGap = results.services.daycare.total * ((65 - occupancy) / occupancy);
+          insights.push({
+            type: 'opportunity',
+            title: 'Daycare capacity underutilized',
+            text: `Increasing occupancy from ${occupancy}% to 65% (industry average) would add ${formatCurrency(revenueGap)} in monthly revenue.`,
+            priority: 1
+          });
+        }
+      }
+
+      // Add-on opportunity
+      const totalAddOns = Object.values(results.services).reduce((sum: number, s: any) => sum + s.addOns, 0);
+      const addOnRatio = (totalAddOns / results.totalRevenue) * 100;
+      if (addOnRatio < 10) {
+        insights.push({
+          type: 'opportunity',
+          title: 'Add-on services underutilized',
+          text: `Add-ons currently represent ${addOnRatio.toFixed(1)}% of revenue. Well-managed facilities achieve 15-20% through enrichment, grooming, and premium upgrades.`,
+          priority: 1
+        });
+      } else if (addOnRatio >= 15) {
+        insights.push({
+          type: 'positive',
+          title: 'Strong add-on revenue',
+          text: `Add-ons represent ${addOnRatio.toFixed(1)}% of revenue, meeting or exceeding industry targets.`,
+          priority: 3
+        });
+      }
+
+      // Service diversification
+      if (selectedServices.length === 1) {
+        insights.push({
+          type: 'opportunity',
+          title: 'Diversification opportunity',
+          text: 'Single-service businesses have higher revenue risk. Facilities that add complementary services typically increase revenue by 15-30%.',
+          priority: 2
+        });
+      } else if (selectedServices.length >= 3) {
+        insights.push({
+          type: 'positive',
+          title: 'Well-diversified service offering',
+          text: `Your ${selectedServices.length} services reduce revenue risk and create cross-selling opportunities.`,
+          priority: 3
+        });
+      }
+
+      return insights.sort((a, b) => a.priority - b.priority).slice(0, 6);
+    }
+
+    // ===========================
+    // LIVE COST PREVIEW
+    // ===========================
+    const costInputs = [
+      'ft-staff-count', 'ft-staff-salary', 'pt-staff-count', 'pt-staff-hours', 'pt-staff-rate',
+      'rent', 'utilities', 'insurance', 'rates',
+      'cleaning-supplies', 'food-treats', 'equipment', 'vet-fund',
+      'marketing', 'software', 'accounting', 'vehicle', 'other-costs'
+    ];
+
+    costInputs.forEach(id => {
+      const input = document.getElementById(id);
+      input?.addEventListener('input', () => {
+        const total = calculateTotalCosts();
+        const preview = document.getElementById('total-costs-preview');
+        if (preview) {
+          preview.textContent = formatCurrency(total);
+        }
+      });
+    });
+
+    // Recalculate button
+    document.getElementById('btn-recalculate')?.addEventListener('click', () => {
+      currentStep = 1;
+      showStep(1);
+    });
+
+    // Initialize
+    showStep(1);
+  </script>
+
+</BaseLayout>

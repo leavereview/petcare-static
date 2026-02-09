@@ -369,7 +369,7 @@ Your executive summary should capture:
 
 **Positioning options:**
 - Premium quality (highest service)
-- Value leader (competitive pricing)
+- Value leader ([competitive pricing strategies](/blog/dog-boarding-pricing-strategies/))
 - Specialist (specific breeds, needs)
 - Convenience (location, hours)
 - Trust focus (webcams, communication)
@@ -391,6 +391,8 @@ Your executive summary should capture:
 - Referral programmes
 
 ### Customer Retention
+
+Building [customer loyalty](/blog/customer-loyalty-pet-business/) is critical for long-term success:
 
 **Retention strategies:**
 - Loyalty programmes
