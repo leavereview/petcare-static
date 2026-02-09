@@ -2,6 +2,7 @@
 title: "Dog Daycare Software Comparison"
 description: "Compare the top dog daycare software options for small businesses. Features, pricing, and honest reviews to help you choose the right platform."
 image: /images/blog-technology.jpg
+imageAlt: "Modern pet care software interface on laptop showing booking and scheduling features for dog daycare management"
 date: "2026-02-20"
 tags: ["Dog Daycare", "Software"]
 author: "PetCare Team"

@@ -2,6 +2,7 @@
 title: "Dog Boarding Business Plan (2026)"
 description: "Dog boarding business plan guide: startup costs, facility requirements, licensing, pricing strategies, and profitability tips."
 image: /images/blog-boarding.jpg
+imageAlt: "Professional dog boarding facility with comfortable kennels and play areas for boarding business planning"
 date: "2026-01-18"
 tags: ["Dog Boarding", "Starting a Business"]
 author: "PetCare Team"
