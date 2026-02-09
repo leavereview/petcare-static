@@ -171,7 +171,7 @@ Clear terms and conditions, reasonable limits on redemption, and software tracki
 
 ### What if our margins are too thin for rewards?
 
-Focus on low-cost, high-perceived-value rewards: recognition, priority access, exclusive communication, partner discounts.
+Focus on low-cost, high-perceived-value rewards: recognition, priority access, exclusive communication, partner discounts. Review your [pricing strategies](/blog/dog-boarding-pricing-strategies/) to ensure healthy margins before implementing rewards.
 
 ## Conclusion
 
