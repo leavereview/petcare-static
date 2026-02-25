@@ -109,7 +109,7 @@ Getting paid efficiently:
 | **PetCare.Software** | Custom | Yes | Full | Yes + alerts | Visual | Yes |
 | **Gingr** | From $99/mo | Yes | Full | Yes | Visual | Yes |
 | **PetExec** | From $69/mo | Yes | Full | Yes | Yes | Yes |
-| **Revelation Pets** | From $39/mo | Yes | Full | Basic | Yes | Yes |
+| **PetLinx** | From $29/mo | Yes | Full | Basic | Yes | Web |
 | **ProPet** | From $50/mo | Yes | Full | Yes | Yes | Yes |
 | **Kennel Booker** | From GBP 35/mo | Yes | Full | Basic | Yes | Yes |
 | **Kennel Connection** | From $65/mo | Demo | Full | Yes | Yes | Limited | See how [Dog Daycare Software](/dog-daycare-software/) can help. Learn more about [Kennel Software](/kennel-software/). Check out [Pet Grooming Software](/pet-grooming-software/). Check out [Pet Sitting Software](/pet-sitting-software/).
@@ -122,7 +122,7 @@ Getting paid efficiently:
 
 **PetExec** offers comprehensive boarding features with good feeding and medication tracking. POS integration useful for facilities with retail. Interface is functional if not modern.
 
-**Revelation Pets** provides solid boarding basics at accessible pricing. Good for smaller facilities. Feeding and medication tracking is more basic than competitors.
+**PetLinx** provides solid boarding basics at the lowest price point of any platform. Good for smaller facilities and those on tight budgets. Feeding and medication tracking is more basic than competitors, and the mobile experience is web-only.
 
 **ProPet** balances features and pricing well. Strong in Canadian market but works internationally. Handles combined boarding and daycare operations effectively.
 
@@ -139,7 +139,7 @@ Boarding software typically costs slightly more than daycare-only solutions due 
 **Small Facilities (Under 20 runs)**
 - Budget: $35-70/month
 - Focus: Core booking, basic care tracking
-- Platforms: Revelation Pets, Kennel Booker, PetLinx
+- Platforms: PetLinx, Kennel Booker
 
 **Medium Facilities (20-50 runs)**
 - Budget: $70-150/month

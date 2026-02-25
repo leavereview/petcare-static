@@ -128,7 +128,6 @@ Here's how the leading platforms compare across key criteria:
 | **PetCare.Software** | Custom pricing | Yes | Full | Yes + alerts | Yes + photos | Yes |
 | **Gingr** | From $99/mo | Yes | Full | Yes | Yes | Yes |
 | **PetExec** | From $69/mo | Yes | Full | Yes | Yes | Yes |
-| **Revelation Pets** | From $39/mo | Yes | Full | Yes | Basic | Yes |
 | **PawLoyalty** | From $59/mo | Yes | Full | Yes | Yes | Yes |
 | **ProPet** | From $50/mo | Yes | Full | Yes | Yes | Yes |
 | **Kennel Booker** | From GBP 35/mo | Yes | Full | Yes | Basic | Yes |
@@ -141,8 +140,6 @@ Here's how the leading platforms compare across key criteria:
 **Gingr** is popular with medium to large facilities. Strong multi-location support, robust CRM, and integrated payments. The interface has a learning curve but offers deep customisation. Customer support response times vary.
 
 **PetExec** offers comprehensive features including POS and retail modules. Well-suited for facilities offering multiple services. The interface feels dated but functionality is solid. Strong user community.
-
-**Revelation Pets** focuses on simplicity and ease of use. Ideal for smaller daycares wanting core features without complexity. Pricing is accessible. Advanced reporting is limited compared to larger platforms.
 
 **PawLoyalty** excels at daycare-specific features like staff scheduling and customer engagement tools. Good balance of features and usability. Some advanced features require higher-tier plans.
 
@@ -211,7 +208,7 @@ Even conservative estimates show software paying for itself many times over.
 **Small Daycares (Under 20 dogs/day capacity)**
 
 Priorities: Ease of use, affordable pricing, core features
-Recommended: Revelation Pets, PetLinx, Kennel Booker
+Recommended: PetLinx, Kennel Booker, PawLoyalty
 Avoid: Over-featured platforms with steep learning curves
 
 **Medium Daycares (20-50 dogs/day capacity)**

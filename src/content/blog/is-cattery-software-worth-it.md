@@ -143,7 +143,7 @@ The ROI is positive, though smaller in absolute terms than dog boarding due to l
 ### Platforms That Work for Catteries
 
 Most general boarding platforms work with configuration:
-- Revelation Pets (good for smaller operations)
+- PetLinx (good for smaller operations)
 - ProPet (handles multiple species well)
 - Kennel Booker (popular with UK catteries)
 - Gingr (if you need more features)

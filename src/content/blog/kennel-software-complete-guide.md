@@ -128,7 +128,6 @@ Keeping clients informed:
 | **PetCare.Software** | Custom | Yes | Full | Yes + alerts | Visual | Advanced |
 | **Gingr** | From $99/mo | Yes | Full | Yes | Visual | Advanced |
 | **PetExec** | From $69/mo | Yes | Full | Yes | Yes | Advanced |
-| **Revelation Pets** | From $39/mo | Yes | Full | Yes | Basic | Standard |
 | **ProPet** | From $50/mo | Yes | Full | Yes | Yes | Standard |
 | **Kennel Booker** | From GBP 35/mo | Yes | Full | Yes | Yes | Standard |
 | **PetLinx** | From $29/mo | Yes | Full | Yes | Basic | Basic |
@@ -141,8 +140,6 @@ Keeping clients informed:
 **Gingr** is well-suited for medium to large kennels. Strong multi-location support, comprehensive features, and good integrations. The learning curve is steeper than simpler platforms, but capabilities justify this for growing operations.
 
 **PetExec** offers deep functionality with modules for retail, grooming, and training alongside core kennel features. Interface is dated but reliable. Strong user community and documentation.
-
-**Revelation Pets** provides accessible entry-level pricing with solid core features. Ideal for smaller kennels wanting simplicity over advanced capabilities. Support is responsive.
 
 **ProPet** balances features and pricing effectively. Good for kennels offering multiple services. Canadian-developed but works internationally.
 
@@ -159,7 +156,7 @@ Keeping clients informed:
 **Small Kennels (Under 20 runs)**
 - Monthly cost: $30-60
 - Setup: Usually minimal or included
-- Best platforms: Revelation Pets, Kennel Booker, PetLinx
+- Best platforms: Kennel Booker, PetLinx
 
 **Medium Kennels (20-50 runs)**
 - Monthly cost: $60-130
