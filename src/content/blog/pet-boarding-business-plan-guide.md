@@ -7,7 +7,7 @@ tags: ["Dog Boarding", "Starting a Business", "Finance"]
 author: "PetCare Team"
 ---
 
-Starting a pet boarding business is exciting—but without a written plan, it's easy to underestimate costs, overlook regulations, or miss revenue opportunities. This step-by-step guide gives you a lender-ready structure for a pet boarding business plan, with real-world assumptions you can adapt to your market.
+Starting a pet boarding business is exciting—but without a written plan, it's easy to underestimate costs, overlook regulations, or miss revenue opportunities. This step-by-step guide gives you a lender-ready structure for a pet boarding business plan, with real-world assumptions you can adapt to your market. When you're ready to open, [dog boarding software](/dog-boarding-software/) handles the day-to-day operations so you can focus on growth.
 
 ## Why Plan? Lender & Execution Benefits
 
@@ -195,4 +195,28 @@ Once your foundation is in place, you can focus on delighting customers—and th
 
 ---
 
-*Related reading: [How to Start a Dog Kennel Business](/blog/how-to-start-kennel-business), [How to Start a Dog Daycare Business](/blog/how-to-start-dog-daycare-business), [Dog Boarding Software Guide](/blog/dog-boarding-software-complete-guide)*
+## Financial Projections: A Simple First-Year Model
+
+Before you build a complex spreadsheet, a back-of-envelope model reveals whether your facility is viable at your target scale. Take a small UK operation: 10 dogs per night on average, charged at £25/night, running 5 nights per week. That's £1,250/week, or roughly £65,000/year in gross boarding revenue.
+
+Now subtract realistic annual costs for a small owner-operated facility:
+
+| Cost | Annual Estimate |
+|------|----------------|
+| Premises (rent + utilities) | £18,000 |
+| Insurance (liability, bailee, property) | £1,800 |
+| Staff (part-time help at peak) | £8,000 |
+| Software and admin | £900 |
+| Marketing and sundries | £2,000 |
+| **Total costs** | **£30,700** |
+
+That leaves roughly **£34,300 net** — a 53% margin on a lean, owner-operated basis. Scale to 15 dogs/night and the same cost base produces significantly higher returns. Conversely, drop to 6 dogs/night and the margin tightens quickly, which is why accurate occupancy tracking matters from day one. [Dog boarding software](/dog-boarding-software/) lets you compare actual vs projected occupancy in real time, so you can spot a shortfall early and adjust pricing or marketing before cash flow becomes a problem.
+
+---
+
+## Related Articles
+
+- [Dog Boarding Software — Features, Pricing & Platform Guide](/dog-boarding-software/)
+- [Dog Boarding Software Buyer's Guide](/blog/dog-boarding-software-complete-guide)
+- [Dog Boarding Business Plan (2026)](/blog/dog-boarding-business-plan)
+- [Legal & Insurance for Pet Boarding](/blog/legal-insurance-pet-boarding)

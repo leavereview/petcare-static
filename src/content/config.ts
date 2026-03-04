@@ -10,6 +10,7 @@ const blogCollection = defineCollection({
     imageAlt: z.string().optional(),
     tags: z.array(z.string()).optional(),
     author: z.string().default('PetCare Team'),
+    faqs: z.array(z.object({ question: z.string(), answer: z.string() })).optional(),
   }),
 });
 

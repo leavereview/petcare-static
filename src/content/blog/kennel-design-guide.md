@@ -9,6 +9,8 @@ author: "PetCare Team"
 
 Your facility design directly impacts animal welfare, operational efficiency, and customer perception. A well-designed kennel reduces stress for dogs, minimises injury risk, and makes daily operations smoother for staff.
 
+Planning your facility layout alongside the right [kennel software](/kennel-software/) from the start will save significant rework later.
+
 ## Space Requirements
 
 ### Minimum Standards
