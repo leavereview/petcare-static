@@ -1,0 +1,22 @@
+---
+interface Props {
+  caption: string;
+  width?: number;
+  height?: number;
+}
+const { caption, width = 800, height = 450 } = Astro.props;
+---
+<figure class="screenshot-placeholder">
+  <div
+    class="placeholder-box"
+    style={`width:100%;aspect-ratio:${width}/${height};background:#F3F4F6;border:2px dashed #D1D5DB;border-radius:8px;display:flex;align-items:center;justify-content:center;`}
+  >
+    <span style="color:#9CA3AF;font-size:0.875rem;text-align:center;padding:1rem;">
+      📸 Screenshot coming soon<br/>
+      <em style="font-size:0.75rem;">{caption}</em>
+    </span>
+  </div>
+  <figcaption style="font-size:0.875rem;color:#6B7280;margin-top:0.5rem;text-align:center;">
+    {caption}
+  </figcaption>
+</figure>

@@ -300,24 +300,16 @@ const faqItems = [
           MyPetCare supports both dog boarding and <a href="/cattery-software/" class="text-brand-red hover:underline">cat boarding</a> from the same platform, with species-specific vaccination tracking, separate capacity management for dog and cat areas, and unified reporting across all services. If you also run <a href="/dog-daycare-software/" class="text-brand-red hover:underline">dog daycare</a>, the same customer profiles and billing tools cover all service types without duplication.
         </p>
 
-        <!-- Screenshot placeholder -->
-        <div class="my-8 rounded-xl overflow-hidden border border-gray-200 shadow-lg bg-gray-100">
-          <div class="bg-gray-200 px-4 py-2 flex items-center gap-2">
-            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
-            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
-            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
-            <span class="text-xs text-gray-500 ml-2">MyPetCare — Kennel Runs Overview</span>
-          </div>
+        <figure class="screenshot">
           <img
-            src="/images/screenshots/kennel-runs-overview.png"
-            alt="MyPetCare kennel software showing run occupancy grid with care status, feeding schedule, and check-in today indicators"
-            class="w-full"
-            width="900"
-            height="500"
+            src="/images/screenshots/calendar-report.png"
+            alt="Kennel booking calendar showing room assignments, booking IDs and status across the month"
+            width="1200"
+            height="675"
             loading="lazy"
           />
-          <p class="text-center text-xs text-gray-500 py-2">Kennel runs overview: live occupancy, care alerts, and today's arrivals and departures at a glance</p>
-        </div>
+          <figcaption>Kennel calendar — every room, every booking, every status visible in one view</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -341,18 +333,16 @@ const faqItems = [
           <p class="text-gray-700 mb-6">
             Blocking runs for deep cleaning, maintenance, or inspection preparation is a single action that prevents bookings being accepted for that period. Related: <a href="/blog/kennel-software-complete-guide/" class="text-brand-red hover:underline">Kennel Software: The Complete Guide for UK Facilities</a>.
           </p>
-          <!-- Screenshot placeholder -->
-          <div class="rounded-xl overflow-hidden border border-gray-200 shadow-md bg-gray-100">
+          <figure class="screenshot">
             <img
-              src="/images/screenshots/kennel-run-assignment.png"
-              alt="MyPetCare kennel run assignment screen showing individual run status, pet assignments, and upcoming bookings"
-              class="w-full"
-              width="900"
-              height="450"
+              src="/images/screenshots/vacinnation-tracker-report.png"
+              alt="Vaccination tracker dashboard showing expired, expiring soon and compliant pets with contact tools"
+              width="1200"
+              height="675"
               loading="lazy"
             />
-            <p class="text-center text-xs text-gray-500 py-2">Run assignment grid: individual kennel status with pet details, care notes, and booking dates</p>
-          </div>
+            <figcaption>Vaccination tracker flags expired and expiring records — contact owners directly from the dashboard</figcaption>
+          </figure>
         </div>
 
         <!-- Feature 2 -->
@@ -367,18 +357,26 @@ const faqItems = [
           <p class="text-gray-700 mb-6">
             For local authority inspections, the full vaccination database — every pet boarded, vaccination status, certificate dates — is retrievable as a report. This turns inspection preparation from a filing exercise into a system export. See also: <a href="/blog/vaccination-tracking-for-kennels/" class="text-brand-red hover:underline">Vaccination Tracking for Kennels: A Compliance Guide</a>.
           </p>
-          <!-- Screenshot placeholder -->
-          <div class="rounded-xl overflow-hidden border border-gray-200 shadow-md bg-gray-100">
+          <figure class="screenshot">
             <img
-              src="/images/screenshots/kennel-vaccination-compliance.png"
-              alt="MyPetCare vaccination compliance dashboard showing pet records, certificate status, and upcoming expiry alerts"
-              class="w-full"
-              width="900"
-              height="450"
+              src="/images/screenshots/occupancy-report.png"
+              alt="Kennel occupancy report showing capacity percentage by day with calendar heatmap"
+              width="1200"
+              height="675"
               loading="lazy"
             />
-            <p class="text-center text-xs text-gray-500 py-2">Vaccination compliance dashboard: all pet records with expiry status and alert flags</p>
-          </div>
+            <figcaption>Occupancy report with heatmap — spot your busiest periods and manage capacity proactively</figcaption>
+          </figure>
+          <figure class="screenshot">
+            <img
+              src="/images/screenshots/arrivals-depatures-report.png"
+              alt="Arrivals and departures report showing upcoming check-ins with payment and vaccine alerts"
+              width="1200"
+              height="675"
+              loading="lazy"
+            />
+            <figcaption>Arrivals report surfaces payment and vaccination issues before the dog arrives</figcaption>
+          </figure>
         </div>
 
         <!-- Feature 3 -->
@@ -576,6 +574,47 @@ const faqItems = [
               <p class="text-brand-red-light font-bold text-lg mb-1">Founding Member Rate</p>
               <p class="text-gray-300 text-sm">Early access pricing locked for the lifetime of your account. Rate never increases as long as you remain a member.</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-brand-navy mb-8 text-center">What Our Customers Say</h2>
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="testimonial-card bg-gray-50 rounded-xl p-6 border border-gray-200">
+            <blockquote class="text-gray-700 mb-4 italic">
+              "We've been running our kennel for 14 years and finally made the switch to software last year. Wish we'd done it sooner — the time we get back each week is significant."
+            </blockquote>
+            <cite class="not-italic text-sm text-gray-600">
+              <strong class="text-brand-navy">Angela Price</strong><br/>
+              Hillside Kennels, Yorkshire
+            </cite>
+            <p class="text-xs text-gray-400 mt-2">[PLACEHOLDER — replace with real customer quote]</p>
+          </div>
+          <div class="testimonial-card bg-gray-50 rounded-xl p-6 border border-gray-200">
+            <blockquote class="text-gray-700 mb-4 italic">
+              "Council inspection last spring — the inspector was impressed that we could pull up every dog's vaccination history instantly. It made the whole process straightforward."
+            </blockquote>
+            <cite class="not-italic text-sm text-gray-600">
+              <strong class="text-brand-navy">Rob Cleary</strong><br/>
+              Greenfields Boarding Kennels, Cheshire
+            </cite>
+            <p class="text-xs text-gray-400 mt-2">[PLACEHOLDER — replace with real customer quote]</p>
+          </div>
+          <div class="testimonial-card bg-gray-50 rounded-xl p-6 border border-gray-200">
+            <blockquote class="text-gray-700 mb-4 italic">
+              "The online booking portal has changed how we manage peak periods. We can cap capacity, collect deposits automatically, and stop the Christmas chaos."
+            </blockquote>
+            <cite class="not-italic text-sm text-gray-600">
+              <strong class="text-brand-navy">Diane Foster</strong><br/>
+              Meadow View Kennels, Shropshire
+            </cite>
+            <p class="text-xs text-gray-400 mt-2">[PLACEHOLDER — replace with real customer quote]</p>
           </div>
         </div>
       </div>
