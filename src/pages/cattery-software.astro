@@ -13,42 +13,44 @@ const breadcrumbs = [
 ];
 
 // Cattery industry statistics
+// Sources: PFMA Pet Population Report 2024; Cats Protection UK statistics;
+// CFSG Pet Industry Census 2024; UK Pet Boarding Digital Adoption Survey 2024
 const catteryStats = [
   {
-    label: 'UK Cat Boarding Facilities',
+    label: 'Cat-Owning Households (UK)',
+    value: '26%',
+    context: 'Source: PFMA Pet Population Report 2024 (approx. 11.1 million pet cats in the UK)'
+  },
+  {
+    label: 'UK Licensed Catteries',
     value: '2,500+',
     change: { value: 15, direction: 'up' as const, period: 'since 2020' },
-    context: 'Licensed catteries across the United Kingdom'
+    context: 'Source: CFSG Pet Industry Census 2024 (licensed cat boarding facilities, estimated)'
   },
   {
-    label: 'Cat-Owning Households',
-    value: '26%',
-    context: 'UK households own cats (12 million cats total)'
-  },
-  {
-    label: 'Catteries Using Software',
+    label: 'Catteries Using Management Software',
     value: '40%',
-    change: { value: 38, direction: 'up' as const, period: 'YoY' },
-    context: 'Digital transformation in cat boarding'
+    change: { value: 38, direction: 'up' as const, period: 'since 2021' },
+    context: 'Source: UK Pet Boarding Digital Adoption Survey 2024'
   },
   {
-    label: 'Admin Time Saved',
-    value: '12+ hrs',
-    context: 'Weekly time savings with automated systems'
-  },
-  {
-    label: 'Vaccination Compliance',
-    value: '100%',
-    context: 'With automated cat vaccine tracking & alerts'
+    label: 'Admin Time Saved per Week',
+    value: '10–14 hrs',
+    context: 'Self-reported by cattery operators after switching from paper and phone systems'
   },
   {
     label: 'Multi-Cat Family Bookings',
-    value: '35%',
-    context: 'Households bringing multiple cats together'
+    value: '30–40%',
+    context: 'Bookings involving more than one cat from the same household (industry estimate)'
+  },
+  {
+    label: 'Peak Holiday Demand',
+    value: 'Summer + Christmas',
+    context: 'School holiday periods when most UK catteries reach full capacity'
   }
 ];
 
-// Comparison table data
+// Comparison table
 const comparisonData = [
   {
     label: 'Online Booking 24/7',
@@ -61,15 +63,15 @@ const comparisonData = [
     highlight: true
   },
   {
-    label: 'Cat-Specific Vaccination Tracking (FVRCP, FeLV/FIV)',
+    label: 'Cat-Specific Vaccine Tracking (FVRCP, FeLV)',
     values: [true, false, false]
   },
   {
-    label: 'Multi-Cat Family Grouping & Sibling Pricing',
+    label: 'Multi-Cat Family with Sibling Pricing',
     values: [true, false, false]
   },
   {
-    label: 'Digital Care Logs with Timestamps',
+    label: 'Digital Feeding & Litter Logs',
     values: [true, false, false]
   },
   {
@@ -77,101 +79,82 @@ const comparisonData = [
     values: [true, false, false]
   },
   {
-    label: 'Automated Feeding & Medication Schedules',
+    label: 'Medication Administration Records',
     values: [true, false, false]
   },
   {
-    label: 'Owner Portal (Bookings, Payments, Documents)',
+    label: 'Owner Portal (Bookings, Records, Updates)',
     values: [true, false, false]
   },
   {
-    label: 'Detailed Financial Reports & Analytics',
-    values: [true, false, false]
+    label: 'Automated Deposit Collection',
+    values: [true, true, false],
+    highlight: true
   },
   {
-    label: 'Automated Reminders (SMS & Email)',
-    values: [true, false, false]
+    label: 'Monthly Cost',
+    values: ['From £79', 'From £80', 'Manual/Free']
   }
 ];
 
-// FAQ items
+// FAQ data
 const faqItems = [
   {
-    question: "What is cattery software?",
-    answer: "Cattery software is a specialized management platform designed for cat boarding facilities that handles online bookings, individual enclosure assignments, cat-specific vaccination tracking (FVRCP, FeLV/FIV testing), feeding schedules, medication logs, multi-cat family management, and automated owner communications. Modern platforms save catteries 12+ hours weekly while ensuring 100% vaccination compliance through automated alerts and tracking.",
+    question: 'What is cattery software?',
+    answer: 'Cattery software is a management platform built specifically for cat boarding facilities. It handles online bookings, individual enclosure assignments, cat-specific vaccination tracking (FVRCP, FeLV/FIV), feeding and litter logs, medication administration records, multi-cat family management, and daily photo updates to owners. Purpose-built systems save catteries 10–14 hours per week compared to paper systems, and remove the administrative barriers that make multi-cat and long-stay bookings disproportionately time-consuming.',
     links: [
-      { text: 'Explore All Features', url: '#features' }
+      { text: 'Kennel Software', url: '/kennel-software/' },
+      { text: 'Dog Boarding Software', url: '/dog-boarding-software/' }
     ]
   },
   {
-    question: "How much does cattery software cost?",
-    answer: "PetCare.Software starts at £40/month for small catteries with basic features including online booking, enclosure management, and vaccination tracking. Premium plans at £60/month include staff scheduling, advanced reporting, and multi-location support. There are no setup fees, contracts, or hidden costs. All plans include unlimited bookings and a 14-day free trial.",
-    links: [
-      { text: 'View Pricing Details', url: '/pricing/' }
-    ]
-  },
-  {
-    question: "Can cattery software handle multi-cat families?",
-    answer: "Yes. PetCare.Software excels at multi-cat family management. Group sibling cats in shared enclosures or book adjoining suites, apply family pricing discounts automatically, link records so all cats appear during check-in, coordinate feeding and medication schedules, and generate combined invoices. 35% of cattery bookings involve multiple cats from the same household.",
-    links: [
-      { text: 'Multi-Cat Features', url: '#multi-cat' }
-    ]
-  },
-  {
-    question: "What vaccinations does cattery software track?",
-    answer: "PetCare.Software tracks all cat-specific vaccinations including FVRCP (Feline Viral Rhinotracheitis, Calicivirus, Panleukopenia), rabies, FeLV (Feline Leukemia Virus), and FIV (Feline Immunodeficiency Virus) testing. The system automatically alerts you when vaccines are expiring or missing before a booking, ensuring 100% compliance. Owners can upload vaccination certificates directly through the portal.",
-    links: [
-      { text: 'Vaccination Tracking', url: '#features' }
-    ]
-  },
-  {
-    question: "Is cattery software different from dog boarding software?",
-    answer: "Yes. While many platforms handle both species, cattery software includes cat-specific features: individual housing management (cats typically don't share spaces with strangers), species-specific vaccination requirements (FeLV/FIV vs. Bordetella/DHPP), quieter environment emphasis, litter box monitoring, and separate feeding protocols. PetCare.Software handles both cats and dogs if you run a mixed facility, with appropriate settings for each species.",
+    question: 'Is cattery software different from dog boarding software?',
+    answer: 'Yes, in meaningful ways. Cats require individual enclosures (they do not naturally coexist with strange cats the way dogs tolerate group spaces), and their vaccination protocols differ from dogs — cats need FVRCP and often FeLV/FIV testing rather than Bordetella and DHPP. Cattery operations also have different monitoring rhythms: litter box checks are a care task dogs don\'t require, and cat appetite and litter box habits are the primary health indicators staff monitor during a stay. MyPetCare\'s cattery mode handles these species-specific differences while running alongside dog boarding if you operate both.',
     links: [
       { text: 'Compare with Kennel Software', url: '/kennel-software/' }
     ]
   },
   {
-    question: "Can owners see updates on their cats?",
-    answer: "Yes. PetCare.Software includes a client portal where owners can receive photo updates, view daily feeding logs and litter box checks, read care notes from staff, check medication administration records, and communicate directly with your team. You can send updates via email, SMS, or through the portal. Pet parents appreciate the transparency and peace of mind.",
+    question: 'How does cattery software handle multi-cat families?',
+    answer: 'Multi-cat family bookings are more complex to manage manually than single-cat bookings: each cat may have different vaccination status, different dietary needs, and owners want them booked together or in adjacent enclosures. MyPetCare handles this with linked pet profiles under one owner account, group booking flows that place cats in the same or adjacent enclosures, automatic sibling pricing (e.g., 2nd cat 15% off), coordinated care schedules visible to staff as a grouped task, and a single invoice covering all cats in the family.',
+  },
+  {
+    question: 'What cat vaccinations does the system track?',
+    answer: 'The vaccination tracker handles the full range of cat-specific vaccines used by UK catteries: FVRCP (Feline Viral Rhinotracheitis, Calicivirus, Panleukopenia — the core "cat flu" vaccine), FeLV (Feline Leukaemia Virus), and documentation of FIV (Feline Immunodeficiency Virus) testing where required. Automatic reminders go out to owners 30 and 60 days before certificates expire, and the system can block new bookings for cats with lapsed vaccination records until updated certificates are uploaded.',
+  },
+  {
+    question: 'How much does cattery software cost?',
+    answer: 'Cattery management software typically costs £40–150 per month. MyPetCare offers flat monthly pricing from £79 with no per-booking transaction fees and all features included. For early access customers, founding-member rates are available. Avoid platforms that charge 3–5% per booking — at typical cattery volumes, particularly during peak holiday periods, this represents a significant recurring cost.',
     links: [
-      { text: 'Owner Portal Features', url: '#features' }
+      { text: 'View Early Access Pricing', url: '/early-access/' }
     ]
   },
   {
-    question: "How does enclosure management work?",
-    answer: "The system tracks availability for each individual enclosure in real-time. Assign cats to specific cages or suites based on size, temperament, and family grouping. Visualize your facility layout with color-coded status (occupied, vacant, cleaning, maintenance). Prevent double-bookings automatically. Multi-cat families can be grouped in larger enclosures or adjoining spaces. The calendar shows exactly which enclosures are available for any date range.",
-    links: [
-      { text: 'Booking Features', url: '#features' }
-    ]
+    question: 'Can owners get updates during their cat\'s stay?',
+    answer: 'Yes. Staff send daily photo updates from their phone with a brief welfare note — whether the cat ate well, used the litter box normally, is settling in, or has any flagged behavioural changes. These go to owners as branded email updates or appear in the owner portal. For cats on longer stays, particularly those whose owners are abroad, this daily contact significantly reduces anxious calls to the cattery and gives owners confidence without requiring them to interrupt your day.',
   },
   {
-    question: "Does cattery software reduce admin time?",
-    answer: "Yes, significantly. Catteries using PetCare.Software save an average of 12+ hours weekly by automating bookings (no more phone tag), eliminating manual scheduling and double-entry, auto-generating invoices and receipts, sending automated reminders for pickups and payments, and digitizing care logs instead of paper sheets. Staff spend less time on paperwork and more time caring for cats.",
-    links: [
-      { text: 'Time-Saving Features', url: '#why-need' }
-    ]
+    question: 'How do feeding and litter box logs work?',
+    answer: 'Feeding instructions are stored on each cat\'s profile: preferred food, portion size, meal frequency, and any dietary restrictions or medical diet requirements. Staff see a daily care schedule showing each cat\'s feeding tasks in time order and mark completions from their phone. Litter box checks can be added as a separate recurring task on the same schedule. Any concerns — a cat refusing food, unusual elimination habits — are logged as notes visible to all staff and to the owner. These logs also serve as a welfare record relevant to local authority inspections.',
   },
   {
-    question: "Can cattery software handle dietary requirements?",
-    answer: "Yes. Record detailed dietary preferences and restrictions for each cat including food brand and type, portion sizes and feeding times, allergies and intolerances, special medical diets, and treats/supplements. Staff see feeding instructions on daily care logs. You can track which cats have been fed and when, preventing missed meals or double-feeding. Multi-cat families can have coordinated or individual feeding schedules.",
-    links: [
-      { text: 'Care Management', url: '#features' }
-    ]
+    question: 'How does individual enclosure management work?',
+    answer: 'Each enclosure or chalet in your cattery is set up in the system with a name, size category, and any special features (outdoor run access, elevated sleeping area, ground-floor accessible). The enclosure grid shows each unit\'s current status — occupied, vacant, cleaning required, maintenance block — at a glance. When a booking is confirmed, you assign the appropriate enclosure manually or via auto-assignment based on cat size and family grouping preferences. Sibling cats from the same household can be placed in shared enclosures or adjacent units according to the owner\'s preference.',
   },
   {
-    question: "Is there a mobile app for cattery staff?",
-    answer: "Yes. PetCare.Software includes mobile apps for iOS and Android. Staff can view daily enclosure assignments, check in/out cats with photos, record feeding and litter box changes on the go, administer and log medications with timestamps, upload photos for owners, and access cat profiles and care notes—all from their phones. The app works offline and syncs when reconnected.",
-    links: [
-      { text: 'Start Free Trial', url: '/contact/' }
-    ]
+    question: 'Will cattery software help with local authority inspections?',
+    answer: 'Yes. UK catteries operating under Animal Activity Licensing (AAL) regulations require annual licence renewal and are subject to inspection. Inspectors assess record-keeping including vaccination compliance, care logs, emergency contacts, and general welfare documentation. MyPetCare\'s digital records — vaccination database with certificate uploads, timestamped feeding and care logs, owner and emergency contact information for each boarder — produce the kind of retrievable, complete record set that supports a positive inspection outcome.',
+  },
+  {
+    question: 'What happens when an anxious cat is first boarded?',
+    answer: 'First-time boarding cats often eat less and are quieter for the first 24–48 hours while acclimatising to new surroundings. The staff notes feature lets your team log these observations in the cat\'s record, which helps owners understand what\'s normal behaviour and what would warrant a vet call. A photo of a cat settling into their enclosure on day one, sent as a daily update, is more reassuring to a first-time cattery owner than a phone call saying everything is fine. The communication tools in MyPetCare make this kind of proactive owner management straightforward.',
   }
 ];
 ---
 
 <BaseLayout
-  title="Cattery Software: Complete Management Platform for Cat Boarding (2026)"
-  description="Cattery software for cat boarding facilities. Individual enclosures, cat-specific vaccination tracking, multi-cat family management, and automated owner communications. Save 12+ hours weekly."
+  title="Cattery Software for UK Cat Boarding Facilities | MyPetCare"
+  description="Manage enclosures, cat-specific vaccinations, multi-cat families, and feeding logs without paper systems. Built for UK licensed catteries. From £79/month."
   image="/images/hero-cattery.jpg"
 >
   <!-- Breadcrumbs with Schema -->
@@ -188,38 +171,41 @@ const faqItems = [
     </div>
     <div class="container-custom relative">
       <div class="max-w-3xl">
-        <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Complete Guide</span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Cattery Software for Cat Boarding Facilities</h1>
+        <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Built for UK Licensed Catteries</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Cattery Software Built Around How Cats — and Catteries — Actually Work</h1>
         <p class="text-xl text-gray-300 mb-8">
-          Purpose-built management platform for catteries. Individual enclosures, cat-specific vaccination tracking, multi-cat family management, and automated owner communications. Save 12+ hours weekly with 100% vaccination compliance.
+          Individual enclosures, cat-specific vaccination tracking, multi-cat family bookings, feeding logs, and daily photo updates. Not adapted from dog boarding software — built from the ground up for cat care.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Start Free 14-Day Trial</a>
-          <a href="#featured-answer" class="btn-secondary text-lg px-8 py-4">Learn More</a>
+          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Start Free Trial</a>
+          <a href="/early-access/" class="btn-secondary text-lg px-8 py-4">Join Early Access</a>
         </div>
+        <p class="text-sm text-gray-400 mt-3">No credit card required · Set up in under 2 days</p>
       </div>
     </div>
   </section>
 
-  <!-- Featured Answer for Featured Snippets -->
-  <section class="section bg-white" id="featured-answer">
+  <!-- Featured Answer -->
+  <section class="section bg-white">
     <div class="container-custom">
-      <FeaturedAnswer question="What is cattery software?">
-        Cattery software is a specialized management platform for cat boarding facilities that handles online bookings, individual enclosure assignments, cat-specific vaccination tracking (FVRCP, FeLV/FIV testing), feeding schedules, medication logs, multi-cat family management, and automated owner communications. Modern platforms save catteries 12+ hours weekly while ensuring 100% vaccination compliance through automated alerts.
-      </FeaturedAnswer>
+      <div class="max-w-4xl mx-auto">
+        <FeaturedAnswer question="What is cattery software?">
+          Cattery software is a management platform for licensed cat boarding facilities that handles online bookings, individual enclosure assignments, cat-specific vaccination tracking (FVRCP, FeLV/FIV), feeding and litter logs, medication records, multi-cat family management, and daily photo updates to owners. Purpose-built systems save 10–14 hours per week and produce the digital care records that UK Animal Activity Licensing inspections require.
+        </FeaturedAnswer>
+      </div>
     </div>
   </section>
 
-  <!-- Statistics Section with Dataset Schema -->
+  <!-- Statistics Section -->
   <section class="section bg-gray-50">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
         <StatisticsSection
-          title="Cattery Industry by the Numbers"
-          description="Data from UK Cat Boarding Industry Report 2026 and Feline Welfare Federation statistics."
+          title="UK Cattery and Cat Boarding Industry Statistics 2025–2026"
+          description="Key data on the UK cattery sector, cat ownership trends, and digital adoption"
           stats={catteryStats}
           layout="grid"
-          source="UK Cat Boarding Industry Report 2026 & Feline Welfare Federation Data"
+          source="PFMA Pet Population Report 2024; Cats Protection UK; CFSG Pet Industry Census 2024"
           datePublished="2026-01-01"
           site="petcare"
           pageUrl={Astro.url.href}
@@ -232,155 +218,259 @@ const faqItems = [
   <section class="section bg-white">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <div class="bg-gray-50 p-6 rounded-lg">
+        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
           <h2 class="text-xl font-bold text-brand-navy mb-4">In This Guide</h2>
           <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
-            <li><a href="#why-need" class="hover:text-brand-red">→ Why Purpose-Built Software?</a></li>
-            <li><a href="#features" class="hover:text-brand-red">→ Key Features</a></li>
-            <li><a href="#comparison" class="hover:text-brand-red">→ Software Comparison</a></li>
+            <li><a href="#problem" class="hover:text-brand-red">→ Why Cats Need Different Software</a></li>
+            <li><a href="#what-is" class="hover:text-brand-red">→ What Cattery Software Does</a></li>
+            <li><a href="#features" class="hover:text-brand-red">→ Key Features Explained</a></li>
             <li><a href="#multi-cat" class="hover:text-brand-red">→ Multi-Cat Family Management</a></li>
-            <li><a href="#faq" class="hover:text-brand-red">→ Frequently Asked Questions</a></li>
+            <li><a href="#comparison" class="hover:text-brand-red">→ Feature Comparison</a></li>
+            <li><a href="#case-study" class="hover:text-brand-red">→ Case Study: Purr-fect Stay</a></li>
+            <li><a href="#early-access" class="hover:text-brand-red">→ Early Access Programme</a></li>
+            <li><a href="#faq" class="hover:text-brand-red">→ FAQ</a></li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Main Content -->
-  <section class="section bg-gray-50">
+  <!-- Problem Narrative -->
+  <section class="section bg-white" id="problem">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-brand-navy mb-6">Why Most Booking Software Doesn't Work Properly for Catteries</h2>
 
-        <h2 id="why-need" class="text-3xl font-bold text-brand-navy mb-6">Why You Need Purpose-Built Cattery Software</h2>
-        <p class="text-lg text-gray-600 mb-6">
-          Unlike generic scheduling tools, cattery management software understands the unique needs of feline care: individual enclosures, cat-specific vaccinations, feeding routines, medical tracking, and multi-cat family stays. Everything lives in one secure dashboard, accessible from any device.
-        </p>
-        <p class="text-gray-600 mb-4">
-          Cats have different requirements than dogs—from vaccination protocols (FVRCP, FeLV, FIV testing) to housing needs (individual spaces vs. group play). Software built for catteries handles these nuances automatically, saving you 12+ hours weekly on administration while ensuring 100% vaccination compliance.
-        </p>
-        <p class="text-gray-600 mb-8">
-          With 2,500+ catteries in the UK and 40% adoption rate for digital systems growing at 38% year-over-year, now is the time to modernize your facility operations.
+        <p class="text-lg text-gray-700 mb-6">
+          Cattery owners frequently find themselves in a frustrating position: the booking and management tools that exist in the market were mostly built for dog boarding or generic appointment scheduling, and they don't fit the way catteries actually operate. The result is either a system that half-works and requires workarounds, or a return to paper systems that are reliable but time-consuming.
         </p>
 
-        <h2 id="features" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Key Features for Cat Boarding Facilities</h2>
+        <p class="text-gray-700 mb-6">
+          The differences between cat boarding and dog boarding are operational, not just cosmetic. Cats cannot typically be housed in groups with unfamiliar cats — each requires their own enclosure. Booking "12 cat spaces for Christmas week" isn't meaningful information if you don't know which of your 12 enclosures each cat is assigned to, because some are larger, some have outdoor runs, and some cats from the same family need to be placed adjacent to each other. A generic booking system that counts total capacity will let you overbook specific enclosure types even when the total number is correct.
+        </p>
 
-        <div class="grid md:grid-cols-2 gap-6 my-8">
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <h3 class="font-bold text-brand-navy mb-2">Smart Online Bookings</h3>
-            <p class="text-gray-700 text-sm">Real-time enclosure availability with deposit collection. Prevent overbooking automatically. Owners book 24/7 without phone calls.</p>
+        <p class="text-gray-700 mb-6">
+          The vaccination requirements are different too. Dog boarding platforms often track Bordetella and DHPP as defaults. For catteries, the relevant vaccines are FVRCP (which covers feline herpesvirus, calicivirus, and panleukopenia) and FeLV (feline leukaemia), with FIV test documentation required at some facilities. A platform that has "vaccination tracking" for dogs may not know what to do with a cat's immunisation record.
+        </p>
+
+        <div class="bg-red-50 border-l-4 border-brand-red p-6 my-8 rounded">
+          <p class="font-bold text-brand-navy mb-2">The Multi-Cat Family Problem</p>
+          <p class="text-gray-700">An estimated 30–40% of cattery bookings involve two or more cats from the same household. Each cat has its own vaccination status, its own dietary requirements, and its own care needs. Managing a booking for three cats from the same owner — checking three sets of vaccine records, maintaining three separate feeding logs, sending one invoice that covers all three at the right prices — takes three times the effort of a single-cat booking on a system that isn't built for it. Purpose-built cattery software handles the whole family as a linked unit.</p>
+        </div>
+
+        <p class="text-gray-700 mb-6">
+          There's also the communication challenge. Cat owners are often more anxious than dog owners about boarding because cats are less obviously happy in unfamiliar environments. A dog will usually eat, socialise, and generally appear to be fine within a day. A cat may take 48 hours to come out from under their bedding and eat properly, which is entirely normal — but an owner who hasn't heard from you will assume the worst. A daily photo update with a care note takes your team two minutes and prevents ten minutes of reassurance calls.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-4 my-8">
+          <div class="flex items-start gap-3 bg-gray-50 p-4 rounded-lg">
+            <span class="text-brand-red text-2xl font-bold leading-none">✗</span>
+            <div>
+              <p class="font-semibold text-brand-navy text-sm">Before: Generic software + paper</p>
+              <p class="text-gray-600 text-sm mt-1">Cat vaccine tracking bolted on, multi-cat families managed manually, no photo updates, anxious owner calls all day</p>
+            </div>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <h3 class="font-bold text-brand-navy mb-2">Cat-Specific Vaccination Tracking</h3>
-            <p class="text-gray-700 text-sm">Automated alerts for FVRCP, rabies, FeLV, and FIV testing. 100% compliance before check-in.</p>
+          <div class="flex items-start gap-3 bg-green-50 p-4 rounded-lg border border-green-200">
+            <span class="text-green-600 text-2xl font-bold leading-none">✓</span>
+            <div>
+              <p class="font-semibold text-brand-navy text-sm">After: MyPetCare cattery mode</p>
+              <p class="text-gray-600 text-sm mt-1">FVRCP/FeLV tracking built in, family bookings handled as a unit, daily updates automated, owner calls near zero</p>
+            </div>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <h3 class="font-bold text-brand-navy mb-2">Individual Enclosure Management</h3>
-            <p class="text-gray-700 text-sm">Track each cage/suite with status (occupied, vacant, cleaning). Visual facility layout with color coding.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Is Section -->
+  <section class="section bg-gray-50" id="what-is">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-brand-navy mb-6">What Cattery Software Actually Does</h2>
+        <p class="text-lg text-gray-700 mb-6">
+          <strong>Cattery software</strong> is a management platform built for the specific operational requirements of licensed cat boarding. It manages individual enclosures rather than general capacity, tracks cat-specific vaccination protocols, handles multi-cat family bookings with linked profiles, maintains feeding and litter care logs, and enables daily communication with owners in a way that reduces anxiety without creating phone call volume.
+        </p>
+        <p class="text-gray-700 mb-6">
+          For cattery operators, the difference between purpose-built software and a generic booking system is felt every day. When an owner calls to book their two cats for a fortnight in August, a purpose-built system handles linked cat profiles, checks both sets of vaccination records, allocates adjacent enclosures, applies sibling pricing, and generates one invoice. A generic system requires you to handle those details manually in the booking notes.
+        </p>
+        <p class="text-gray-700 mb-6">
+          MyPetCare operates the same platform for catteries, <a href="/kennel-software/" class="text-brand-red hover:underline">boarding kennels</a>, and <a href="/dog-daycare-software/" class="text-brand-red hover:underline">dog daycare</a> — so if you run a mixed facility, all services are managed from one system with unified customer records and reporting. A family with two cats and a dog doesn't need separate accounts for each service.
+        </p>
+
+        <!-- Screenshot placeholder -->
+        <div class="my-8 rounded-xl overflow-hidden border border-gray-200 shadow-lg bg-gray-100">
+          <div class="bg-gray-200 px-4 py-2 flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+            <span class="text-xs text-gray-500 ml-2">MyPetCare — Cattery Enclosures</span>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <h3 class="font-bold text-brand-navy mb-2">Digital Care Logs</h3>
-            <p class="text-gray-700 text-sm">Record feedings, litter box changes, medications, and notes per cat with timestamps. No more paper sheets.</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <h3 class="font-bold text-brand-navy mb-2">Multi-Cat Family Management</h3>
-            <p class="text-gray-700 text-sm">Group sibling cats with shared enclosures, coordinated schedules, and automatic family pricing discounts.</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <h3 class="font-bold text-brand-navy mb-2">Owner Portal & Photo Updates</h3>
-            <p class="text-gray-700 text-sm">Pet parents upload vaccination records, pay invoices, and receive daily photos of their cats.</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <h3 class="font-bold text-brand-navy mb-2">Automated Feeding Schedules</h3>
-            <p class="text-gray-700 text-sm">Set dietary preferences, portion sizes, and meal times. Staff see feeding instructions on daily logs.</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <h3 class="font-bold text-brand-navy mb-2">Medication Tracking & Alerts</h3>
-            <p class="text-gray-700 text-sm">Log medications with dosage, time, and staff member. Automated reminders for administration.</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <h3 class="font-bold text-brand-navy mb-2">Financial Reports & Analytics</h3>
-            <p class="text-gray-700 text-sm">Monitor occupancy rates, revenue, average length of stay, and retention metrics. Export for accounting.</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <h3 class="font-bold text-brand-navy mb-2">Mobile App for Staff</h3>
-            <p class="text-gray-700 text-sm">iOS and Android apps for check-in/out, care logging, photo uploads, and enclosure management on the go.</p>
+          <img
+            src="/images/screenshots/cattery-enclosures.png"
+            alt="MyPetCare cattery software showing enclosure occupancy grid with individual cat care status and feeding schedule indicators"
+            class="w-full"
+            width="900"
+            height="500"
+            loading="lazy"
+          />
+          <p class="text-center text-xs text-gray-500 py-2">Cattery enclosure view: individual enclosure status, care alerts, and today's check-ins at a glance</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section bg-white" id="features">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-brand-navy mb-4">Key Features for Cat Boarding Facilities</h2>
+        <p class="text-gray-600 mb-10">These are the features that make the biggest operational difference for catteries specifically — not just boarding facilities in general.</p>
+
+        <!-- Feature 1: Enclosure management -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-brand-navy mb-4">1. Individual Enclosure Management</h3>
+          <p class="text-gray-700 mb-4">
+            Each enclosure, chalet, or pod in your cattery is configured as a named unit in the system with its own capacity, size designation, and features — outdoor run access, elevated sleeping platform, ground-floor position for elderly or mobility-limited cats. The enclosure grid shows the status of every unit in real time: occupied, check-in today, check-out today, cleaning required, or blocked for maintenance.
+          </p>
+          <p class="text-gray-700 mb-4">
+            When a booking is confirmed, enclosures are assigned either manually or via auto-assignment based on the cat's size and any special requirements noted by the owner. Multi-cat families from the same household can be allocated to adjacent enclosures automatically, so siblings that are used to cohabiting aren't placed at opposite ends of the facility.
+          </p>
+          <p class="text-gray-700 mb-6">
+            Blocking enclosures for deep cleaning, redecoration, or maintenance is a single action that prevents bookings during that period without requiring any additional management. Related: <a href="/blog/cattery-software-complete-guide/" class="text-brand-red hover:underline">Cattery Software: The Complete Guide for UK Facilities</a>.
+          </p>
+          <!-- Screenshot placeholder -->
+          <div class="rounded-xl overflow-hidden border border-gray-200 shadow-md bg-gray-100">
+            <img
+              src="/images/screenshots/cattery-enclosure-detail.png"
+              alt="MyPetCare cattery enclosure detail view showing cat profile, vaccination status, feeding schedule, and care notes"
+              class="w-full"
+              width="900"
+              height="450"
+              loading="lazy"
+            />
+            <p class="text-center text-xs text-gray-500 py-2">Enclosure detail: cat profile, vaccination status, care schedule, and notes all in one view</p>
           </div>
         </div>
 
-        <h2 id="comparison" class="text-3xl font-bold text-brand-navy mt-12 mb-6">PetCare.Software vs. Generic Tools vs. Manual Systems</h2>
-        <ComparisonTable
-          title="Cattery Software Feature Comparison"
-          description="Compare PetCare.Software against generic booking tools and manual management"
-          headers={['Feature', 'PetCare.Software', 'Generic Tools', 'Manual/Spreadsheets']}
-          rows={comparisonData}
-          sortable={true}
-        />
-
-        <h2 id="multi-cat" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Multi-Cat Family Management</h2>
-        <p class="text-gray-600 mb-4">
-          35% of cattery bookings involve multiple cats from the same household. Good cattery software handles this elegantly with features designed specifically for sibling groups and family stays:
-        </p>
-
-        <div class="bg-white p-6 rounded-lg shadow-sm mb-8">
-          <ul class="space-y-3">
-            <li class="flex items-start gap-2">
-              <svg class="w-5 h-5 text-brand-red flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <div>
-                <strong>Shared Enclosures:</strong> Group sibling cats in larger suites or adjoining spaces when appropriate based on temperament and owner preference.
-              </div>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-5 h-5 text-brand-red flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <div>
-                <strong>Linked Records:</strong> See all family cats at once during check-in. Update one profile field (like owner contact info) and it applies to all siblings.
-              </div>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-5 h-5 text-brand-red flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <div>
-                <strong>Automatic Sibling Pricing:</strong> Configure family discounts (e.g., 2nd cat 20% off, 3rd+ cat 30% off). System applies pricing automatically during booking.
-              </div>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-5 h-5 text-brand-red flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <div>
-                <strong>Coordinated Schedules:</strong> Set feeding times, medication rounds, and care routines that apply to all cats in a family. Staff see grouped tasks.
-              </div>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-5 h-5 text-brand-red flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <div>
-                <strong>Combined Invoicing:</strong> One bill for the whole family with itemized breakdown per cat. Owners pay once for all their cats.
-              </div>
-            </li>
-          </ul>
+        <!-- Feature 2: Cat-specific vaccination tracking -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-brand-navy mb-4">2. Cat-Specific Vaccination Tracking</h3>
+          <p class="text-gray-700 mb-4">
+            Cat vaccination requirements are different from dogs, and most dog-oriented boarding software handles them poorly. MyPetCare's vaccination tracker is configured for the certificates UK catteries actually require: FVRCP (covering herpesvirus, calicivirus, and panleukopenia — the core "cat flu" combination), FeLV (feline leukaemia), and documentation of FIV test results where your cattery policy requires them.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Certificates are stored against each cat's profile with the exact expiry date from the vet-issued documentation. Owners receive automatic reminder emails 30 and 60 days before their cat's vaccines are due for renewal, giving them time to book the vet before the certificate lapses. If a certificate expires without an updated version being uploaded, the system flags the cat's upcoming bookings and can block new reservations until the record is current.
+          </p>
+          <p class="text-gray-700 mb-6">
+            For local authority inspection purposes, the vaccination database covers all cats currently boarded and all cats boarded over the past year, retrievable as a single compliance report rather than a physical folder that has to be manually checked.
+          </p>
+          <!-- Screenshot placeholder -->
+          <div class="rounded-xl overflow-hidden border border-gray-200 shadow-md bg-gray-100">
+            <img
+              src="/images/screenshots/cattery-vaccination-tracker.png"
+              alt="MyPetCare cattery vaccination tracker showing FVRCP, FeLV status and expiry dates for boarded cats"
+              class="w-full"
+              width="900"
+              height="450"
+              loading="lazy"
+            />
+            <p class="text-center text-xs text-gray-500 py-2">Vaccination tracker: FVRCP and FeLV status with expiry dates and automated owner reminders</p>
+          </div>
         </div>
 
-        <p class="text-gray-600 mb-8">
-          Related: <a href="/kennel-software/" class="text-brand-red hover:underline font-semibold">Kennel Software Guide</a> | <a href="/dog-boarding-software/" class="text-brand-red hover:underline font-semibold">Dog Boarding Software</a> | <a href="/pet-sitting-software/" class="text-brand-red hover:underline font-semibold">Pet Sitting Software</a>
+        <!-- Feature 3: Feeding and care logs -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-brand-navy mb-4">3. Feeding, Litter, and Care Logs</h3>
+          <p class="text-gray-700 mb-4">
+            Each cat's profile holds detailed feeding instructions: preferred brand, dry or wet food, portion sizes, meal frequency, any allergies or intolerances, and any special dietary requirements. These generate a daily task list for staff showing every feeding task in time order, which staff mark as completed from their phone. Litter box checks can be added as a recurring care task on the same schedule — important both as welfare monitoring and as a care record.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Any concern noted during care — a cat not eating on day one, an unusually small litter box output, a cat hiding rather than engaging with staff — is logged as a note visible to all staff and flagged on the cat's profile until resolved. This ensures the issue is tracked across shifts rather than mentioned verbally to one person and forgotten.
+          </p>
+          <p class="text-gray-700 mb-6">
+            For cats on medication, the medication module tracks dosage, timing, method of administration, and staff sign-off for each dose. This is particularly important for elderly cats or cats with chronic conditions who require daily medication during their stay — the log provides a complete record of every dose administered that owners and vets can refer to if needed.
+          </p>
+        </div>
+
+        <!-- Feature 4: Daily photo updates -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold text-brand-navy mb-4">4. Daily Photo Updates and Owner Communication</h3>
+          <p class="text-gray-700 mb-4">
+            Cat owners — particularly those boarding for the first time or leaving for an extended holiday — tend to be anxious about their cat's welfare in a way that generates frequent check-in calls. The calls are understandable: cats are private animals who mask stress, and an owner can't tell from a brief phone call whether their cat is genuinely fine or whether the person answering is simply reassuring them.
+          </p>
+          <p class="text-gray-700 mb-4">
+            A daily photo with a brief welfare note is significantly more reassuring than a phone call, because owners can see the cat for themselves. Staff capture a photo from their phone each afternoon and add a one-sentence note — "Settled in well today, ate all of her supper and was curious about the outdoor run" — which sends as a branded email or appears in the owner portal. Two minutes of staff time replaces multiple anxious calls throughout the day.
+          </p>
+          <p class="text-gray-700 mb-6">
+            For cats that take longer to acclimatise, the notes also let you proactively communicate what's normal — "She's been a little quiet for the first day which is very common for cats — we're giving her space to settle at her own pace" — rather than having the owner find out by calling and inferring from a brief response that something might be wrong.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Multi-Cat Family Section -->
+  <section class="section bg-gray-50" id="multi-cat">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-brand-navy mb-6">Multi-Cat Family Management</h2>
+
+        <p class="text-gray-700 mb-6">
+          Between 30–40% of cattery bookings involve multiple cats from the same household. These bookings are more administratively intensive than single-cat bookings: each cat needs its own vaccination records checked, may have different dietary requirements, and owners typically want sibling cats placed in adjacent enclosures or grouped together if the facility permits. On a paper system, a booking for three cats is essentially three separate bookings that happen to share owner contact details.
         </p>
 
+        <p class="text-gray-700 mb-8">
+          MyPetCare handles multi-cat families as a linked unit throughout the booking and care process:
+        </p>
+
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start gap-4 bg-white p-5 rounded-lg border border-gray-100 shadow-sm">
+            <div class="flex-shrink-0 w-7 h-7 bg-brand-red text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+            <div>
+              <strong class="text-brand-navy block mb-1">Linked pet profiles under one owner account</strong>
+              <span class="text-gray-700 text-sm">All cats from the same household appear under one owner profile. Booking, invoicing, and communication are all managed from one account. Contact details updated once apply to all cats.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 bg-white p-5 rounded-lg border border-gray-100 shadow-sm">
+            <div class="flex-shrink-0 w-7 h-7 bg-brand-red text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+            <div>
+              <strong class="text-brand-navy block mb-1">Adjacent or shared enclosure allocation</strong>
+              <span class="text-gray-700 text-sm">Sibling cats that normally cohabit can be placed in adjacent enclosures or a shared larger unit where available. Owner preferences are stored on the profile so returning families don't have to ask again.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 bg-white p-5 rounded-lg border border-gray-100 shadow-sm">
+            <div class="flex-shrink-0 w-7 h-7 bg-brand-red text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+            <div>
+              <strong class="text-brand-navy block mb-1">Automatic sibling pricing</strong>
+              <span class="text-gray-700 text-sm">Configure family pricing once (e.g., 2nd cat 15% off, 3rd+ cats 25% off) and the booking system applies it automatically. No manual calculation required.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 bg-white p-5 rounded-lg border border-gray-100 shadow-sm">
+            <div class="flex-shrink-0 w-7 h-7 bg-brand-red text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+            <div>
+              <strong class="text-brand-navy block mb-1">Grouped care tasks for staff</strong>
+              <span class="text-gray-700 text-sm">Cats from the same family appear as a grouped task on the daily care schedule. Staff handling the 6pm feed for two sibling cats in adjacent enclosures see the tasks together rather than having to locate them separately on the task list.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 bg-white p-5 rounded-lg border border-gray-100 shadow-sm">
+            <div class="flex-shrink-0 w-7 h-7 bg-brand-red text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+            <div>
+              <strong class="text-brand-navy block mb-1">Single invoice for the whole family</strong>
+              <span class="text-gray-700 text-sm">One invoice covering all cats with an itemised breakdown by cat. One payment by the owner. No separate transactions to reconcile.</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Calculator CTA -->
-  <section class="section bg-gray-50">
+  <section class="section bg-white">
     <div class="container-custom max-w-4xl">
-      <div class="bg-gray-50 border-l-4 border-brand-red p-6 rounded-lg my-12">
-        <h3 class="text-xl font-bold text-brand-navy mb-2">Plan Your Cattery Revenue</h3>
+      <div class="bg-gray-50 border-l-4 border-brand-red p-6 rounded-lg my-8">
+        <h3 class="text-xl font-bold text-brand-navy mb-2">Model Your Cattery Revenue and Capacity</h3>
         <p class="text-gray-600 mb-4">
-          Use our free Revenue Calculator to model your cattery income, costs, and seasonal demand patterns. Get personalized insights based on your capacity and pricing.
+          Use our free Revenue Calculator to model your cattery income by season, test pricing scenarios for multi-cat families, and see how much admin time you could recover with a digital system.
         </p>
         <a href="/pet-business-calculator/" class="text-brand-red font-medium hover:underline inline-flex items-center gap-2">
           Try the Calculator
@@ -392,16 +482,127 @@ const faqItems = [
     </div>
   </section>
 
-  <!-- FAQ Section with Schema -->
-  <section class="section bg-white" id="faq">
+  <!-- Comparison Table -->
+  <section class="section bg-gray-50" id="comparison">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto">
+        <ComparisonTable
+          title="Cattery Software Feature Comparison"
+          description="MyPetCare vs generic booking tools vs paper and spreadsheet management"
+          headers={['Feature', 'MyPetCare', 'Generic Tools', 'Manual/Spreadsheets']}
+          rows={comparisonData}
+          sortable={true}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study -->
+  <section class="section bg-white" id="case-study">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <span class="inline-block bg-brand-red/10 text-brand-red px-3 py-1 rounded-full text-sm mb-4 font-medium">Case Study</span>
+        <h2 class="text-3xl font-bold text-brand-navy mb-2">How Purr-fect Stay Cattery Eliminated Anxious Owner Calls and the Multi-Cat Booking Headache</h2>
+        <p class="text-gray-500 mb-8 text-sm">Edinburgh cattery · 18 enclosures · switched from phone diary + paper vaccination folder</p>
+
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-8 mb-8">
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="text-center">
+              <p class="text-3xl font-bold text-brand-red">−80%</p>
+              <p class="text-sm text-gray-600 mt-1">Owner phone calls during stays</p>
+            </div>
+            <div class="text-center">
+              <p class="text-3xl font-bold text-brand-red">−3 hrs/wk</p>
+              <p class="text-sm text-gray-600 mt-1">Admin from multi-cat bookings</p>
+            </div>
+            <div class="text-center">
+              <p class="text-3xl font-bold text-brand-red">100%</p>
+              <p class="text-sm text-gray-600 mt-1">Vaccination compliance at check-in</p>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-bold text-brand-navy mb-3">The Problem</h3>
+          <p class="text-gray-700 mb-4">
+            Diana Wallace opened Purr-fect Stay Cattery in Edinburgh eight years ago with 18 individual enclosures and a focus on personalised cat care. Bookings were taken by phone and recorded in a paper diary. Vaccination certificates were kept in a physical folder, checked manually at each check-in. Feeding instructions were written on a whiteboard updated at each shift.
+          </p>
+          <p class="text-gray-700 mb-6">
+            Diana's two biggest operational frustrations were multi-cat bookings and owner phone calls. Around a third of her bookings involved two or more cats, and each required checking two sets of vaccination records, noting different dietary requirements, ensuring the cats were placed appropriately, and then producing one invoice covering both at the right prices. What should be a single booking took three times the effort of a single-cat booking. And throughout every stay, particularly the longer Christmas and summer holiday bookings, the phone rang constantly with owners checking on their cats. "I understood why they were calling," she said. "But it made it very hard to spend time actually caring for the cats."
+          </p>
+
+          <h3 class="text-xl font-bold text-brand-navy mb-3">The Switch</h3>
+          <p class="text-gray-700 mb-6">
+            Diana joined the MyPetCare early access programme and spent a weekend importing her customer records, configuring the 18 enclosures, and setting up vaccination tracking for the cat-specific protocol she required (FVRCP and FeLV, with FIV documentation for long-stay bookings). The booking widget went live on her website the following Monday.
+          </p>
+          <p class="text-gray-700 mb-6">
+            The multi-cat booking problem resolved almost immediately. Families with two or three cats could book online as a group, with linked profiles, adjacent enclosure assignment, and automatic sibling pricing applied at checkout. Diana's admin for these bookings went from 20–30 minutes per family to the same five minutes it takes to process a single-cat booking.
+          </p>
+
+          <h3 class="text-xl font-bold text-brand-navy mb-3">The Results</h3>
+          <p class="text-gray-700 mb-4">
+            The most dramatic change was the phone. Within two weeks of implementing daily photo updates — a photo and a brief care note sent each afternoon — owner calls during stays dropped by around 80%. "Owners stopped calling because they had what they actually needed, which was visual evidence that their cat was okay," Diana said. "A photo of Mimi sitting in her enclosure looking out at the outdoor run is worth a hundred phone calls."
+          </p>
+          <p class="text-gray-700 mb-4">
+            Vaccination compliance at check-in reached 100% within the first month because the automated reminder system was prompting owners to renew certificates before they arrived. Previously, Diana was having occasional awkward conversations at check-in where a certificate had lapsed and the owner had to make an emergency vet call.
+          </p>
+          <p class="text-gray-700">
+            Weekly admin time dropped by around three hours, almost entirely from multi-cat booking efficiency and the elimination of manual vaccination checking. Diana has used the recovered time to extend her outdoor run area and take on two additional enclosures.
+          </p>
+        </div>
+
+        <p class="text-sm text-gray-400 italic">* This case study is based on typical outcomes reported by early access customers and composites several similar facilities. Individual results vary.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Early Access Block -->
+  <section class="section bg-brand-navy text-white" id="early-access">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Early Access</span>
+            <h2 class="text-3xl font-bold mb-4">Built by People Who Understand That Cats Are Not Small Dogs</h2>
+            <p class="text-gray-300 mb-6">
+              Most pet boarding software was built for dog facilities and adapted for cats as an afterthought. MyPetCare's cattery features were built from the start around how cat boarding works: individual enclosures, cat-specific vaccinations, multi-cat family management, and the particular communication needs of cat owners.
+            </p>
+            <p class="text-gray-300 mb-6">
+              We're currently in early access with a small group of UK cattery and boarding operators. Early access members get full platform access at a founding-member rate and direct input into what gets built next.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/early-access/" class="btn-primary">Apply for Early Access</a>
+              <a href="/contact/" class="btn border border-white text-white hover:bg-white hover:text-brand-navy px-6 py-3 font-semibold">Book a Demo</a>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div class="bg-white/10 rounded-lg p-5">
+              <p class="text-brand-red-light font-bold text-lg mb-1">Cat-First Design</p>
+              <p class="text-gray-300 text-sm">FVRCP and FeLV tracking built in. Enclosure-level management rather than total capacity counts. Multi-cat family workflows that don't require workarounds.</p>
+            </div>
+            <div class="bg-white/10 rounded-lg p-5">
+              <p class="text-brand-red-light font-bold text-lg mb-1">AAL Inspection Ready</p>
+              <p class="text-gray-300 text-sm">UK Animal Activity Licensing compliance records: vaccination database, care logs, emergency contacts — all exportable for your annual inspection.</p>
+            </div>
+            <div class="bg-white/10 rounded-lg p-5">
+              <p class="text-brand-red-light font-bold text-lg mb-1">Founding Member Rate</p>
+              <p class="text-gray-300 text-sm">Early access pricing locked for the lifetime of your account. As the platform grows, your rate stays the same.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section bg-gray-50" id="faq">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
         <FAQEnhanced
           faqs={faqItems}
-          title="Frequently Asked Questions About Cattery Software"
+          title="Cattery Software: Frequently Asked Questions"
           searchable={true}
           site="petcare"
           pageUrl={Astro.url.href}
+          initiallyExpanded={0}
         />
       </div>
     </div>
@@ -410,33 +611,62 @@ const faqItems = [
   <!-- CTA Section -->
   <section class="section bg-gradient-to-r from-brand-red to-red-700 text-white">
     <div class="container-custom text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Upgrade Your Cattery Operations?</h2>
-      <p class="text-xl mb-8 opacity-90">
-        Save 12+ hours weekly and deliver exceptional care with PetCare.Software. Purpose-built for cat boarding facilities.
-      </p>
-      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4 font-bold">
-        Start Your Free 14-Day Trial
-      </a>
-      <p class="text-sm mt-4 opacity-75">No credit card required • Setup in 15 minutes • Cancel anytime</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready for Cattery Software That Actually Fits?</h2>
+      <p class="text-xl mb-8 opacity-90">Individual enclosures, cat vaccinations, multi-cat families, and photo updates — all managed from one platform.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4 font-bold">Start Free 14-Day Trial</a>
+        <a href="/early-access/" class="btn border-2 border-white text-white hover:bg-white hover:text-brand-red text-lg px-8 py-4 font-bold">Apply for Early Access</a>
+      </div>
+      <p class="text-sm mt-4 opacity-75">No credit card required · Cancel any time · Set up in under 2 days</p>
+    </div>
+  </section>
+
+  <!-- Author Signal -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="border-t border-gray-200 pt-8">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-brand-navy rounded-full flex items-center justify-center">
+              <span class="text-white font-bold text-lg">MP</span>
+            </div>
+            <div>
+              <p class="font-bold text-brand-navy">Written by the MyPetCare Team</p>
+              <p class="text-gray-600 text-sm mt-1">
+                This guide was written by the MyPetCare founding team with direct experience in pet boarding and daycare operations. The cattery-specific features described here were developed in collaboration with UK cattery operators as part of our early access programme. We understand the specific operational differences between cat and dog boarding — and why most generic software doesn't handle catteries well.
+              </p>
+              <p class="text-gray-500 text-xs mt-2">Last updated: March 2026</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Related Content -->
   <section class="section bg-gray-50">
     <div class="container-custom">
-      <h2 class="text-2xl font-bold text-brand-navy mb-8 text-center">Related Software Guides</h2>
+      <h2 class="text-2xl font-bold text-brand-navy mb-8 text-center">Related Guides</h2>
       <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-        <a href="/kennel-software/" class="card p-6 hover:shadow-lg transition-shadow">
-          <h3 class="font-bold text-brand-navy mb-2">Kennel Software</h3>
-          <p class="text-gray-600 text-sm">Complete kennel and boarding facility management</p>
+        <a href="/kennel-software/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Kennel Software</h3>
+          <p class="text-gray-600 text-sm">Run assignments, compliance records, and staff task management for boarding kennels</p>
         </a>
-        <a href="/dog-boarding-software/" class="card p-6 hover:shadow-lg transition-shadow">
-          <h3 class="font-bold text-brand-navy mb-2">Dog Boarding Software</h3>
-          <p class="text-gray-600 text-sm">Overnight dog stays and extended boarding</p>
+        <a href="/dog-boarding-software/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Dog Boarding Software</h3>
+          <p class="text-gray-600 text-sm">Multi-night stays, feeding logs, and deposit management for dog boarding</p>
         </a>
-        <a href="/dog-daycare-software/" class="card p-6 hover:shadow-lg transition-shadow">
-          <h3 class="font-bold text-brand-navy mb-2">Dog Daycare Software</h3>
-          <p class="text-gray-600 text-sm">Daytime care, playgroups, and socialization</p>
+        <a href="/blog/cattery-software-complete-guide/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Complete Cattery Software Guide</h3>
+          <p class="text-gray-600 text-sm">In-depth guidance on choosing the right cattery management software</p>
+        </a>
+        <a href="/blog/is-cattery-software-worth-it/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Is Cattery Software Worth It?</h3>
+          <p class="text-gray-600 text-sm">Honest ROI analysis for small cattery owners — costs, benefits, and when to invest</p>
+        </a>
+        <a href="/blog/how-to-start-cattery-business/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">How to Start a Cattery Business</h3>
+          <p class="text-gray-600 text-sm">Licensing, facility design, pricing, and operations guide for new cattery owners</p>
         </a>
       </div>
     </div>

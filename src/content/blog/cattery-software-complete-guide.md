@@ -11,6 +11,8 @@ Managing a cattery presents unique challenges. Cats need individual housing, car
 
 This guide covers cattery management software comprehensively: what makes cat boarding different, essential features, platform options, and how to choose the right solution for your facility.
 
+This guide sits alongside our [cattery software](/cattery-software) overview if you want the full feature picture before diving in.
+
 ## What Is Cattery Software?
 
 Cattery software is management software designed for cat boarding facilities. While it shares core functionality with general kennel software, it includes features specific to feline care:
@@ -312,8 +314,7 @@ For small catteries, PetLinx or Kennel Booker offer good value with sufficient c
 
 The key is configuring the platform properly for cat-specific needs during setup. No platform is perfect out of the box for catteries, but all can be made to work effectively with thoughtful configuration.
 
----
-
-*Ready to get started? Visit our [cattery software](/cattery-software/) page to learn more about PetCare.Software's cat boarding features.*
-
-*Related guides: [Dog Daycare Software](/blog/dog-daycare-software-complete-guide), [Dog Boarding Software](/blog/dog-boarding-software-complete-guide), [Kennel Software](/blog/kennel-software-complete-guide)*
+## Related Articles
+- [Cattery Software: Features, Pricing & How to Choose](/cattery-software)
+- [Is Cattery Software Worth It?](/blog/is-cattery-software-worth-it)
+- [How to Start a Cattery Business](/blog/how-to-start-cattery-business)

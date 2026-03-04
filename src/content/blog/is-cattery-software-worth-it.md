@@ -9,6 +9,8 @@ author: "PetCare Team"
 
 Cat boarding is a smaller market than dog boarding, and catteries often operate on tighter margins. Does it make sense to invest in management software? Here's an honest look at the costs and benefits for small cattery owners.
 
+Before we get into the numbers, our [cattery software](/cattery-software) page covers everything from online booking to client communication.
+
 ## Understanding Cattery-Specific Needs
 
 Before discussing ROI, it's worth noting what makes catteries different:
@@ -202,6 +204,14 @@ In absolute pounds, often yes—because nightly rates are lower. As a percentage
 
 This is ideal for software. You get unified client management, combined billing, and can cross-sell services. Most platforms handle multiple species.
 
+## A Simple ROI Check for Cattery Owners
+
+Consider a cattery with 10 pens at an average stay of 5 nights and £20/night. That's £1,000/week gross at full occupancy. Manual admin for an operation that size — booking calls, reminder messages, vaccination checks, feeding-note lookups, invoicing — typically runs 4–5 hours a week, or roughly £60–80/month at minimum wage.
+
+[Cattery software](/cattery-software) at £40–50/month pays for itself if it saves even 3 hours a week. For most cattery owners the break-even point arrives in the first month; the time savings compound after that as the client database grows.
+
+If you're not sure where the hours go, track admin time for one week before trialling any platform. The gap between actual cost and software cost usually settles the question.
+
 ## Conclusion
 
 For commercial catteries with more than 10-12 units, software is worth the investment. The ROI is positive, and the professionalism it brings helps compete with larger facilities.
@@ -210,8 +220,7 @@ For very small operations (under 10 units), the calculation is closer. If you're
 
 Take a free trial. Configure it for cats properly. The answer will become clear.
 
----
-
-*Ready to explore your options? See our complete [cattery software](/cattery-software/) guide for features, pricing, and platform comparisons.*
-
-*Related reading: [How to Start a Cattery Business](/blog/how-to-start-cattery-business), [Kennel Software Guide](/blog/kennel-software-complete-guide)*
+## Related Articles
+- [Cattery Software: Features, Pricing & How to Choose](/cattery-software)
+- [Cattery Software: The Complete Guide](/blog/cattery-software-complete-guide)
+- [How to Start a Cattery Business](/blog/how-to-start-cattery-business)
