@@ -1,6 +1,6 @@
 ---
 title: "Dog Boarding Kennel Design Guide"
-description: "Complete guide to kennel design and layout: space requirements, flooring, ventilation, noise control, and creating comfortable environments for boarding dogs."
+description: "Complete kennel design guide: space requirements, flooring, ventilation, noise control, and creating comfortable environments for boarding dogs."
 image: /images/blog-kennel.jpg
 date: "2026-02-06"
 tags: ["Kennel", "Business Operations"]
@@ -198,10 +198,37 @@ Acoustic panels, solid (not chain-link) kennel partitions, calming music or whit
 
 Yes. Separate exercise areas for small and large dogs prevent injuries. Kennel areas can be mixed if dogs are individually housed, but play must be size-appropriate.
 
+## Technology and Software Considerations for Your Kennel Layout
+
+Your kennel's physical design affects how well your management software integrates with daily operations — and it's worth thinking through both together during the planning phase.
+
+**Check-in desk placement** matters more than it seems. Staff need access to a screen or tablet to review incoming bookings, verify vaccination status, and complete the check-in process in the system. Positioning the reception desk where staff can see the entrance and access the booking system simultaneously reduces bottlenecks during busy arrival periods.
+
+**Staff-facing screens in the kennel area** allow staff to view feeding schedules, medication alerts, and care task lists without returning to a central office. A mounted tablet near the kennel block enables staff to mark tasks as completed in real time, which keeps care logs accurate without requiring trips back to reception.
+
+**Camera placement for report cards.** If you send daily photo updates to owners — a feature of modern [kennel software](/kennel-software) platforms — plan your lighting and camera angles during the design phase. Good natural light in the play areas and kennels makes report card photos better and requires less staff effort.
+
+**WiFi coverage across the full facility** is not optional if you're using mobile devices for care logging. A single router in the reception building rarely covers outdoor runs or back kennel areas. Budget for access points in the kennel block itself during construction — retrofitting is significantly more expensive.
+
+## Kennel Design Mistakes to Avoid
+
+**Insufficient ventilation per run.** Under-specifying ventilation is one of the most common and costly mistakes. Poorly ventilated kennels have higher disease transmission rates, stressed dogs that bark more, and staff working in an unpleasant environment. 10–20 air changes per hour is the standard for kennel areas. Getting this wrong during construction means expensive remediation later.
+
+**Shared water bowls or feeding stations.** Individual water and food stations for each run are not a luxury — they are the single most effective barrier against disease transmission between boarders. Shared water bowls transmit kennel cough and other pathogens directly and efficiently.
+
+**No isolation unit.** Every kennel should have at least one run completely separated from the main kennel block — with separate ventilation, separate traffic flow, and separate staff procedures — for sick or newly arrived dogs whose health status is uncertain. Facilities built without this are structurally non-compliant with AAL guidance in England.
+
+**Poor drainage causing cleaning bottlenecks.** A kennel that takes 45 minutes per run to clean because of inadequate drainage or poorly sloped floors will always be understaffed relative to the time available. Drainage design is among the highest-ROI investments in the build phase.
+
+**No staff-only areas.** Staff need somewhere to change, store equipment, and take breaks that is completely separate from both clients and animals. Facilities that don't have this create cross-contamination risk and fail welfare standards for staff working conditions.
+
+**Inadequate lighting for evening checks.** Evening and overnight checks are significantly harder — and more likely to miss health issues — in poorly lit facilities. LED strip lighting at kennel level (not just overhead fluorescents) makes it easy to observe each dog's behaviour from the walkway without entering the run.
+
 ## Conclusion
 
 Good kennel design requires balancing animal welfare, operational efficiency, regulatory compliance, and budget realities. Invest time in planning before construction—changes are expensive after building. Visit successful facilities, consult with licensing authorities, and work with designers experienced in animal facility construction.
 
----
-
-*Related reading: [How to Start a Kennel Business](/blog/how-to-start-kennel-business), [Legal & Insurance for Pet Boarding](/blog/legal-insurance-pet-boarding), [Dog Health & Safety Protocols](/blog/dog-health-safety-protocols)*
+## Related Articles
+- [Kennel Software: Features, Pricing & Reviews](/kennel-software)
+- [How to Start a Dog Kennel Business](/blog/how-to-start-kennel-business)
+- [7 Ways to Grow Your Kennel Business](/blog/grow-dog-kennel-business)

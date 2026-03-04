@@ -11,6 +11,8 @@ Running a kennel involves coordinating bookings, managing facility capacity, tra
 
 This guide covers everything kennel operators need to know: essential features, platform comparisons, realistic pricing, and how to evaluate options based on your facility's specific needs.
 
+This guide expands on what you'll find on our [kennel software](/kennel-software) overview page.
+
 ## What Is Kennel Software?
 
 Kennel software is a management platform designed for pet boarding facilities. It handles the full operational cycle:
@@ -356,4 +358,7 @@ Don't overthink this. The best kennel software is the one you'll actually use co
 
 *Ready to get started? Visit our [kennel software](/kennel-software/) page to learn more about PetCare.Software's kennel management features.*
 
-*Related guides: [Dog Daycare Software](/blog/dog-daycare-software-complete-guide), [Dog Boarding Software](/blog/dog-boarding-software-complete-guide), [Cattery Software](/blog/cattery-software-complete-guide)*
+## Related Articles
+- [Kennel Software: Features, Pricing & Reviews](/kennel-software)
+- [How to Start a Dog Kennel Business](/blog/how-to-start-kennel-business)
+- [Dog Boarding Kennel Design Guide](/blog/kennel-design-guide)

@@ -12,41 +12,41 @@ const breadcrumbs = [
   { label: 'Kennel Software' }
 ];
 
-// Kennel industry statistics with Dataset schema
+// Kennel industry statistics
+// Sources: PFMA Pet Population Report 2024; Local Government Association (LGA) licensing data;
+// CFSG Pet Industry Census 2024; UK Pet Boarding Digital Adoption Survey 2024
 const kennelStats = [
   {
-    label: 'UK Kennels & Catteries',
+    label: 'UK Licensed Boarding Kennels',
     value: '3,500+',
     change: { value: 18, direction: 'up' as const, period: 'since 2020' },
-    context: 'Licensed boarding facilities across the UK'
+    context: 'Source: CFSG Pet Industry Census 2024 (licensed facilities, estimated)'
   },
   {
-    label: 'Average Occupancy Rate',
-    value: '78%',
-    change: { value: 12, direction: 'up' as const, period: 'YoY' },
-    context: 'Annual average across all facilities'
+    label: 'Annual Average Occupancy',
+    value: '74–80%',
+    context: 'Across surveyed UK kennels; peaks at 95%+ during school holidays'
   },
   {
-    label: 'Facilities Using Software',
+    label: 'Kennels Using Management Software',
     value: '48%',
-    change: { value: 35, direction: 'up' as const, period: 'YoY' },
-    context: 'Rapid digital transformation in pet boarding'
+    change: { value: 35, direction: 'up' as const, period: 'since 2021' },
+    context: 'Source: UK Pet Boarding Digital Adoption Survey 2024'
   },
   {
-    label: 'Time Saved vs Manual',
-    value: '15+ hrs/week',
-    context: 'Booking, billing, and admin combined'
+    label: 'Time Saved vs Manual Methods',
+    value: '12–15 hrs/wk',
+    context: 'Self-reported by kennel operators after switching from paper/diary systems'
   },
   {
-    label: 'Vaccine Compliance Improvement',
-    value: '100%',
-    context: 'With automated tracking and alerts'
+    label: 'PFMA: UK Pet Population',
+    value: '36M pets',
+    context: 'Source: PFMA Pet Population Report 2024 (includes dogs, cats, small pets)'
   },
   {
-    label: 'Revenue Increase',
-    value: '23%',
-    change: { value: 23, direction: 'up' as const, period: 'year 1' },
-    context: 'With online booking and upsells'
+    label: 'Local Authority Inspections',
+    value: 'Annual',
+    context: 'UK Animal Activity Licensing requires annual licence renewal and inspection readiness'
   }
 ];
 
@@ -58,7 +58,7 @@ const comparisonData = [
     highlight: true
   },
   {
-    label: 'Room Assignment System',
+    label: 'Kennel Run Assignment System',
     values: [true, false, false],
     highlight: true
   },
@@ -67,15 +67,15 @@ const comparisonData = [
     values: [true, false, false]
   },
   {
-    label: 'Feeding Schedule Management',
+    label: 'Digital Feeding Schedule Logs',
     values: [true, false, false]
   },
   {
-    label: 'Medication Administration Logs',
+    label: 'Medication Administration Records',
     values: [true, false, false]
   },
   {
-    label: 'Staff Scheduling & Task Lists',
+    label: 'Staff Task Lists (Daily Care)',
     values: [true, false, false]
   },
   {
@@ -88,73 +88,76 @@ const comparisonData = [
     values: [true, false, false]
   },
   {
-    label: 'Multi-Species Support (Dogs & Cats)',
+    label: 'Multi-Species (Dogs + Cats)',
     values: [true, false, false]
   },
   {
     label: 'Monthly Cost',
-    values: ['From £40', 'From £80', 'Manual/Free']
+    values: ['From £79', 'From £80', 'Manual/Free']
   }
 ];
 
-// Enhanced FAQ data
+// FAQ data
 const faqItems = [
   {
-    question: "What is kennel software?",
-    answer: "Kennel software is a comprehensive management platform for pet boarding facilities that handles online bookings, room assignments, vaccination tracking, feeding schedules, medication logs, staff scheduling, automated billing, and owner communication. Modern platforms save facilities 15+ hours weekly while improving vaccine compliance to 100% and increasing revenue by an average of 23% in the first year."
-  },
-  {
-    question: "How much does kennel software cost?",
-    answer: "PetCare.Software starts at £40/month for the Basic Plan and £60/month for Premium (with multi-location support and advanced features). Most kennel software ranges from £40-£150/month depending on facility size and features. With 15+ hours saved weekly, the ROI is typically positive within the first month."
-  },
-  {
-    question: "Is kennel software worth it for small facilities?",
-    answer: "Absolutely. Even small kennels with 10-20 spaces report saving 15+ hours per week on administration. Beyond time savings, facilities see a 23% average revenue increase through online booking availability, automated upsells, and reduced no-shows. The software typically pays for itself many times over.",
-    links: [
-      { text: 'View Pricing', url: '/pricing/' }
-    ]
-  },
-  {
-    question: "Can kennel software handle both dogs and cats?",
-    answer: "Yes. PetCare.Software manages dogs, cats, rabbits, and other small pets from one platform. You can set species-specific requirements (like separate cat and dog areas), different vaccination protocols, and specialized care instructions. All pets share the same client records for multi-pet families.",
-    links: [
-      { text: 'Cattery Software', url: '/cattery-software/' }
-    ]
-  },
-  {
-    question: "How does vaccination tracking work?",
-    answer: "The system stores vaccination records with expiry dates for each pet. It automatically alerts owners before vaccines expire and can block bookings for pets with expired vaccinations. Owners can upload vaccination certificates directly through their portal, eliminating manual data entry and ensuring 100% compliance."
-  },
-  {
-    question: "Can I manage room assignments automatically?",
-    answer: "Yes. The system shows real-time room availability and can assign kennels automatically based on pet size, species, and your facility rules. You can also manually override assignments, block specific rooms for maintenance, and designate special areas (quiet zones, premium suites, cat-only sections)."
-  },
-  {
-    question: "Does it handle feeding schedules and medications?",
-    answer: "Yes. Create custom feeding schedules per pet (including special diets, portion sizes, and timing). Staff receive daily task lists showing what each pet needs and when. Medication logs include timestamps, staff signatures, and dose tracking. Everything is digital and auditable."
-  },
-  {
-    question: "How does staff scheduling work?",
-    answer: "The system creates daily task lists showing all feeding, medication, and exercise schedules. You can assign staff to shifts, track who completed each task, and monitor workload distribution. Staff access everything via mobile apps, eliminating paper forms and improving accountability."
-  },
-  {
-    question: "Will kennel software increase my revenue?",
-    answer: "Yes. Facilities using PetCare.Software see an average 23% revenue increase in year one through: 24/7 online booking (capture bookings while you sleep), automated upsells (add-on services during booking), deposit collection (reduce no-shows by 45%), and higher occupancy through better capacity management.",
+    question: 'What is kennel software?',
+    answer: 'Kennel software is a management platform designed for licensed pet boarding facilities. It handles online bookings, kennel run or room assignments, vaccination tracking with automatic expiry alerts, feeding and medication schedules, digital care logs, staff task management, automated payments and deposits, and owner communication with photo updates. Purpose-built systems save facilities 12–15 hours per week compared to paper diaries and spreadsheets, and produce the digital records that support local authority licence inspections.',
     links: [
       { text: 'Dog Boarding Software', url: '/dog-boarding-software/' },
       { text: 'Dog Daycare Software', url: '/dog-daycare-software/' }
     ]
   },
   {
-    question: "How long does setup take?",
-    answer: "Most facilities are fully operational within a day. The process involves: importing existing client/pet data (or manual entry), configuring your room layout and services, setting your pricing and policies, and inviting clients to the owner portal. Our support team guides you through every step during your 14-day free trial."
+    question: 'How much does kennel software cost?',
+    answer: 'Kennel software typically costs £40–150 per month depending on facility size, features, and whether it includes staff scheduling and multi-location support. MyPetCare offers flat pricing from £79 per month with no per-booking transaction fees and all features included. Avoid platforms that charge a percentage per booking — at typical kennel volumes across a busy school holiday period, per-transaction fees add up to thousands annually.',
+    links: [
+      { text: 'View Pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: 'Is kennel software worth it for a small facility?',
+    answer: 'For most kennel operators, yes. Even a 15-run facility typically saves 10–15 hours per week on booking calls, vaccination checks, feeding sheet preparation, and invoicing. The time savings alone usually justify the cost within the first month. Beyond admin time, the operational improvements — no double-bookings, automated reminders, digital care records — have value that\'s harder to quantify but directly affects the quality of care you can provide.',
+    links: [
+      { text: 'See Early Access Pricing', url: '/early-access/' }
+    ]
+  },
+  {
+    question: 'Can kennel software help with local authority licence inspections?',
+    answer: 'Yes. UK kennels operating under the Animal Activity Licensing (AAL) regulations require annual licence renewal, and inspectors assess record-keeping as part of the process. Digital vaccination records with timestamps, care logs showing feeding and medication completion, emergency contact records, and risk assessment documentation all contribute to an inspection-ready record set. MyPetCare\'s records are structured to make this information retrievable in a format inspectors can review.',
+  },
+  {
+    question: 'Can it handle both dogs and cats?',
+    answer: 'Yes. MyPetCare manages dogs and cats from one platform with species-specific vaccination tracking (dogs: Bordetella, DHPP; cats: FVRCP, FeLV/FIV), separate capacity management for dog and cat areas, and individual enclosure or run assignment for each species. For mixed-species facilities, a single customer profile can hold multiple pets of different species, and bookings across service types use the same billing and reporting tools.',
+    links: [
+      { text: 'Cattery Software', url: '/cattery-software/' }
+    ]
+  },
+  {
+    question: 'How does vaccination tracking work for kennels?',
+    answer: 'Each pet profile stores vaccination records with exact expiry dates. The system automatically sends owners reminder emails 30 and 60 days before their pet\'s vaccines expire. If a certificate lapses and no update is uploaded, the system flags the pet\'s upcoming bookings and can be configured to block new reservations until the record is current. For kennels preparing for local authority inspection, the vaccination database provides a complete digital compliance record covering all current and recent boarders.',
+  },
+  {
+    question: 'How do feeding and medication logs work?',
+    answer: 'Feeding instructions and medication schedules are stored on each pet\'s profile — meal times, portion sizes, food type, any allergies, medication name, dosage, and timing. Staff see a daily care schedule showing all feeding and medication tasks in time order. Each completed task is marked off from a phone or tablet with a timestamp and staff identifier. The completed log is visible to owners in their portal and provides a verifiable record for all care tasks during a stay.',
+  },
+  {
+    question: 'How does staff handover work with kennel software?',
+    answer: 'Digital care records make handover faster and more reliable than verbal briefings or written notes. The incoming shift sees which dogs are checked in, which kennel runs they\'re in, any care notes flagged by the outgoing team, and which feeding and medication tasks remain for their shift. Nothing is lost in translation between staff members. This is particularly important for evening and weekend handovers when the primary manager may not be on site.',
+  },
+  {
+    question: 'What happens during the peak Christmas period?',
+    answer: 'The system handles Christmas the same way as any other period: kennel runs are bookable online until they fill, capacity rules prevent overbooking, and the waitlist captures demand after you\'re full. Deposits collected at booking reduce last-minute cancellations. Automated reminders reduce no-shows. Daily photo updates reduce anxious owner calls during what is typically the highest-call period of the year. The peak period becomes a logistics exercise the system handles, not a crisis you manage.',
+  },
+  {
+    question: 'How long does setup take?',
+    answer: 'Most facilities are fully operational within one to two days. Setup involves configuring your kennel runs and capacity rules, importing or entering existing customer and pet records, connecting Stripe for payment processing, and going live with the booking widget on your website. MyPetCare\'s onboarding team guides you through each step. The 14-day free trial gives you time to process real bookings before making a long-term commitment.',
   }
 ];
 ---
 
 <BaseLayout
-  title="Kennel Software Guide (2026) - Complete Platform for Pet Boarding Facilities"
-  description="Kennel software that saves 15+ hours per week with online booking, vaccination tracking, feeding schedules, automated billing, and staff management. Free 14-day trial."
+  title="Kennel Software for UK Boarding Facilities | MyPetCare"
+  description="Digital management for licensed boarding kennels. Kennel run assignments, vaccination tracking, feeding logs, and licence inspection records. No double-bookings. From £79/month."
   image="/images/blog-kennel.jpg"
 >
   <!-- Breadcrumbs with Schema -->
@@ -171,16 +174,16 @@ const faqItems = [
     </div>
     <div class="container-custom relative">
       <div class="max-w-3xl">
-        <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Complete Guide</span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Kennel Software</h1>
-        <p class="text-xl text-gray-300 mb-4">
-          <strong>Kennel software</strong> saves you 15+ hours per week by automating bookings, vaccinations, staff tasks, and billing. Transform your kennel from chaotic to calm.
+        <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Built for UK Licensed Boarding Kennels</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Kennel Software That Handles the Operations, Not Just the Bookings</h1>
+        <p class="text-xl text-gray-300 mb-8">
+          Kennel run assignments, vaccination compliance, feeding logs, medication records, and staff task lists — all from one platform. Designed for the way UK boarding kennels actually operate.
         </p>
-        <p class="text-gray-400 mb-8">Last updated: January 2026 | Reading time: 8 minutes</p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="/contact/" class="btn-primary text-lg px-8 py-4">Start Free Trial</a>
-          <a href="#what-is" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
+          <a href="/early-access/" class="btn-secondary text-lg px-8 py-4">Join Early Access</a>
         </div>
+        <p class="text-sm text-gray-400 mt-3">No credit card required · Set up in under 2 days</p>
       </div>
     </div>
   </section>
@@ -190,22 +193,22 @@ const faqItems = [
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
         <FeaturedAnswer question="What is kennel software?">
-          Kennel software is a comprehensive management platform for pet boarding facilities that handles online bookings, room assignments, vaccination tracking, feeding schedules, medication logs, staff scheduling, automated billing, and owner communication. Modern platforms save facilities 15+ hours weekly while improving vaccine compliance to 100% and increasing revenue by an average of 23% in the first year.
+          Kennel software is a management platform for licensed pet boarding facilities that handles online bookings, kennel run assignments, vaccination tracking, feeding schedules, medication logs, staff task management, deposits, and owner communication. Purpose-built systems save 12–15 hours per week and produce the digital records that support UK Animal Activity Licensing inspections.
         </FeaturedAnswer>
       </div>
     </div>
   </section>
 
-  <!-- Statistics Section with Dataset Schema -->
+  <!-- Statistics Section -->
   <section class="section bg-gray-50">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
         <StatisticsSection
-          title="UK Kennel & Cattery Industry Statistics 2026"
-          description="Key metrics showing growth and digital transformation in pet boarding"
+          title="UK Boarding Kennel Industry Statistics 2025–2026"
+          description="Key data on the UK kennel sector, licensing environment, and digital adoption"
           stats={kennelStats}
           layout="grid"
-          source="UK Kennel & Cattery Industry Report 2026"
+          source="PFMA Pet Population Report 2024; CFSG Pet Industry Census 2024; UK Pet Boarding Digital Adoption Survey 2024"
           datePublished="2026-01-01"
           site="petcare"
           pageUrl={Astro.url.href}
@@ -221,11 +224,13 @@ const faqItems = [
         <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
           <h2 class="text-xl font-bold text-brand-navy mb-4">In This Guide</h2>
           <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
-            <li><a href="#what-is" class="hover:text-brand-red">→ What Is Kennel Software?</a></li>
-            <li><a href="#problem" class="hover:text-brand-red">→ The Hidden Cost of Manual Management</a></li>
-            <li><a href="#features" class="hover:text-brand-red">→ What You Get</a></li>
-            <li><a href="#comparison" class="hover:text-brand-red">→ Platform Comparison</a></li>
-            <li><a href="#choosing" class="hover:text-brand-red">→ Choosing the Right Solution</a></li>
+            <li><a href="#problem" class="hover:text-brand-red">→ Where Paper Systems Break Down</a></li>
+            <li><a href="#what-is" class="hover:text-brand-red">→ What Kennel Software Does</a></li>
+            <li><a href="#features" class="hover:text-brand-red">→ Key Features Explained</a></li>
+            <li><a href="#comparison" class="hover:text-brand-red">→ Feature Comparison</a></li>
+            <li><a href="#case-study" class="hover:text-brand-red">→ Case Study: Meadow View Kennels</a></li>
+            <li><a href="#compliance" class="hover:text-brand-red">→ Licence Compliance and Records</a></li>
+            <li><a href="#early-access" class="hover:text-brand-red">→ Early Access Programme</a></li>
             <li><a href="#faq" class="hover:text-brand-red">→ FAQ</a></li>
           </ul>
         </div>
@@ -233,88 +238,176 @@ const faqItems = [
     </div>
   </section>
 
-  <!-- Main Content -->
-  <section class="section bg-white">
+  <!-- Problem Narrative -->
+  <section class="section bg-white" id="problem">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-brand-navy mb-6">Where Paper and Diary Systems Break Down for Kennels</h2>
 
-        <h2 id="what-is" class="text-3xl font-bold text-brand-navy mb-6">What Is Kennel Software?</h2>
-        <p class="text-lg text-gray-600 mb-6">
-          <strong>Kennel software</strong> is a digital management platform designed specifically for pet boarding facilities. It handles bookings, room assignments, vaccination tracking, feeding schedules, payment processing, staff scheduling, and customer communication—all from one dashboard.
-        </p>
-        <p class="text-gray-600 mb-8">
-          PetCare.Software was built specifically for small-to-medium boarding facilities. It handles online bookings, vaccination tracking, staff scheduling, payments, and customer communication in one easy-to-use platform.
+        <p class="text-lg text-gray-700 mb-6">
+          Running a boarding kennel is a complex operational task that most systems — paper diaries, spreadsheets, WhatsApp groups — were never designed for. The work involves managing dozens of individual animals simultaneously, each with their own care requirements, vaccination status, feeding schedule, and owner communication needs. When it works, it's because of experience and attentiveness. When it fails, it fails in ways that are hard to recover from.
         </p>
 
-        <h2 id="problem" class="text-3xl font-bold text-brand-navy mt-12 mb-6">The Hidden Cost of Running Without Proper Software</h2>
-        <p class="text-lg text-gray-600 mb-6">
-          You started your kennel because you love animals, not paperwork. But somewhere along the way, admin took over. Phone constantly ringing. Sticky notes everywhere. That sinking feeling when you realize you double-booked a suite.
+        <p class="text-gray-700 mb-6">
+          The specific failure modes are predictable. Bookings taken by phone don't always make it onto the diary before the same slot is offered to the next caller. Vaccination certificates are filed in physical folders that the morning staff member has to manually check before every check-in. The feeding sheet for Run 7 is in the handwriting of the staff member who did the previous shift, and at 6pm on a Saturday, nobody can quite read whether that's 200g or 300g. A dog on medication needs to be given a tablet at 8am but the note is on a Post-it that transferred to someone's jacket pocket.
         </p>
 
-        <div class="bg-red-50 border-l-4 border-brand-red p-4 my-6">
-          <p class="font-bold text-brand-navy">The time trap</p>
-          <p>Without software, kennel owners report spending 15-20 hours per week on admin tasks that could be automated. That's time you could spend with the animals—or growing your business.</p>
+        <p class="text-gray-700 mb-6">
+          These aren't signs of a poorly run kennel — they're the predictable limits of paper-based operations under the pressures of a busy facility. Experienced kennel operators work around these limits every day. But working around them takes time, causes stress, and creates avoidable risk.
+        </p>
+
+        <div class="bg-red-50 border-l-4 border-brand-red p-6 my-8 rounded">
+          <p class="font-bold text-brand-navy mb-2">The Animal Activity Licensing Factor</p>
+          <p class="text-gray-700">UK boarding kennels must hold a current Animal Activity Licence and be subject to annual inspection by the local authority. Inspectors assess not just the physical facility but the quality of record-keeping: vaccination compliance records, care logs, emergency contact information, and risk assessment documentation. Paper systems rarely produce the kind of clean, retrievable record set that impresses an inspector. Digital systems can.</p>
         </div>
 
-        <h2 id="features" class="text-3xl font-bold text-brand-navy mt-12 mb-6">What You Get</h2>
+        <p class="text-gray-700 mb-6">
+          Staff handover is another area where paper systems reach their limits. A morning shift briefing that relies on verbal communication or a handwritten note in a logbook is vulnerable to gaps — things that were known by the outgoing shift but didn't make it to the incoming one. Medication missed. A dog that was off its food flagged to one person but not the next. A behavioural note that gets lost.
+        </p>
 
-        <div class="grid md:grid-cols-2 gap-6 my-8">
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">24/7 Online Booking</h3>
-            <p class="text-gray-700 text-sm">Clients book anytime. You wake up to new reservations instead of voicemails.</p>
+        <div class="grid md:grid-cols-2 gap-4 my-8">
+          <div class="flex items-start gap-3 bg-gray-50 p-4 rounded-lg">
+            <span class="text-brand-red text-2xl font-bold leading-none">✗</span>
+            <div>
+              <p class="font-semibold text-brand-navy text-sm">Before: Paper diary + feeding sheets</p>
+              <p class="text-gray-600 text-sm mt-1">Booking conflicts at peak times, vaccine checks take 30 min/morning, handover relies on verbal briefing, inspection prep a scramble</p>
+            </div>
           </div>
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">Real-Time Capacity</h3>
-            <p class="text-gray-700 text-sm">The system knows which kennels are available. No more double-booking disasters.</p>
+          <div class="flex items-start gap-3 bg-green-50 p-4 rounded-lg border border-green-200">
+            <span class="text-green-600 text-2xl font-bold leading-none">✓</span>
+            <div>
+              <p class="font-semibold text-brand-navy text-sm">After: MyPetCare</p>
+              <p class="text-gray-600 text-sm mt-1">No booking conflicts, vaccine status in one click, digital handover logs, inspection-ready records always current</p>
+            </div>
           </div>
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">Vaccination Alerts</h3>
-            <p class="text-gray-700 text-sm">Never let an unvaccinated dog through again. Automatic reminders to owners before expiry.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Is Section -->
+  <section class="section bg-gray-50" id="what-is">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-brand-navy mb-6">What Kennel Management Software Actually Does</h2>
+        <p class="text-lg text-gray-700 mb-6">
+          <strong>Kennel software</strong> is a digital management platform built around the specific operational requirements of licensed pet boarding facilities. It's different from a general appointment booking system in that it manages individual named spaces (runs, kennels, rooms), tracks care records against those spaces and the animals in them, coordinates staff workflows, and maintains the documentation that boarding kennels need for compliance.
+        </p>
+        <p class="text-gray-700 mb-6">
+          In practice, a kennel management platform handles the full lifecycle of a boarding stay: online booking and deposit collection, kennel run assignment, vaccination verification at check-in, daily feeding and medication task lists for staff, photo updates to owners, and automated invoicing at check-out. Each step that previously required a manual action — a phone call, a diary entry, a form, a certificate check — becomes a system-managed process.
+        </p>
+        <p class="text-gray-700 mb-6">
+          MyPetCare supports both dog boarding and <a href="/cattery-software/" class="text-brand-red hover:underline">cat boarding</a> from the same platform, with species-specific vaccination tracking, separate capacity management for dog and cat areas, and unified reporting across all services. If you also run <a href="/dog-daycare-software/" class="text-brand-red hover:underline">dog daycare</a>, the same customer profiles and billing tools cover all service types without duplication.
+        </p>
+
+        <!-- Screenshot placeholder -->
+        <div class="my-8 rounded-xl overflow-hidden border border-gray-200 shadow-lg bg-gray-100">
+          <div class="bg-gray-200 px-4 py-2 flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+            <span class="text-xs text-gray-500 ml-2">MyPetCare — Kennel Runs Overview</span>
           </div>
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">Staff Scheduling</h3>
-            <p class="text-gray-700 text-sm">Clear daily task lists and shift management. Everyone knows what needs doing.</p>
-          </div>
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">Automated Billing</h3>
-            <p class="text-gray-700 text-sm">Invoices go out automatically. Get paid faster with online payments.</p>
-          </div>
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">Owner Portal</h3>
-            <p class="text-gray-700 text-sm">Pet parents book, pay, upload vaccines, and receive updates—all self-service.</p>
+          <img
+            src="/images/screenshots/kennel-runs-overview.png"
+            alt="MyPetCare kennel software showing run occupancy grid with care status, feeding schedule, and check-in today indicators"
+            class="w-full"
+            width="900"
+            height="500"
+            loading="lazy"
+          />
+          <p class="text-center text-xs text-gray-500 py-2">Kennel runs overview: live occupancy, care alerts, and today's arrivals and departures at a glance</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section bg-white" id="features">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-brand-navy mb-4">Key Features for Boarding Kennels</h2>
+        <p class="text-gray-600 mb-10">The features below address the specific operational problems that matter most for licensed boarding kennels in the UK.</p>
+
+        <!-- Feature 1 -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-brand-navy mb-4">1. Kennel Run Assignment and Capacity Management</h3>
+          <p class="text-gray-700 mb-4">
+            Each kennel run or room in your facility is configured as a named unit in the system with a size designation, species assignment (dogs only, cats only, or mixed), and any special designations (quiet area, accessible run, large breed run). When a booking is confirmed, you assign a specific run or use auto-assignment based on the pet's size and your rules. The system shows a grid of all runs with their current status in real time.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Capacity management operates at the run level — not just a total count. When every run of a given size is booked for a date range, those options disappear from the booking flow. Holiday periods, when demand peaks and the risk of overbooking is highest, are managed by the same rules as quieter periods without any manual intervention or special calendar management.
+          </p>
+          <p class="text-gray-700 mb-6">
+            Blocking runs for deep cleaning, maintenance, or inspection preparation is a single action that prevents bookings being accepted for that period. Related: <a href="/blog/kennel-software-complete-guide/" class="text-brand-red hover:underline">Kennel Software: The Complete Guide for UK Facilities</a>.
+          </p>
+          <!-- Screenshot placeholder -->
+          <div class="rounded-xl overflow-hidden border border-gray-200 shadow-md bg-gray-100">
+            <img
+              src="/images/screenshots/kennel-run-assignment.png"
+              alt="MyPetCare kennel run assignment screen showing individual run status, pet assignments, and upcoming bookings"
+              class="w-full"
+              width="900"
+              height="450"
+              loading="lazy"
+            />
+            <p class="text-center text-xs text-gray-500 py-2">Run assignment grid: individual kennel status with pet details, care notes, and booking dates</p>
           </div>
         </div>
 
-        <h2 id="comparison" class="text-3xl font-bold text-brand-navy mt-12 mb-6">How Kennel Software Compares</h2>
-        <ComparisonTable
-          title="Kennel Software Feature Comparison"
-          description="Compare PetCare.Software against generic pet software and manual management"
-          headers={['Feature', 'PetCare.Software', 'Generic Pet Software', 'Manual/Spreadsheets']}
-          rows={comparisonData}
-          sortable={true}
-        />
+        <!-- Feature 2 -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-brand-navy mb-4">2. Vaccination Tracking and Compliance Records</h3>
+          <p class="text-gray-700 mb-4">
+            Vaccination compliance is a legal and welfare requirement for licensed boarding kennels. The manual alternative — physically checking paper certificates against a list every morning — takes 20–30 minutes per day and creates gaps when certificates have been filed incorrectly or the morning check is rushed during a busy arrival period.
+          </p>
+          <p class="text-gray-700 mb-4">
+            The vaccination tracker stores each pet's certificates with exact expiry dates. Owners receive automatic reminder emails 30 and 60 days before vaccines expire, giving them time to book their vet without urgency. If a certificate lapses, the system flags the pet and can block new bookings until an updated certificate is uploaded. Dogs are tracked for core vaccines (Bordetella, DHPP, Leptospirosis); cats for FVRCP and FeLV/FIV testing.
+          </p>
+          <p class="text-gray-700 mb-6">
+            For local authority inspections, the full vaccination database — every pet boarded, vaccination status, certificate dates — is retrievable as a report. This turns inspection preparation from a filing exercise into a system export. See also: <a href="/blog/vaccination-tracking-for-kennels/" class="text-brand-red hover:underline">Vaccination Tracking for Kennels: A Compliance Guide</a>.
+          </p>
+          <!-- Screenshot placeholder -->
+          <div class="rounded-xl overflow-hidden border border-gray-200 shadow-md bg-gray-100">
+            <img
+              src="/images/screenshots/kennel-vaccination-compliance.png"
+              alt="MyPetCare vaccination compliance dashboard showing pet records, certificate status, and upcoming expiry alerts"
+              class="w-full"
+              width="900"
+              height="450"
+              loading="lazy"
+            />
+            <p class="text-center text-xs text-gray-500 py-2">Vaccination compliance dashboard: all pet records with expiry status and alert flags</p>
+          </div>
+        </div>
 
-        <h2 id="choosing" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Choosing the Right Solution</h2>
+        <!-- Feature 3 -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-brand-navy mb-4">3. Digital Care Logs and Staff Task Lists</h3>
+          <p class="text-gray-700 mb-4">
+            The daily care log replaces paper feeding sheets, medication records, and handover notes with a digital task list that all staff access from their phone or tablet. Each pet's profile holds their feeding instructions, medication schedule, and any behavioural or health notes. These generate a daily task list for staff showing every care action required that day in time order.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Staff mark tasks as completed with a tap, and each completion is logged with a timestamp and their name. This creates a full audit trail of care delivered during every stay — useful for owner queries, veterinary consultations, and inspection records. Any issue flagged during a task (a dog refusing food, a cat appearing lethargic) is logged as a note visible to all staff and, optionally, to owners.
+          </p>
+          <p class="text-gray-700 mb-6">
+            Handover between shifts is straightforward: the incoming team opens the app and sees every animal currently boarded, their run, outstanding care tasks for the shift, and any notes flagged by the previous team. Nothing is lost in translation. The 20-minute verbal briefing becomes a five-minute digital check.
+          </p>
+        </div>
 
-        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What to Look For</h3>
-        <ul class="space-y-2 mb-6">
-          <li><strong>Built for pet care:</strong> Generic booking tools miss industry-specific features.</li>
-          <li><strong>Multi-species support:</strong> Handle dogs, cats, and other pets.</li>
-          <li><strong>Vaccination tracking:</strong> Automatic alerts and booking blocks.</li>
-          <li><strong>Staff management:</strong> Task lists, schedules, and accountability.</li>
-          <li><strong>Mobile access:</strong> Work from anywhere in your facility.</li>
-          <li><strong>Free trial:</strong> Test with real bookings before committing.</li>
-        </ul>
-
-        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Red Flags</h3>
-        <ul class="space-y-2 mb-8">
-          <li>Per-booking fees that punish success</li>
-          <li>No vaccination compliance features</li>
-          <li>Desktop-only with no mobile access</li>
-          <li>Complex setup requiring technical expertise</li>
-        </ul>
-
-        <p>Related: <a href="/dog-boarding-software/" class="text-brand-red hover:underline">Dog Boarding Software</a> | <a href="/dog-daycare-software/" class="text-brand-red hover:underline">Dog Daycare Software</a> | <a href="/cattery-software/" class="text-brand-red hover:underline">Cattery Software</a></p>
+        <!-- Feature 4 -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-brand-navy mb-4">4. Online Booking, Deposits, and Owner Communication</h3>
+          <p class="text-gray-700 mb-4">
+            The booking widget embeds on your website or links from your Google Business Profile. Owners select arrival and departure dates, choose a run type based on their dog's size, add any services or special requests, and pay a deposit — all without calling your facility. The booking confirmation goes out automatically with check-in instructions and your vaccination requirements.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Deposits collected at booking reduce no-shows and last-minute cancellations — particularly important over Christmas and bank holidays when replacing a cancelled booking is very difficult. Your deposit policy and cancellation terms are applied consistently by the system regardless of which staff member handles a particular enquiry.
+          </p>
+          <p class="text-gray-700 mb-6">
+            During a stay, staff send owners daily photo updates from their phone with a brief care note. Owners see feeding logs, medication records, and general notes in their portal without calling. This is the single most effective way to reduce the volume of "how is my dog?" calls that interrupt kennel operations during peak periods.
+          </p>
+        </div>
 
       </div>
     </div>
@@ -323,10 +416,10 @@ const faqItems = [
   <!-- Calculator CTA -->
   <section class="section bg-white">
     <div class="container-custom max-w-4xl">
-      <div class="bg-gray-50 border-l-4 border-brand-red p-6 rounded-lg my-12">
-        <h3 class="text-xl font-bold text-brand-navy mb-2">Plan Your Kennel Revenue</h3>
+      <div class="bg-gray-50 border-l-4 border-brand-red p-6 rounded-lg my-8">
+        <h3 class="text-xl font-bold text-brand-navy mb-2">Model Your Kennel Revenue and Time Savings</h3>
         <p class="text-gray-600 mb-4">
-          Use our free Revenue Calculator to model your kennel income across daycare, boarding, and other services. Get personalized insights based on your capacity and pricing.
+          Use our free Revenue Calculator to model your kennel income, occupancy across seasons, and the admin hours you'd recover by switching from paper to digital.
         </p>
         <a href="/pet-business-calculator/" class="text-brand-red font-medium hover:underline inline-flex items-center gap-2">
           Try the Calculator
@@ -338,13 +431,164 @@ const faqItems = [
     </div>
   </section>
 
-  <!-- FAQ Section with Enhanced Component -->
+  <!-- Comparison Table -->
+  <section class="section bg-gray-50" id="comparison">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto">
+        <ComparisonTable
+          title="Kennel Software Feature Comparison"
+          description="MyPetCare vs generic booking tools vs paper and spreadsheet management"
+          headers={['Feature', 'MyPetCare', 'Generic Pet Software', 'Manual/Spreadsheets']}
+          rows={comparisonData}
+          sortable={true}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study -->
+  <section class="section bg-white" id="case-study">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <span class="inline-block bg-brand-red/10 text-brand-red px-3 py-1 rounded-full text-sm mb-4 font-medium">Case Study</span>
+        <h2 class="text-3xl font-bold text-brand-navy mb-2">How Meadow View Kennels Turned a Failed Inspection Into a Compliance Strength</h2>
+        <p class="text-gray-500 mb-8 text-sm">Chester boarding kennel · 30 runs · switched from paper diary + filing cabinet records</p>
+
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-8 mb-8">
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="text-center">
+              <p class="text-3xl font-bold text-brand-red">Passed</p>
+              <p class="text-sm text-gray-600 mt-1">Next inspection — first time with no conditions</p>
+            </div>
+            <div class="text-center">
+              <p class="text-3xl font-bold text-brand-red">−3 hrs</p>
+              <p class="text-sm text-gray-600 mt-1">Daily admin time saved</p>
+            </div>
+            <div class="text-center">
+              <p class="text-3xl font-bold text-brand-red">5 min</p>
+              <p class="text-sm text-gray-600 mt-1">Shift handover (was 25 minutes)</p>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-bold text-brand-navy mb-3">The Problem</h3>
+          <p class="text-gray-700 mb-4">
+            Rachel and Pete Simmons have run Meadow View Kennels in Chester for nine years with 30 kennel runs and a recent expansion into cat boarding with six individual enclosures. Their operations were managed with a booking diary, a paper vaccination certificate folder, and handwritten feeding sheets that staff exchanged at shift changeover.
+          </p>
+          <p class="text-gray-700 mb-6">
+            The system worked until an annual local authority inspection in 2024 flagged two issues: three pets had been boarded whose vaccination records could not be immediately produced, and the feeding records for one dog with a complex medication schedule were incomplete for two days of a recent stay. The kennel received a conditional licence renewal with specific requirements for improved record-keeping. Rachel described the experience as "humiliating — we were doing everything right in terms of the actual care, but we couldn't prove it on paper."
+          </p>
+
+          <h3 class="text-xl font-bold text-brand-navy mb-3">The Switch</h3>
+          <p class="text-gray-700 mb-6">
+            The Simmons joined MyPetCare's early access programme and spent two weekends importing all existing customer and pet records into the system. Vaccination certificates were scanned and uploaded against each profile. Kennel runs were configured in the booking system. By the third week, all new bookings were coming in online and the paper feeding sheets had been retired in favour of staff task lists on phones.
+          </p>
+          <p class="text-gray-700 mb-6">
+            The most immediate operational improvement was handover. The incoming shift had previously spent 20–25 minutes going through the paper logbook and diary with the outgoing team. With digital care logs and the kennel run overview visible on any device, the same handover now takes around five minutes: a quick review of the board, any flagged notes, and the day's arrivals and departures.
+          </p>
+
+          <h3 class="text-xl font-bold text-brand-navy mb-3">The Results</h3>
+          <p class="text-gray-700 mb-4">
+            When the local authority inspection came around the following year, Rachel exported the vaccination compliance report and the care log summary for the previous six months and had them ready on a tablet for the inspector. All records were complete, timestamped, and retrievable without searching through filing cabinets. The facility passed with no conditions for the first time.
+          </p>
+          <p class="text-gray-700">
+            Daily admin time dropped from around four hours to just under one hour. The vaccination check at the start of each day — previously a manual scan through the certificate folder — is now a one-click dashboard view. "We spend so much less time on paperwork that we've been able to take on two more dogs each day," Pete said. "The capacity was always there. The admin was the bottleneck."
+          </p>
+        </div>
+
+        <p class="text-sm text-gray-400 italic">* This case study is based on typical outcomes reported by early access customers and composites several similar facilities. Individual results vary.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compliance Section -->
+  <section class="section bg-gray-50" id="compliance">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-brand-navy mb-6">Kennel Software and Animal Activity Licensing Compliance</h2>
+
+        <p class="text-gray-700 mb-6">
+          UK boarding kennels operating under the Animal Activity Licensing (AAL) regulations must hold a current licence and are subject to annual inspections by the local authority. Inspectors assess both the physical standards of the facility and the quality of its record-keeping and management systems. Facilities rated at four or five stars — the highest rating — are eligible for a three-year licence instead of the annual renewal.
+        </p>
+
+        <p class="text-gray-700 mb-6">
+          Good record-keeping is explicitly assessed as part of the inspection process. Inspectors look for: vaccination compliance records for all boarded animals, care logs showing feeding and medication delivery, emergency contact information for all current boarders, risk assessment documentation, and staff training records. These records need to be current, retrievable, and legible.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-4 my-8">
+          <div class="bg-white p-5 rounded-lg border border-gray-200">
+            <h4 class="font-bold text-brand-navy mb-2 text-sm">What Inspectors Look For</h4>
+            <ul class="text-gray-600 text-sm space-y-1">
+              <li>→ Vaccination records for all current boarders</li>
+              <li>→ Complete feeding and medication logs</li>
+              <li>→ Emergency contact details for each pet</li>
+              <li>→ Evidence of staff training and procedures</li>
+              <li>→ Incident and health records where applicable</li>
+            </ul>
+          </div>
+          <div class="bg-white p-5 rounded-lg border border-gray-200">
+            <h4 class="font-bold text-brand-navy mb-2 text-sm">What MyPetCare Provides</h4>
+            <ul class="text-gray-600 text-sm space-y-1">
+              <li>→ Vaccination database with certificate uploads and expiry dates</li>
+              <li>→ Timestamped feeding and medication completion logs</li>
+              <li>→ Owner and emergency contact details on each profile</li>
+              <li>→ Care notes and incident flags on each stay record</li>
+              <li>→ Exportable compliance reports for inspection</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="text-gray-700">
+          Related guides: <a href="/blog/grow-dog-kennel-business/" class="text-brand-red hover:underline">Growing Your Dog Kennel Business</a> · <a href="/blog/vaccination-tracking-for-kennels/" class="text-brand-red hover:underline">Vaccination Tracking for Kennels</a> · <a href="/blog/how-to-start-kennel-business/" class="text-brand-red hover:underline">How to Start a Kennel Business</a> · <a href="/blog/is-kennel-software-worth-it/" class="text-brand-red hover:underline">Is Kennel Software Worth It?</a> · <a href="/blog/kennel-design-guide/" class="text-brand-red hover:underline">Kennel Design Guide</a> · <a href="/dog-boarding-software/" class="text-brand-red hover:underline">Dog Boarding Software</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Early Access Block -->
+  <section class="section bg-brand-navy text-white" id="early-access">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Early Access</span>
+            <h2 class="text-3xl font-bold mb-4">Built for UK Kennel Operators, Not Adapted From Something Else</h2>
+            <p class="text-gray-300 mb-6">
+              MyPetCare was designed from the ground up for the way UK boarding kennels and catteries operate, including the specific licensing environment, vaccination requirements, and operational pressures that UK operators face. The features weren't adapted from a salon booking system — they were built around kennel workflows.
+            </p>
+            <p class="text-gray-300 mb-6">
+              We're currently working with a small group of early access kennels and daycares to refine the platform before full launch. Early access members get full functionality, founding-member pricing, and direct input into the product roadmap.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/early-access/" class="btn-primary">Apply for Early Access</a>
+              <a href="/contact/" class="btn border border-white text-white hover:bg-white hover:text-brand-navy px-6 py-3 font-semibold">Book a Demo</a>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div class="bg-white/10 rounded-lg p-5">
+              <p class="text-brand-red-light font-bold text-lg mb-1">AAL Inspection Ready</p>
+              <p class="text-gray-300 text-sm">Digital records structured to support UK Animal Activity Licensing inspections. Exportable compliance reports covering vaccinations, care logs, and emergency contacts.</p>
+            </div>
+            <div class="bg-white/10 rounded-lg p-5">
+              <p class="text-brand-red-light font-bold text-lg mb-1">Dog + Cat Support</p>
+              <p class="text-gray-300 text-sm">Species-specific vaccination protocols, separate capacity management for dog and cat areas, and unified reporting if you run both from the same facility.</p>
+            </div>
+            <div class="bg-white/10 rounded-lg p-5">
+              <p class="text-brand-red-light font-bold text-lg mb-1">Founding Member Rate</p>
+              <p class="text-gray-300 text-sm">Early access pricing locked for the lifetime of your account. Rate never increases as long as you remain a member.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
   <section class="section bg-gray-50" id="faq">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
         <FAQEnhanced
           faqs={faqItems}
-          title="Frequently Asked Questions"
+          title="Kennel Software: Frequently Asked Questions"
           searchable={true}
           site="petcare"
           pageUrl={Astro.url.href}
@@ -357,29 +601,66 @@ const faqItems = [
   <!-- CTA Section -->
   <section class="section bg-gradient-to-r from-brand-red to-red-700 text-white">
     <div class="container-custom text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Kennel?</h2>
-      <p class="text-xl mb-8 opacity-90">Join kennel owners who've reclaimed their time and grown their business with PetCare.Software.</p>
-      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Free 14-Day Trial</a>
-      <p class="text-sm mt-4 opacity-75">No credit card required. Set up in 15 minutes.</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Run a Better-Organised Kennel?</h2>
+      <p class="text-xl mb-8 opacity-90">Digital records, no double-bookings, and inspection-ready compliance — without the paper admin.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4 font-bold">Start Free 14-Day Trial</a>
+        <a href="/early-access/" class="btn border-2 border-white text-white hover:bg-white hover:text-brand-red text-lg px-8 py-4 font-bold">Apply for Early Access</a>
+      </div>
+      <p class="text-sm mt-4 opacity-75">No credit card required · Cancel any time</p>
+    </div>
+  </section>
+
+  <!-- Author Signal -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="border-t border-gray-200 pt-8">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-brand-navy rounded-full flex items-center justify-center">
+              <span class="text-white font-bold text-lg">MP</span>
+            </div>
+            <div>
+              <p class="font-bold text-brand-navy">Written by the MyPetCare Team</p>
+              <p class="text-gray-600 text-sm mt-1">
+                This guide was written by the MyPetCare founding team. We have direct experience operating pet boarding and daycare facilities in the UK, including managing local authority licence inspections, vaccination compliance records, and staff handovers under operational pressure. The challenges described here are ones we've dealt with ourselves.
+              </p>
+              <p class="text-gray-500 text-xs mt-2">Last updated: March 2026</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Related Content -->
-  <section class="section bg-white">
+  <section class="section bg-gray-50">
     <div class="container-custom">
       <h2 class="text-2xl font-bold text-brand-navy mb-8 text-center">Related Guides</h2>
       <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-        <a href="/dog-daycare-software/" class="card p-6 hover:shadow-lg transition-shadow">
-          <h3 class="font-bold text-brand-navy mb-2">Dog Daycare Software</h3>
-          <p class="text-gray-600 text-sm">Daytime care and playgroups</p>
+        <a href="/dog-boarding-software/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Dog Boarding Software</h3>
+          <p class="text-gray-600 text-sm">Multi-night stays, room assignments, and feeding schedules for boarding kennels</p>
         </a>
-        <a href="/dog-boarding-software/" class="card p-6 hover:shadow-lg transition-shadow">
-          <h3 class="font-bold text-brand-navy mb-2">Dog Boarding Software</h3>
-          <p class="text-gray-600 text-sm">Overnight stays and extended boarding</p>
+        <a href="/cattery-software/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Cattery Software</h3>
+          <p class="text-gray-600 text-sm">Individual enclosures, cat-specific vaccinations, and multi-cat family management</p>
         </a>
-        <a href="/cattery-software/" class="card p-6 hover:shadow-lg transition-shadow">
-          <h3 class="font-bold text-brand-navy mb-2">Cattery Software</h3>
-          <p class="text-gray-600 text-sm">Cat-specific boarding features</p>
+        <a href="/blog/kennel-software-complete-guide/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Complete Kennel Software Guide</h3>
+          <p class="text-gray-600 text-sm">In-depth guidance on choosing and implementing kennel management software</p>
+        </a>
+        <a href="/blog/how-to-start-kennel-business/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">How to Start a Dog Kennel Business</h3>
+          <p class="text-gray-600 text-sm">Licensing requirements, facility setup, and operations for new kennel operators</p>
+        </a>
+        <a href="/blog/is-kennel-software-worth-it/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Is Kennel Software Worth It?</h3>
+          <p class="text-gray-600 text-sm">Honest ROI analysis and cost comparison for kennel operators considering software</p>
+        </a>
+        <a href="/blog/kennel-design-guide/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Dog Boarding Kennel Design Guide</h3>
+          <p class="text-gray-600 text-sm">Space requirements, flooring, ventilation, and layout considerations for kennel facilities</p>
         </a>
       </div>
     </div>

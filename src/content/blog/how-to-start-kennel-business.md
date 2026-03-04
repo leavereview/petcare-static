@@ -11,6 +11,8 @@ Thinking about starting a dog kennel or boarding business? The pet care industry
 
 This guide walks you step-by-step through the essentials of starting your kennel business, with a special focus on licensing and legal requirements in the USA, UK, Canada, and Australia/New Zealand.
 
+Choosing the right [kennel software](/kennel-software) early is one of the most important decisions you'll make.
+
 ## Step 1: Understanding Licensing in the USA
 
 In the United States, kennel licensing requirements vary **state by state and even county by county**. There's no single federal kennel license. Instead, you must comply with:
@@ -233,4 +235,7 @@ Starting a dog kennel business is a rewarding journey—but it requires careful 
 
 ---
 
-*Related reading: [How to Start a Dog Daycare Business](/blog/how-to-start-dog-daycare-business), [Pet Boarding Business Plan Guide](/blog/pet-boarding-business-plan-guide), [Kennel Software Complete Guide](/blog/kennel-software-complete-guide)*
+## Related Articles
+- [Kennel Software: Features, Pricing & Reviews](/kennel-software)
+- [Kennel Software Buyer's Guide](/blog/kennel-software-complete-guide)
+- [7 Ways to Grow Your Kennel Business](/blog/grow-dog-kennel-business)
