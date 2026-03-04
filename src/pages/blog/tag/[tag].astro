@@ -41,9 +41,6 @@ const description = postCount === 1
   ? `Read our article about ${tag.toLowerCase()} for pet care businesses. Expert tips and guides from PetCare.Software.`
   : `Explore ${postCount} articles about ${tag.toLowerCase()} for pet care businesses. Expert tips, guides, and best practices.`;
 
-// noindex sparse tags (fewer than 5 posts) to avoid thin content penalties
-const shouldNoindex = posts.length < 5;
-
 // Tag topic intro content map
 const tagIntros: Record<string, string> = {
   'Kennel': 'Expert guidance on running efficient kennel operations, from facility design to capacity planning and customer service best practices.',
@@ -69,7 +66,7 @@ const introText = tagIntros[tag] || `Browse our collection of articles about ${t
 <BaseLayout
   title={`${displayTag} Articles`}
   description={description}
-  noindex={shouldNoindex}
+  noindex={true}
   schemaType="CollectionPage"
 >
   <!-- Breadcrumbs -->
