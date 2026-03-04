@@ -9,6 +9,8 @@ author: "PetCare Team"
 
 Investing in dog daycare software can feel like a big decision for a small operation. You're already juggling care, customers, and costs—do you really need another monthly expense? Let's break down the real costs and benefits to help you decide.
 
+Before we get into the numbers, it's worth bookmarking our [dog daycare software](/dog-daycare-software/) guide — choosing the right platform early saves significant time later.
+
 ## Understanding the Investment
 
 ### Subscription Costs
@@ -34,6 +36,18 @@ Quality customer support matters. Most platforms offer:
 - Video tutorials and documentation
 - Email/chat support
 - Some offer phone support at higher tiers
+
+## What Does Dog Daycare Software Actually Cost?
+
+Most platforms offer a free trial of 14–30 days — enough time to test with real clients and real bookings before committing. After that, pricing falls into two clear bands:
+
+**Entry-level (£30–50/month):** Covers the essentials — online booking, vaccination tracking, automated appointment reminders, and basic reporting. Suitable for independent daycares running up to 25–30 dogs per day with a small team.
+
+**Mid-tier (£80–120/month):** Adds deeper reporting, multi-playgroup capacity management, staff scheduling, a client-facing portal, and in some cases a dedicated mobile app. This tier is justified once you are running multiple playgroups simultaneously or managing more than one member of staff.
+
+The most important variable to watch is the billing model. A flat monthly rate is predictable. Per-booking or per-transaction fees are not — a platform advertising £30/month can easily reach £80/month once per-booking fees accumulate at a 15-dog-per-day volume. Always calculate your realistic total cost, not just the headline subscription price.
+
+To find your personal break-even point: divide the monthly software cost by the hourly value of admin time saved. At £50/month and 3+ admin hours recovered per week, most small facilities break even within the first month of use.
 
 ## Tangible Benefits
 
@@ -108,6 +122,26 @@ Manual systems break down as you grow. Software scales with you, making future e
 | **Net monthly gain** | **+£585** |
 
 Even with conservative estimates, the ROI is significant.
+
+## ROI Calculator: A Simple Framework
+
+Abstract ROI claims are easy to dismiss. Here is a concrete worked example for a daycare running 15 dogs per day, five days a week.
+
+**Manual admin time per week (pre-software):**
+- Scheduling and booking management: 30 minutes/day × 5 days = 2.5 hours
+- Sending appointment reminders: 20 minutes/day × 5 days = 1.7 hours
+- Invoicing and payment follow-up: 45 minutes/week
+- No-show follow-up and rebooking: 30 minutes/week
+
+**Total: approximately 3.5 hours per week**
+
+At minimum wage, that works out to around £25/week in staff time — £100/month — spent on tasks that software handles automatically.
+
+Software at £50/month leaves a **net saving of £50/month** from admin time alone, before accounting for revenue recovered from reduced no-shows. Automated reminders typically cut no-show rates by 30–50%. For a daycare charging £30/day with two no-shows per week, that is an additional £30–60 per month recovered.
+
+**Combined monthly impact: £80–110 of net value on a £50/month software spend.**
+
+The break-even is not measured in months — for most facilities running 15+ dogs per day, it is reached within the first two weeks of going live.
 
 ## When Software Might NOT Be Worth It
 
@@ -185,8 +219,7 @@ The question isn't really "can I afford software?" It's "can I afford to run my 
 
 Start with a free trial. Enter real data. Test real workflows. You'll quickly see whether it fits your operation.
 
----
-
-*Ready to explore your options? See our complete [dog daycare software](/dog-daycare-software/) guide for features, pricing, and platform comparisons.*
-
-*Related reading: [Reduce No-Shows in Pet Business](/blog/reduce-no-shows-pet-business), [How to Start a Dog Daycare Business](/blog/how-to-start-dog-daycare-business)*
+## Related Articles
+- [Dog Daycare Software: Features, Pricing & How to Choose](/dog-daycare-software/)
+- [Dog Daycare Software Complete Guide](/blog/dog-daycare-software-complete-guide/)
+- [Best Dog Daycare Software](/blog/best-dog-daycare-software/)
