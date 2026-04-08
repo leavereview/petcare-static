@@ -1,0 +1,32 @@
+# PetCare Software
+
+> Pet care business software for dog daycares, boarding kennels, catteries, and grooming salons — online booking, vaccination tracking, automated billing, and staff task management.
+
+PetCare Software helps pet care businesses manage bookings, track pet vaccination records, handle client billing, and coordinate staff — saving 15 hours per week. Used by 500+ facilities in the UK. 14-day free trial, no credit card required.
+
+## Core Pages
+
+- [Home](https://petcare.software/): Product overview, key features, testimonials, and free trial
+- [Pricing](https://petcare.software/pricing/): Basic and Premium plans with feature comparison
+- [About](https://petcare.software/about/): Product story and mission
+- [Contact](https://petcare.software/contact/): Start free trial or ask a question
+
+## Product Pages by Business Type
+
+- [Dog Daycare Software](https://petcare.software/dog-daycare-software/): Complete management software for dog daycare centres — bookings, check-in/out, group management, and billing
+- [Dog Boarding Software](https://petcare.software/dog-boarding-software/): Booking and management tools for dog boarding businesses — kennels, home boarders, and overnight stays
+- [Kennel Software](https://petcare.software/kennel-software/): Software designed for boarding kennel operations — run sheets, vaccination tracking, and capacity management
+- [Cattery Software](https://petcare.software/cattery-software/): Management software for catteries — booking calendar, health records, and client communication
+
+## Tools
+
+- [Pet Business Revenue Calculator](https://petcare.software/pet-business-calculator/): Free calculator to model pet care business revenue, capacity utilisation, seasonal demand, and growth projections
+
+## Blog & Guides
+
+- [Blog](https://petcare.software/blog/): 36 guides on running dog daycares, boarding kennels, grooming salons, and catteries — covering operations, compliance, marketing, and business growth
+
+## Legal
+
+- [Privacy Policy](https://petcare.software/privacy-policy/)
+- [Terms of Service](https://petcare.software/terms/)
